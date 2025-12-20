@@ -1,0 +1,88 @@
+version: '3.8'
+
+services:
+  # Selenium Hub for coordinating browsers
+  selenium-hub:
+    image: selenium/hub:4.16.1
+    container_name: selenium-hub
+    ports:
+      - "4444:4444"
+      - "4442:4442"
+      - "4443:4443"
+    environment:
+      - SE_SESSION_REQUEST_TIMEOUT=300
+      - SE_NODE_MAX_SESSIONS=5
+      - SE_NODE_SESSION_TIMEOUT=300
+
+  # Chrome browser node - Player 1
+  chrome-player1:
+    image: selenium/node-chrome:4.16.1
+    container_name: chrome-player1
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=1
+      - SE_NODE_SESSION_TIMEOUT=300
+    shm_size: 2gb
+    volumes:
+      - /dev/shm:/dev/shm
+
+  # Chrome browser node - Player 2
+  chrome-player2:
+    image: selenium/node-chrome:4.16.1
+    container_name: chrome-player2
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=1
+      - SE_NODE_SESSION_TIMEOUT=300
+    shm_size: 2gb
+    volumes:
+      - /dev/shm:/dev/shm
+
+  # Chrome browser node - Game Master
+  chrome-gm:
+    image: selenium/node-chrome:4.16.1
+    container_name: chrome-gm
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=1
+      - SE_NODE_SESSION_TIMEOUT=300
+    shm_size: 2gb
+    volumes:
+      - /dev/shm:/dev/shm
+
+  # Test runner
+  e2e-tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: e2e-tests
+    depends_on:
+      - selenium-hub
+      - chrome-player1
+      - chrome-player2
+      - chrome-gm
+    environment:
+      - SELENIUM_HUB_URL=http://selenium-hub:4444
+      - FRONTEND_URL=${FRONTEND_URL:-https://deadlands-frontend-production.up.railway.app}
+      - API_URL=${API_URL:-https://deadlands-campaign-manager-production-053e.up.railway.app/api}
+      - HEADLESS=${HEADLESS:-true}
+    volumes:
+      - ./features:/app/features
+      - ./reports:/app/reports
+    command: npm test
+
+networks:
+  default:
+    name: deadlands-test-network

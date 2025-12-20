@@ -1,0 +1,6 @@
+{
+  "permissions": {
+    "allow_all": true,
+    "auto_approve": ["bash", "write", "read", "edit"]
+  }
+}

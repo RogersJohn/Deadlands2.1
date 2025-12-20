@@ -1,0 +1,16 @@
+{
+  "name": "deadlands-manual-testing",
+  "version": "1.0.0",
+  "description": "Manual testing utilities for Deadlands Campaign Manager",
+  "private": true,
+  "scripts": {
+    "launch": "node launch-test-scenario.js",
+    "create-chars": "node create-test-characters.js",
+    "verify": "node verify-characters.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "pg": "^8.16.3",
+    "puppeteer": "^21.6.0"
+  }
+}

@@ -1,0 +1,55 @@
+services:
+  postgres:
+    image: postgres:14-alpine
+    container_name: deadlands-db
+    environment:
+      POSTGRES_DB: deadlands
+      POSTGRES_USER: deadlands
+      POSTGRES_PASSWORD: deadlands_dev
+    ports:
+      - "5433:5432"  # Use 5433 on host to avoid conflicts with local PostgreSQL
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U deadlands"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: deadlands-backend
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      DATABASE_URL: jdbc:postgresql://postgres:5432/deadlands
+      DATABASE_USERNAME: deadlands
+      DATABASE_PASSWORD: deadlands_dev
+      JWT_SECRET: dev-secret-key-change-in-production
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./backend/src:/app/src:ro
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      target: development
+    container_name: deadlands-frontend
+    environment:
+      VITE_API_URL: http://localhost:8080
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend/src:/app/src:ro
+      - ./frontend/public:/app/public:ro
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

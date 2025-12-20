@@ -1,0 +1,771 @@
+Blood Drive 1: Bad Times on the Goodnight
+
+Bad Times on the Goodnight
+by John Goff
+Savage Worlds by Shane Lacy Hensley
+Additional Material: Matthew Cutter, Piotr Korys Editors: Matthew Cutter, Piotr Korys
+Deadlands Brand Manager: Matthew Cutter Layout and Graphic Design: Aaron Acevedo, Travis Anderson, Simon Lucas, Tomasz Tworek
+Cover Artist: Tomasz Tworek Cover Design and Typesetting: Tomasz Tworek
+Interior Artwork: Tomasz Tworek
+Pinnacle Entertainment Group grants permission to print this document, in whole or in part, for personal use. Any electronic distribution is strictly forbidden.
+© 2012 Pinnacle Entertainment Group. Deadlands, Smiling Jack, Savage Worlds, and all related marks and logos are trademarks of Pinnacle Entertainment Group. All Rights Reserved. Produced under license by Studio 2 Publishing, Inc. The Studio 2 logo is a trademark of Studio 2 Publishing, Inc. ©2012. All Rights Reserved.
+
+Contents
+
+Introduction
+
+1
+
+Round-Up
+
+2
+
+Sutter's Flats. .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 2
+
+Job Offer.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 3
+
+Gettin' Started.  .  .  .  .  .  .  .  .  .  .  .  .  .  . 3
+
+Saddle Broken...and Sore.  .  .  .  .  .  . 4
+
+Findin' Lost Doggies .  .  .  .  .  .  .  .  .  . 5
+
+Creepy Crawlies.  .  .  .  .  .  .  .  .  .  .  .  .  . 5
+
+An Unwelcome Visit. .  .  .  .  .  .  .  .  .  . 7
+
+Who's That Injun?.  .  .  .  .  .  .  .  .  .  .  . 8
+
+Supply Run .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 8
+
+You Again!.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 8
+
+Head 'Em Up!
+
+10
+
+Swing, Flank, and Drag.  .  .  .  .  .  . 10
+
+The Remuda. .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 11
+
+Chuck Wagon.  .  .  .  .  .  .  .  .  .  .  .  .  .  . 11
+
+Bayou Vermilion Attacks.  .  .  .  .  . 12
+
+A Long, Dry Spell.  .  .  .  .  .  .  .  .  .  . 14
+
+Any Spring in a Drought.  .  .  .  .  . 14
+
+Nobody's Home....  .  .  .  .  .  .  .  .  .  .  . 15
+
+Once More into the Dust.  .  .  .  .  . 16
+
+Snakes Alive!.  .  .  .  .  .  .  .  .  .  .  .  .  .  . 16
+
+Shooting Stars...and Bars.  .  .  .  .  . 16
+
+Look, Up in the Sky! .  .  .  .  .  .  .  .  . 17
+
+Identified Falling Object .  .  .  .  .  . 17
+
+All Dressed Up.  .  .  .  .  .  .  .  .  .  .  .  .  . 18
+
+Step Away from the Jet Pack!.  . 18
+
+Wrong Place, Wrong Time.  .  .  .  . 19
+
+Crossing the Canadian.  .  .  .  .  .  .  . 19
+
+Quicksand!.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 20 Black Mesa. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 20 Bad Dreams.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 20 Black Dog Attacks.  .  .  .  .  .  .  .  .  .  . 21
+
+No Man's Land
+
+22
+
+Sign of the Territories.  .  .  .  .  .  .  . 22
+
+Keep Off the Grass!.  .  .  .  .  .  .  .  .  . 23
+
+Speak Your Piece, Mister.  .  .  .  .  . 23
+
+Legal Troubles.  .  .  .  .  .  .  .  .  .  .  .  .  . 24
+
+Dog Leg.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 24
+
+The "Marshal" .  .  .  .  .  .  .  .  .  .  .  .  .  . 25
+
+Negotiations.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 25
+
+Bad News Bearers.  .  .  .  .  .  .  .  .  .  . 26
+
+Unexpected Allies. .  .  .  .  .  .  .  .  .  .  . 26
+
+Dealin' with Devlins.  .  .  .  .  .  .  .  .  . 27
+
+The Law, or Lack Thereof.  .  .  .  . 27
+
+The Battle of Gault's Gulch.  .  .  . 28
+
+Evening the Odds.  .  .  .  .  .  .  .  .  .  .  . 28
+
+Aftermath .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 28
+
+Trail's End.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 29
+
+Friends & Foes
+
+30
+
+Bill Sutter .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 30
+
+Abigail "Abby" Morton .  .  .  .  .  .  . 30
+
+Lazy S Cowboy. .  .  .  .  .  .  .  .  .  .  .  .  . 31
+
+Devil Eyes.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 31
+
+Black Dog .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 31
+
+Ravenite Brave. .  .  .  .  .  .  .  .  .  .  .  .  . 33
+
+Colonel Socrates Gault .  .  .  .  .  .  . 33
+
+Introduction
+
+Grab a spot by the chuck wagon, Marshal, and get ready to start your posse heading 'em up and moving 'em out! Your cowpokes are about to take part in one of the longest, dangerfraught cattle drives in the Weird West, one that spans two countries, a war-torn no man's land, and the Sioux Nations. Along the way, they'll cross paths with virtually every major railroad, bloodthirsty border raiders, Indian war parties, and of course, nightmares of the sort found only in a land ravaged by the horrors of the Reckoning.
+This adventure is the first of three in the Blood Drive series. The series follows the posse as it rides herd on an epic cattle drive starting in southwest Texas and ending in Wyoming, where
+
+the heroes find themselves embroiled in a full-blown range war. Along the way, they'll cross paths with virtually every one of the major railroads, fight their way through the Disputed Territories, and maybe make an ally or two, as well as at least one dogged enemy.
+Although the Blood Drive series is a complete campaign, each adventure starts and ends in such a fashion that if you want to use it by itself without the others in the series, you can easily do so. In fact, the nature of the adventures makes them perfect from getting a posse from one part of the Weird West to another if that's what you're looking for, Marshal. Used together, the three combine to take the heroes from greenhorn cowpunchers to hardened trail hands fighting for their cattle, their land, and even their lives!
+
+1
+
+Round-Up
+
+The adventure begins in a small town called Sutter's Flats in southwest Texas, in early spring. How the posse ends up there is largely up to you, Marshal. Perhaps they're just riding through on their way north from Laredo or maybe they've been drawn near the border hunting down a bounty. Or it could be they're on the run themselves, and it's hard to get much farther out of the way than Sutter's Flats!
+Sutter's Flats
+Fear Level: 2
+Sutter's Flats is located a mere 10 miles from the Mexican border, roughly 100 miles west of San Antonio. The town rests in a region of low, grassy hills dotted with the occasional cottonwood tree.
+Although the Bayou Vermilion railroad passes relatively nearby, there is no direct rail access to the town and no regular stage routes service it. In short, Sutter's Flat is a town travelers pass through quickly, assuming they ever get there in the first place.
+Sutter's Flats consists, in its entirety, of a livery, general store, and a small saloon named The Lonely Crow.
+
+The town is little more than a supply point for the few local ranchers and a place for their hands to spend money on Saturday nights. Sutter's Flats isn't even large enough to support a part-time marshal.
+Any stop in town inevitably leads to a visit to either the general store or The
+
+2
+
+Lonely Crow, mainly because there's nowhere else to go.
+The Lonely Crow: This watering hole also has two dusty rooms for rent by the day, week, or month. The rooms are nearly always unoccupied. On alternate Sunday mornings, a circuit-riding preacher commandeers the main room of the Lonely Crow to host his sparsely attended sermons.
+The Lonely Crow serves coffee, lunch, and dinner. Both meals consist generally of beans, although sometimes it may have another type of beans, and on special occasions, beans with a hunk of bacon. The bar sports a wide range of alcohol ranging from watered-down whiskey to watereddown tequila...and nothing in between.
+Pettinger's Supply: The general store's owner, Frank Pettinger, keeps most common items on his shelf, but at a 25% mark-up due to the difficulty of keeping them in stock.
+Job Offer
+Not long after the travelers have availed themselves of all that Sutter's Flats has to offer--in other words, about five minutes after they arrive--they're approached by Bill Sutter. (The town is named after his father, the first settler in the area, but that's as far as his connection to it goes).
+He knocks trail dust off his clothes and introduces himself:
+Howdy! My name's Bill Sutter. I know most everyone hereabouts and I didn't recognize you, so I wanted to say "Welcome to Sutter's Flats." Just to clear things up, the town's named after my daddy. He was the first settler in this area, but that's as far as my connection goes.
+Aw, Hell. I ain't no good at small talk. I'm lookin' for some extra hands. I'm gettin' ready to pull up stakes. Bayou Vermilion has got a stranglehold on the cattle trade 'round these parts, due to being the only railroad within hundreds of miles, and calling the prices they
+
+Round-Up
+offer "highway robbery" is an insult to bandits. That bein' the case, I'm gonna take my herd and leave, so to speak.
+I've got a solid crew, but I'm shy a few. I'm lookin' for experienced trail riders, but I'll settle for anybody who knows which end of a gun the bullet comes out of. But pickin's is gettin' slim and I want to get on the trail before we get too far into spring, so if I can't get that, I'll make do with breathin'.
+Nobody comes to Sutter's Flat if they've got anywhere else to be, so I figured I'd make you the offer.
+If questioned, Sutter explains he's planning to head north, either to Roswell to sell to the Confederate post there or into the Disputed Territories and Denver. With three major railroads tied to it, Denver seems like a good place to sell his beef. He's ridden the Goodnight-Loving Trail before and plans to generally follow it for most of the trip. If the heroes ask about other, closer destinations, such as Dodge City, Sutter explains that a recent glut of cattle in the Disputed Territories has bottomed out prices, making the destination far less appealing.
+Sutter offers $30 a month in pay, plus meals and a bed in his bunkhouse until the drive starts. A successful Persuasion roll convinces him to up that to $35, but no higher. The rancher also loans any cowpoke in need a string of five riding horses for the duration of the drive.
+His guess is that the drive will take one to two months' time. He also figures on spending another month finishing his round-up before heading out, but hopes to cut that short if possible. If the party agrees, he provides directions to his ranch and tells them they start work tomorrow morning.
+Gettin' Started
+Round-up is the busiest time around a ranch. The hands stay busy from dawn until dark, and often beyond, gathering
+
+3
+
+Deadlands: Bad Times on the Goodnight
+
+Keepin' the Herd on the Trail
+Bill Sutter is a central character through most of the Blood Drive series. As owner of the Lazy S herd, he's who keeps the herd on track through the events of the adventures. With that in mind, we've done our best to make him hardy enough to weather most of the scrapes encountered during the course of the drive.
+However, the best laid plans being what they are, it is always possible that Fate may conspire to bring him to an untimely end. We strongly encourage you to do what's necessary to keep him alive, but if he does die unexpectedly during the course of the series, Abby takes over ownership of the herd. Unless a hero steps up to provide solid leadership, she continues in her uncle's footsteps, allowing the series to continue with few changes required.
+stray cattle and horses, branding, and readying their gear for months on the trail. Experienced cowboys say it's rougher work than most actual drives.
+Sutter is working on an accelerated timetable since he wants to hit the trail just as soon as possible, so the Lazy S hands work six-and-a-half days a week. He allows his men a half-day off on Sunday mornings for those that feel the calling to hear a sermon by the circuit preacher. Most of the cowboys instead choose to sleep in, some to recover a little from the work week and the rest
+
+to recover from cards and whiskey on Saturday night.
+The work is tiring and often brutal. And it doesn't end with nightfall either. Each cowpoke is expected to spend two hours each night riding the edges of the herd to keep it together and protect it from predators--animal, human...and otherwise.
+The morning after each day's work, a Vigor roll (at ­4, or ­2 for heroes with the Brawny Edge) is required. A failed roll means the cowpuncher is saddled with a Fatigue level from the previous day's exertion. The good news is that the Fatigue never gets worse than one level, but the bad news is an hombre's only free of it on days that begin with a successful Vigor roll. A full eight hours' siesta also removes the Fatigue.
+Saddle Broken...and Sore
+Even if the characters are all seasoned trail hands--and odds are they're not--the rancher can't be sure of this until they prove themselves on a few commonplace jobs. The first task Sutter puts on the posse's plate is a relatively "tame" one. It's also one that's likely to wind up causing more than one bruise for any of the less savvy tinhorns in the group.
+Over the past couple of weeks, the other cowboys on the Lazy S have been rounding up wild horses to serve as backups during the drive. To get the party's measure, Sutter assigns them to one of his trusted cowboys, Luke Canton, to help break horses for the saddle.
+Luke has half-a-dozen new mustangs in the corral he needs to saddle break. Since the heroes are new meat, he plans to let them do all the work. Five of the six are run-of-the-mill animals, but the sixth has come to be known as "Devil Eyes" around the ranch. So far, no one's been able to break the animal and it seems to take hellish pleasure in tossing off riders
+
+4
+
+that try. Though none admit it, all the cowboys are scared of the beast.
+Once the posse succeeds in breaking the five normal horses, Sutter considers them capable of handling other tasks on the ranch. Any cowpoke that bests Devil Eyes earns a fair amount of respect around the Lazy S for the rest of the round-up.
+In fact, Sutter is so impressed he gives the character the horse for her own mount.
+Luke Canton: Use Lazy S Cowboy stats on page 31.
+Horses, Riding (5): See the Savage Worlds rules.
+Devil Eyes: See page 31.
+Findin' Lost Doggies
+The job Sutter entrusts to the heroes is rounding up lost cattle. Over the course of the winter, the cows roam far and wide on the ranch and beyond. He's had his cowboys combing the wilds for weeks now and they've succeeded in locating most of the wayward steers, but there are still a few unaccounted for. Sutter details the posse to finding what cattle they can, explaining,
+Look, I need you to concentrate your efforts to the southwest of the ranch, near the Rio Grande. The cows tend to congregate at the water, but the crew ain't found too many along the shore. I reckon they're probably millin' about in a box canyon the men overlooked.
+A cowpoke searching for cattle can roll either Tracking, or Survival (­2). With a success, he locates one errant cow or steer that day. Each raise on the roll finds another animal. Feel free to apply bonuses or penalties based on the posse's plan of action as you see fit.
+Creepy Crawlies Late in the afternoon of the second day
+of searching, the posse has had little luck
+
+Round-Up
+Breakin' a Horse
+At some point in any trail hand's career, she's probably going to have to help break an untamed horse--or ten--to the saddle. Capturing a horse in the wild works exactly the same as Ropin' Cattle (see page 6). However, unlike a longhorn, once a horse is roped, the cowpoke has to go a step further and teach the animal to accept a saddle and a rider.
+To break a horse to the saddle, a rider first has to mount and stay on the animal long enough for it to get accustomed to the idea. She does this by making a Riding roll each round, opposed by the horse's Spirit. If she wins the roll, the horse gains a level of Fatigue (and don't forget this means a ­1 to all subsequent Spirit rolls). If she manages to win enough rolls to make the horse Exhausted, the animal is saddle-broken.
+Should the rider lose a roll, however, the horse bucks her from its back. She has to make a Vigor roll to avoid taking a Fatigue level from bumps and bruises. She's free to get back in the saddle and continue trying to break the horse.
+The horse fully recovers its Fatigue with a day of rest. Any Fatigue the rider suffers from getting tossed on her backside recovers normally at the rate of one step per day.
+
+5
+
+Deadlands: Bad Times on the Goodnight
+
+Ropin' Cattle
+Roping a steer is easy enough. It's a simple Throwing roll (adjusted for range, of course). But even armed with his trusty lariat, a cowboy is grossly overmatched in a tug-of-war by a longhorn. An average-sized specimen of the breed tips the scales at around three-quarters of a ton, so man-handling those doggies isn't the best option.
+Luckily, when it comes to taking charge of a bullheaded longhorn, a cowboy's best friend is his mount. A canny ranch hand can use the lasso in conjunction with his saddle to bring his horse's strength and weight to bear against a roped steer.
+Once a mounted cowpoke has lassoed a longhorn, an opposed roll of his Riding versus the animal's Strength is made. On a success, he wrangles the animal under control and can lead it with the rope; with a raise, he pulls the longhorn off its feet. On a failure, the beast continues to put up a fight, but doesn't break free. If the player is unlucky enough to roll a 1 on his Riding die (regardless of the Wild Die), the animal breaks free--possibly pulling the unlucky sod off his saddle in the process!
+and has settled for two steers they found caught in some scrub. On their way back to the ranch, they pass through a small cottonwood grove not far from the river. As they're riding through, allow the cowpokes a Notice roll (­4). With a success, a cowboy spots the desiccated corpse of a cow--then another, then
+
+a third--scattered throughout the grove. Those who fail are understandably surprised by what happens next.
+Out of the ground next to one of the recently captured steers bursts a hairy, black spider nearly the size of a man. The repulsive critter latches onto the steer, which screams piteously as it loses its footing and falls over to its side. Almost at the same time, the other steer breaks through the ground, dropping into a small pit. Out of the pit swarm hundreds of smaller versions of the large spider, flowing over the thrashing cattle and out onto the surrounding ground.
+Those heroes not surprised by the ambush can act normally in the next round. Those who failed the Notice roll spend the round keeping their seat and getting their mounts under control.
+The terrantulas are perfectly content with the hamburger they've already procured. They do not attack any of the characters unless a sodbuster attacks them or moves to try to save one of the cattle. If the heroes are willing to write off the two cows as a loss, they easily ride free of the spiders without suffering any attacks.
+Intervening on behalf of the steers quickly draws the attention of the spiders. The swarm flows off the trapped animal while their larger cousin squares off with anyone near its prey. Worse, the first hero who moves to help the cattle is in for a nasty surprise as a second spider bursts from its hidey-hole and attacks! Allow the victim a Notice roll (­4) to spot the concealed trapdoor. On a failure, the terrantula gets The Drop on the poor sap. Otherwise, she can act normally.
+Once the spiders are defeated, the posse finds the steers are both a little worse for the wear, but they survive the attack. A quick search of the grove discovers over a dozen drained
+
+6
+
+Round-Up
+
+carcasses of Lazy S cattle along with a few deer and other smaller animals. The other cowboys likely completely missed them because the husks are so desiccated that they're only visible from within the grove itself.
+Large Terrantula (2): Use stats in the Deadlands Marshal's Handbook.
+Terrantula Swarm: Use Small Terrantula Swarm stats in the Deadlands Marshal's Handbook.
+
+An Unwelcome Visit
+On the evening of the fourth day, just as the heroes are returning, a small group of riders approaches the ranch. There are six rather surly looking gunmen following a betterdressed man sporting a pair of shiny Colt revolvers. Off to one side rides the fifth member of the band, an older
+Indian dressed in a threadbare Confederate jacket decorated with a smattering of bangles and fetishes.
+The riders ignore the posse unless someone accosts them, instead riding directly toward the ranch's front door. The well-dressed gunman calls out to Sutter, who appears at the door at once. He is carrying a shotgun, currently pointed at the ground, but in the general direction of the new arrivals.
+"Good day to you, Mr. Sutter," the fancily dressed spokesman says. "My name is Bartholomew Phelps and I'm here as a representative of Bayou Vermilion. I'm authorized to purchase your cattle at the agreed-upon price of $5 per head."
+"Like I told them other fellers from your railroad, you can pound sand. That ain't half what they're worth on the open market!"
+"Ah, but this isn't an open market," Phelps says. "I understand no one hereabouts will purchase cattle with your brand and I'm afraid my employer's stock cars are booked up for the foreseeable future. I'd recommend you take the offer before prices drop further."
+"Prices ain't the only thing about to be droppin' around here, if 'n you and your lot don't head out--pronto!"
+With that, Sutter thumbs back both hammers on his shotgun. Phelps looks
+
+7
+
+Deadlands: Bad Times on the Goodnight
+
+around at the growing crowd of ranch hands drawn to the argument. With the posse, Sutter's men outnumber the Bayou Vermilion riders. The gunman tips his hat, turns his horse, and leads his gang out.
+The enforcers do not start a fight under any conditions. Even if the heroes feel froggy and skin their smokewagons, the gunmen flee.
+Bartholomew Phelps: Use Gunman (Veteran) stats in the Deadlands Marshal's Handbook. Add Taunt d6 to his skills. Armed with a single-action Colt Peacemaker (12/24/48, 2d6+1, RoF 1, Shots 6, AP 1) and 25 spare rounds.
+Black Dog: See page 31.
+Bayou Vermilion Gunmen (2, plus 1 per hero): Use Rail Warrior stats in the Deadlands Marshal's Handbook. Armed with single-action Colt Peacemakers (12/24/48, 2d6+1, RoF 1, Shots 6, AP 1), Winchester '73 rifles (24/48/96, 2d8, RoF 1, Shots 15, AP 2), and 25 spare rounds for each.
+Lazy S Cowboys (4): See page 31.
+Who's That Injun?
+If the posse should ask about the Indian with the enforcers after they depart, Sutter tells them,
+His name is Black Dog. He's an old Comanche raider from hereabouts and me and him got a little history. I was part of the posse that ran him to ground back in '73.
+I heard he signed on with the Confederacy for clemency, but they cut him loose before too long. No doubt Vermilion hired him on 'cause he knows the area...and ain't likely to balk at pointin' the business end of a gun at any of the locals."
+Later that evening when the majority of the ranch has gathered for dinner, Sutter addresses the group.
+
+I don't trust those Vermilion varmints as far as I can throw myself. I figure if we sit too long, they'll cut our herd--or worse. I'm gatherin' what we've got on hand and headin' north in three days.
+This is much sooner than he expected, but Sutter figures if he waits around any longer, the railroad's enforcers are liable to start stealing his cattle or worse.
+Supply Run
+Next morning, Sutter gathers up the heroes. He tells them he's sending his niece Abby into Sutter's Flats with a buckboard to pick up the last of the supplies needed for the drive and he wants them to go along and help load the wagon.
+Out of Abby's hearing, he tells them it's as much to keep an eye on Abby as anything else. The young woman's a bit new to the saddle, he explains, and Sutter isn't quite ready to trust her with any matters of real importance just yet. He adds that while he doesn't expect any trouble from Bayou Vermilion, a few extra bodies could go a long way in ensuring that none happens just the same.
+The trip into town passes uneventfully. Once there, Abby produces a list of supplies and heads to the general store, pulling one or more of the heroes along with her to help with the load. Those who get tapped for the duty quickly find themselves standing idly by as Abby waits for the shopkeep to fill his list.
+You Again!
+After Abby's been in the store about five minutes, Phelps and a band of Bayou Vermilion gunhands converge on the front of the store from all around. Phelps confronts any of the posse still outside, announcing in a mocking tone,
+
+8
+
+I commend you folk on your stubbornness, if not your common sense. Most would have cleared out ahead of the storm that is coming.
+Instead, you chose to leave the Lazy S where you held, at least for the moment, a numerical advantage.
+If one of the posse has a reputation --or hankering for a reputation--as a gunslinger, Phelps calls him out. Should the hero take him up on the challenge, use the Dueling rules from the Deadlands Player's Guide. Phelps relies on his Taunt during the Face Off portion of the Duel.
+Defeating Phelps causes his men to back down...for now. If Phelps wins the fight, his men open up on the posse. In the case that none of the cowpokes is a gunfighter or if the party's gunslinger is too yellow to respond, Phelps and
+
+Round-Up
+his men open fire. Once Phelps or more than half his gunmen are Incapacitated or killed, the rest flee.
+Abby (and any posse members) inside the store at the time respond the round following the outbreak of gunfire. If you're feeling generous, Marshal, you can allow any heroes inside the store a Notice roll to catch wind of the confrontation just as the lead starts flying.
+Abby Morton: See page 30.
+Bartholomew Phelps: Use Gunman (Veteran) stats in the Deadlands Marshal's Handbook.
+Bayou Vermilion Gunmen (2, plus 1 per hero): Use Rail Warrior stats in the Deadlands Marshal's Handbook.
+
+9
+
+Head 'Em Up!
+
+Who's Who on the Lazy S
+Here's a handy list to help keep track of the various cowboys and workers on the Lazy S drive.
+Bill Sutter: Owner of the Lazy S herd and head honcho of the cattle drive. See page 31 for his stats.
+Abigail "Abby" Morton: Bill's headstrong niece, and youngest member of the crew. Her stats are on page 30.
+Luke Canton: Sutter's most trusted employee, Luke is trail boss for this crew. He's a leathery old cowboy who's seen it all and takes no guff. Use the Lazy S Cowboy stats on page 31.
+Javier Ortega: A former Mexican soldier, Javier cooks food for the crew and drives the chuck wagon. Use Soldier stats in the Deadlands Marshal's Handbook for Javier.
+Lazy S Cowboys: An additional 14 cowboys are employed on the cattle drive. Their stats are on page 31.
+
+Following the dust-up at Pettinger's Supply, Sutter is more determined than ever to get the herd on the trail. The next day is spent on final preparations, both for the herd and the cowboys themselves. For safety reasons, Sutter keeps all his hands close to the ranch.
+Once the herd rolls out, everyone on the ranch is given a specific job on the drive. Sutter makes all the major decisions, but Luke, as the most knowledgeable on the route, is the trail boss. His job is not only to find the best trail for the herd, but also to ride out ahead and locate watering holes and campsites.
+Swing, Flank, and Drag
+The Lazy S riders are split between riding point, swing, and flank. The point riders are the most experienced hands outside the trail boss. They have the coveted spot at the head of the herd and keep the lead steers headed in the right direction. They also set the pace for the drive. Luke Canton is almost always assigned to one of the point positions.
+Swing men ride in pairs, one on each side about a third of the way back along the herd, and keep things moving. The flank riders are usually positioned in a pair about two-thirds of the way back and are responsible for wrangling in cattle that drift off to one side or the other of the main body.
+As the least experienced (at least at the Lazy S), the posse is given the job
+
+10
+
+of "riding drag" on the drive--which means they follow directly behind it. Drag riders are responsible for picking up any stragglers and driving the slower cattle at the herd's pace. They also get to breathe the dust and flatulence of several thousand cows and beeves, so it's pretty much the bottom of the totem pole on the drive.
+There's another reason Sutter places the heroes in the drag position. It's the most likely direction for Indian raiders, rustlers, or outlaws to strike the herd, as they can often get in and back out before the rest of the crew even realizes an attack is underway. Sutter's hands may know cattle, but they're not necessarily seasoned gunhands. The rancher is banking that at least a few of the posse are--that's why he hired them, after all!
+The Remuda
+Abby is given the job of tending the crew's collection of riding horses, known as its remuda. She's responsible for keeping the animals together during the drive. During the day, she usually keeps the remuda fairly close to the chuck wagon and at night she ties them off in a rope corral near the campsite.
+Each trail hand has a group of five or six horses known as his "string." It's fairly common for a rider to have horses that he favors for certain jobs: a hardy animal for daily riding, a swift one for round-up purposes, and a surefoot, canny mount for riding night watch. All told, this amounts to several dozen horses under her care.
+Marshal, since it's unlikely any of the heroes was leading a string of half a dozen or so mounts at the beginning of this adventure, just assume that Sutter set them up with a stake of "loaners" for the drive.
+
+Head 'Em Up!
+
+Controlling Cattle
+Texas Longhorns are known for being headstrong beasts. It's more than likely the adventurers find themselves having to cajole, coerce, or otherwise convince a group of the ornery beasts to do something they are otherwise not disposed to do. Or maybe the erstwhile trail hands have to calm a passel of nervous cows to avert a stampede.
+Regardless of the situation, handling a herd of cows boils down to a Riding roll. A tinhorn with no Riding skill--or a cowpoke on foot-- who finds himself trying to control cattle instead substitutes a Smarts roll (­2) or, at your discretion Marshal, another, related Knowledge skill.
+Apply the following modifiers to the roll:
+
+Situation No experience with cattle Obvious threat nearby Cattle stampeding
+
+Modifier ­2 ­4 ­6
+
+Chuck Wagon
+The heart--and more importantly, stomach--of the trail crew is the chuck wagon. The chuck wagon is the sole responsibility of Javier Ortega, a former Mexican soldier who guards that authority closely. No one is allowed to touch the wagon or its contents without his approval--and usually his close supervision as well.
+
+11
+
+Deadlands: Bad Times on the Goodnight
+
+Texas Longhorn
+Longhorns are rangy and tough, with horns that average around six feet from tip to tip, but may grow up to eight feet or more. The animals are natural survivors and are capable of finding food, water, and even shelter in bad weather on their own.
+Attributes: Agility d6, Smarts d4 (A), Spirit d4, Strength d10, Vigor d10
+Skills: Fighting d6, Notice d6, Survival d4
+Pace: 8; Parry: 5; Toughness: 9
+Special Abilities:
+· Gore: Cattle use the charge maneuver to gore their opponents with their horns. If they can move at least 6" before attacking, they add +4 to their damage total.
+· Horns: Str+d6.
+· Size +2: Longhorns are large creatures, weighing well over half a ton.
+
+cubbies holding everything from salt and lard to tobacco and castor oil. Underneath the wagon, another box--called the boot--holds the skillets, pots, pans, and Ortega's prized dutch oven.
+Ortega doesn't pull night watch, but still has the longest working day of anyone on the drive. He's up in time to prepare an early hot breakfast in the mornings and typically doesn't bed down until after the last hand settles in for the night. His last job each night is to point the tongue of the wagon toward the North Star to orient the herd the next day in case the morning sky is overcast.
+The chuck wagon normally rides ahead of the herd to give Ortega time to set up camp and prepare dinner in time for the crew's arrival. Sutter may assign a character to ride with Ortega if the sodbuster is simply too inept a horseman to even ride drag. However, this is a last resort; the rancher keeps the tinhorn on horseback for at least a week before giving up on him.
+Javier Ortega: Use Soldier stats in the Deadlands Marshal's Handbook. Ortega is armed with a shotgun (12/24/48, 1­3d6, RoF 1, Shots 1, +2 to Shooting rolls).
+
+The wagon carries not only the foodstuffs for the trail, but also any gear too bulky to fit on the cowboys' mounts, such as bedrolls, tarps for bad weather, and the like. A water barrel is strapped to one side of the wagon and what looks like an upright cabinet is affixed to the rear.
+The cabinet is Ortega's rolling kitchen. A hinged lid lets down to form a work table, exposing an array of drawers and
+
+Bayou Vermilion Attacks
+The first few days of the drive are rather humdrum. Most of the posse's time is likely spent just figuring out exactly what they're supposed to be doing besides learning to breathe dust and swatting flies. Feel free to throw in a few run-of-the-mill complications like stray cattle or a frisky horse just to keep them on their toes.
+On the third night out of the Lazy S, a band of Bayou Vermilion gunmen catch up to the herd, intent on collecting a little payback for Phelps and his men. This time, however, the Lazy S crew is far enough from any potential witnesses
+
+12
+
+that the railroad feels comfortable in sending some of its special troops in addition to the normal hired guns. The Bayou Vermilion gang assaults the camp around midnight.
+Earlier in the day, Sutter and Luke rode out ahead of the herd to scout for the next day's watering hole. They have not returned yet, but Sutter warned the crew ahead of time that they would likely not be back before the next morning. At the time of the attack, four Lazy S cowboys are out of camp riding the edges of the herd.
+Allow any heroes in camp a Notice roll (­2 if they're sleeping) to detect the bushwhackers before they spring the attack. Success allows them to act normally. Those who fail the roll or are sleeping at the time are surprised the first round. Treat all the Lazy S cowboys as surprised.
+
+Head 'Em Up!
+Get in the Kitchen!
+Alternately, Marshal, if one of the heroes is well-suited to the role of trail cook, you may have Sutter assign that character to the position. Obviously, in that case, Ortega does not become a member of the crew for the drive. The player character assuming the role also assumes all of the duties noted for Ortega, and is put in charge of the fully stocked chuck wagon for the duration of the drive.
+
+13
+
+Deadlands: Bad Times on the Goodnight
+
+The walkin' dead focus on the cowboys and heroes. Half the warmbodied gunmen stampede the cattle by shouting and firing guns in the air, while the rest support the attack on the main camp. Black Dog supports the attack from the rear with boost/lower trait or fear when possible, otherwise using his Winchester. If directly engaged, he draws his Bowie.
+The gunmen fight until half their number are dead or Incapacitated, then either surrender or flee. Black Dog retreats with the gunmen or if he suffers a Wound. In either case, he uses shape change to take the form of a crow and fly into the night to ensure his escape. Not surprisingly, the walkin' dead fight to the bitter end.
+Once the shootout is finished and the wounded tended to, the Lazy S crew-- posse included--spends the rest of the evening recovering any cattle scattered by the Bayou Vermilion gunmen.
+Black Dog: See page 31.
+Bayou Vermilion Gunmen (4, plus 2 per hero): Use Outlaw stats in the Deadlands Marshal's Handbook. All are mounted on Riding Horses (see Savage Worlds).
+Walkin' Dead (2, plus 1 per hero): Use Rail Warrior (Bayou Vermilion) stats in the Deadlands Marshal's Handbook.
+Abby Morton: See page 30.
+Javier Ortega: Use Soldier stats in the Deadlands Marshal's Handbook. Ortega is armed with a shotgun (12/24/48, 1­3d6, RoF 1, Shots 1, +2 to Shooting rolls).
+Lazy S Cowboys (10): See page 31.
+A Long, Dry Spell
+After the Bayou Vermilion attack, things pass peacefully for about two weeks. Draw for daily encounters (per the Deadlands Marshal's Handbook) or gloss over this time as you see fit, Marshal. The land becomes drier and water sources fewer and farther between. On the sixteenth day of the drive,
+
+the herd hits a region of desert. Fortunately, the herd is on the trail before the summer heat, so it's not the blast furnace it will be in the next couple of months. Still, it looks to be an unpleasant ride.
+At a small watering hole that's only about two steps from a mud pit, Sutter warns there isn't likely to be much water for the next week or two. He has the trail cook fill his water barrels, but even so, there isn't enough water for full rations for the crew.
+Over the next three days, the reduced water rations mean the characters have to make Vigor rolls each day to resist the effects of thirst. Any who fail suffer a Fatigue level as described in the Savage Worlds rules. Due to the severe conditions, even a successful Survival roll does not completely offset this effect, as any efforts amount to little more than collecting morning dew. Instead, success provides a +2 to one character's Vigor roll (or five cowpokes on a raise).
+Any Spring in a Drought
+On the third day, the herd arrives at the first watering hole on the route. The water in question is found in a small well at an abandoned homestead and barn located in a stretch of God-forsaken wilderness. Fortunately, this keeps the cattle and horses from fouling it by wading into the source, but it also makes getting sufficient water from the well for the entire herd and crew a time-consuming task.
+Sutton details the crew to shifts lifting the water out of the well in buckets. The water level is approximately 50 feet below the surface, so this quickly becomes an arduous job and takes the better part of a day to accomplish. When they're not on shift hauling the bucket up, the cowpokes alternate between riding the fringe of the herd and free time.
+While it is a long and tiresome day, at the end of it all the animals are able
+
+14
+
+to slake their thirsts adequately. The Lazy S cowboys can drink their fill and refill their canteens. The bad news is it's another four days to the next water...
+Nobody's Home...
+While the other cowhands take no interest in the abandoned homestead, it's likely at least some of the heroes do. Any exploration reveals something strange is afoot at the isolated farm. The door is barred from the inside and all the windows are shuttered. There is no response to knocks or yelling. Forcing the door takes a Strength roll (­4). The posse can make this roll cooperatively--or just use a horse and rope if they're feeling lazy.
+The interior and contents of the small two-room house seem virtually untouched. Several items of sentimental value and some monetary worth remain, including a small box of jewelry (worth a total of $50 if sold), a loaded and unfired Evans Old Model Sporter rifle, and $32 in Confederate bills. The barn, though filled with the usual tools and accoutrements of a small farm, is empty of any animals and all the stalls are closed and latched.
+The inside of the house is covered by a layer of dust and, prior to the entry of the characters, unmarred by any tracks. More puzzlingly, there are two plates set on a small table in the main room--complete with the desiccated remains of a meal long uneaten. A Tracking roll (­2) tells the heroes the house has sat undisturbed for at least six months. There is no sign of the inhabitants or what became of them.
+Should the cowpokes report what they find to Sutter, he is mildly puzzled but not overly concerned. After all, he says, the farm is days from any other civilization and well into Comanche territory. The heroes found nothing that would indicate the farmstead was raided by Indians; in fact, every bit of evidence that they saw seems to indicate no one
+
+Head 'Em Up!
+Stampede!
+The slightest noise can cause a herd of cattle to stampede, and when it does it brings a dang sight of difficulty for any cowpokes in its path. Rather than providing specific conditions under which a herd bolts, we've left it up to your judgment, Marshal, and to the story's demands. A stampede works better as a plot device than as a random hazard.
+Cowpokes caught in a stampede have to seek cover or get trampled into the dust. This requires an Agility roll (­2). On a failure, the poor sap is kicked by a few cattle as they thunder past, suffering 2d6+2 damage. Rolling a 1 on the Agility die, regardless of the Wild Die, means she's caught smack in the middle of the stampede and trampled. She takes 4d6+4 damage.
+A character must make two successful Agility rolls in a row (or succeed with a raise on one) to make it to safety.
+The fun doesn't end with just getting out of the way of the stampede though. The trail riders have got to round up the panicked herd. This requires a successful Riding roll (­4) to turn back the lead steers so everything calms down. A failed roll means the unlucky cowhand and his horse fall over and suffer the effects described above.
+
+15
+
+Deadlands: Bad Times on the Goodnight
+
+has been to the farm since its inhabitants left, but Sutter remains unconcerned. He does order his crew to salvage what tools and supplies they can from the barn.
+Ultimately, there is no explanation of what happened to the former inhabitants to be found here, Marshal. It's just another mystery of the Weird West--and one that may cause the party more than a little unease.
+Once More into the Dust
+This time, Sutter decides to travel at night to reduce the effect of thirst on the animals. However, the additional distance offsets the gains for the trail hands, as water rations have to be further reduced. Vigor rolls are once again required as above for each character, and Survival rolls only provide a bonus to the roll--not necessarily relief.
+Each night, allow the heroes to make a Notice roll (­1). On a success, the character with the highest total spots a lone wolf or coyote shadowing the herd at a distance. If any cowpoke attempts to chase it down, it disappears into the wilderness, seemingly without a trace. This is actually Black Dog using shape change and wilderness walk to follow the Lazy S, awaiting a chance for revenge.
+After four more days of travel, the party reaches the headwaters of a tributary of the Colorado River. The lead Longhorns smell the water long before the crew can see it and the cows become restless. The posse has to help keep the animals under control (see the Controlling Cattle sidebar on page 11), with a ­2 to their rolls due to the herd's extreme thirst. Unless half or more of the players succeed at the roll, the Longhorns break loose in a stampede to the watering hole, losing 25 of their number to either exhaustion or trampling.
+
+Snakes Alive!
+The water is shallow enough that getting the herd across isn't too much effort. The cattle don't balk at entering it, thanks to their thirst, and the river is little more than a stream with delusions of grandeur at this point. As a result, Sutter sets the posse to simply shepherding the animals across, rather than actually driving them. The crew also takes the opportunity to refill canteens, the chuck wagon's water barrels, and water their horses.
+Halfway through the crossing, have each of the characters draw a card. The hero with the lowest card must immediately make a Notice roll. If he fails, he's surprised by a mass of water snakes roiling to the surface, apparently riled by the passing of the herd. If he succeeds, he can act normally the first round. Regardless, the snakes rise from under the muddy water within 1" of the unlucky adventurer.
+The reptiles are not large or poisonous, but they are extremely aggressive, attacking anyone within their reach (or that they can swim to in a round). Treat them as a swarm, but use a Small Burst Template to mark the area they threaten.
+The mass of snakes is actually controlled by Black Dog through his beast friend spell. The shaman is hidden several hundred yards from the crossing point and if the posse should for some reason come within a hundred yards, he uses shape change to escape in raven form.
+Nest o' Snakes: Use Swarm stats in Savage Worlds, but with a Small Burst Template instead of Medium. The snakes also have Swimming d6.
+Shooting Stars...and Bars
+One week after the ordeal in the desert, the herd arrives in the vicinity of
+
+16
+
+Roswell, New Mexico. There is very little to distinguish the wilderness from the desert they just left, with the exception of the nearby Pecos River. Abby leads the herd into a shallow box canyon east of the river.
+Sutter informs the posse that he intends to sell some of his herd to the Confederate Army at the nearby fort on the other side of the Pecos. Should he be unable to do so, he plans to sell the cattle to a buyer in town, as Dixie Rails' main line runs through Roswell. Sutter takes Abby with him along with two of the cowboys. He leaves Luke in charge until he returns, with orders to everyone to stay out of trouble and keep their heads down.
+Look, Up in the Sky!
+Late the second night the herd is near Roswell, read the following to the players:
+A distant rumble from the west seems to foretell an approaching thunderstorm. Some of the more experienced cowhands begin fetching canvas tarps from the chuck wagon, grumbling about a long, wet night ahead. A flicker of light at first appears to be a lightning flash on the horizon, followed by more rumbling. Then the flickering becomes a steady glow, which abruptly rises off the ground, toward the clouds to the west...
+The Longhorns, always quick to seize a chance to become restless, begin to stir at the strange goings-on. Their mood worsens by the second as the arc of the strange object streaking into the sky begins to turn its trajectory toward the Lazy S herd. Fortunately, shortly thereafter, it rises into the clouds, and although its rumble can still be clearly heard,
+
+Head 'Em Up!
+at least its glow ceases to threaten the skittish cows.
+Suddenly, there's a flash and the object, now clearly jetting flame and smoke, plummets out of the clouds and hurtles toward the ground about a mile or so from camp. Luke Canton quickly sets the crew to settling the cattle before a full-fledged stampede can materialize. He turns to the posse and says,
+You greenhorns git over there and find out what that thing is! I don't want you muckin' things up tryin' to rein in these bullheaded brutes in the dark.
+Identified Falling Object The object's landing point isn't hard to
+find. Small fires lit by the impact serve as beacons to the cowpokes as they make their way through the sparsely
+
+17
+
+Deadlands: Bad Times on the Goodnight
+
+vegetated countryside. Even without the fires, though, it's likely the heroes could easily have pinpointed the spot on the flat ground near the river.
+When they reach the scene, they discover the unidentified object is actually a man in Confederate grays wearing a large rocket pack. Or, rather, was. The man's landing left a lot to be desired, not the least of which was his own survival. The rocket pack suffered a similar fate and now is capable of flying only if tossed off a cliff--and then only as long as it takes to reach the ground.
+All Dressed Up
+The man was actually a Wasatch spy who'd infiltrated the Confederate government's research facility at Roswell earlier this evening. There are a few clues on the body to hint that something's amiss if the posse takes a moment to look.
+Roll Notice if a character examines the rocket pack. Success spots several bullet holes in the destroyed device. It seems likely that the damage was responsible for the crash (a Repair roll can confirm this).
+Checking the man himself confirms he is dead. A Notice roll here finds a bullet hole in the jacket of his uniform. However, there is no corresponding wound on the corpse. Furthermore, a Common Knowledge roll for any character with a military or Confederate background tells the adventurer that the man's pants, while they initially look like standard issue, are actually just common trousers dyed to look like a Confederate uniform.
+An inquisitive hero that searches the body finds two items of interest. The first is a small roll of Deseret bank notes. A Common Knowledge roll lets the characters know these are seldom seen outside of Deseret itself, so it's a tad
+
+unusual to find them on a dead body in New Mexico.
+The second is single piece of paper with precise drawings of what appears to be a mechanical man, along with cryptic notes consisting primarily of chemical formulae and engineering calculations. While the document at first glance appears to be a blueprint, it's actually only the Confederacy's attempt to reverse-engineer one of Hellstromme's automatons. (Incidentally, since they've yet to get their hands on a non-exploded one, their guesswork is completely wrong, but only a Wasatch scientist is likely to realize that.)
+Step Away from the Jet Pack!
+After the posse's been at the crash site for a few minutes, a squad of Confederate soldiers emerges from the darkness and immediately begins firing on the heroes. Allow each character to make a Notice roll to avoid being surprised the first round of combat.
+The soldiers are part of a quick-reaction force dispatched to apprehend the spy. Finding the party at the site of his "landing," they assume the heroes are in cahoots with the thief and immediately open fire.
+The Confederates aren't sure who the spy was working for or what he's stolen. Damage control is therefore the first concern and the soldiers are under orders to let no one escape under any circumstances. Unless the characters immediately drop their firearms and surrender, the Confederates fight to the death. Later attempts to parley fall on deaf ears.
+If the posse immediately surrenders to the soldiers, they're taken into custody and held for several days at the Confederate fort near Roswell. Most of the time is spent with sacks over their heads (to prevent them seeing any
+
+18
+
+other secret projects) or in grueling interview sessions. Eventually, their stories are confirmed through Sutter and the rest of the Lazy S crew and they're released.
+Confederate Soldiers (2, plus 2 per hero): Use Soldier stats in the Deadlands Marshal's Handbook.
+Confederate Officer: Use Soldier (Officer) stats in the Deadlands Marshal's Handbook.
+Wrong Place, Wrong Time
+Assuming the posse wins the shootout, Sutter arrives the next morning with an armed escort. Thanks to the generally open nature of the terrain, the heroes spot the approaching group of soldiers in plenty of time to hide or otherwise dispose of any incriminating evidence. The Confederates tear the camp apart looking for evidence that any of the crew was involved in the break-in.
+If they find anything incriminating-- say if one of the posse members insisted on bringing the damaged rocket pack back to camp--they immediately make a move to arrest everyone present. Allow the heroes to talk their way out of imprisonment. If you're feeling especially cordial, you can even make this a cooperative roll (see Savage Worlds) as the fast-talking sodbusters build a collaborative fiction for the investigating soldiers.
+Regardless of the outcome of the crash-site encounter and subsequent search of the trail camp, Sutter finds the Confederate government and Dixie Rails suddenly very uncooperative with his business venture. He has the crew round up the cattle and Luke leads the herd north at daybreak the next morning.
+
+Head 'Em Up!
+Crossing the Canadian
+About a week and a half out of Roswell, the crew faces its first major river crossing. Normally, in this part of the country, it's a slow-moving stream banked by mud flats, but this late in the season the Canadian is beginning to swell with both snowmelt and spring rains. Getting the herd across it safely poses a fairly significant obstacle to the trail hands.
+Sutter arrived at the river a day early and scouted out a relatively solid fording point. The herd doesn't understand this, so as drag riders the posse is tasked with driving the cattle forward into the river. Not being known for their amphibian prowess, the cows prove reluctant to enter the water.
+The posse must make Riding rolls-- (­4) to drive the animals forward. Sutter's herd, while not the largest to hit the trail, is still fairly large, so a single roll isn't sufficient to move 1,500 head of cattle. The posse must score a total of five successful Riding rolls to manhandle the herd into the ford. Each raise counts as an additional success toward achieving that total.
+The bad news is wrangling a mass of milling and nervous Longhorns is risky business. A Riding die that comes up 1, regardless of the result of the Wild Die, means the poor sod is chucked off his horse and into the mass of cattle, suffering 1d6 damage in the process. The unhorsed rider must then immediately make an Agility roll (­2) to remount or otherwise make it to safety. Failing that roll means the character is trampled by the cows for another 2d6+2 damage!
+The river is also deep enough that a hero has to either swim or cling to his horse to cross it. Doing so in the vicinity of a agitated mass of unruly critters, each weighing upwards of half a ton, adds an
+
+19
+
+Deadlands: Bad Times on the Goodnight
+
+additional complication. Crossing the river safely requires an additional Riding roll-or Swimming, if the wrangler is going it on her own. Failing the roll means the character suffers a Fatigue level (per the Drowning rules in Savage Worlds).
+Quicksand!
+Sutter did a thorough job scouting the ford, but Longhorns are notorious for finding ways to get into trouble. As the main body of cattle is crossing the Canadian, one hapless steer manages to find a patch of quicksand. Once again, the drag riders get the dirty end of the stick. It's their job to pull the beast out.
+Fortunately, the quicksand is actually closer to a thick mud and very slow -- working. The animal is only sinking a few inches at a time, giving the crew plenty of time to haul it out. Conversely, the viscosity of the quicksand works against the heroes, holding the steer fast.
+Extracting the beast with a horse and lasso requires success on a Riding roll at ­6! If the heroes think to pool their resources, up to four horses can aid in the effort. Each horse beyond the first adds +1 to the lead cowboy's Riding roll. Partially digging out the animal's legs adds another +2 to the roll. If any heroes think to suggest using one of the chuck wagon's wheels and axle as a makeshift capstan, it limits the number of horses to one, but adds a +5 bonus to the roll.
+With a success the steer is freed. On a failure, the animal settles deeper into the mud, increasing the Strength roll penalty to ­8. A 1 on the skill die (regardless of the result of the Wild Die), means the poor steer is mortally injured in the attempt to free it--possibly breaking its neck, drowning, or even losing a limb.
+Black Mesa
+Sutter keeps the herd hugging the New Mexico-Texas border as it heads north.
+
+Ahead of the crew loom the eastern foothills of the Sangre de Cristo Mountains. He explains one night around the campfire that most traffic into the Disputed Territories heads up through the Raton Pass. A rather enterprising entrepreneur, "Uncle Dick" Wooten, set up a toll road there over a decade ago with the blessing of the Confederate government. Wooten's toll for the herd would likely gobble up the majority of Sutter's grubstake, so he instead heads for nearby Trincheras Pass.
+As a result, this route leads the herd within spitting distance of Black Mesa. Black Mesa is a large mountain made primarily of dark volcanic rock that stands on the border of the Oklahoma panhandle, near New Mexico. It's also a spot where the veil between the Hunting Grounds and our world is thinner than usual, and as such, has drawn the attention of some of the more powerful allies of Raven.
+The herd never actually comes within sight of the mountain, but it does drift close enough for Black Dog to call up a few allies from there to torment the posse.
+Bad Dreams
+The first assault comes on the heroes and the rest of the crew through their dreams. A dozen night ravens flock to the edges of the herd in the darkness, and plague the drive for three nights prior to it arriving at its closest point to Black Mesa. Each night, the heroes and cowboys must make a Guts roll as they're tormented by terrible night terrors, with a cumulative ­1 penalty to the roll for each night after the first.
+By the end of the third night, the crew is physically exhausted from lack of restful sleep and suffers a Fatigue level that can only be removed by a week free of the nightmares.
+Should the posse somehow discover the birds (the abominations must be within
+
+20
+
+16 yards of their victims to use their Nightmare Special Ability), it's a small matter to frighten them off as the ravens avoid physical combat. Doing so negates the need for a Guts roll that night, and perhaps more importantly, resetting the cumulative penalty for the next night.
+Night Ravens (12): See the Deadlands Marshal's Handbook.
+Black Dog Attacks
+On the fourth night, as the herd enters the approach to the pass, Sutter rides ahead to scout the pass with Luke. By this time, at least some of the heroes have likely begun to impress the cattleman and he leaves them in charge until his return the next day.
+Unfortunately, Black Dog and his allies have chosen this night to attack. Under cover of darkness, the Comanche shaman and several braves creep up to the camp once the wranglers have bedded down. Black Dog has already cast beast friend on a swarm of bats prior to arriving at the campsite.
+The bushwhackers crawl to within 15 yards from the edge of the camp. If the posse has decided to post a watch on the camp itself, allow the guards to make a Notice roll against the Indians' Stealth skill. (The guards receive a ­4 penalty due to the darkness and the fact the braves are crawling.)
+If Black Dog and his war party are undetected, treat it as though they have surprise on the Lazy S crew. He initiates the attack by sending the Medium-sized swarm of bats to attack the largest concentration of sleeping cowpokes. The braves then begin firing into the camp at any available targets. The next round, Black Dog follows up with a fear spell, again targeting the largest concentration of trail hands.
+If the Indians are detected before they get into position, combat begins normally. The braves return fire if they're fired on
+
+Head 'Em Up!
+before Black Dog can start the ambush. The shaman sends the bats in on his first action and then the next round follows up with a fear spell as above.
+Once combat is underway, Black Dog uses either fear or boost/lower trait to best hamper the heroes or assist his warriors. Half the braves remain prone and engage the trail hands with firearms while the remaining fighters charge in to attack hand-to-hand.
+The war party fights until more than two-thirds their number are Incapacitated or captured. Black Dog attempts to flee if the war party retreats, he suffers a wound, or he is reduced to 5 or less Power Points. If necessary, he casts shape change and shifts to raven form to fly away.
+If you're planning on running the entire Blood Drive series, do your best to make sure Black Dog escapes. Although this is the last of Black Dog the posse will see for a while and they might even forget about him, he has only drawn back to nurse his wounds and plan for his eventual revenge. The Comanche shaman secretly dogs their heels as they cross the Disputed Territories, awaiting his next opportunity to strike-- which comes in Blood Drive: High Plains Drovers, the second adventure in this series!
+Black Dog: See page 31.
+Ravenite braves (8, plus 2 per hero): See page 33.
+Lazy S Cowboys (8): See page 31.
+Abby Morton: See page 30.
+Javier Ortega: Use Soldier stats in the Deadlands Marshal's Handbook. Ortega is armed with a shotgun (12/24/48, 1­3d6, RoF 1, Shots 1, +2 to Shooting rolls).
+
+21
+
+No Man's Land
+
+After surviving another assault by Black Dog, the rest of the trip up and through the Trincheras Pass is uneventful. The terrain is not overly steep and the trail skirts the edges of a few draws and never becomes particularly challenging. In fact, the transition is so gentle, the heroes are almost through the pass before they realize they're crossing the apex.
+On the other side lies Colorado...and the Disputed Territories. The Disputed Territories are the domain of War and it's not long before the heroes get their first taste of the Reckoner's handiwork.
+Sign of the Territories
+After a day driving north of the pass, the Lazy S crew passes the burnt remains of a small homestead. Anyone taking even a cursory look at the ruins immediately realizes the home was fired in the last week or so. A closer examination quickly reveals a couple of disturbing facts.
+Behind the homestead, a tripod has been lashed over the remains of a small fire. Above the ashes hangs a large, bulging bag constructed of fresh skins. Opening the bag requires a Guts check against nausea as a horribly twisted body tumbles out.
+If anyone looks closely at the body, have the player roll Knowledge (Medicine) or Healing to determine the cause of death. Success tells the adventurer the victim was sewn up in the bag alive and
+
+then suspended over the fire. The heat simultaneously cooked the poor sodbuster while causing the leather to dry and constrict, crushing him while he roasted!
+
+Heroes with experience in either the Great Plains or Southwest know that some Indian tribes use similar methods to kill captives. However, a Tracking roll quickly reveals that there are tracks of well over a dozen horses and all of them were shod. Most Indian war parties ride unshod animals.
+
+Digging through the ruins turns up
+
+no items of any worth in the debris. It's
+
+as if the homestead was stripped of all
+
+valuables
+
+before it was set
+
+afire.
+
+22
+
+Keep Off the Grass!
+Two days later, the posse hears the sound of a gun from far up the herd. Cresting a small rise, they see the herd is approaching another homestead, this one slightly larger than the last they saw. The lead steers are beginning to scatter and wander, while several Lazy S riders try to get the animals under control.
+The cause of the confusion--and likely the source of the gunshot--appears to be a pair of men standing a short distance in front of the wandering cattle. If the heroes move closer, they can see both men are holding long guns. Two of the Lazy S crew, probably Sutter and Luke, seem to be trying to talk to the men, but even at a distance the characters can tell things are not going well.
+Should any of the cowpokes approach the parley, they hear one of the homesteaders all but shouting at Sutter,
+I'll be damned if I let you trample my field with a bunch of stinkin' Texas cows! It ain't enough we got to contend with border raiders from New Mexico, homegrown guerillas, Injun raidin' parties, and Gault's bunch on top o' all that, but now you want to go draggin' a thousand head o' cattle across our land. Ain't no way that's happenin', mister! I'll stampede them cows all the way back to Santa Fe!
+The men identify themselves as the Farley brothers. They and their families settled this area about five years ago. They're used to having to fight off raiders of all sorts, so they're more than willing to stand up to Sutter and his crew. The Farleys won't attack the trail hands unless they're attacked first, but they're more than happy to stampede the herd by firing their guns if things go bad.
+Farley Brothers (2): Use Townsfolk stats in the Deadlands Marshal's Handbook. Earle Farley has Persuasion d8, and his brother Gail has Persuasion d6. Each is armed with
+
+No Man's Land
+a double-barrel shotgun (12/24/48, 1­3d6, RoF 1­2, Shots 2, +2 to Shooting rolls).
+Speak Your Piece, Mister
+What we have here is a good ol' Social Conflict (see Savage Worlds for all the details; we provide all that's needed here to run the scene). The conflict is broken down into three rounds of heated conversation between the cowboys' spokesman (or spokesmen, if two or more speakers are cooperating on the Persuasion roll) and the Farley brothers. The homesteaders aren't a passive audience--they counter every point the speaker makes with arguments of their own.
+Each round, the cowpunchers' spokesman roleplays his argument and makes an opposed Persuasion roll against the Farley brothers' cooperative roll (for which Gail aids Earle). The speaker accumulates a success for each success and raise on the Persuasion roll. Grant a +2 bonus if the heroes make a brilliant or undeniable point, or apply a ­2 penalty if they insult the Farleys or make provably untrue statements.
+At the end of the third round of conflict, the side with more successes "wins" the argument, depending on the margin of victory:
+Tie: The Farleys simply won't allow the herd to cross their spread, resulting in an extra day of travel for the herd.
+1­2 Successes: The men agree to allow the cattle to cross, but insist on a $50 "toll" to cover damages to their property.
+3­4 Successes: The Farley brothers back down and allow the Lazy S to cross their land for free.
+5+ Successes: Not only do the homesteaders allow the herd to cross their land, they also provide an armed escort the whole way. If the Lazy S is in need of provisions or gear, the Farleys sell it to them if it is available.
+
+23
+
+Deadlands: Bad Times on the Goodnight
+
+If any of the wranglers think to ask about who "Gault" is, the Farleys explain he's a particularly nasty border raider that has plagued the area recently. He has at least a couple of dozen men riding with him. Gault claims to be a Union supporter, but the Farleys suspect he's just an outlaw using that as cover for his misdeeds. Worst of all, they've heard tales that suggest the man has powerful connections in the Black River railroad.
+The rumors about Gault and Black River are completely untrue. The bandit started those rumors himself to make it less likely any of his victims would fight back. His successes have served to spread them across the region.
+Should the heroes mention the burned homestead they encountered a few days ago, the men visibly pale and say they'd not be at all surprised if it was the work of Gault. So far, he's not raided the Farleys' spread, but they've heard tell of the gang slaughtering entire settlements to the north.
+Legal Troubles
+A few days after the herd passes the Farley homestead, Sutter comes to the party with a special assignment. He says,
+I sent a pair of hands off to Dog Leg--that's a small town a day's ride to the west--to scout for reprovisions. They ain't come back yet. I'm more than a little worried they've run afoul of Indians, border raiders, bandits, or even that Gault fellow them Farley boys mentioned. I want y'all to ride over to Dog Leg and see if you can't find them yahoos.
+He adds that he's going to keep the herd moving north. If the heroes are delayed or lose the trail, he'll wait for them outside Exposition, a town a few days to the north.
+
+Dog Leg
+Fear Level: 3
+After an uneventful trip, the posse arrives in Dog Leg. As Sutter said, it's a small settlement with around 100 residents. The town's small business district consists of a livery, a small saloon, a general store, and the marshal's office, so looking for signs of the missing trail hands appears to be a fairly easy matter.
+If they enter the general store or saloon first, they quickly learn the men were arrested by the town marshal yesterday. None of the townsfolk are willing to provide details about why the men were arrested. However, any hero making a Notice roll senses the townsfolk are more than a little nervous when talk turns to the marshal.
+A Streetwise or Persuasion roll convinces the citizens of Dog Leg to open up a little about the town's law enforcement representative. About a month or so ago, a large band of marauders rode into town with Socrates Gault at their head. When the town marshal tried to stand them down, the thugs gunned him down instead.
+
+24
+
+Gault installed one of his henchmen, Dalton Wilcott, as the current marshal and left a few more outlaws as "deputies."
+Wilcott and two other lackeys of Gault now pretty much run the town. The townsfolk are afraid to take any action against the outlaws for fear of reprisals by Gault and his gang. Worse, rumors are circulating that Gault is backed by the Black River railroad. (As noted earlier, these rumors are completely untrue.)
+The "Marshal"
+Whether it's their first stop or they're led there after visiting another establishment in Dog Leg, the posse's trail inevitably ends at the town marshal. At first glance, the office appears to a rather unremarkable wooden building with a freshly--if crudely-- painted sign announcing MARSHAL. With a successful Notice roll, a character spots a marked absence of bars on the windows or any other sign of reinforcement.
+The door to the marshal's office stands slightly ajar. Inside, Marshal Wilcott sits behind a desk with his feet up and hat down. Near the back of the office the two Sutter trail hands sit on the floor, chained to a metal eyebolt. Both men look worse for wear, sporting bruises and scrapes, and one of them has a black eye.
+Marshal Wilcott tips his hat up as the heroes enter and a pair of unkempt cowpokes wearing deputy's badges eye the posse from the other side of the room. He asks in a surly voice,
+What do you folks want?
+If the heroes admit any connection to the imprisoned cowboys, Wilcott says,
+Well, we got us a little problem. These fellows came in bustin' up the place, and me and the boys had to take 'em into custody--for the good o' the town. Before we can let 'em go, we'd need restitution for the damages to local establishments.
+
+No Man's Land
+Negotiations
+Wilcott demands $250 per man, up front, to secure their release. He's already interrogated the cowboys and figures Sutter might have enough grubstake to pony up that amount. However, a successful Persuasion roll and producing the cash on the spot means Wilcott can be talked down to $150 per man.
+The marshal doesn't really care if the posse can pay his ransom or not. He's already sent one of his men to inform Gault there's a sizeable herd moving through the area. Wilcott knows Gault is probably going to try to seize Sutter's cattle and anything else of worth soon anyway. If he can pad his own pockets a little beforehand, that's just gravy.
+Even a cursory investigation of the town finds no evidence or witnesses to the trail hands "bustin' up the place," and of course the cowboys deny it. This information is of little use to the posse, except as proof of Wilcott's ill intent. If the party seeks allies in town, no one agrees to action against the marshal for fear of what Gault will do in response. In fact, most actively try to talk the heroes out of confronting Wilcott and his men!
+Should the party pay the money, Wilcott releases the men and lets the group return to the herd. If the heroes decide to free the Sutter cowboys by force, the outlaws don't hesitate to let their guns do the talking. Wilcott fights until he suffers at least two wounds and then surrenders. His henchmen only surrender if he does, or if he's Incapacitated.
+Dalton Wilcott: Wild Card. Use Gunman (Veteran) stats in the Deadlands Marshal's Handbook.
+Deputies (2): Use Outlaw stats in the Deadlands Marshal's Handbook.
+
+25
+
+Deadlands: Bad Times on the Goodnight
+
+Bad News Bearers
+When the cowpokes return to the herd, they discover that Gault's raiders have beaten them there. Only Abby, Luke Canton, and half a dozen of the other trail hands escaped. Abby quickly fills them in on what happened.
+Gault and his men descended on the herd the day before the posse returned from Dog Leg--tipped off, no doubt, by the men captured in Dog Leg. Since the crew was moving the cattle, the men were dispersed all around the herd and couldn't put up much of a fight. A couple of the men were killed and the rest, including Sutter, were taken captive when the raiders drove the cows away to the east. Less than one hundred head of cattle remain.
+Abby is beside herself as her uncle is her only remaining family. With the return of the heroes, she wants to head out after the raiders immediately. However, by this time, she and the crew have likely begun to view at least some of the posse members as de facto leaders and defer to them.
+If the characters seem to be leaning toward Abby's plan, Luke balks at the idea. Gault's band outnumbers the remaining crew badly. He guesses they had more than 30 raiders during the attack. Even with the addition of the posse, the Sutter cowboys don't even have a third of that number. After a brief, half-hearted argument, Abby eventually relents to Luke's wisdom.
+Should none of the posse suggest it, Luke recommends the group ride to the next town of any size and try to raise a posse or get the authorities (such as they may be) involved.
+Unexpected Allies
+Two days later, the crew rides into the town of Exposition (Fear Level 3). Exposition is built at the end of a rail spur and also has a telegraph office. As the cowboys enter town, the citizens look on
+
+nervously. A small boy darts into a saloon near the train station. Moments later, a large band of armed men and women emerge with the business end of their firearms pointed in the posse's general direction.
+A cold-eyed woman at the front of the group shouts,
+That's far enough, Gault! Drop your weapons and get your hands up!
+A Persuasion roll from any of the heroes is enough to calm the situation before lead starts flying.
+Should none of the posse speak up, Luke or Abby defuses the gunfight--barring a particularly bloodthirsty posse. The leader of their would-be captors doesn't immediately apologize for the mistaken identity, but she does order her troops to lower their weapons.
+It turns out they are a band of Black River enforcers guarding the railhead in Exposition. Word has gotten back to the Memphis headquarters of Black River that Gault's been preying on the local population and claiming the railroad was behind him. Mina Devlin is no one's idea of a saint, but she takes serious umbrage to someone else making use of her reputation and her gunhands are on orders to bring the outlaw down.
+The leader of the enforcers, a battlehardened veteran named Constance Merit, tells the posse and Sutter that when the locals saw a large number of armed men riding into town, they just assumed the remnants of the Sutter crew were Gault and his gang. When it becomes clear the trail hands have had a recent run-in with the raider, Merit's ears perk up. Allow the characters a Notice roll to observe her apparent interest.
+Constance Merit: Wild Card. Use Rail Warrior (Black River) stats in the Deadlands Marshal's Handbook.
+Black River Enforcers (10, plus 2 per hero): Use Rail Warrior stats in the Deadlands Marshal's Handbook.
+
+26
+
+Dealin' with Devlins
+Merit herself is under strict orders to protect the railhead in Exposition, whether from bandits, raiders, or other rail gangs. However, she's also keenly aware that cleaning up the Gault gang would be a feather for her cap with the railroad. She has a good-sized contingent of enforcers both in town and patrolling the spur, so she figures she can spare a few to get the border raiders out of her hair.
+If the posse asks, Merit agrees to send 20 of her enforcers with the posse to take down Gault's gang, all for the low price of 50 head of cattle. A successful Persuasion roll can talk her down to 25 head, and a raise gets her to accept 10 cows. She's also willing to let the posse keep any reward should they think to mention it.
+Black River Enforcers (20): Use Rail Warrior stats in the Deadlands Marshal's Handbook. They are armed with Winchester '73 rifles and Colt Army revolvers.
+The Law, or Lack Thereof
+If the posse tries to drum up support for an attack on Gault from somewhere besides Merit's enforcers, it has little luck. Although there is a wanted poster advertising a $1,000 bounty on Gault, no one in town seems to have much interest in trying to claim it.
+There is only a single marshal in Exposition and he has no jurisdiction over--or interest in--crimes committed outside the borders of the town. His only concern is keeping the peace in town and staying on the good side of Merit and her enforcers.
+Likewise, the townsfolk have little interest in pursuing Gault. Border raiders have become accepted facts of life in the Disputed Territories, just like thunderstorms and twisters. Most folks don't see the percentages in a shootout with a band of hardened killers.
+If you're feeling generous, Marshal, you can allow the heroes to muster up a few
+
+No Man's Land
+The Mass Battle Option
+Ideally, you can play out the fight with Gault using the regular Savage Worlds rules, with each player controlling a number of allied Extras. It's a climactic battle to cap off the first adventure in the Blood Drive series. However, if the number of combatants feels like too much for you to comfortably handle, Marshal, you can also fall back on the Mass Battle rules from Savage Worlds.
+Keep in mind, though, that unless one of the heroes has Knowledge (Battle), the posse is at a serious disadvantage with this method.
+Depending on the posse's actions, one or more of the following may apply to the battle as well.
+At least part of the posse's force attacks the camp from atop the bluffs: ­2 to Gault's Knowledge (Battle) roll.
+Posse frees the captives: An immediate bonus of 1 token to the heroes' force, plus allows them to use Sutter's Knowledge (Battle) skill for subsequent rolls.
+The heroes stampede the herd through camp: An immediate loss of 2 tokens from Gault's force, plus a ­5 to his roll during the round of the stampede.
+hardy souls. With a successful Persuasion or Streetwise roll, the posse can find five townsfolk willing to help rescue Sutter. A raise on the roll gets them another five, but
+
+27
+
+Deadlands: Bad Times on the Goodnight
+
+the crew cannot raise more than 10 townsfolk no matter what results they manage.
+Townsfolk (5 or 10): Use Townsfolk stats in the Deadlands Marshal's Handbook.
+The Battle of Gault's Gulch
+Whether they immediately go after the raiders or wait to gather reinforcements from Exposition, finding Gault's gang isn't particularly difficult. After all, a few thousand cows do tend to leave a trail! The posse doesn't even need to make a Tracking roll to follow it.
+The wide swath of hoof prints and cow pies leads about a day's ride east of where the raiders attacked the drive. The raiders corralled the cattle in a box canyon, blocking one end with a simple rope fence. Gault and his men set up camp near the entrance to the canyon. There is a guard atop each bluff near the canyon mouth.
+Even a cursory look at the outlaw camp reveals the heroes (and any possible allies) are likely badly outnumbered by the border raiders. There are dozens of outlaws milling about the camp, all armed to the teeth.
+Colonel Gault: See page 33.
+Gault's Henchmen (1 per hero): Use Gunman stats in the Deadlands Marshal's Handbook. Armed with Colt Army pistols and Winchester '73 rifles.
+Border Raiders (40): Use Outlaw stats in the Deadlands Marshal's Handbook. Armed with Colt Army pistols and Winchester '73 rifles.
+Evening the Odds No matter how they go about it, taking on
+Gault's gang is going to be a fight--and a big one, at that! A clever posse may find several ways to offset its numerical disadvantage.
+Gault has not killed any of the captive cowboys. He hopes he can parlay the hostages into a ransom at some point, and has them tied up to the south of his
+
+main camp. Freeing them gives the posse another five fighters and Sutter himself. Obviously, none of the captives are armed at the moment though.
+Although the gang has posted lookouts atop the bluffs, the men are bored and inattentive. Treat them as inactive guards with an additional ­2 to their Notice rolls versus anyone approaching from atop the cliffs. Anyone on the bluffs automatically gets half cover (­1) against ranged attacks from the camp. Going prone raises that to heavy cover (­4)!
+Another effective tactic is stampeding the cattle. Circling around the camp, the heroes can drop into the eastern end of the canyon and approach the herd from behind. Cutting the rope fence unnoticed requires a Stealth roll, but surprise isn't necessary once the cows start stampeding--right through the raiders' camp! See the Stampede! sidebar on page 15 for details on handling the unruly herd.
+The confusion from the stampede takes 10 rounds to settle, with the cows dispersing either into the countryside or back into the canyon. During that time, anyone caught in the mass of cattle can take no action until he finds cover as described under Stampede! on page 15.
+However, the rushing mass of cattle provides medium cover (­2) to anyone caught inside it.
+Aftermath
+After the heroes defeat Gault, Sutter and the other captives thank them for the rescue. The Black River enforcers return to Exposition, taking the agreedupon number of cattle with them. Any townsfolk the heroes mustered to their cause leave as well. Sutter keeps the crew at the box canyon for the next few days, both to recuperate and to round
+
+28
+
+No Man's Land
+
+up any cattle that scattered during the firefight.
+Digging around the outlaw camp turns up Gault's stash of ill-gotten gains. A trunk in his tent holds $1,000 in Union bills, $500 in Confederate, and $400 in gold dust. Sutter suggests dividing half the money amongst the cowboys on the rescue party (including the posse and Abby). However, none of the crew argues openly if the characters decide to claim it for themselves. This action may hurt the heroes rapport with their fellow trail hands, though.
+Once the cattle are gathered, the herd sets out once again for Denver. Sutter halts the herd for a day at Exposition to resupply. The posse can also attempt to collect the $1,000 reward on Gault at this time. Unfortunately for them, the surviving enforcers and townsfolk have already claimed a cut. The marshal did keep $500 back for the heroes.
+
+Trail's End
+The next two weeks pass uneventfully, unless you have any side adventures or encounters you'd like to throw at the posse during this time, Marshal--feel free! Barring further complications, Sutter halts the herd about a day out of Denver. Over the next few days, he makes inquiries about selling the cattle. During this time, he allows the hands to visit the city as long as enough remain to ensure the herd is properly tended.
+If you choose to end the adventure here, Sutter finds a buyer in short order and makes good on his contract with the heroes. In addition, he adds a $100 bonus for each in recognition of their invaluable assistance. On the other hand, if you intend to continue to the Blood Drive series, this is merely a well-earned break for the posse to spend some of its hard-earned cash before things get rolling in the next installment!
+
+29
+
+Friends & Foes
+
+The following characters appear in the adventure to lend a helpin' hand or try to clean the posse's collective plow, as noted in their descriptions. Wild Cards are marked with a handy marshal's badge, like so:
+Bill Sutter Bill Sutter is as tough as the land where he makes his home. During the war, he served in the Army of Tennessee and fought against General Sherman during his march across the Confederate states. He still carries shrapnel in his right leg from a wound he suffered during the Battle of Atlanta. Sutter has spent years building his spread, fending off attacks by Comanches, Mexican banditos, and other things that still give him nightmares. Sutter's not about to roll over and die just because some city slicker in New Orleans has taken a liking to his herd. Attributes: Agility d6, Smarts d8, Spirit d8, Strength d6, Vigor d6 Skills: Fighting d8, Guts d8, Intimidation d6, Knowledge (Battle) d6, Notice d6, Riding d8, Shooting d10, Survival d6, Throwing d6, Tracking d4 Charisma: 0; Grit: 3; Pace: 5; Parry: 6; Toughness: 5 Hindrances: Code of Honor, Slowpoke Stubborn Edges: Harder to Kill, Level Headed, Steady Hands, True Grit Gear: Double-action Colt Peacemaker (12/24/48, 2d6+1, RoF 1, Shots 6, AP 1),
+
+20 spare rounds, double-barrel shotgun (12/24/48, 1­3d6, ROF 1-2, Shots 2, +2 Shooting rolls), 20 spare shells, lariat (Parry ­1, Reach +2, Can be used to perform an Agility Trick using the wielder's Fighting skill. Success means the opponent suffers -2 Parry until his next action. With a raise the opponent falls prone, suffers -2 Parry, and is Shaken), horse, chaps, saddle.
+Abigail "Abby" Morton Abby is the youngest of Sutter's crew,
+barely 18 years old. She's Sutter's niece who moved out West to live with her uncle after her parents died in a cholera outbreak less than a year ago. Not having much experience with raising young women, Sutter has been treating her more or less like a slightly favored ranch hand, although he is quite fond of her.
+The young woman is trying hard to adapt to her new life and, as a result, often asks about three questions too many on any given subject. She is likely to latch on to a hero who seems competent--or even just confident--as a surrogate for her parents (although she'll never admit it).
+Attributes: Agility d8, Smarts d6, Spirit d6, Strength d6, Vigor d6
+Skills: Fighting d6, Guts d6, Notice d6, Riding d8, Shooting d6, Survival d4, Throwing d4, Tracking d4
+Charisma: 0; Pace: 6; Parry: 5; Toughness: 5
+Hindrances: Big Mouth, Curious, Loyal
+Edges: Luck, Quick
+
+30
+
+Gear: Single-action Colt Peacemaker (12/24/48, 2d6+1, RoF 1, Shots 6, AP 1), 20 spare rounds (.45), Winchester '73 (24/48/96, 2d8, RoF 1, Shots 15, AP 2), 20 spare rounds (.44­40), lariat (Parry ­1, Reach +2, Can be used to perform an Agility Trick using the wielder's Fighting skill. Success means the opponent suffers ­2 Parry until his next action. With a raise the opponent falls prone, suffers ­2 Parry, and is Shaken), horse, chaps, saddle.
+Lazy S Cowboy Only the toughest and most reliable
+ranch hands are still in Sutter's employ. The rest cut out early on when it was clear Sutter was going to tussle with LaCroix's thugs. Those who remain have stood by the rancher through fights with rustlers, outlaws, and even Santa Anna's troops. They're in for the long haul. Attributes: Agility d8, Smarts d6, Spirit d6, Strength d6, Vigor d8 Skills: Fighting d8, Gambling d4, Guts d6, Notice d6, Riding d10, Shooting d6, Survival d4, Taunt d6, Throwing d6, Tracking d4 Charisma: 0; Pace: 6; Parry: 6; Toughness: 6 Hindrances: Loyal, Poverty Edges: Steady Hands Gear: Colt Army (12/24/48, 2d6+1, RoF 1, Shots 6, AP 1), Winchester '73 rifle (24/48/96, 2d8, ROF 1, Shots 15, AP 2), 40 spare rounds (.44­40), lariat (Parry ­1, Reach +2, Can be used to perform an Agility Trick using the wielder's Fighting skill. Success means the opponent suffers ­2 Parry until his next action. With a raise the opponent falls prone, suffers ­2 Parry, and is Shaken), horse, chaps, saddle.
+Devil Eyes Devil Eyes is a large, coal-black mare the Lazy S cowboys captured near the Mexican
+
+Frends & Foes
+border during the round up. She's spirited and just a tad mean, but for the right rider, she'll charge the gates of Hell.
+Attributes: Agility d8, Smarts d6 (A), Spirit d10, Strength d12, Vigor d10
+Skills: Fighting d8, Guts d8, Notice d6, Taunt d8
+Pace: 10; Parry: 6; Toughness: 9 Special Abilities · Fleet-Footed: Devil Eyes rolls a d8
+when running instead of a d10.
+· Kick: Str. · Size +2: Devil Eyes weighs nearly
+1,000 pounds.
+· Unbreakable: Devil Eyes receives +2 on Spirit rolls to resist being broken to the saddle. If she is ever broken, the ability is lost, but any rider except the one who broke Devil Eyes still suffers ­2 on Riding rolls to mount and ride the mare.
+Black Dog Black Dog, or To'sarre, is a renegade Comanche shaman. For years, he raided settlers in and around Sutter's Flats until the rancher and a posse of locals hunted him down. He signed on with the Confederate Army in exchange for a pardon, but was drummed out within less than a year for killing several Union soldiers under a flag of truce.
+Recently, the shaman found a home with Bayou Vermilion when the railroad was laying track through western Texas and New Mexico. In the railroad's employ, Black Dog's cruelty and viciousness has proven not a liability, but rather an asset. Although voodoo is more commonly practiced by LaCroix's magicians, Black Dog's formidable mystical skills as a shaman are highly valued by the railroad.
+Although Sutter doesn't know it, he's the last surviving member of the posse that captured Black Dog. The shaman
+
+31
+
+Deadlands: Bad Times on the Goodnight
+32
+
+intends to see he doesn't enjoy that status for much longer...
+Treat Black Dog as a Seasoned Rank character for spell-casting purposes.
+Attributes: Agility d6, Smarts d8, Spirit d10, Strength d6, Vigor d8
+Skills: Fighting d8, Guts d8, Knowledge (Occult) d6, Intimidation d8, Notice d6, Riding d8, Shooting d8, Stealth d8, Survival d6, Tracking d8, Tribal Medicine d10
+Charisma: ­2/­4; Grit: 2 Pace: 6; Parry: 6; Toughness: 6
+Hindrances: Mean, Vengeful (Major), Outsider
+Edges: Arcane Background (Shamanism), New Powers
+Powers: Beast friend, boost/lower trait, fear, shape change, wilderness walk. Power Points: 15
+Gear: Winchester '76 rifle (24/48/96, 2d8, RoF 1, Shots 15, AP 2), 20 spare rounds (.45), Bowie knife (Str+d4+1), horse, saddle.
+Ravenite Brave These braves are young warriors from
+a variety of tribes, all of whom have become frustrated with the Old Ways and the elders' inability to stand up to the whites' demands. Black Dog finds it particularly easy to influence these young hotheads.
+Attributes: Agility d8, Smarts d6, Spirit d8, Strength d8, Vigor d8
+Skills: Fighting d8, Guts d8, Intimidation d6, Riding d8, Shooting d8, Stealth d6, Survival d6, Tracking d6
+Charisma: 0; Pace: 8; Parry: 6; Toughness: 6
+Hindrances: Vengeful (Major), Vow (Serve the Raven cult)
+Edges: Fleet-Footed, Marksman
+Gear: Winchester '76 (24/48/96, 2d8, RoF 1, Shots 15, AP 2), double-action Colt Peacemaker (12/24/48, 2d6+1, RoF 1,
+
+Frends & Foes
+Shots 6, AP 1), 30 rounds ammunition, tomahawk (Str+d6), horse.
+Colonel Socrates Gault "Colonel" Gault was never really a colonel. In fact, he's never served in either the Union or Confederate forces and has no particular allegiance to either side of the Mason-Dixon. He's just an ambitious outlaw who's drifted through the Disputed Territories for years, using the war as an excuse for looting and pillaging with whichever border raiders would take him.
+Not too long ago, Gault donned the persona of a Union guerrilla and settled into southern Colorado. It wasn't too long before he'd raised a sizable band of outlaws, murderers, and even a few disgruntled former soldiers. He wasted little time in using his band to effectively seize control of a small portion of the wartorn state.
+Gault is a canny tactician, but he has a tendency to let his ambition overtake his means. He seldom considers the longterm consequences of his actions--a trait that has sent him running with his tail tucked more than once.
+Attributes: Agility d6, Smarts d6, Spirit d6, Strength d8, Vigor d10
+Skills: Fighting d8, Guts d6, Intimidation d6, Knowledge (Battle) d6, Notice d6, Riding d8, Shooting d8, Survival d4, Tracking d4
+Charisma: ­6; Pace: 6; Parry: 6; Toughness: 7 Hindrances: Bloodthirsty, Ugly, Wanted (Major, Disputed Territories)
+Edges: Combat Reflexes, Command, Nerves of Steel, Harder to Kill
+Gear: Lemat Grapeshot Pistol (12/24/48, 2d6, RoF 1, Shots 9, AP 1), & shotgun (5/10/20, 1­3d6, RoF 1, Shots 1), saber (Str+d6), horse, chaps, saddle.
+
+33
+
+Deadlands: Bad Times on the Goodnight
+34
+
+

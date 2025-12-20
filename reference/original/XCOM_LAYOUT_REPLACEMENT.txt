@@ -1,0 +1,121 @@
+This file contains the new XCOM-style layout that will replace lines 307-846 in GameArena.tsx
+
+REPLACE THIS:
+Line 307: <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center' }}>
+...through...
+Line 846: </Box>
+
+WITH THE FOLLOWING:
+
+        /* XCOM-STYLE GAME LAYOUT */
+        <Box sx={{ display: 'flex', flexDirection: 'column', height: 'calc(100vh - 100px)' }}>
+          {/* Top Bar - Settings & Turn Info */}
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              px: 2,
+              py: 1,
+              backgroundColor: '#2d1b0e',
+              borderBottom: '2px solid #8b4513',
+            }}
+          >
+            <Typography
+              sx={{
+                fontFamily: 'Rye, serif',
+                color: '#f5e6d3',
+                fontSize: '18px',
+              }}
+            >
+              Deadlands Arena
+            </Typography>
+
+            <Box
+              sx={{
+                px: 2,
+                py: 0.5,
+                backgroundColor: '#1a0f08',
+                border: '2px solid #8b4513',
+                borderRadius: 1,
+              }}
+            >
+              <Typography
+                sx={{
+                  fontFamily: 'Rye, serif',
+                  color:
+                    combatState.phase === 'player'
+                      ? '#4169e1'
+                      : combatState.phase === 'enemy'
+                      ? '#ff4444'
+                      : '#888888',
+                  fontSize: '16px',
+                  fontWeight: 'bold',
+                }}
+              >
+                {combatState.phase === 'player'
+                  ? 'YOUR TURN'
+                  : combatState.phase === 'enemy'
+                  ? 'ENEMY TURN'
+                  : combatState.phase === 'victory'
+                  ? 'VICTORY!'
+                  : 'DEFEAT'}
+              </Typography>
+            </Box>
+
+            <SettingsMenu
+              cameraFollowEnabled={cameraFollowEnabled}
+              setCameraFollowEnabled={setCameraFollowEnabled}
+              showWeaponRanges={showWeaponRanges}
+              setShowWeaponRanges={setShowWeaponRanges}
+              showMovementRanges={showMovementRanges}
+              setShowMovementRanges={setShowMovementRanges}
+              illumination={illumination}
+              setIllumination={setIllumination}
+            />
+          </Box>
+
+          {/* Main Game Canvas - Takes 85-90% of screen */}
+          <Box sx={{ flexGrow: 1, position: 'relative', overflow: 'hidden' }}>
+            <GameCanvas
+              character={selectedCharacter}
+              selectedWeapon={selectedWeapon}
+              onCombatStateUpdate={handleCombatStateUpdate}
+              onDiceRoll={handleDiceRoll}
+              onWoundsUpdate={handleWoundsUpdate}
+              onShakenUpdate={handleShakenUpdate}
+              onMovementBudgetUpdate={handleMovementBudgetUpdate}
+              onPhaserGameReady={handlePhaserGameReady}
+            />
+          </Box>
+
+          {/* Bottom Action Bar */}
+          {selectedCharacter && (
+            <ActionBar
+              character={selectedCharacter}
+              playerHealth={combatState.playerHealth}
+              playerMaxHealth={combatState.playerMaxHealth}
+              playerWounds={playerWounds}
+              movementBudget={movementBudget}
+              selectedWeapon={selectedWeapon}
+              weapons={selectedCharacter.equipment?.filter(
+                (eq) => eq.type === 'WEAPON_MELEE' || eq.type === 'WEAPON_RANGED'
+              ) || []}
+              onSelectWeapon={handleSelectWeapon}
+              onSelectAction={() => {
+                // TODO: Open action menu in modal/overlay
+                console.log('Actions button clicked');
+              }}
+              remainingActions={remainingActions}
+              turnNumber={combatState.turnNumber}
+            />
+          )}
+        </Box>
+
+NOTES:
+- This removes ~540 lines of complex sidebar code
+- Map now takes 85-90% of screen (controlled by flexGrow: 1)
+- All environment controls moved to SettingsMenu (gear icon)
+- Bottom ActionBar has all essential combat info
+- ActionMenu, WeaponSelection, StatusEffects, Combat Log can be added as overlays/modals later
+- AI GM button can be added to top-right near settings

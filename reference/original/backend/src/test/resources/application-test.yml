@@ -1,0 +1,45 @@
+# Test Configuration
+# Used by tests annotated with @ActiveProfiles("test")
+
+spring:
+  main:
+    allow-bean-definition-overriding: true  # Allow test mocks to override real beans
+
+  datasource:
+    # Use H2 in-memory database for tests
+    url: jdbc:h2:mem:testdb;MODE=PostgreSQL
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    # Show SQL in test logs (helpful for debugging)
+    show-sql: false
+    hibernate:
+      ddl-auto: create-drop  # Create schema on start, drop on exit
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: false
+
+  ai:
+    anthropic:
+      api-key: sk-ant-test-dummy-key-for-testing-only
+      chat:
+        model: claude-3-5-sonnet-20241022
+
+# JWT Configuration (for tests that need it)
+jwt:
+  secret: test-secret-key-for-testing-only-not-for-production-use
+  expiration: 86400000  # 24 hours in milliseconds
+
+# CORS (not needed in tests but required by config)
+cors:
+  allowed-origins: http://localhost:3000
+
+# Logging
+logging:
+  level:
+    com.deadlands.campaign: DEBUG
+    org.springframework.security: DEBUG
+    org.hibernate.SQL: DEBUG

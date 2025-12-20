@@ -1,0 +1,22 @@
+{
+  "name": "deadlands-e2e-tests",
+  "version": "1.0.0",
+  "description": "End-to-end automated tests for Deadlands multiplayer functionality",
+  "scripts": {
+    "test": "cucumber-js",
+    "test:parallel": "cucumber-js --parallel 3",
+    "test:headless": "HEADLESS=true cucumber-js",
+    "test:docker": "docker-compose up --abort-on-container-exit",
+    "test:clean": "docker-compose down -v",
+    "test:debug": "node run-with-devtools.js --tags @critical --slow"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^10.3.1",
+    "selenium-webdriver": "^4.16.0",
+    "chai": "^4.3.10",
+    "axios": "^1.6.5"
+  },
+  "devDependencies": {
+    "chromedriver": "^120.0.1"
+  }
+}

@@ -1,0 +1,29 @@
+name: Autonomous Continue
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [main]
+
+jobs:
+  trigger-next:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check task queue
+        id: check-queue
+        run: |
+          if grep -q "\- \[ \] Incomplete" .claude/task-queue.md; then
+            echo "has_tasks=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_tasks=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Log completion
+        if: steps.check-queue.outputs.has_tasks == 'false'
+        run: |
+          echo "All tasks complete! 🎉"
+          echo "Check .claude/PROGRESS.md for summary"

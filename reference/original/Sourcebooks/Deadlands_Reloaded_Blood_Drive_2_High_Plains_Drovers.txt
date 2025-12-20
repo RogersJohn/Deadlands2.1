@@ -1,0 +1,737 @@
+BLOOD DRIVE II:
+HIGH PLAINS DrOVERS
+
+High Plains Drovers
+by John Goff
+Savage Worlds by Shane Lacy Hensley
+Additional Material: Matthew Cutter, Piotr Korys Editors: Matthew Cutter, Piotr Korys
+Deadlands Brand Manager: Matthew Cutter Layout and Graphic Design: Aaron Acevedo, Travis Anderson, Simon Lucas, Tomasz Tworek
+Cover Artist: Tomasz Tworek Cover Design and Typesetting: Tomasz Tworek
+Interior Artwork: Tomasz Tworek
+Pinnacle Entertainment Group grants permission to print this document, in whole or in part, for personal use. Any electronic distribution is strictly forbidden.
+© 2012 Pinnacle Entertainment Group. Deadlands, Smiling Jack, Savage Worlds, and all related marks and logos are trademarks of Pinnacle Entertainment Group. All Rights Reserved. Produced under license by Studio 2 Publishing, Inc. The Studio 2 logo is a trademark of Studio 2 Publishing, Inc. ©2012. All Rights Reserved.
+
+Contents
+
+Introduction
+
+1
+
+For All You Greenhorns....  .  .  .  .  . 1
+
+The Story So Far.  .  .  .  .  .  .  .  .  .  .  .  . 1
+
+North to Wyoming!
+
+2
+
+Change o' Plans.  .  .  .  .  .  .  .  .  .  .  .  .  . 2
+
+Cowboys for Hire.  .  .  .  .  .  .  .  .  .  .  .  . 3
+
+A Spy in Wrangler's Clothing.  .  .  . 4
+
+Swapping Stories.  .  .  .  .  .  .  .  .  .  .  .  . 4
+
+Something's Fishy .  .  .  .  .  .  .  .  .  .  .  . 4
+
+Outbreak .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 5
+
+An Impromptu Autopsy.  .  .  .  .  .  .  . 5
+
+That's Not Right!.  .  .  .  .  .  .  .  .  .  .  .  . 6
+
+Whatever You Do, Just Don't....  . 7
+
+At the Gates of Hades
+
+8
+
+Spy Games.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 8
+
+Wasatch Comes A-Knockin'.  .  .  .  . 8
+
+Troubleshooter.  .  .  .  .  .  .  .  .  .  .  .  .  .  . 9
+
+Strong-arm Tactics.  .  .  .  .  .  .  .  .  .  . 10
+
+Armored Steam Wagon.  .  .  .  .  .  . 11
+
+Eight Legs, Again .  .  .  .  .  .  .  .  .  .  . 11
+
+Wild Prairie Fire.  .  .  .  .  .  .  .  .  .  .  . 12
+
+Death from Above.  .  .  .  .  .  .  .  .  .  . 13
+
+The Battle Is Joined .  .  .  .  .  .  .  .  . 13
+
+Auto-Gyro .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 14
+
+Armored Steam Wagon.  .  .  .  .  .  . 14
+
+From Bad to Ugly .  .  .  .  .  .  .  .  .  .  . 14
+
+Here Comes the Cavalry!.  .  .  .  .  . 14
+
+Escape from Hell.  .  .  .  .  .  .  .  .  .  .  . 15
+
+Into the Nations
+
+16
+
+Sinking Sand .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 16
+
+Wagons, Ho!.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 17
+
+A Plague of Undeath.  .  .  .  .  .  .  .  . 17
+
+Return o' the Dog .  .  .  .  .  .  .  .  .  .  . 18 Fort Desperation.  .  .  .  .  .  .  .  .  .  .  . 18 Who's Minding the Fort?.  .  .  .  .  . 18 The First Night.  .  .  .  .  .  .  .  .  .  .  .  . 19 Epidemic.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 20 Trapped.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 21 Midnight Snack .  .  .  .  .  .  .  .  .  .  .  .  . 21 Curing the Plague...Vampires.  .  . 21
+
+The Home Stretch
+
+22
+
+Death on the Wing.  .  .  .  .  .  .  .  .  .  . 22
+
+A Trestle Too Far.  .  .  .  .  .  .  .  .  .  . 23
+
+Old Wounds.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 23
+
+The Last Command.  .  .  .  .  .  .  .  .  . 24
+
+Battlefield o' the Damned .  .  .  .  . 24
+
+A Commander's Lament. . . . . . . 24
+
+There She Blows!.  .  .  .  .  .  .  .  .  .  .  . 25
+
+Solving Problems with Explosives.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 26
+
+Ghost War.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 26
+
+Who's That Tripping Under My Bridge? .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 27
+
+Wind River Trestle's Fallin' Down. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 28
+
+After the Fal.l .  .  .  .  .  .  .  .  .  .  .  .  .  . 28
+
+End o' the Trail.  .  .  .  .  .  .  .  .  .  .  .  . 28
+
+Friends & Foes
+
+29
+
+Abigail "Abby" Morton .  .  .  .  .  .  . 29
+
+Bill Sutter .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 29
+
+Black Dog .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 30
+
+Jay Goodman.  .  .  .  .  .  .  .  .  .  .  .  .  .  . 30
+
+Jurgen Emmerich. .  .  .  .  .  .  .  .  .  .  . 31
+
+Lazy S Cowboy. .  .  .  .  .  .  .  .  .  .  .  .  . 31
+
+Plague Vampire.  .  .  .  .  .  .  .  .  .  .  .  . 31
+
+Texas Longhorn.  .  .  .  .  .  .  .  .  .  .  .  . 33
+
+Introduction
+
+It's time to grab your lasso and saddle up again, Marshal! Welcome to the second part of the Blood Drive trilogy. Here we continue the story of the epic cattle drive, begun in Bad Times on the Goodnight, with the posse riding herd on a few thousand beeves through the Disputed Territories and Sioux Nations. Things don't get any easier the farther north the drive goes, in case you were wondering.
+Some plot threads introduced in the first installment are woven into High Plains Drovers. Specifically, accusations of rail baron intrigue return to bedevil the heroes' efforts to earn an honest living and a not-quite-vanquished nemesis catches up with the herd to further complicate matters. Add to that a bevy of all new obstacles and your wranglers are likely to find their hands full as they push on toward their new destination.
+For All You Greenhorns...
+Should this be your hopping-on point to the Blood Drive series, feel free to adapt, mangle, or mutilate this information to best suit your own campaign and posse. We encourage you to rustle up the first part of the series, Bad Times on the Goodnight, and give it a turn first.
+But if you'd rather not, that's fine-- High Plains Drovers is perfectly capable of standing on its own. Very little modification to the plot is necessary and we've even included a couple of handy Greenhorns sidebars to help you through any rough spots.
+
+The Story So Far
+If you're new to the trail or maybe just saddled with a short memory, here's a quick round-up of the events that led to High Plains Drovers.
+Bill Sutter was unable to get a fair price for his herd of Longhorns from Bayou Vermilion, the nearest railroad to his ranch, the Lazy S. Rather than knuckle under, he and his niece Abby chose to drive his beeves north to Denver, hoping to get a better price there than in the crowded cattle market in Dodge City. The posse hired on as trail hands to help with the drive. Bayou Vermilion took exception to this and made a couple of attempts to stop it, bringing Sutter back in contact with an old enemy--a Comanche shaman by the name of Black Dog.
+After a rough time in the western Texas scrubland, a brief stop near Roswell turned sour after an encounter with an apparent spy from the Confederate fort nearby. The Confederates suspected one or more members of the posse of being in cahoots with the spy. To avoid getting into a losing fight with the Confederate army, the herd hit the trail again.
+The posse ran afoul of Black Dog again near Black Mesa. Fending off attacks by Ravenite braves and critters straight from the Hunting Grounds, the herd and crew passed into Colorado and the Disputed Territories. There they encountered a minor warlord who seized the herd, along with Sutter and most of the hands. With help from Black River enforcers, the heroes took down the warlord and got the herd to Denver.
+
+1
+
+North to Wyoming!
+
+At the beginning of this adventure, the herd is settled in about half a day's ride from Denver. It's been milling about the same area for the better part of a week while Sutter gets a feel for the local cattle market.
+Most of the time, the crew (including the posse) is either riding the edges of the herd, rounding up stragglers, or simply sitting around the chuck wagon swapping stories. Compared with driving the stubborn Longhorns over one thousand miles of hostile wilderness, it's been an easy stretch.
+Every day or so, a few of the hands are cut loose to head into Denver to gather supplies or just whoop it up a little. If your group has been riding with the crew since Bad Times on the Goodnight, this is a good time to let them spend a little of their hard earned money, heal up any scrapes and bruises, or even find a side adventure if you're of the mind, Marshal.
+Change o' Plans
+After the Lazy S herd has been near the city for a couple of days, Sutter returns to the trail crew's camp. He gathers all the cowboys around who aren't riding herd at the moment and says he has some news. He continues,
+Turns out we got here a little late. Between herds comin' down from the Wyoming Territory and Texas herds that have already hit the market in Dodge, the price o' beef is in the outhouse hereabouts.
+
+It's only a snake's belly above what them Bayou Vermilion varmints were offerin', and this time, that's across the board.
+Now, after cogitatin' on it a piece, I figure that's both good and bad. It's bad in that I ain't headin' back to Texas a rich man--at least not right away. It's good in that there's another herd here in a bad spot that I was able to buy up for a little more than a song. On top of that, a feller sold me a Union land grant in the Bighorn Basin up in Wyoming that's a fair sight larger than my spread on the Brazos. I'm sick of dealing with those Bayou Vermilion hooligans, so I took him up on it.
+I plan to take both herds north and start a new ranch up in the territory. Any of you that wants to can ride with me. Those who don't I understand. You're welcome to any pay that's owed you with no hard feelings on my part.
+Sutter's plan is to follow the Overland Trail north out of Denver, cut the western corner of the Sioux Nations, and forge north through Winding River Canyon. He offers $45 dollars a month to those who stay on with the Lazy S. Some of the cowboys agree to stay on, but a few decide to head back to Texas. Obviously, Sutter's niece Abby is headed north with him as well.
+If you're playing this adventure as part of the entire Blood Drive series or just looking for a lead-in to the next adventure, Range War!, Sutter pulls the characters aside after the rest of the trail crew sorts itself out.
+
+2
+
+You folk have done right by me and Abby from the get go. To tell the truth, this here deal has put a dent in my wallet. I'm gonna need to be hirin' more hands as well. I'm willin' to cut you in for a tenth ownership of my original herd, divided amongst yourselves, in lieu of payment, if you choose to stay on with us.
+Sutter's original herd numbered approximately 1,500 head of cattle. Accounting for losses on the trail and a few sales along the way, the crew arrived in Denver with just shy of 1,300 beeves, so the rancher is offering the posse about 130 head of cattle. (When sold in a favorable market, each Longhorn might bring as much as $40.)
+He's come to value the heroes' contribution highly, so the characters can bargain with him for a better deal. With a successful Persuasion roll, he increases the offer to 200 head and on a raise, he goes all the way up to a quarter of the original herd--325 beeves!
+Cowboys for Hire
+The new herd Sutter purchased totals around 2,000 head. This more than doubles the size of the original Lazy S herd. Combined with several of the original members of the crew heading back home to Texas, this leaves the Lazy S shorthanded for the trip.
+Of the original cowboys, only half a dozen choose to remain with the herd (including Luke Canton, should he have survived the last adventure). He plans to bring that total up to 20 riders--including the posse--before the herd heads north, by putting out a call for experienced hands.
+It's not long before drifters begin to mosey into the main camp. Most of them are honest cowboys just looking for any work they can find, but
+
+North to Wyoming!
+Greenhorns
+If the posse is just jumping onboard with this adventure, you can omit much of this. Instead, Sutter is an aspiring rancher who has just purchased his first herd from the glutted market near Denver. With a land grant in hand, he plans to drive the cattle to Wyoming to start a new ranch. Short on both experienced hands and capital, he cuts a deal with the heroes whom he takes to be veterans of the West--for right or wrong--to assist in the drive.
+
+Controlling Cattle
+
+Texas Longhorns are known for being headstrong beasts. It's more than likely the adventurers find themselves having to cajole, coerce, or otherwise convince a group of the ornery beasts to do something they are otherwise not disposed to do. Or maybe the erstwhile trail hands have to calm a passel of nervous cows to avert a stampede.
+Regardless of the situation, handling a herd of cows boils down to a Riding roll. A tinhorn with no Riding skill--or a cowpoke on foot-- who finds himself trying to control cattle instead substitutes a Smarts roll (­2) or, at your discretion Marshal, another, related Knowledge skill.
+Apply the following modifiers to the roll:
+
+Situation No experience with cattle Obvious threat nearby Cattle stampeding
+
+Modifier ­2 ­4 ­6
+
+3
+
+Deadlands: High Plains Drovers
+a couple of the more experienced hands warn that some might be bandits or rustlers taking measure of the crew.
+A Spy in Wrangler's Clothing
+One particularly garrulous fellow shows up a few days later and seems especially dedicated to signing on with the Lazy S. He talks to everyone in the camp, including the heroes, and seems a friendly enough sort at first. The would-be cowpuncher gives his name as Jay Goodman and claims to have ridden on several drives, mostly on the Texas and Chisholm Trails.
+In reality, Goodman is a plant for the Union Blue railroad. Word reached the railroad that a Wasatch infiltrator broke into the Confederate base a while back. They also caught wind of the dust-up between Sutter's crew and the Confederate army. Goodman has been dispatched to find out if anyone on the crew is moonlighting as a courier for Wasatch, and if so, to intercept the information before it reaches Hellstromme.
+Any of the caballeros with experience on either of the two trails and questions Goodman finds that his story seems to be square. He seems familiar with both routes and all the well-known hazards along them. However, any hero who wins a Notice roll opposed by Goodman's Persuasion gets the distinct feeling that the cowboy isn't being completely square with her.
+Swapping Stories Goodman chats up each member of
+the crew. He spins yarns easily, recalling any number of anecdotes from his own experiences on the trail. At first, Goodman monopolizes conversations and barely lets any other party get a word in edgewise.
+He's a sharp eye for character and has an almost uncanny ability to figure out
+
+a person's weaknesses. Allow Goodman a Notice roll to deduce one of a character's Hindrances to exploit. He keeps a stock of tobacco (chewing and smoking), a flask of whiskey, a pack of cards, and even a small roll of cash in his pockets to help play to any of his target's vices.
+Once Goodman feels he's established a rapport with one of the group, he slowly turns the topic to the drive up from Texas. If the buckaroo mentions the encounter at Roswell, Goodman focuses the conversation there. If Roswell doesn't come in, he slides it into the conversation as an aside. Goodman hides his real interest, instead going off on tangents about runins with the Confederate army or Texas Rangers he's had. But all the while, he's feeling out the character to see if there's any likely tie to Wasatch or the spy.
+After he's spent some time with each of the posse members, Goodman wraps up his mission. He asks the crew to keep him in mind if work opens up and heads back to Denver to file his report. His initial take on the crew--and the posse, specifically--is that they may be in cahoots with Wasatch, but he isn't certain. He advises the railroad to monitor the herd's progress going forward.
+Something's Fishy
+It's very possible the heroes catch on to the fact that something's amiss with Goodman. If confronted, he denies any accusations, insisting he's just an innocent cowboy looking for honest work. No amount of cajoling can sway him to break his cover. However, although he takes his job very seriously, Goodman is no martyr.
+Should someone suggest he's a scout for cattle rustlers or even just threaten violence against him, allow an Intimidation roll opposed by Goodman's Guts. If the cowpoke wins, Goodman admits to being
+
+4
+
+a Union Blue spy. He initially claims he's just making sure the crew is who they say they are since they're near the Union Blue main line (this is true). On a raise, Goodman spills the whole story about Roswell.
+In either instance, however, Goodman insists he's convinced no one on the crew is anything but what they claim to be. No amount of coercion convinces him to confess that he suspects someone may be a Wasatch spy--after all, he knows that's liable to get him killed! If the heroes tell him to get lost, Goodman keeps tabs on the herd's movements and sends word ahead to his allies inside the Union border.
+Jay Goodman: See page 30.
+Outbreak
+Through a combination of a little bit of good animal husbandry and a whole lot of luck, none of Sutter's original herd were afflicted with any serious parasites. Bear in mind that in the Weird West, a serious parasite is one that drains your blood and then bursts out of your stomach in a rain of gore.
+Unfortunately, the previous owner of the cattle purchased in Denver wasn't so lucky. That herd ran across a nest of prairie ticks on its way to market and several of the beeves were attacked. And now, Bill Sutter isn't so lucky anymore either.
+As the Lazy S nears the South Platte River a week or so out of Denver, allow a Notice roll for any buckaroos riding with the main herd. With a success, the hero spots one of the Longhorns stagger to a stop and fall over. One of the herd stumbling or even dying isn't all that unusual, but the cattle have been moving through good grazing country, there's been no shortage of water, and the pace has been fairly leisurely the last few days. Given the situation, the event is a little out of the ordinary.
+
+North to Wyoming!
+Ropin' Cattle
+Roping a steer is easy enough. It's a simple Throwing roll (adjusted for range, of course). But even armed with his trusty lariat, a cowboy is grossly overmatched in a tug-of-war by a longhorn. An average-sized specimen of the breed tips the scales at around three-quarters of a ton, so man-handling those doggies isn't the best option.
+Luckily, when it comes to taking charge of a bullheaded longhorn, a cowboy's best friend is his mount. A canny ranch hand can use the lasso in conjunction with his saddle to bring his horse's strength and weight to bear against a roped steer.
+Once a mounted cowpoke has lassoed a longhorn, an opposed roll of his Riding versus the animal's Strength is made. On a success, he wrangles the animal under control and can lead it with the rope; with a raise, he pulls the longhorn off its feet. On a failure, the beast continues to put up a fight, but doesn't break free. If the player is unlucky enough to roll a 1 on his Riding die (regardless of the Wild Die), the animal breaks free--possibly pulling the unlucky sod off his saddle in the process!
+An Impromptu Autopsy Anyone who decides to check out the
+fallen steer finds the animal lying on its side. Its abdomen is moving spastically in and out, almost fluttering as if it's struggling for breath. However, should a character examine the beast's head, allow that player to make a Notice roll.
+
+5
+
+Deadlands: High Plains Drovers
+With a success, the examiner immediately discovers the animal is most likely dead. Its eyes have rolled back in its head. Its lips are pulled back from teeth and its tongue protrudes slightly from its mouth. Finally, its nostrils show no movement to indicate the steer is still breathing.
+If the Notice roll results in a raise, she finds a few small lacerations on the lips of the animal. They have begun to heal and are likely at least a week old. These are from when the tick first crawled into the steer's mouth.
+About this time--or shortly after the first animal falls, if the posse did not investigate it--the sound of snorts and squeals go up throughout the herd as more of the cattle fall victim to a similar fate. All told, nearly a dozen suddenly drop, leaving the Lazy
+
+S hands scratching their heads...but only for a moment.
+That's Not Right!
+Within moments of the sudden collapses (or whatever time feels best for your game, Marshal) the culprits behind the deaths expose themselves --by bursting out of the bellies of the afflicted Longhorns! All around the players, the engorged and gore-covered ticks chew their way out of the bellies of dead steers and cows, bringing bits and pieces of the animals' entrails with them as they do.
+The gruesome scene is enough to require a Guts check for even the most jaded of saddletramps to avoid getting a ­1 penalty to all Trait rolls for the rest of the encounter due to nausea.
+The good news is the disgusting critters are pretty bloated with cow's blood. Their bladders are literally filled to bursting and it's all the tiny abominations can do to crawl out of the carcasses and onto the ground. Ironstomached dudes can simply walk up and stomp the little buggers (no roll needed), although doing so requires another Guts roll (­2) when the blood sac bursts, spraying its contents up the character's leg!
+Ignoring the hellish arachnids is also a viable tactic, though it might not sit well with many heroes. They're full and not going to be looking for another meal until long after the herd has moved on north.
+
+6
+
+Whatever You Do, Just Don't...
+However, the worst--and for many posses, most likely--response is for one of the crew to whip out a gun and start blasting away. Certainly, that guarantees killing any tick successfully targeted, but it's also an incredibly bad idea in the middle of a herd of Texas Longhorns already on the far side of nervous thanks to the smell of blood and cow guts permeating the air. If any pistolero cooks off even so much as a single shot, the cattle panic and stampede!
+And, Marshal, if you're feeling particularly bloodthirsty, don't forget there are over a dozen other cowboys around--all of whom are also packing smokewagons and capable of popping off a shot at one of the ticks in a moment of shock or fear.
+Since anyone examining one of the downed beeves is in the middle of the herd, they're probably in a world of hurt. See the Stampede! sidebar to the right for details. Should the cattle stampede, the crew's first priority (after surviving) becomes getting the animals back under control. If necessary, this process takes the hands the rest of the afternoon.
+Once the herd is settled down, the posse can try to weed out any remaining beeves carrying the parasites, but Sutter advises against it. Doing so is a time-consuming process; the only way to do it is to examine the mouths of every single individual Longhorn for telltale scratches--requiring Notice rolls each time--and would require several days. By that time, he adds, any afflicted animals would already be dead. Furthermore, there's not much the hands can do if they do find one other than watch it die or put it down.
+Regardless of the group's actions, only three more of the herd die to ticks, and they do so by the morning after the first outbreak.
+
+North to Wyoming!
+Stampede!
+Cattle are notoriously skittish critters. Gunshots, strange creatures, sometimes even just a set of railroad tracks can set them off in a panic. Stampedes are one of the big hazards on a trail drive, and the heroes are likely to face more than one over the course of this adventure. In addition to those we've already included here, Marshal, feel free to stage one anytime you feel the posse is getting a little too lackadaisical in its animal handling.
+Cowpokes caught in a stampede have to seek cover or get trampled into the dust. This requires an Agility roll (­2). On a failure, the poor sap is kicked by a few cattle as they thunder past, suffering 2d6+2 damage. Rolling a 1 on the Agility die, regardless of the Wild Die, means she's caught smack in the middle of the stampede and trampled. She takes 4d6+4 damage.
+A character must make two successful Agility rolls in a row (or succeed with a raise on one) to make it to safety.
+The fun doesn't end with just getting out of the way of the stampede though. The trail riders have got to round up the panicked herd. This requires a successful Riding roll (­4) to turn back the lead steers so everything calms down. A failed roll means the unlucky cowhand and his horse fall over and suffer the effects described above.
+
+7
+
+At the Gates of Hades
+
+With the transition to mid-summer, the weather takes a turn for the milder, lessening the threat of challenging river crossings. The crew easily fords the South Platte River at a stagecoach stop known as Latham Station, and the way north toward the Wyoming Territory seems clear. Even the ongoing guerilla warfare that seems endemic in the Disputed Territories begins to lessen the farther north the herd travels.
+After a couple days of travel through relatively gentle rolling terrain with no gunfire or stampedes, the characters probably begin to relax.
+North of Latham Station, the herd passes its closest point with the most well-guarded strongpoint of the Wasatch Railroad east of the City o' Gloom--Camp Hades. Camp Hades is heavily armed, and rightly so. It guards the eastern entrance to the Plutonian Express, the vast tunnel running from the eastern slopes of the Rockies all the way to California!
+Fortunately, the Overland Trail runs some distance west of the Wasatch encampment. Sutter believes this distance is sufficient to prevent any unwanted entanglements with the various rail enforcers in the area. Unfortunately, Hellstromme's rail gang has taken a personal interest in the Lazy S...
+Spy Games
+Not surprisingly, nearly every other Rail Baron has armed detachments or at least spies in the area to keep an
+
+eye on Hellstromme's activities. If you want to keep the posse on its toes, let them catch sight of a group of heavily armed gunmen briefly shadowing the herd from high ground in the distance. These are scouts from one or more of the other barons monitoring any unusual activity in the area. They quickly determine the Lazy S crew poses no serious threat and move on-- but possibly not before making the trail hands a bit jittery.
+One band that pays a little extra attention to the herd is Union Blue. Forewarned by its spy, Goodman, the railroad's enforcers have been on the lookout for the Lazy S crew to arrive in the vicinity. Union Blue is still on the fence about whether the party is working with Wasatch, but its gunmen are keeping their hands on their gun butts just in case.
+Wasatch Comes A-Knockin'
+About two days after crossing the South Platte, the heroes spot a steam wagon churning across the rolling terrain toward the herd. The vehicle seems bulky and oddly-shaped and somehow ominously slow-moving. Clearly, it's not a standard Smith & Robards catalog model.
+If they don't take the initiative themselves, Sutter directs the heroes to intercept the contraption before it startles the cattle.
+Upon getting closer to the steam wagon (or just allowing it to get closer to them),
+
+8
+
+the cowpokes can see the reason for the contraption's strange silhouette. The vehicle is heavily armored, with even the driver's bench surrounded by steel plating. A Gatling gun is mounted behind the driver's compartment--and manned. The gunner doesn't exactly track the heroes with the weapon but makes sure they always get an eyeful of the business end of the weapon's barrels.
+Troubleshooter The steam wagon comes to a stop
+a short distance from the posse. A tall, thin man dressed in a long, steel-gray
+
+At the Gates of Hades
+coat steps down from the passenger side. His gaze is now solely focused on the Lazy S crew--and the posse in particular.
+Jurgen Emmerich started out as an inventor in Wasatch's research facility, but the railroad quickly realized he was much better suited to the battlefield than the lab. Emmerich, a talented engineer in his own right, has a knack for solving problems. He's ruthless and impossible to deter from a course until he's accomplished his goal. As an added bonus, he sees other people as either tools or obstacles.
+
+9
+
+Deadlands: High Plains Drovers
+Greenhorns
+If your posse didn't play Bad Times on the Goodnight, your players are likely completely clueless as to what the Wasatch enforcer is talking about. They may have an inkling from the encounter with Goodman in Denver, but odds are there are a lot of confused looks. That's fine--Emmerich does exactly the same thing whether the heroes know anything or not.
+He's just that kind of guy.
+Reports have reached Wasatch that their spy in the Confederate skunk works, Roswell, attempted to escape with an important piece of intelligence. Wasatch believes that the Confederacy is close to deciphering the secret of Hellstromme's automatons and that the spy had vital information on their progress. (Actually, they're completely off-track, attempting to create a clockwork-driven mechanical man of their own.)
+The spy was killed in the escape attempt, but word from observers in the area indicates that the Lazy S herd was near the site where the Confederates caught up with the spy. The soldiers failed to recover any documents or other intelligence from the spy, so the general consensus is that someone in the Lazy S must have gotten hold of it.
+Wasatch is quite curious about that information, and has sent Emmerich to recover it. Emmerich, however, in his madness has made it his personal crusade to get the information at any cost. He makes it seem like his employers
+
+are the eager ones, but it's his own mania driving the conflict.
+Strong-arm Tactics Emmerich dismounts and marches
+determinedly up to the characters. The man radiates the warmth and personality of a cold piece of steel. He quickly states his name and that he is a representative of the Wasatch Railroad.
+It has come to my employer's attention that you or one of your fellow... "cowboys" is in possession of property of an intellectual nature that belongs to the Wasatch Railroad.
+This property is of tremendous value to my employer and he would like it returned posthaste. Of course, the perceived value of the property warrants that I render adequate remuneration on his behalf for your efforts in seeing it safely here.
+Should the group ask him what information he's talking about, Emmerich seems exasperated, as if he thinks the characters are trying a ploy of some sort. However, he does explain briefly,
+The exact nature of said property is not something I am at liberty to discuss. However, a...courier in our employ was en route to deliver this property when he ran afoul of Confederate interdiction forces in the vicinity of Roswell, New Mexico. Other sources have informed us that the Confederates did not recover our property.
+The same sources have also provided that this herd--the "Lazy S", correct?-- and its crew were the only others in the vicinity at that time. Again, we would appreciate the return of our property. Failure to do so would not be looked upon favorably, of course.
+If the party inquires as to the amount of reward Emmerich is offering, he says the railroad is willing to pay
+
+10
+
+$1,000 for the information. That sum is not up for negotiation; Wasatch set the amount and Emmerich has no influence over it. No amount of Persuasion or Intimidation directed at him can alter the reward.
+Emmerich has already decided that the Lazy S crew must be eliminated, even if they provide the documents from the spy. After all, he has no way of knowing if they've made copies or if they're even selling him the actual information the spy stole.
+If the heroes turn over the real documents from the spy, he briefly scans them and then throws them to the ground, calling them obvious forgeries. He knows the secrets of Hellstromme's automatons and realizes that the Confederate plans have nothing to do with it. He also immediately recognizes the unfeasibility of the designs and assumes the party is trying to pull a fast one. The enforcer turns sharply and returns to the wagon, which departs in a cloud of dirt and dust.
+On the other hand, if the posse cuts to the chase and attacks Emmerich, he and the wagon crew attempt to retreat. If he escapes, he returns the next day as noted in Death from Above on page 13. Should the group manage to send him to Boot Hill, there's no attack by Wasatch forces the next day. Being the mean, stubborn, vengeful sourpuss that he is, giving the Lazy S a hard time is Emmerich's own idea. As long as the cattle drive doesn't linger near Camp Hades, there's no further Wasatch intervention.
+Jurgen Emmerich: Wild Card. See page 31.
+Steam Wagon Crew (2): Use Rail Warrior stats in the Deadlands Marshal's Handbook.
+Armored Steam Wagon
+This armored model is manufactured by Hellstromme Industries exclusively for
+
+At the Gates of Hades
+use by Wasatch rail crews. The wagon is open-topped and heavily armored, which results in a vehicle that's stronger but also slower than the Smith & Robards version.
+Acc/Top Speed: 4/12; Toughness: 15 (8); Crew: 2+1; Notes: Gatling gun (Range: 24/48/96, Damage: 2d8, RoF 3, Shots 100, AP 2), otherwise as steam wagon from the Deadlands Player's Guide.
+Eight Legs, Again
+If the heroes refuse Emmerich's initial offer, around midnight allow a Notice roll for each cowpoke. Any sodbusters sleeping at that time get a ­2 to the roll. With success the snorts and moos of frightened cattle are heard coming from the western edge of the herd, about half a mile away. Should they investigate the commotion, the characters find several Longhorns dead, with large holes in their sides--not unlike those animals that fell victim to the prairie ticks recently.
+If an investigator takes a closer look, have the player make a Knowledge (Medicine) or Healing roll. Lacking either of those skills, he can roll Notice (­2). With a success, the searcher realizes that, unlike the wounds from the parasites, these appear to have been caused by an outside trauma. A Tracking roll (­2) finds small indentations in the dirt all around the dead cattle.
+Shortly after the heroes begin investigating the carcasses, another group of beeves raises a ruckus not far from their location. If the posse rushes to the sounds, they find the animals being attacked by three-foot-tall, eight-legged, mechanical horrors. The clockwork tarantulas don't take notice of the new, two-legged arrivals unless attacked, instead focusing on spraying jets of acid at the Longhorns. As soon as the characters intervene, however, the artificial arachnids turn on them!
+
+11
+
+Deadlands: High Plains Drovers
+The devices fight to the end, exploding in a burst of acid upon their "deaths."
+Clockwork Tarantulas (1 per hero): See the Deadlands Marshal's Handbook.
+Wild Prairie Fire
+Emmerich returns the next day. If the group confronts him with accusations about the clockwork tarantulas, his initial response is to ask to see the "alleged contraptions", knowing full well the devices are little more than puddles of goo. He tires of his game quickly, though, and presses his notso-subtle accusations from the day before--this time with the added threat of further mishaps.
+Perhaps some of our inventions fell into the wrong hands and were released on your cattle. That would be a terrible
+
+event if it occurred, of course. Having seen how dire possible outcomes from these circumstances can be, I'm sure you can understand my interest in recovering my employer's property. I would hate to see any further calamity befall your efforts.
+As before, regardless of the posse's response Emmerich believes the Lazy S crew is withholding information from him. He does not offer a reward this time. Even if they hand over the documents, nothing they say or do convinces him otherwise. He eventually departs, warning them that he has little patience for their "foolish obstinance".
+Less than an hour after Emmerich's steam wagon departs, have the players make a Notice roll for each hombre with any modifiers for smell. Those
+
+12
+
+who succeed detect the distinct odor of smoke in the air. Within minutes flames are visible, approaching rapidly from the east.
+The Lazy S cowboys have to react quickly to keep the cattle from stampeding wildly away from the fire. See the sidebar Controlling Cattle on page 3. Apply the modifier for an obvious threat to the cowpuncher's Riding (or Smarts) roll.
+The fire was set by a group of Wasatch X-Squad members armed with flamethrowers. By the time the crew gets the herd under control and away from the fire, the enforcers have long since departed. However, if the posse investigates, a successful Tracking roll (­2) tells them the fire was set deliberately. A raise on the roll gives the tracker enough information to guess that flamethrowers or similar devices were probably used to start the blaze.
+Death from Above
+The morning after the wildfire, Emmerich arrives once again in his steam wagon. Sutter has reached the limit of his patience with the Wasatch scientist. He dispatches the party to speak with him, but this time he sends an additional 10 cowboys as a show of force.
+The implication isn't lost on Emmerich. He does not dismount from the vehicle, opting instead to address the group from the open-topped driver's compartment. His patience has also worn thin; this time, he's past any subtlety.
+I see there were some...further difficulties, yesterday. I truly wish we could have reached an accommodation. Unfortunately, the truth is that my employers could never have been certain of our discretion even if we came to an agreement. So, I suppose, this outcome was inevitable.
+With that, he raises his left hand.
+
+At the Gates of Hades
+The Battle Is Joined
+Almost immediately in response to Emmerich's signal, a large group of X-Squaders streaks up into the sky from behind a nearby hill (24" distant), lines of smoke streaming behind their rocket packs as they leapfrog toward the herd. Simultaneously, an auto-gyro appears around the base of the hill, flying only a few dozen feet above the ground as it closes on the herd.
+The posse has one round before the Wasatch enforcers arrive. Emmerich, on his action, engages the heroes with his electrostatic gun from the passenger's seat, using bolt or burst as appropriate. The driver attempts to move away from the posse (at least 15") and the gunner opens up with the Gatling. The steam wagon's armor provides Emmerich with Medium cover (­2), the gunner with Light (­1), and the driver with Heavy (­4). Remember Emmerich is Absent Minded until a Joker is dealt, when his Schizophrenia Dementia causes him to adopt the Yellow Hindrance. These can add a little unpredictability to the fight, or even end it prematurely.
+The X-Squad troops and the auto-gyro reach the battle at the same time. When the X-Squads arrive, they immediately engage the heroes and their allies using their Gatling weapons. The auto-gyro makes a pass every two rounds. On each pass, the pilot drops a bundle of 2 sticks of dynamite (3d6, SBT) on the largest clump of Lazy S hands and/or posse members.
+Not surprisingly, the commotion startles the Longhorns and triggers a stampede away from the battle. Sutter and the remaining hands have their hands full dealing with the panicked cattle, leaving the posse and their 10 cowboys to face the Wasatch force.
+Jurgen Emmerich: Wild Card. See page 31.
+
+13
+
+Deadlands: High Plains Drovers
+X-Squad Troopers (10): Use Rail Warrior (Wasatch) stats in the Deadlands Marshal's Handbook. They have Shooting d8, Repair d6, and are equipped with rocket packs, bulletproof vests (Armor 2), and Gatling pistols (Range: 12/24/48, Damage: 2d6+1, RoF 2, Shots 12, AP 1, must fire full RoF).
+Auto-Gyro Pilot: Use Rail Warrior stats in the Deadlands Marshal's Handbook, but add Piloting d8 and Throwing d6.
+Steam Wagon Crew (2): Use Rail Warrior stats in the Deadlands Marshal's Handbook, but add Driving d6.
+Auto-Gyro Acc/Top Speed: 15/30; Toughness: 8 (2);
+Crew: 2; Cost: $8,000; Notes: Piloting ­2 in rough conditions; travels approximately 50 miles on one pound of ghost rock. See the Deadlands Player's Guide.
+Armored Steam Wagon Acc/Top Speed: 4/12; Toughness:
+12 (5); Crew: 2+1; Notes: Gatling Gun (24/48/96, 2d8, RoF 3, Shots 100; AP 2); otherwise as steam wagon from Deadlands Player's Guide.
+From Bad to Ugly
+Three rounds after the X-Squads engage the posse, a new combatant enters the battle. Chugging over the same rise behind which the other Wasatch forces hid comes one of Hellstromme's most feared creations--an automaton!
+The unholy union of necromancy and steam technology began moving at the same time as its airborne compadres, but is only now reaching the high ground. The ironclad juggernaut is 24" away when the posse first catches sight of it. It doesn't increase its speed beyond its normal Pace 4, but instead immediately opens fire, throwing a deadly hail of lead into the melee.
+
+Emmerich continues the fight until eight X-Squaders and the automaton are taken out. Should Emmerich himself fall in the fight, the rest of the human enforcers begin retreating on their next action. The automaton, however, fights to the death--or in its case, the boobytrapped explosion!
+Automaton (1): Wild Card. See the Deadlands Marshal's Handbook.
+Here Comes the Cavalry!
+The odds are definitely stacked against the Lazy S in this battle. However, let the heroes have a chance to triumph in the fight on their own. Clever tactics and luck may win the day.
+If the party is overwhelmed, all is not lost. Thanks to Goodman's report, Union Blue has been keeping close tabs on the Lazy S crew since Denver--and even closer ones as the herd neared Camp Hades. A small contingent of the railroad's cavalry enforcers, led by Goodman, has been nearby for the last few days. Once it's clear that the posse isn't in bed with Wasatch, they jump at the chance to mix it up with Hellstromme's lackeys!
+We'll leave it up to you to decide when--if at all--the posse could use a hand from the boys in blue. Once you decide things are barreling downhill like a hoopsnake racing a rockslide, the Union Blue force arrives to help out.
+If Union Blue does become involved, allow the players to control the new Extras just like regular allies. After all, at this point some of the characters may be sucking wind themselves.
+Should the caballeros manage to whip the Wasatch goons on their own, the Union Blue troops still arrive, but this time just to provide congratulations and a hearty slap on the back!
+
+14
+
+Jay Goodman: See page 30. Mounted on a riding horse (see Savage Worlds).
+Union Blue Enforcers (10): Use Soldier (Veteran) stats in the Deadlands Marshal's Handbook. Mounted on riding horses (see Savage Worlds).
+Escape from Hell
+Once the Lazy S cowpokes overcome the Wasatch forces, the railroad decides to cut its losses. Emmerich is either dead or embarrassed by his defeat and removed from any position of authority. Wasatch decides that if the Confederacy has cracked the secret of the automatons, it's already too late to close the barn door. And after their knockdown-drag-out with the X-Squad, Union Blue is convinced the posse is not in cahoots with Hellstromme.
+The rest of the trip to the Wyoming border--and out of the war-torn Disputed Territories--passes uneventfully. That is, Marshal, unless you want to throw a few complications of your own at your sodbusters.
+
+At the Gates of Hades
+
+15
+
+Into the Nations
+
+Central Wyoming is the portion of the drive that most worries Sutter. Here, after leaving the Overland Trail, the Lazy S has to cross a portion of the Sioux Nations and it's a well-known fact the Indians are notoriously protective of their land. He tells the crew he hopes to skedaddle across the corner of the Nations and be into the Wind River Canyon before the Sioux even know they were there.
+But nothing ever goes as planned-- particularly when you're trying to sneak a herd of 3,000 Longhorns through Indian territory!
+The Sioux are extremely sensitive to any violation of their territory by the white man, and one as large as Sutter's herd can't go unnoticed for long. Within two days of crossing into the Nations, a roving war party catches sight of the Lazy S herd.
+The Indian warriors don't immediately approach the herd, but they also don't go out of their way to remain unseen. Allow the heroes Notice rolls to catch sight of small bands of Indians shadowing the herd at a distance. Any attempt to approach them results in the Indians riding swiftly off into the wilderness, only to return the next day.
+The size of the herd and Sutter's trail crew dissuade the Sioux from initially attacking outright. However, each night a band of particularly adventurous braves tries to slip in amongst the herd to steal a horse or two, count coup, or even attempt to stampede some of the cattle--usually when one or more of the characters are on watch. If confronted,
+
+the Indians immediately retreat into the night rather than engage in combat.
+Sioux Braves (1 per hero): Use Indian Brave stats in the Deadlands Marshal's Handbook.
+Sinking Sand
+As if fending off a war party weren't enough, another complication comes three days later when the herd reaches the North Platte River near the Oregon Trail. If any of the posse is riding point, allow a Notice roll (­2) for the scout. On a success, the sharpeyed outrider spots a patch of quicksand on the banks of the river. If the unlucky buckaroo rolls a 1 on both his Notice and Wild Die, however, the poor sap still finds the hazard--by stepping into it herself!
+This being the Weird West, even quicksand is more dangerous. Any creature caught in the quicksand sinks completely in three rounds unless pulled out. Mounted cowpokes get another two rounds as their doomed mounts give them a little extra time. A trapped character can try to save herself with a Strength roll (­4). With success, she stops sinking further and on a raise, she pulls herself out. If a 1 shows on both Strength and Wild Die, she is sucked under immediately!
+Under the surface, a victim begins to drown as described in Savage Worlds. A submerged victim must be pulled out by someone on the surface; she can't extricate herself.
+Other cowpokes can aid a sinking hero
+
+16
+
+with Strength rolls. If the adventurer has sunk beneath the surface, it takes a Notice roll (­2) to find him and then a Strength roll (­2) to pull him out. If a rescuer gets a 1 on both his Strength and Wild Die, he's pulled into the quicksand too!
+Should the point rider not detect the quicksand (and this is guaranteed if one of the other Lazy S hands is at the head of the herd), 1d4 cattle stumble into the deadly pool before the hands can divert the rest. In this case, Sutter puts the posse in charge of rescuing any trapped cattle and/or cowboys.
+After it's identified, the cowboys can divert the cattle around the quicksand with little effort.
+Wagons, Ho!
+Although the Indians initially are reluctant to engage the Lazy S directly, every day adds a few more to their number. Shortly after crossing the North Platte, the point rider for the herd crests a rise and gets his first look at the Oregon Trail.
+It's not an awe-inspiring sight by any stretch, consisting of a pair of deeply rutted wagon wheel tracks. More awe-inspiring is the large contingent of Sioux (a hundred or more) on the opposite side of the ruts that blocks the herd's progress north. Sutter says,
+I reckon they want us to follow the trail. Maybe that's how they want folks a-passin' through?
+Clearly, fighting the Indians is a losing proposition as they outnumber the Lazy S hands more than five to one--and that's just the warriors the cowpokes can see!
+Once the herd is moving along the Oregon Trail, the Sioux flank the cattle to the north and south just out of pistol range, and a rear guard follows along behind. Any sodbuster that tries to stray from the route finds warriors converging quickly on his position. However, as long as the
+
+Into the Nations
+crew keeps to the vicinity of the trail, the Indians seem content to pace them.
+Make a Tracking roll for any saddletramps riding point. A success tells the sharp-eyed cowpuncher that a rather sizeable group of wagons, horses, and even folks on foot passed along this section of the trail within the last few days. A raise on the roll gives the tracker an estimate of six or more wagons in the group.
+A Plague of Undeath While passing through Laramie,
+a member of a wagon train fell victim to a rare critter in the Weird West--an honestto-dickens vampire. The creature chose a weaker member of the caravan as its prey, an elderly grandmother named Mildred Bower. Mildred's constitution, already compromised by disease and the hardships of the trail, broke under the added strain of the monster's feeding. She died on the trail shortly after the group departed town.
+The rest of the wagon train took her sudden failing health as a sad, but inevitable, consequence of her age and the difficulties of the frontier. She passed within two days and was buried beside the trail.
+That night, she arose as a vampire spawn and quenched her unholy thirst on other members of the group. Worse, her feeding now spread the disease to her prey. The new victims were assumed to have taken ill, but no one guessed the true nature of their affliction. Mildred rose again the next night and pursued the wagons, feeding again on her chosen prey.
+By the second night, the wagons had traveled too far from her gravesite for her to reach them, but the damage had already been done. Two more members of the group were already too far gone to save.
+Sioux shamans quickly detected the abomination the settlers brought into their territory. To prevent the undead plague from spreading further, they've
+
+17
+
+Deadlands: High Plains Drovers
+Greenhorns
+Black Dog's motivation here is all behind the scenes, a tool to trap the Lazy S with the pioneers. It's fine if your posse has no history with the vengeful shaman. In that case, Black Dog is just a particularly angry shaman who's taking advantage of an opportunity to get a little payback on a group of whites passing through Sioux territory.
+In any case, the shaman's plan ends in him getting a little comeuppance of his own--but even that comes back to haunt the heroes in the final installment of this trilogy, Range War!
+effectively quarantined the pioneers in an old abandoned fort. The two dying members finally succumbed, rising again as vampire spawn themselves and were all too happy to find a veritable smorgasbord held captive!
+Return o' the Dog Unbeknownst to the Lazy S, another old
+foe has been trailing them for some time-- Black Dog. The Comanche shaman, who the posse last tussled with back at Black Mesa, has been on their heels, slowly regaining his strength while looking for an opportune time to strike. Upon reaching the Sioux Nations, he spotted his chance.
+Black Dog convinced the warriors who'd entrapped the wagon train to drive the Lazy S herd in with the settlers--and the newly risen abominations. He hopes the vampires will make short work of the cowboys. If not, he plans to convince the Sioux to sweep in and finish off the survivors to "cleanse the land".
+
+Fort Desperation
+A day after the Sioux steer the herd onto the Oregon Trail, the point riders catch sight of what appears to be a fort beside the trail ahead. Smoke rises from inside the walls, indicating the outpost likely is manned. A number of the trail hands cheer at the sight.
+As the Lazy S crew nears the fort, it quickly becomes clear that any rejoicing was premature. The structure is obviously in bad repair. There are significant holes in the palisade and the gates are propped up. Although figures are visible atop the walls, watching the arrival of the herd, none of them look to be soldiers. They're simply pioneers or frontiersmen who've taken shelter in the army post's remains.
+Lead riders reaching the ramshackle fort find the Sioux once again blocking further progress. The Indians continue to drive the main body of the herd toward the fort, simultaneously widening their cordon. Eventually, the Lazy S hands find themselves and their herd trapped inside a roughly one-mile-diameter circle centered on the ruins of the fort--and ringed by a growing horde of Sioux warriors.
+Who's Minding the Fort?
+The folks inside the fort open the gates once the herd settles down. A small group of men comes out, led by a gray-bearded man in a flannel shirt and weathered plainsman hat. All are clearly pioneers trapped here by the same Indians that escorted the Lazy S.
+The bearded man, Rudolph Jovich, tells the heroes he's wagon master for the train.
+Are we glad to see you folks! First bit of luck we've had in a while. Those Injuns corralled us here a few days ago, and we ain't seen no other white folks since then. Weirdest thing, though. They ain't attacked us, not even a feint. They just sit over there in the distance and watch.
+
+18
+
+Rudolph points out a few corpses in the distance.
+Anyone that tries to leave the encirclement gets feathered with so many arrows he looks like an oversize pincushion. We're afraid to go round 'em up for fear of catchin' a few arrows ourselves.
+There are nearly 30 settlers camped inside the fort. The group was headed to Oregon when they ran afoul of the Sioux a few days ago. If asked, Jovich has no idea why the Indians have trapped either the pioneers or the Lazy S at the fort. The Indians have made no contact with the pioneers.
+Should the heroes press him for further details on the group's bad luck, he explains,
+One of the families lost a grandmother to consumption just outside of Laramie. To be honest, I thought she was too frail to be makin' the trip in the first place. Anyways, that cost us a couple o' days, what with her laid up sick... and then the burial.
+Here's the part I've been delayin' tellin' you. Before we ran into the Injuns, a few o' the folks started showin' signs o' illness-- smallpox, to be exact. Since we've been trapped at the fort, three have died to it. We've set up a cemetery round back. I reckon them Injuns is plannin' to keep us bottled up here until we fill it--if the sickness or arrows don't get us, starvation will.
+If the cowpokes press for a count of how many pioneers are infected, Jovich says there are presently four showing symptoms. He adds that all are sequestered in a tent near the back of the ruins.
+Should they enter the fort the characters find it every bit as ramshackle as it appeared from the outside. Nothing of the interior buildings remains standing beyond an occasional wall or door frame. In several places, large sections of the palisade have fallen down.
+Jovich has moved wagons in front of
+
+Into the Nations
+the wall breaches to block them. Although he doubts the Sioux will attack, Jovich also posted guards atop the remaining wall sections just in case. The remaining pioneers have set up living quarters in-- or in many cases under--their wagons, or in one of half-a-dozen tattered tents.
+The First Night
+Understandably, Sutter and the rest of the Lazy S are reluctant to shelter in the fort with a group of folks likely brimming with disease, although he doesn't forbid the posse members from doing so. Sutter and the other cowboys set camp a short distance from the ruins.
+Regardless of where the heroes settle in for the night, the trail hands have to keep watch on the herd. Given the proximity of the Sioux warriors, Sutter doubles the guard, with four cowboys on watch at any given time. The watch is split into two pairs, patrolling the perimeter in opposite directions as usual. This turns out to be a wise move.
+Although Black Dog has the Lazy S trapped with a group of plague-ridden vampires, his patience has worn thin over the past weeks as he followed the herd. Rather than wait it out, the shaman stirs up a band of scalp-hungry young Sioux for a night attack on the cowboys. Although he won't go out of his way to spare the pioneers, his wrath is focused pretty squarely on the Sutter crew--and, in particular, the characters themselves as they've likely played a significant role in handing him numerous defeats recently.
+The raid occurs when most or all of the heroes are sleeping. The Indian raiders time their infiltration to bypass the watch and sneak into wherever the posse is holed up. Allow a Notice roll (­2) for sleeping cowpokes to detect the warriors before the attack begins. Those who fail are surprised the first round.
+
+19
+
+Deadlands: High Plains Drovers
+Black Dog's Demise
+After fleeing the battle, Black Dog does not immediately return to the safety of the Sioux encampments. Instead, he circles back to spy on the posse and the rest of the trapped pioneers and cowboys. Ironically, he runs afoul of one of the very abominations he hoped would slay the heroes.
+Although the heroes are unlikely to learn of his fate until the last installment in the Blood Drive trilogy, Black Dog contracts the vampire's disease and ultimately dies from it. Unfortunately for the characters, this isn't the end for him though...
+Black Dog starts the attack by using his fear power on the greatest concentration of targets. Once the raid is detected, other cowboys (or pioneers, if the party is sleeping inside the fort itself) rally to the defense after two rounds. Once half the braves fall, the rest retreat. Black Dog flees using shape change if he suffers two or more wounds.
+Black Dog: Wild Card. See page 30. Sioux Warriors (2, plus 2 per hero): Use Indian Brave stats in the Deadlands Marshal's Handbook, unmounted. Lazy S Cowboys (5): See page 31. Pioneers (10): Use Townsfolk stats in the Deadlands Marshal's Handbook. Half are armed with shotguns (Range: 12/24/48, Damage: 1­3d6, RoF 1, Shots 1, Shooting +2), the other half with Springfield rifles (Range: 24/48/96, Damage: 2d10, RoF 1, Shots 1, AP 2, reload 2).
+
+Epidemic
+The next day, the adventurers learn that another member of the wagon train has died of disease and two more have begun exhibiting symptoms of smallpox. Worse yet, one of the Lazy S cowboys is as well. The news makes the rest of the trail hands understandably nervous; smallpox usually doesn't move that quickly!
+If any of your hombres examine either the deceased pioneer or the new plague victims, allow a Knowledge (Medicine) roll. A Healing roll (­2) also works. With a success, he can confirm that the afflicted is indeed suffering from smallpox, albeit an extremely virulent form. With a raise, the sharpeyed sawbones spots a pair of puncture wounds in a cluster of pox blisters on the victim's neck (or wrist or ankle if you want to be creative, Marshal). Should the character choose to check other victims, she finds similar wounds on all of them.
+A Vigor roll must be made for anyone who comes in contact with any of the pox victims, or she contracts the unnatural plague as well. The hero who conducts the examination certainly qualifies for this check. See the Plague Vampire stats on page 31 for details.
+It's certainly possible that sharp-eyed-- and suspicious--hombres may put the clues together and guess that vampires are to blame. Should they decide to exhume the bodies of the three earlier plague victims, good for them! If exposed to sunlight, the creatures instantly burst into flame and burn to dust.
+However, even if the fearless monster hunters succeed in detecting and destroying the existing plague vampires, there are still four pioneers and one of their own crew infected. Should any of
+
+20
+
+them die, they rise the following night as plague vampires themselves!
+Trapped Daytime at the ruins consists largely
+of sitting and trying to stay out of the blistering sun as much as possible. There is no nearby water source and the pioneers have begun to run low on their own supplies. Although the Lazy S chuck wagon has a full water barrel, it's not capable of supporting even just the trail crew for more than a few days.
+For their part, the Indians seem content to watch from the distance, acting only to cut off attempts to escape the encirclement. Anyone who tries to break or sneak out quickly finds a large band of warriors blocking his route. The Sioux engage any cowpokes trying to escape with their bows and avoid hand-to-hand at all costs. If the escapee turns back, the warriors immediately break contact and return to their positions on the perimeter.
+Sioux Warriors (2, plus 2 per hero): Use Indian Brave (Veteran) stats in the Deadlands Marshal's Handbook. An additional two warriors arrive every other round.
+Midnight Snack
+The second night the Lazy S is trapped at the ruined fort, the heroes get a shot at their first encounter with the plague vampires. Late in the night, long after the camp has settled in, the newest of the unholy bloodsuckers creeps into camp, intent on taking a drink from some unlucky sap-- and if it's one of the posse, all the better!
+Hoping to avoid discovery, the vampire chooses a sleeping victim on which to feed. Allow a Notice roll (­2) for a sleeping character to detect the abomination, opposed by the vampire's Stealth. Its bite not only doesn't awaken the victim, it actually makes them sleep deeper--any rolls
+
+Into the Nations
+to awaken are at an additional ­2.
+On the other hand, if the party was cautious enough after Black Dog's raid to start posting a guard, allow any pistolero on watch to roll his Notice against the undead's Stealth with no modifier to catch the creature before it starts to feed. Once it's feeding, the guard gets a Notice roll to spot the critter. In this case, though, the poor soul has to make the Vigor check to avoid contracting the fiend's pox.
+Even a single plague vampire can be a handful for unprepared parties. If the heroes are having too hard a time, Marshal, you can have the abomination flee if it's confronted directly with any of its weaknesses. On the other hand, if they make too quick work of the abomination, as soon as the posse puts down the one in its camp, screams erupt from the circled wagons as the other three are discovered there!
+Plague Vampires (1­4): See page 31.
+Curing the Plague...Vampires Once the wranglers have identified the
+true source of the epidemic ravaging the pioneers, they are likely to make quick work of the creatures. During the daytime, all it takes is a little digging to turn a terror of the night into undead flambé. However, the heroes' trials at the abandoned fort aren't quite done.
+The Sioux continue to surround the area until the last of the folks infected by the plague vampires either recover or die--and are permanently put down. When the last possible carrier of the plague is cured or eliminated, the warriors melt back into the wilderness, leaving the way clear for the wagon train and Lazy S to continue on its way.
+In recognition of the Lazy S crew's efforts in defeating a scourge of the Reckoners, the Sioux shamans convince the rest of their respective tribes to allow the herd to pass unmolested the rest of the way across the Nations.
+
+21
+
+The Home Stretch
+
+The herd leaves the recognized boundaries of the Sioux Nations at the foot of the Owl Creek and Bridger Mountains. The two ranges are separated by Wind River Canyon. North of the canyon, the river is commonly referred to as the Bighorn River, but in southern Wyoming most folks know it as the Wind River.
+The ranges themselves pose a nearly insurmountable obstacle to a herd the size of Sutter's, but the canyon itself--while narrow--offers what the rancher hopes will prove to be a shortcut to the Bighorn Basin, and his new property, to the north.
+At the southern mouth, the river flows north into the canyon between cliff walls that rise in places to almost half a mile to either side. The canyon twists its way between the two mountain ranges for nearly 20 miles. There is precious little room between the canyon walls for anything besides the river itself.
+It doesn't take a frontiersman to see it won't be an easy route by any stretch.
+Death on the Wing
+Travel in the canyon is every bit as difficult as it appeared from the mouth. The river bottom is covered with rocks and the banks, wedged between the rushing water and steep cliffs, are often narrow--or nonexistent. More than once, the riverbank peters out on one side, while roaring rapids make crossing the Wind River impossible. These dead-ends force the Lazy S hands to convince 3,000 or so ornery Longhorns to do an about-face and
+
+backtrack to a suitable fording spot.
+By the end of the day, the herd has barely moved five miles into the canyon.
+That night, the crew gets an unwelcome visit from the night sky. About four hours after the trail hands bed down, a fair-sized colony of devil bats that roost in the cliffs of the canyon descend on the camp. The beeves are too large for the nocturnal predators to snatch up, but the cowboys themselves are just the right size!
+Have players make Notice rolls for the posse members against the devil bats' Stealth, applying a ­2 modifier for any sleeping cowpunchers. Those who fail are surprised as the airborne critters swoop down on their prey. The bats aim to scoop up a victim and drop them on the rocks of the canyon floor, and only stand--or hover--and fight if the heroes somehow restrain them from flying away.
+The creatures fight until more than half their number are Incapacitated, at which time the rest soar away into the darkness.
+The good news is that, for once, the confined nature of the canyon works to the Lazy S cowboys' advantage. Due to the lack of open space, the danger of a stampede is largely negated. The cows can only travel north or south and it's fairly easy for the crew to round them up after the battle--no rolls needed.
+Devil Bats (2 per hero): See the Deadlands Marshal's Handbook.
+
+22
+
+A Trestle Too Far
+The next day, Sutter sends the heroes riding ahead in the hopes of avoiding dead-ends and backtracks as the herd moves further into Wind River Canyon. About midday, the scouts hear the sound of sustained gunfire echoing down the canyon from the north. A lot of sustained gunfire.
+Regardless of whether they approach stealthily or charge in, the posse is greeted with the sight of an intense battle taking place in the canyon ahead:
+Two heavily armed groups--one toting flamethrowers, Gatling weapons, and other outlandish mechanical devices, and the other not so well-equipped but holding a decided advantage in sheer numbers--have squared off over a railroad trestle that crosses the Wind River at this point. They seem in no mood to take prisoners.
+
+The Home Stretch
+Neither side, however, takes any notice of the group's arrival.
+Old Wounds
+Three years ago, a detachment of Iron Dragon enforcers was dispatched to stop the construction of a railroad trestle by Wasatch. Initial reports indicated that the railroad was trying to flank Iron Dragon and cut off Kang's Montana line from the south. In reality, the entire operation was an elaborate scheme by Hellstromme to decoy Kang from looking too closely at Camp Hades-- where they might have caught sight of the first tests of the Hellbore. The trestle was nothing more than an enormous, wooden sleight-of-hand built in the middle of nowhere.
+Iron Dragon scouts eventually detected the deception. Wasatch hadn't even laid real rails to the bridge. Kang's field commanders chose not to reinforce and sent a messenger to sound retreat. Unfortunately, the messenger fell victim to a roving band of Sioux raiders and never reached the battlefield. Wasatch, on the other hand, had always intended for its enforcers to die in place; it just never told them that.
+For days, Kang's forces tried to seize control of the bridge from Wasatch defenders who were just as determined to hold it. Between the advanced weaponry available to Hellstromme's men and the superior numbers of Iron Dragon, the two sides proved remarkably effective at killing each other. By the end of a week, the only survivors were those too wounded to hold a rifle or the carrion birds that quickly picked the corpses clean.
+Now, each year on the anniversary of the pointless battle, the fallen rise to throw themselves again and again into the meat-grinder that claimed their lives...and now their souls.
+
+23
+
+Deadlands: High Plains Drovers
+The Last Command
+From a distance, there is nothing to tell the posse anything is amiss on the battlefield. Wasatch forces occupy the shore closest to the heroes, while the Iron Dragon troops are fairly well-entrenched to the west. East of the trestle, a flag bearing the Wasatch emblem flies near a pair of tents atop high ground. To the west, a similar group of tents is marked by an Iron Dragon banner.
+As noted, none of the enforcers seems to pay any attention to the party's approach. In fact, although numerous armed men patrol the area, the posse can ride right up to the command tents without being challenged. It's almost as if the heroes weren't even there...
+Battlefield o' the Damned Fear Level: 3
+Should they go near the fighting, the cowpokes can't help but notice the combatants ignore them. Even if spoken to directly, none of the enforcers pays the slightest attention to the heroes. Attempts to make physical contact with any of the fighters produces an unsettling result: the hombre's hand (or whatever) passes through the figure. The group is on a battlefield filled with ghosts!
+When the unnatural nature of the rail gangs is revealed, have the players immediately make Guts rolls for all posse members. The spirits take no notice of the living amongst them--much less act against them--but it is more than a little unnerving to be surrounded by dozens of wraiths and phantoms.
+With a successful Common Knowledge roll, shrewd cowboys realize there's simply no way the trail hands can move a herd of skittish cattle through the ghostly combat zone.
+
+There is one last--and possibly lethal-- complication as well. Although the ghosts are immaterial and take no notice of the presence of the heroes, the bullets they fire are as deadly as they were when the two gangs first fought over the bridge. Each round the cowpokes remain on the battlefield (roughly the area between the two command tents), roll a d6 for each posse member (and their mounts)--on a 1, a stray rifle bullet strikes the poor devil for 2d8 damage!
+A Commander's Lament
+If the heroes decide to investigate further, the only standing "structures" on the battlefield (other than the trestle itself, of course) are the clusters of tents on opposite sides of the river.
+The Wasatch tent is the closest, and easiest by far, to approach. Unlike the Iron Dragon command post, attaining the Wasatch command center doesn't require crossing the haunted battlefield. It does require dodging the occasional ghostly courier--or walking through it, which provokes a Guts roll--running to and from the tent with messages from the fight below.
+The route also takes them past the makeshift field hospital the rail gang set up. The "dead" and "dying" are laid out on the ground almost haphazardly, and a corpsman wanders amongst them in a vain attempt to somehow ease their suffering. The men's wounds are horrific and were obviously mortal in life. Anyone taking too close a look must make a Guts roll against nausea or suffer ­1 to all Trait rolls for the rest of the time she's at the battlefield.
+Read the following when the group reaches their goal:
+Reaching the command tent, you find it to be substantial unlike the ghostly combatants. However, the fabric is long
+
+24
+
+faded and tattered, as if the tent has somehow stood for years against the elements. The Wasatch banner outside is likewise badly weathered and frayed, and the pole from which it flies is sun-dried and cracked.
+Inside the tent, the phantom of the Wasatch commander speaks to another enforcer. The commander seems weary, almost saddened, at the carnage taking place in the canyon, but resigned to do his duty.
+"Our orders are to hold the Dragon forces here as long as we can," the commander says.
+"We can hold them until Hell busts loose, but I don't think we can beat them," the other specter answers. "There's just too many of them and they ain't showin' any signs of retreat."
+"As long as that bridge stands, we are to keep fighting."
+The ghosts return to discussing their battle plans. If the party remains to listen, it becomes clear the plan is more of the same. The Wasatch enforcers were tasked with keeping the opposing gang occupied without destroying the trestle. To do so, they were resigned to turning the ford into a meat grinder.
+There She Blows!
+Hopefully, the players key to the fact that the trestle acts as an anchor, keeping the spirits tied to this area. If not, Marshal, you can nudge them in that direction with a Knowledge (Occult) roll--or maybe even a Common Knowledge roll if the adventurer has an appropriately bizarre background.
+Even a brief examination of the trestle grants the characters a Smarts or related Knowledge roll (Railroads, Engineering, Architecture, or the like). With a success, the hero recognizes that the trestle is not that well-constructed. Wasatch put far
+
+The Home Stretch
+The Other Side of the Story
+If your gunslingers decide to brave crossing the battlefield (or simply ford the river far enough south of the trestle to avoid the fight), they can visit the Iron Dragon tents. There they find the commander poring over his own battle plans, which mostly consist of simply trying to overcome the Wasatch X-Squads with sheer numbers. The confines of the canyon eliminate nearly any other tactical option--and favor Hellstromme's well-armed force.
+Listening in on the Iron Dragon leaders' conversation reveals to the eavesdroppers that they suspect the trestle is a decoy, but that they are under orders to seize it at all costs.
+more effort into making it look like a viable bridge than in actually making it one. Sufficient damage to the trestle anywhere in its lower midsection is likely to bring the entire structure crashing down.
+Nonetheless, it is still a rather large structure and requires a fair amount of explosives to bring down. Dropping the bridge quickly--with "quickly" probably being foremost in the cowpokes' minds as phantom bullets whiz by!--requires bringing down several of the supports at once. This translates to a single attack dealing at least 25 points of damage in an area equal to a Large Burst Template.
+Certainly, dedicated (or bulletproof) folks can certainly give it a go with an axe or saw, but the weight then has time
+
+25
+
+Deadlands: High Plains Drovers
+to settle onto other supports resulting in a larger number needing to be destroyed. That means hours--if not days--of work, all the while dodging ghostly missiles.
+Solving Problems with Explosives Searching the other tents in the Wasatch
+or Iron Dragon command posts requires a Notice roll. A success uncovers a dusty crate at the back of the tent covered by debris. Inside are 24 sticks of old dynamite, coated with more than a few drops of some clear liquid.
+Allow a Common Knowledge (or related Knowledge) roll for any hero with a background in mining, demolitions, railroads, or chemistry. On a success, he realizes the dynamite is "sweating" nitroglycerin and highly unstable. The same roll also tells him there is more than enough explosive present to bring down the bridge--three damage rolls of 5d6, as a Heavy Weapon in a Large Burst Template, if all the sticks are used at once.
+However, dropping the dynamite or even just subjecting it to a severe enough bump may cause it to detonate--snake eyes on any Agility roll causes it to explode and inflict full damage. If the posse has access to enough explosives without having to resort to carting sweaty dynamite almost a hundred yards, that's great--and not in the least because a group of riders that carts that much destruction with them everywhere they go is bound to provide hours of amusement for you, Marshal!
+Ghost War
+As if lugging a crate full of high explosives just looking for an excuse to detonate isn't enough of a complication, the posse has to cross a battlefield occupied by guntoting phantoms. The dynamite needs to be placed virtually at the waterline of the Platte to bring the trestle down.
+
+Each round they're on the battlefield, the heroes are exposed to the risk of getting hit by a stray bullet as noted under Battlefield o' the Damned (on page 24). Anyone carrying the unstable explosives who is at least Shaken, whether by damage or another effect, must make an Agility roll to avoid nitrofueled disaster--on snake eyes the cargo goes boom.
+From the Wasatch (or Iron Dragon) command post to the southern bank is 120 yards (60")--that's 10 rounds of movement for a gunslinger with a Pace 6. Attempting to run while carrying the dynamite requires the character(s) to make Agility rolls each round to avoid stumbling, dropping, or otherwise jostling the explosive enough to set it off. Walking carries no risk of this.
+The case weighs 30 lbs., so it may reduce the Pace of a hero unlucky enough to be carrying it solo. The posse doesn't have to take the full amount or the case itself. Of course, they might regret taking too few sticks later if they fail to bring the trestle down on the first attempt!
+Should they think of using a horse or pack animal to carry the dynamite, allow the foolhardy bronco-busters a Riding roll to realize that's a bad idea. Even horses well-conditioned to the sound of gunfire are skittish due to the pervading presence of the supernatural on the battlefield.
+Each round an animal moves across the battlefield, make a Guts roll for it. The animal's handler can substitute a Riding roll (­2) for the animal's Guts roll if desired. On a failure, it bolts or begins bucking--either of which is sufficient to set off the volatile explosives.
+
+26
+
+The Home Stretch
+
+Who's That Tripping Under My Bridge?
+Once the intrepid demolitionists get the dynamite to the base of the bridge, they're far from out of danger. In fact, they're probably in deeper.
+Lying in wait in the muddy water of the Wind River is the only "survivor" of the battle--a 'glom. The grotesque undead abomination comes roaring and babbling out of the water once any posse member gets within 6" (12 yards) of the shoreline. Treat the monster as if it were on Hold and allow the heroes Notice rolls (at ­4 due to the dark water covering it) to avoid surprise as normal.
+When the horrid 'glom first appears, have players make appropriate Guts rolls for the posse members. The abomination
+
+charges the nearest cowpoke. Although it holds a few firearms, none of the weapons work, having succumbed to rust and disrepair. Instead, it just uses them as clubs (Str+d4 damage).
+This is likely to be a difficult combat. To keep things moving along quickly, Marshal, you might ignore the chance of random ghostly bullets striking pistoleros during the fight. After all, the party probably already has its hands full here anyway!
+A resourceful posse can kill two birds with one stone by luring the `glom near the trestle and detonating the dynamite with it in the blast effect, but this may take some clever tactics and maneuvering to accomplish.
+'Glom (1): Wild Card. See the Deadlands
+
+27
+
+Deadlands: High Plains Drovers
+Marshal's Handbook. There are currently six corpses incorporated into the 'glom, giving it Strength d12+2, Vigor d12+2, Size +5, and Toughness 16.
+Wind River Trestle's Fallin' Down Assuming the heroes succeed in dealing
+enough damage to the bridge, it collapses cataclysmically into the river. The splash from the river drives water 2" (12 feet) up onto the banks, requiring anyone in that area to make a Strength roll or be swept off their feet. Fortunately, the river isn't deep enough to pose a drowning threat, but snake eyes on the roll means a hero sustains 2d6 damage. Dust billows out from the fallen timbers on either shore, momentarily obscuring the sight of anyone within 4" (25 feet) for 1d4 rounds.
+When the dust clears, the hombres see the ghosts of the combatants stop firing and look almost reverently toward the ruins of the bridge. A profound silence falls over the battlefield. Then, almost as one, they lay down their arms, turn, and walk up the banks, fading from sight shortly thereafter.
+After the Fall If the party decides to look for any
+items left over from the battle, they find numerous rusted (and useless) rifles, pistols, and the like. There are even a few gizmos remaining from the Wasatch enforcers, but all are too badly damaged to be of any use. If you're feeling generous, Marshal, you may allow a mad scientist to recover a few spare parts with a successful Repair roll.
+However, should they succeed in destroying the 'glom, either with the dynamite or just simple brute force, allow Notice rolls for all the cowpokes involved. With a success, the character with the highest total spots a rusted Gatling shotgun (see the Deadlands
+
+Player's Guide) clutched in one of the abomination's hands. A few hours' work and a successful Repair roll restore the weapon to full functionality.
+With the fall of the bridge, the ghosts are released from their ties to the world and depart, leaving the canyon open to passage.
+End o' the Trail
+From the trestle, it's barely another day's travel to the northern end of the canyon. There, the Wind River becomes the Bighorn River and it's a relatively peaceful ride north into the Bighorn River Basin, where Sutter's land grant lies. (Of course, Marshal, if you want to put a few more hurdles of your own in front of your posse, feel free!)
+The land he's purchased lies near Darkwater, a small town on the Bighorn River. Upon arrival in the vicinity of Darkwater, he settles up with any trail hands who want to depart--including the posse--while leaving the option to remain in his hire open to any who wish to do so. After all, raising a ranch isn't a one-man task by anyone's standards and he's happy to get what help he can.
+If the posse accepted his offer for a portion of the original herd, they're likely invested in the well-being of their own cattle. In that case, Sutter welcomes them to stay and, in return for their assistance in building the ranch, their cattle can graze the land as well.
+For posses playing this adventure as a one-shot, this is their jumpingoff point from the herd. Besides, the Bighorn Basin with its proximity to both the Sioux Nations and the strangeness in Yellowstone might make an interesting location for your heroes to explore!
+
+28
+
+Friends & Foes
+
+The following characters appear in the adventure to lend a helpin' hand or try to clean the posse's collective plow, as noted in their descriptions. Wild Cards are marked with a handy marshal's badge, thusly:
+Abigail "Abby" Morton Abby is the youngest of Sutter's
+crew, barely 18 years old. She's Sutter's niece who moved out West to live with her uncle after her parents died in a cholera outbreak less than a year ago. Not having much experience with raising young women, Sutter has been treating her more or less like a slightly favored ranch hand, although he is quite fond of her.
+The young woman is trying hard to adapt to her new life and, as a result, often asks about three questions too many on any given subject. She is likely to latch on to a hero who seems competent--or even just confident--as a surrogate for her parents (although she'll never admit it).
+Attributes: Agility d8, Smarts d6, Spirit d6, Strength d6, Vigor d6 Skills: Fighting d6, Guts d6, Notice d6, Riding d8, Shooting d6, Survival d4, Throwing d4, Tracking d4 Charisma: 0; Pace: 6; Parry: 5; Toughness: 5 Hindrances: Big Mouth, Curious, Loyal Edges: Luck, Quick
+
+Gear: Single-action Colt Peacemaker (12/24/48, 2d6+1, RoF 1, Shots 6, AP 1), 20 spare rounds (.45), Winchester '73 (24/48/96, 2d8, RoF 1, Shots 15, AP 2), 20 spare rounds (.44-40), lariat (Parry ­1, Reach +2, Can be used to perform an Agility Trick using the wielder's Fighting skill. Success means the opponent suffers ­2 Parry until his next action. With a raise the opponent falls prone, suffers ­2 Parry, and is Shaken), horse, chaps, saddle.
+Bill Sutter Bill Sutter is as tough as the land where he makes his home. During the war, he served in the Army of Tennessee and fought against General Sherman during his march across the Confederate states. He still carries shrapnel in his right leg from a wound he suffered during the Battle of Atlanta.
+Sutter has spent years building his spread, fending off attacks by Comanches, Mexican banditos, and other things that still give him nightmares. Sutter's not about to roll over and die just because some city slicker in New Orleans has taken a liking to his herd.
+Attributes: Agility d6, Smarts d8, Spirit d8, Strength d6, Vigor d6
+Skills: Fighting d8, Guts d8, Intimidation d6, Knowledge (Battle) d6, Notice d6, Riding d8, Shooting d10, Survival d6, Throwing d6, Tracking d4
+
+29
+
+Deadlands: High Plains Drovers
+Charisma: 0; Grit: 3; Pace: 5; Parry: 6; Toughness: 5
+Hindrances: Code of Honor, Slowpoke, Stubborn
+Edges: Harder to Kill, Level Headed, Steady Hands, True Grit
+Gear: Double-action Colt Peacemaker (12/24/48, 2d6+1, RoF 1, Shots 6, AP 1), 20 spare rounds, double-barrel shotgun (12/24/48, 1­3d6, RoF 1­2, Shots 2, +2 Shooting rolls), 20 spare shells, lariat (Parry ­1, Reach +2, Can be used to perform an Agility Trick using the wielder's Fighting skill. Success means the opponent suffers ­2 Parry until his next action. With a raise the opponent falls prone, suffers ­2 Parry, and is Shaken), horse, chaps, saddle.
+Black Dog Black Dog, or To'sarre, is a renegade Comanche shaman. For years, he raided settlers in and around Sutter's Flats until the rancher and a posse of locals hunted him down. He signed on with the Confederate Army in exchange for a pardon, but was drummed out within less than a year for killing several Union soldiers under a flag of truce.
+Recently, the shaman found a home with Bayou Vermilion when the railroad was laying track through western Texas and New Mexico. In the railroad's employ, Black Dog's cruelty and viciousness has proven not a liability, but rather an asset. Although voodoo is more commonly practiced by LaCroix's magicians, Black Dog's formidable mystical skills as a shaman are highly valued by the railroad.
+Although Sutter doesn't know it, he's the last surviving member of the posse that captured Black Dog. The shaman intends to see he doesn't enjoy that
+
+status for much longer...
+Treat Black Dog as a Seasoned Rank character for spell-casting purposes.
+Attributes: Agility d6, Smarts d8, Spirit d10, Strength d6, Vigor d8
+Skills: Fighting d8, Guts d8, Knowledge (Occult) d6, Intimidation d8, Notice d6, Riding d8, Shooting d8, Stealth d8, Survival d6, Tracking d8, Tribal Medicine d10
+Charisma: ­2/­4; Grit: 2; Pace: 6; Parry: 6; Toughness: 6 Hindrances: Mean, Vengeful (Major), Outsider
+Edges: Arcane Background (Shamanism), New Powers
+Powers: Beast friend, boost/lower trait, fear, shape change, wilderness walk.
+Power Points: 15 Gear: Winchester '76 rifle (Range: 24/48/96, Damage: 2d8, RoF 1, Shots 15, AP 2), 20 spare rounds (.45), Bowie knife (Damage: Str+d4+1), horse, saddle.
+Jay Goodman A former Pinkerton agent, Goodman does fieldwork for the Union Blue railroad. He is a master of disguise and infiltration. A true "gray man", he is utterly non-descript and unimposing, which allows him to ease into virtually any role necessary. He is both highly intelligent and a trained observer. When on a mission, he works hard to avoid physical confrontations. But if push comes to shove, Goodman is quite handy in a fight.
+Attributes: Agility d8, Smarts d8, Spirit d8, Strength d6, Vigor d6
+Skills: Fighting d6, Guts d6, Investigation d8, Lockpicking d6, Notice d10, Persuasion d6, Shooting d8, Stealth d8, Streetwise d10
+
+30
+
+Charisma: 0; Grit: 1; Pace: 6; Parry: 5; Toughness: 5 Hindrances: Cautious, Enemy (Minor: Opposed rail warriors)
+Edges: Dodge, Investigator, Level Headed Gear: Single-action Colt Peacemaker (Range: 12/24/48, Damage: 2d6+1, RoF 1, Shots 6, AP 1), 20 spare rounds (.45), Winchester '73 (Range: 24/48/96, Damage: 2d8, RoF 1, Shots 15, AP 2), 20 spare rounds (.44-40).
+Jurgen Emmerich Emmerich is a veteran enforcer for Wasatch and a fairly capable inventor in his own right. One thing he isn't is a "people person." He's as bad tempered as a wet polecat, which might make him well-suited for the battlefield, but not so much for public relations.
+He favors a weapon of his own creation, a pistol-like device attached to a backpack. The backpack stores up electrical energy which the gun can deliver in a variety of forms: single shot, a short arc, or a ball of St. Elmo's fire-like energy that erupts at a preset distance.
+Attributes: Agility d6, Smarts d10, Spirit d6, Strength d6, Vigor d6
+Skills: Fighting d4, Guts d8, Knowledge (Science) d8, Notice d4, Repair d8, Shooting d6, Weird Science d10
+Charisma: ­2; Grit: 1; Pace: 6; Parry: 4; Toughness: 7 (2) Hindrances: Mean, Stubborn, Vengeful (Major)
+Dementias: Absent Minded, Schizophrenia (Yellow Hindrance)
+Edges: Arcane Background (Weird Science), New Powers
+Powers: Bolt, blast, stun (all electrical energy effects from Electrostatic Gun). Power Points: 20
+
+Friends & Foes
+Gear: Bulletproof vest (Armor +2), restoration elixir (1 dose), electrostatic gun.
+Lazy S Cowboy Only the toughest and most reliable
+ranch hands are still in Sutter's employ. The rest cut out early on when it was clear Sutter was going to tussle with any thugs that got in his way. Those who remain have stood by the rancher through fights with rustlers, outlaws, and even Santa Anna's troops. They're in for the long haul.
+Attributes: Agility d8, Smarts d6, Spirit d6, Strength d6, Vigor d8 Skills: Fighting d8, Gambling d4, Guts d6, Notice d6, Riding d10, Shooting d6, Survival d4, Taunt d6, Throwing d6, Tracking d4 Charisma: 0; Pace: 6; Parry: 6; Toughness: 6 Hindrances: Loyal, Poverty Edges: Steady Hands Gear: Colt Army (12/24/48, 2d6+1, RoF 1, Shots 6, AP 1), Winchester '73 rifle (24/48/96, 2d8, RoF 1, Shots 15, AP 2), 40 spare rounds (.44-40), lariat (Parry ­1, Reach +2, Can be used to perform an Agility Trick using the wielder's Fighting skill. Success means the opponent suffers ­2 Parry until his next action. With a raise the opponent falls prone, suffers ­2 Parry, and is Shaken), horse, chaps, saddle.
+Plague Vampire A plague vampire is spawned when
+a vampire feeds on a victim who is already afflicted with a serious disease such as cholera, smallpox, or typhoid. Such individuals may arise as a rare type of undead that not only preys on the living, but is also capable of spreading disease amongst its victims.
+
+31
+
+Deadlands: High Plains Drovers
+
+One such abomination is capable of destroying an entire town--not so much through its vampiric depredations as the resultant epidemic.
+Plague vampires are horrific in appearance, often bearing pus-filled sores or pock-marks on their exposed skin. They are more susceptible to fire than "normal" vampires, perhaps due to the nature of the unnatural disease that courses through their veins.
+Attributes: Agility d8, Smarts d8, Spirit d8, Strength d12+1, Vigor d8
+Skills: Fighting d8, Guts d8, Intimidation d8, Notice d6, Swim d8, Throwing d6
+Pace: 6; Parry: 6; Toughness: 8
+Special Abilities:
+· Claws: Str+d4.
+
+· Frenzy: Plague vampires can make two attacks each round with a ­2 penalty to each attack.
+· Fear (­2): Seeing one of these plague-ravaged undead provokes a Guts roll (­2).
+· Infectious Bite: When a plague vampire feeds, make a Vigor roll (­2) or the victim become infected with whatever disease the monster carries.
+· Invulnerability: Plague vampires can only be harmed by their Weaknesses. They may be Shaken by other attacks, but never wounded.
+· Pox: Characters infected with the vampire's pox must make a Vigor roll each day after the initial exposure or gain a level of Fatigue. If they make three such Vigor rolls
+
+32
+
+in a row, they recover from the disease. However, should they fail a Vigor roll while Incapacitated, they die. Fatigue caused by the vampire's pox can only be regained after the character recovers from the disease. Anyone who comes in contact with a pox victim (by touch) must also make a Vigor roll to avoid becoming infected.
+· Sire: Anyone slain by a plague vampire has a 50% chance of rising as one of the creatures in 1d4 days.
+· Weakness (Fire): A plague vampire takes normal damage from fire and fire-based attacks.
+· Weakness (Holy Symbol): A hero with a holy symbol may keep a vampire at bay by displaying a holy symbol and beating the monster in a test of Spirit.
+· Weakness (Holy Water): A plague vampire sprinkled with holy water gains a level of Fatigue. If immersed, the monster combusts as if it were in direct sunlight (see below).
+· Weakness (Invitation Only): Plague vampires cannot enter a private dwelling unless they are invited.
+· Weakness (Stake Through the Heart): A plague vampire hit with a called shot to the heart (­4) must make a Vigor roll versus the damage. If it fails, it disintegrates into dust; otherwise, it takes normal damage.
+· Weakness (Sunlight): These undead catch fire if any part of their skin is exposed to direct sunlight. After that, they suffer 2d10 damage per round until they are dust. Armor grants no protection.
+
+Friends & Foes
+Texas Longhorn Longhorns are rangy and tough, with
+horns that average around six feet from tip to tip, but may grow up to eight feet or more. The animals are natural survivors and are capable of finding food, water, and even shelter in bad weather on their own.
+Attributes: Agility d6, Smarts d4 (A), Spirit d4, Strength d10, Vigor d10
+Skills: Fighting d6, Notice d6, Survival d4 Pace: 8; Parry: 5; Toughness: 9 Special Abilities: · Gore: Cattle use the charge
+maneuver to gore their opponents with their horns. If they can move at least 6" before attacking, they add +4 to their damage total.
+· Horns: Str+d6. · Size +2: Longhorns are large
+creatures, weighing well over half a ton.
+
+33
+
+Deadlands: High Plains Drovers
+34
+
+

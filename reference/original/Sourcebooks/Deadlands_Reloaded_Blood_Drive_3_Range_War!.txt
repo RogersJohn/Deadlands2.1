@@ -1,0 +1,760 @@
+BLOOD DRIVE III:
+RANGE WAR!
+
+Range War!
+by John Goff
+Savage Worlds by Shane Lacy Hensley
+Additional Material and Editing: Matthew Cutter Deadlands Brand Manager: Matthew Cutter Art Director: Aaron Acevedo
+Layout and Graphic Design: Aaron Acevedo, Travis Anderson, Simon Lucas, Matthew Cutter Cover Artist: Tomasz Tworek
+Interior Artwork: Tomasz Tworek Cartography: Alida Saxon
+Pinnacle Entertainment Group grants permission to print this document, in whole or in part, for personal use. Any electronic distribution is strictly forbidden.
+© 2012 Pinnacle Entertainment Group. Deadlands, Smiling Jack, Savage Worlds, and all related marks and logos are trademarks of Pinnacle Entertainment Group. All Rights Reserved. Produced under license by Studio 2 Publishing, Inc. The Studio 2 logo is a trademark of Studio 2 Publishing, Inc. ©2012. All Rights Reserved.
+
+Contents
+
+Introduction
+
+1
+
+The Story So Far.  .  .  .  .  .  .  .  .  .  .  .  . 1
+
+New to the Trai.l .  .  .  .  .  .  .  .  .  .  .  .  . 2
+
+Dirtwater Blues
+
+3
+
+The Northern Star Ranch. .  .  .  .  .  . 3
+
+Enter the Iron Dragon.  .  .  .  .  .  .  .  . 4
+
+Johnson County: Battleground! .  . 4
+
+Dirtwater.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 4
+
+The Law in Dirtwater. .  .  .  .  .  .  .  .  . 4
+
+Dirtwater Locales.  .  .  .  .  .  .  .  .  .  .  .  . 6
+
+Iron Dragon Work Camp.  .  .  .  .  .  . 8
+
+Han's Saloon .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 9
+
+Enforcers.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 9
+
+Opening Volleys
+
+10
+
+Confrontation.  .  .  .  .  .  .  .  .  .  .  .  .  .  . 10
+
+A Pox Upon You. .  .  .  .  .  .  .  .  .  .  .  . 10
+
+Sick and Tired.  .  .  .  .  .  .  .  .  .  .  .  .  . 11
+
+Contagious.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 12
+
+Peace Talks .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 12
+
+So Much for Diplomacy!.  .  .  .  .  .  . 13
+
+A Trip to Town.  .  .  .  .  .  .  .  .  .  .  .  . 14
+
+Daily Business.  .  .  .  .  .  .  .  .  .  .  .  .  . 14
+
+Bayou on the High Plains. .  .  .  .  . 15
+
+Wolves in the Fold.  .  .  .  .  .  .  .  .  .  . 15
+
+Tainted Wolf .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 16
+
+A Long Shot .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 16
+
+Lying in Wait.  .  .  .  .  .  .  .  .  .  .  .  .  .  . 16
+
+Rustle, Rustle. .  .  .  .  .  .  .  .  .  .  .  .  .  . 17
+
+The Finger of Blame.  .  .  .  .  .  .  .  . 17
+
+Stakeout.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 18
+
+Strangers in Town .  .  .  .  .  .  .  .  .  .  . 18
+
+I'm Callin' You Out!.  .  .  .  .  .  .  .  .  . 19 Matt Reynolds. .  .  .  .  .  .  .  .  .  .  .  .  . 19
+
+Confrontation
+
+20
+
+Black Dog's Bite. .  .  .  .  .  .  .  .  .  .  .  . 20
+
+Missing. .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 20
+
+Puttin' Down a Sick Dog.  .  .  .  .  . 20
+
+Iron Dragon Steps In.  .  .  .  .  .  .  .  . 21
+
+Let's Talk.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 22
+
+Man-Eating Cow!.  .  .  .  .  .  .  .  .  .  .  . 22
+
+The Flames of War .  .  .  .  .  .  .  .  .  . 23
+
+Hot Time in Dirtwater.  .  .  .  .  .  .  . 23
+
+Marshal Law .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 24
+
+Back at the Lazy S....  .  .  .  .  .  .  .  . 25
+
+Stampede.! .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 25
+
+Shoot 'Em Up.  .  .  .  .  .  .  .  .  .  .  .  .  .  . 25
+
+Falling Star .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 26
+
+Empty Nest.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 26
+
+Morley's Madness.  .  .  .  .  .  .  .  .  .  .  . 27
+
+Mad Cows .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 27
+
+The Devil's Roundup.  .  .  .  .  .  .  .  . 27
+
+Undead Diablo.  .  .  .  .  .  .  .  .  .  .  .  .  . 28
+
+Aftermath .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 28
+
+Friends & Foes
+
+30
+
+Abigail "Abby" Morton .  .  .  .  .  .  . 30
+
+Barnabas Morley .  .  .  .  .  .  .  .  .  .  .  . 30
+
+Bill Sutter .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 31
+
+Black Dog, Pox Walker .  .  .  .  .  .  . 32
+
+Lazy S Cowboy. .  .  .  .  .  .  .  .  .  .  .  .  . 32
+
+Li Zhin.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 33
+
+Mad Cow.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 33
+
+Randolph Logan. .  .  .  .  .  .  .  .  .  .  .  . 33
+
+Texas Longhorn.  .  .  .  .  .  .  .  .  .  .  .  . 34
+
+Introduction
+
+Well, pards, we've reached the third part of the Blood Drive trilogy, which means it's time for the final round up. Range War! concludes the story of the Lazy S cattle drive that began way back in Texas with Bad Times on the Goodnight. The heroes and their herd have reached the end of the trail, but they're about to discover the grass isn't always greener on the other side of the Disputed Territories.
+The Story So Far
+Here's a quick summary for anyone just signing on with Range War! Bill Sutter, a rancher in southwestern Texas, found himself in a bit of a fix. The only railroad in the area was the Bayou Vermilion, and it was more than happy to abuse its monopoly. Unable to get a fair price for his herd, Sutter set out to drive his Longhorns up to Denver where he reckoned he could turn a better profit than in Dodge.
+Along the way, he and his cowpokes ran afoul of both the Confederate army and Wasatch after a misunderstanding near Roswell, New Mexico. Worse yet, the Lazy S crew soon discovered a nemesis from their past, a Commanche shaman and former Bayou Vermilion enforcer named Black Dog, was hounding their trail. After pushing through those obstacles--and overcoming a self-styled warlord with the help of some Black River gunmen--Sutter and the posse reached Denver.
+
+Rather than sell his herd and return to Texas, Sutter instead took a gamble on a land grant in the Wyoming Territory. He gathered more cattle and set out north with his crew and the heroes, now part owners, in tow. The Lazy S soon discovered things weren't any easier north of the Mason-Dixon, as they faced another attack by Wasatch forces who believed they possessed information on some of Hellstromme's most closely held secrets.
+
+1
+
+Deadlands: Range War!
+Defeating the Wasatch rail gang with the assistance of Union Blue, the herders pushed on into the Sioux Nations. There, they ran into a band of pioneers trapped in an old fort by a veritable army of Sioux warriors, influenced by none other than Black Dog. A plague had been following them across the prairie. The plague turned out to be the work of a vampire. The Lazy S crew managed to put the vampire and its progeny down for good, but not before Black Dog himself was infected.
+Released by the Sioux, the final stage of the drive took the herd through the narrows of the Winding River Canyon. Although beset by devil bats nesting in the cliffs above and facing a rail battle fought by ghosts and worse, the cowboys managed to lead the cattle to the goal: the high plains of central Wyoming.
+New to the Trail
+If this is the first exposure your posse has had to the Blood Drive series,
+
+that's fine! Obviously, we'd love it if you were to round up the first two parts to the series (Bad Times on the Goodnight and High Plains Drovers), but if not, Range War! is easily capable of standing all by its lonesome with very little adaptation necessary.
+Faced with a hostile local competitor--Randolph Logan--Sutter seeks to hire some new blood to fill the ranks of the hands who fell along the trail north. Dirtwater, the only town nearby, isn't exactly teeming with employment opportunities, so his offer is likely to be very tempting to any itinerant heroes looking for work.
+Another route might be to make one or more members a co-owner. Perhaps they inherited a share from a recently deceased, former partner of Sutter. Or maybe they just won it in a card game from a luckless gambler who'd invested in Sutter's plan. That provides them with a more personal investment in seeing the fight through to the end.
+
+2
+
+Dirtwater Blues
+
+Until recently, most of the land in the Wyoming Territory was "public use"--that is, owned by no one and available for grazing purposes. Anyone who wanted to park a mass of cows on a stretch of grassland could, as long as no one owned it. And, for the most part, no one owned land in the territory.
+The rise of the Sioux Nations has caused property values in the western Union states to rise considerably, particularly those capable of supporting herds of cattle. To promote expansion west and development of its own beef industry, Washington began granting land deeds at low cost to folks willing to brave the Indians and elements on the off chance of turning a profit. Sutter got his deed from just such an entrepreneur.
+The seller neglected to tell the Texan exactly why he was so eager to part ways with the property. The land, nearly 65,000 acres, sits just north of a tiny frontier town by the name of Dirtwater. More importantly, it's smack dab in the middle of a stretch of grazing ground that a particularly ornery rancher named Randolph Logan considers his own by squatter's rights.
+The Northern Star Ranch
+Randolph Logan owns nearly 10,000 head of cattle, or at least so he claims. In reality, he has no idea. Logan arrived in the area from Montana a few years ago. The rancher quickly settled
+
+in the relatively fertile area bordering the Bighorn River.
+Logan's outfit, the Northern Star Ranch, is currently the largest in this part of the Wyoming Territory. As far as he's concerned, he owns all the land around Dirtwater, and much of Johnson County to boot. His well-armed cowboys make a habit of enforcing his claim with intimidation and, when necessary, lead.
+Not too long ago, Logan's men had a run-in with the former owner of Sutter's land grant deed. They had little trouble running him off, but Logan was canny enough to recognize that piece of paper might come back to haunt him in the future. To that end, he forged a few deeds saying he owns the land, and has them on file with the recently established land office in Dirtwater.
+Unfortunately, Logan has discovered that his herd wasn't cut from the most sturdy of fabric. Most didn't take to the harsh Wyoming winters, and those that did make it through wasted away to little more than skeletons wrapped in cowhide. The cattle baron rustled himself up a newfangled scientist from Back East to help beef up his herd. What the rancher didn't know was the scientist had some rather peculiar ideas on how to best modify the cattle, and those ideas are about to rear up and bite Northern Star on the behind.
+
+3
+
+Deadlands: Range War!
+Enter the Iron Dragon
+Logan has gone so far with his land grab that he's offered a right-of-way to Iron Dragon to lay tracks into the town, which he promised them will become a major source of cattle. One of Kang's agents, eager to score a coup by finding a convenient and relatively cheap supplier for the Great Maze, jumped on the deal without looking too deeply into the legality of Logan's claims. Now, just as construction is getting started in earnest, in rides the Lazy S, not only holding a legal deed to prime cattle land, but also straddling a part of the right-of-way Logan recently sold.
+The owner of the Northern Star, needless to say, is not pleased with the arrival of Sutter's herd.
+Johnson County: Battleground!
+Johnson County takes up most of the northern central portion of the Wyoming Territory. The majority of the county lies between the Bighorn Mountains to the east, the Absarokas to the east, and the Owl Creek range to the south. Between them is a relatively flat expanse of plains, watered by the Bighorn River. Its isolation has thus far kept a small population in the county--barely a few hundred folks call it home--but it has also shielded it from the ravages of the War Between the States, the worst of the Rail Wars, and war parties from the Sioux Nations just over the Bighorns.
+That doesn't mean the area is a quiet place to retire and kick off your boots, though. Otherworldly horrors occasionally slink through a portal to the Hunting Grounds, hidden in the geysers of Yellowstone only a few dozen miles to the west. The notorious Hole in the Wall hideout leads plenty of
+
+hard men with little respect for the law to the region. And finally, although the Bighorns aren't technically part of the Sioux Nations, some tribes hold places in the mountain range to be sacred and look poorly on folks who trespass.
+All that withstanding, Johnson County represents an opportunity to brave souls--willing to face the dangers it holds--to grind out a living there.
+Dirtwater
+Fear Level: 3
+Dirtwater is one of the few towns in Johnson County, which is really saying something since Johnson County covers a fair piece of the northern Wyoming Territory. It owes its current existence almost entirely to the Northern Star Ranch--at least until the arrival of the Lazy S cowboys. In fact, Dirtwater takes its name from the fact that every time Northern Star cattle crossed the nearby Bighorn River downstream from the town, folks claim "a man could walk across on the dirt in the water."
+The promise of a railhead in town has drawn a few hardy souls to Dirtwater, but even with the recent addition of an Iron Dragon worker camp, the population has yet to break into triple digits. Nonetheless, it's the largest population center along the Bighorn River.
+The Law in Dirtwater
+The state of local government in Dirtwater might be summed up in three words: There is none.
+Well, that's not exactly true. The locals did figure out they needed someone to corral the occasional serious offender and make sure things don't get too out of hand on Saturday nights. To that end, they hired a town
+
+4
+
+marshal, and by "hired" we mean they found a gunhand willing to work for whatever he could bring in from fines and reward money. Rory Tate, a onetime outlaw from Arkansas, now keeps the peace in Dirtwater.
+Since there aren't any official city ordinances for him to draw fines on, Tate is prone to make one or two up whenever his wallet gets light. However, most of his income comes from a "consideration" from Randolph Logan to make sure he turns a blind eye to any Northern Star business. While some of the local business owners aren't thrilled with this arrangement, there's not much they can do about it.
+Tate is more than happy to stretch the definition of the law when it benefits him or Northern Star. Conversely, he's also prone to using his authority to harass or even jail members of the Lazy S once matters start to come to a head between the two ranches. Heroes can try to thwart his heavy-handed and biased enforcement practice by succeeding at a Persuasion or Intimidation roll, both, in this case, modified by the posse's Standing.
+Tate holds serious offenders, like murderers and cattle rustlers (who aren't lynched by Logan's cowboys), until the circuit judge arrives to hold court--usually once a month except during winter months. Of course, jailbirds can also appeal to Tate's greed by offering a bribe--which he calls "bail." A successful Persuasion roll (­2) grants a release, with each $25 giving a +1 bonus to the roll. Standing modifies this roll as usual.
+Johnson County does have an elected sheriff who's not beholden to Logan's will. Unfortunately, he operates out of Fort McKinney on the other side of the Bighorn Mountains and seldom visits Dirtwater.
+
+Dirtwater Blues
+Standing
+Dirtwater is a small boomtown where the heroes' presence quickly causes more than a bit of a stir. With the fever pitch of suspicion that prevails locally, assume all new arrivals-- including the heroes, naturally--are saddled with the Outsider Hindrance (see Savage Worlds). This means they start at a considerable disadvantage when trying to use those social skills.
+Throughout the adventure we've provided several ways for newcomers to improve their Standing with the locals. Thus, their actions in various encounters can change how they're perceived by the residents, allowing them to become something of local heroes by the end of Range War!
+When a hero or heroes amass a Standing bonus of +2, the Outsider Hindrance no longer inflicts a ­2 Charisma penalty. When your compadres gain a Standing bonus of +4 or more, the Outsider Hindrance's roleplaying effects are also negated and it troubles the newcomers no more.
+
+5
+
+Deadlands: Range War!
+Ropin' Cattle
+Roping a steer is easy enough. It's a simple Throwing roll (adjusted for range, of course). But even armed with his trusty lariat, a cowboy is grossly overmatched in a tug-of-war by a longhorn. An average-sized specimen of the breed tips the scales at around three-quarters of a ton, so man-handling those doggies isn't the best option.
+When taking charge of a bullheaded longhorn, a cowboy's best friend is his mount. A canny ranch hand can use the lasso in conjunction with his saddle to bring his horse's strength and weight to bear against a roped steer.
+Once a mounted cowpoke has lassoed a longhorn, an opposed roll of his Riding versus the animal's Strength is made. On a success, he wrangles the animal under control and can lead it with the rope; with a raise, he pulls the longhorn off its feet. On a failure, the beast continues to put up a fight, but doesn't break free. If the player is unlucky enough to roll a 1 on his Riding die (regardless of the Wild Die), the animal breaks free--possibly pulling the unlucky sod off his saddle in the process!
+· Rory Tate: Use Gunman (Veteran) stats in the Deadlands Marshal's Handbook. Usually armed with a Peacemaker (Range 12/24/48, Damage 2d6+1, RoF 1, Shots 6, AP 1) and 25 spare rounds.
+Dirtwater Locales
+Unless otherwise noted, Dirtwater citizens use the stats for Townsfolk in the Deadlands Marshal's Handbook. Money talks, so for every $250 the posse spends in Dirtwater, they gain
+
++1 to Standing (see sidebar on page 5).
+Barber: Identified by the unmistakable red- and white-striped pole in front, Dirtwater's barber, Horatio England, doesn't get much call for his primary trade. However, he worked in field hospitals during the war and now does a fairly brisk business as the only "dentist" for several days in any direction, and in a pinch, he's a fairly capable medic as well.
+· Horatio England: The barber has
+Healing d8 in addition to the usual
+Townsfolk skills.
+Big Lucy's Gambling Hall: Big Lucy's is what passes for a gentleman's club in Dirtwater. That means there are a few soiled doves and an occasional poker game in the parlor. The proprietor is Lucinda Hayes, a former dance hall girl recently arrived from St. Louis. She might be a few years and a hundred pounds or so past her physical prime, but few understand her line of business better. Lucy hates Logan and his cowboys, seeing them as bullies of the worst kind, but keeps her feelings to herself as she understands all too well how much of her establishment's income is derived
+from the pockets of the Northern Star.
+Church of Dirtwater: Twenty-nine days out of the thirty, this building sits empty and is at best only about half-occupied on the day of the month when Vernon Griffith, a circuit-riding preacher (although not a blessed), holds service. And that's not because the church is particularly large--it only seats about thirty before folks begin bumping elbows. Religion isn't really catching on in Dirtwater, although a few of the more respectable citizens put in a lot of hard work to get the structure erected in the hopes it would. The plan is for the church to
+
+6
+
+Dirtwater Blues
+
+serve as a schoolhouse once there are enough children to warrant a teacher,
+but for now it's largely unused.
+Clark's Feed Store: For over a year, Logan has effectively been Bertram Clark's only customer outside of an occasional purchase from small-farm owners in the area. As such, he is deeply in Logan's corner and keeps the rancher informed of all goings-on of which he is aware. Even once the Lazy S begins doing business with him, Clark remains a staunch backer of Logan, although he does so from behind a false front of friendliness
+toward Sutter and his cowboys.
+Dirtwater Livery: Owned by Josiah Johnson, the Dirtwater Livery also serves as the town's stagecoach depot, although both the Watering Hole and
+
+Winslow's Hotel are jockeying to steal that honor away. Johnson has a good eye for horseflesh. Any horse bought from Johnson costs 50% more, but gains a die type in one of either its Spirit, Strength, or Vigor attribute (Marshal's choice). Conversely, he never has el cheapo horses for sale.
+Glauser's Dry Goods: One of the older establishments in Dirtwater, Glauser's has been around for nearly two years. The owner, Thomas Glauser, sees the opportunity the Iron Dragon line offers, but is hedging his bets by keeping his profits as high as he can until things settle out. He doesn't have a dog in the fight between the Northern Star and the Lazy S, just as long as there's someone left at the end to buy his wares.
+
+7
+
+Deadlands: Range War!
+Most common items (except dynamite) are available in his store, but at twice the listed cost. He typically has a couple of shotguns, a handful of six-shooters, and a rifle or two for sale, but at the same mark-up. He's happy to order more exotic items or firearms, but charges three times
+the book price.
+Land Office: One of the newest arrivals in Dirtwater is Milton Fisher, the local representative of the Government Land Office. Fisher has been sent to oversee the administration and sale of public lands in this part of the Wyoming Territory. Although Logan has filed his deeds with Fisher, the agent hasn't taken the time to review them for accuracy.
+· Milton Fisher: The local land agent has Knowledge (Law) d8 in addition
+to the usual Townsfolk skills.
+Marshal's Office: his one-room building serves as Rory Tate's office and a cot in one corner makes up the total of his living quarters. A pair of barred cells occupies the back third of the building. A rack just inside the door holds three Winchester '73 rifles and a double-barreled shotgun for when the marshal needs extra
+firepower.
+Territorial Bank of Wyoming: The bank does little business, but its proprietor--and sole employee-- Noble Vincent hopes that the Iron Dragon line will change that that soon. His only customers are a few local businessmen. Randolph Logan keeps most of his funds in a Laramie bank, maintaining only a token account with Vincent. Money on deposit with the bank counts as if it had been spent in Dirtwater for the purposes of determining Standing--as long as it remains deposited. If it's withdrawn,
+the Standing bonus goes with it.
+
+Train Station: A small contingent of Iron Dragon workers are here every day to erect the station. The process takes about three weeks from the time the posse first arrives in Dirtwater to complete. After that time, the workers are reassigned to track laying and the
+station sits empty.
+Watering Hole Saloon: The Watering Hole is the oldest building in Dirtwater, having originally served as a trading post back before Logan and his crew arrived. After some extensive remodeling, the saloon now sports a large downstairs drinking hall and a few upstairs rooms that are available for rent. The dirt and questionable stains in each are free amenities.
+The owner, Rufus Burke, long ago figured out that the Northern Star cowboys were not only the ones buttering his bread, but also the ones bringing the bread and butter to the table in the first place. While he doesn't cut them any breaks on his whiskey prices, he is very likely to take their side in any argument or altercation-- at least until he gets a taste for the
+color of Lazy S money, that is.
+Winslow's Hotel: Because it's only respectable place to rent a bed in Dirtwater at the moment, Daniel Winslow takes advantage of his monopoly by charging $5 a day for a room with a simple straw mattress. He does little business with Logan and his men though, so he's less biased than some local merchants..
+Iron Dragon Work Camp
+A recent addition to Dirtwater is a cluster of tents to the northeast of Big Lucy's and the Watering Hole Saloon. Here reside several dozen or so of Kang's workers who are building the town's new train station and beginning to lay track to link up with the main
+
+8
+
+operation coming from Montana. A few of his enforcers are also on hand to protect his interests and keep the workers in line.
+In addition, a small Chinatown of sorts has grown up on the western edge of the camp to provide the rail workers--most of whom originally hail from the Far East--some familiar, if minimal, comforts. All told, the population of the work camp rivals that of Dirtwater itself.
+During the day, the tent city is virtually empty with the exception of those workers either too sick or injured to contribute, and a couple of armed enforcers who protect what meager property there is. After dark, the area bustles with the workers, some involved in cooking or similar mundane task, while others engage in exotic games of chance.
+Money spent in the Iron Dragon camp does not count toward accruing a bonus to Standing.
+Han's Saloon
+Across the main drag from the Dirtwater Livery sits a collection of four tents the town residents refer to as Canvas Chinatown. These three are owned not by Kang, but rather by individuals who, for lack of a better word, are basically camp followers. One of the tents specializes in providing foods and spices from the Far East that are uncommon in the average Western settlement, like snake, duck, and even sparrow. Another provides laundry and seamstress services.
+The tent that attracts the most attention--both from Dirtwater and Kang's workers--is Han's Saloon. The owner, Hu Shou Han, is a very canny entrepreneur. By providing more traditional beverages and gambling tables featuring dice and tile games, he draws plenty of customers from
+
+Dirtwater Blues
+the rail gang--as well as the more adventurous local folk.
+Enforcers Kang's enforcers are housed in the
+largest of the tents, near the western edge, and enjoy considerably better living conditions than the average laborer. Each enjoys a much larger living area and most are partitioned with privacy curtains. Additionally, they are paid much better than the common laborers and spend most of their off hours at Han's saloon tent.
+The gunmen are led by Li Zhin, a very experienced martial artist. Li finds the prejudice of the Northern Star ranch hands unpleasant, but honors his employer's agreement with the rancher. Once Logan's claims are proven false, he takes a much more belligerent stance. As a result, Li can become a valuable ally for the posse later in this adventure.
+· Iron Dragon Enforcers (5): Use Rail Warrior stats in the Deadlands Marshal's Handbook. Armed with Colt Army revolvers (Range 12/24/48, Damage 2d6+1, RoF 1, Shots 6, AP 1), double-barreled shotguns (Range 12/24/48, Damage 1­3d6, RoF 1­2, Shots 2, +2 Shooting), and 25 rounds for each.
+· Li Zhin: Wild Card. See page 33.
+
+9
+
+Opening Volleys
+
+This adventure kicks off shortly after the Lazy S herd--of which the heroes are likely part-owners if they've played High Plains Drovers--reaches its destination north of Dirtwater.
+After arriving in the area, the first order of business is to get a bunkhouse and other necessary outbuildings constructed. Although it's only late August, winter comes quickly on the Wyoming plains. Sutter wants to make sure lodgings are laid in as soon as possible. Wood's not in abundance in the area, so the majority of the cowboys not riding herd are dispersed far and wide looking for suitable trees to fell.
+Although Logan was aware of a large herd passing near Dirtwater, he didn't think they'd actually have the temerity to settle on "his land." As such, he's not spoiling for a fight--at least until he discovers the Lazy S plans on establishing a permanent operation. Unfortunately for the posse, he learns all too quickly.
+Confrontation
+Shortly after he picks a permanent site for the ranch, Sutter heads out with a couple cowboys to ride the limits of his land grant. If the posse members are part-owners of the herd, Sutter leaves them largely in charge, but it's understood his niece Abby speaks for his interests. Otherwise, while the rancher is away, Abby is left in charge of the crew.
+About a day after he leaves the fledgling ranch, a band of riders from
+
+the Northern Star approaches the camp. The group isn't actually looking for Sutter's herd. They stumble onto the Lazy S while hunting their own strays.
+The cowboys are a little belligerent, accusing the Lazy S of squatting. However, they're outnumbered and not foolish enough to look for a fight. Should it look like tempers are about to flare, they back down and ride out, but not before warning,
+You ain't heard the last of this!
+· Northern Star Cowboys (4): Use Outlaw stats in the Deadlands Marshal's Handbook. Armed with Colt Army revolvers (Range 12/24/48, Damage 2d6+1, RoF 1, Shots 6, AP 1) and Winchester '73 rifles (Range 24/48/96, Damage 2d8, RoF 1, Shots 15, AP 2).
+A Pox Upon You
+Sutter does not return as scheduled the day after the tussle with the Northern Star riders. Given the parting threat, Abby is more than a little concerned for her uncle's safety and asks the posse to ride out and make sure everything's okay.
+Trailing the Lazy S cowboys is a relatively simple matter, requiring only a Tracking roll (­1); if none of the posse has Tracking, Abby can provide a rough map with her uncle's planned route. Regardless, the heroes don't encounter Sutter the first day out. Early on the second day, the group comes
+
+10
+
+across Sutter's campsite. The riders had set camp in a slight depression, no doubt to protect it from the stiff winds that often blow across the basin.
+The corpses of the two men riding with Sutter are in the camp. One has an arrow square in the chest while the other is still in his bedroll, dead from a cut throat. There is no immediate sign of Sutter, although his saddle and bedroll are lying near the ashes of a day-old fire.
+Examining the corpses quickly leads the cowpokes to the conclusion that the body with the arrow was likely on watch. Make a Notice roll for anyone who looks closely at the arrow. With a success, the investigator sees that the projectile is covered in filth and a variety of noxious substances. The same slime is evident around the wound on the other body as well.
+
+Opening Volleys
+Sick and Tired
+A Tracking roll at the campsite uncovers a pair of booted footprints heading off into the short grass. A Notice roll (­2) locates the same trail. Following it a short distance to a small hillock, the heroes find Sutter lying on the ground near a small clump of brush.
+Sutter is unconscious, but responds groggily if anyone shakes him or makes a loud noise. If anyone gets close enough to touch him, allow a Notice roll (before she actually touches the man, if you're feeling generous, Marshal). With a success, the hero spots a few small blisters forming on his neck and hands.
+Initially, he's a bit confused, but once his head and vision clear, Sutter recognizes the heroes. He says,
+
+11
+
+Deadlands: Range War!
+Sutter's Fate
+Up to this point in the Blood Drive trilogy, we've been using Sutter and his niece Abigail largely as tools to keep the herd moving forward. Now that the Lazy S is settled in Wyoming, they are no longer nearly as important to the tale. At this point in the adventure, though, it's up to you whether you want to keep them in your game, Marshal. If the posse's built a strong relationship with either or both, and it enhances your game, by all means keep them.
+However, if you think your heroes are ready to leave the nest and handle the upcoming fight without any pointers from Sutter or Abby, feel free to cut them loose. The pox walker's disease may force the Texan to head for more favorable climes or seek more advanced medical care. Or, if you feel it's a stronger conclusion for the character, perhaps he falls victim to Black Dog's pox and is buried on the Wyoming plains.
+Either way, Sutter--or Abby, if the rancher passes away--offers the cowpokes a deal they can't beat: When the herd is sold, if they'll send him his share of the profits, he agrees to sign over the ranch to them!
+We was attacked night before last. Damn Injun got Rusty with an arrow before he could warn us. I was just lucky he went after poor ol' Lancaster next. Cut the man's throat before he even got his eyes open. His gurglin' woke me up, though, so there's that, I guess.
+I tell you, I'd swear it was that old Comanch, Black Dog--but he looked real sick. He was covered in sores and looked closer to death than an
+
+undertaker's boots. I pulled my hogleg, but the sneakin' bastard jumped me before I could draw a bead. I caught wind of him and it was like breathin' in rot and corruption.
+While I was still gagging, he lit out. I followed him here, but I ran out of steam.
+Further questioning reveals Sutter has been lying on the hill for the better part of a day. He insists he's just "tuckered out," but a persistent cough and the blisters dotting his flesh tell a different story.
+Sutter is right: It was Black Dog who attacked him. The vengeful shaman died of the plague spread by the vampire in High Plains Drovers and has returned as a pox walker. In some twisted way, Black Dog blames Sutter and the whole Lazy S crew for his hideous existence and intends to kill or infect every one of them. In fact, he let Sutter live in the hope the rancher would spread the pox to more of his cowboys.
+Contagious Any sodbuster who comes in direct
+physical contact has to make a Vigor roll (­1) or contract the pox walker's pox as described in the Deadlands Marshal's Handbook.
+Other than carting Typhoid Sutter across the Wyoming grassland, the trip back to the ranch is uneventful. Although the pox progresses over the course of weeks, it's pretty clear by the time the posse pulls up at the Lazy S that their partner is in pretty sorry shape. Abby immediately hustles him into the main building and sets up nursing the ailing rancher.
+Peace Talks
+The next day Abby hunts up the heroes with word from Sutter. He's
+
+12
+
+concerned about the recent run-in with the Northern Star hands and wants the heroes to ride over to speak to the owner. He hopes it's just a misunderstanding that a little parley can clear up.
+If the cowpokes have spent any time in Dirtwater, odds are they've already got a good feel for where the Northern Star is located. Otherwise, they have to detour briefly into the little boomtown to get directions.
+The trip to Northern Star takes approximately half a day, but the posse encounters no problems en route. Upon their arrival at the competing ranch, they are met by a group of wellarmed riders. When they reveal the reason for their visit, they're escorted to the main house. One of the cowboys heads inside while the rest remain within spitting distance with their hands suspiciously near their shooting irons. The characters are kept near the front porch and not allowed to roam the rest of the grounds under any circumstances.
+· Northern Star Cowboys (4): Use Outlaw stats in the Deadlands Marshal's Handbook. Armed with Colt Army revolvers (Range 12/24/48, Damage 2d6+1, RoF 1, Shots 6, AP 1) and Winchester '73 rifles (Range 24/48/96, Damage 2d8, RoF 1, Shots 15, AP 2).
+So Much for Diplomacy!
+After an uncomfortable, five-minute wait, Logan emerges from the house with Morley in tow. Although he feigns civility at first, the façade lasts only as long as it takes to mention his riders visiting the Lazy S a few days ago. At that point, the man's true colors show. He snarls,
+As far as I'm concerned, you all are nothing but a flea-bitten bunch of Rebel squatters. You and your mangy beasts
+
+Opening Volleys
+have three days to get off my range.
+Logan's in a tough spot and knows it. The Lazy S is in the right legally and he's already cut a deal selling land he didn't technically own. Worse, he's spent a fair chunk of the proceeds from that financing Barnabas Morley and his experiments. As he sees it, his only hope is to try to bully Sutter and his crew off the land just like he did the original owner.
+If anyone mentions the land grant that Sutter holds, Logan becomes nearly irrational and shouts,
+I don't care dog spit about no stinkin' piece of paper! I tamed this here land and there ain't nobody tellin' me who owns it! Me and my boys'll ground that scrap of writin' into the dirt just as quick as we do you if you're still there when we come a-knockin'!
+With that, he orders his men to roust the posse from his ranch. The Northern Star men don't draw their weapons unless the heroes do first, but make it very clear there is no further discussion on the matter. Should the characters decide to try to start a fight, point out to them they're deep in the heart of Northern Star territory and that Logan has a small army on hand. If they can't take the hint, let 'em reap what they sow, Marshal!
+Initially, there is one cowboy per hero, but two more arrive each round of the fight until there are a total of four per character. Logan and his men use cover from the buildings whenever possible. Morley uses his fear and zombie powers as appropriate.
+The Northern Star men don't surrender unless Logan is incapacitated. However, they also don't initially pursue any cowpokes that flee the fight, figuring they'll take care of the troublemakers soon enough.
+
+13
+
+Deadlands: Range War!
+· Northern Star Cowboys (up to 4 per hero): Use Outlaw stats in the Deadlands Marshal's Handbook. Armed with Colt Army revolvers (Range 12/24/48, Damage 2d6+1, RoF 1, Shots 6, AP 1) and Winchester '73 rifles (Range 24/48/96, Damage 2d8, RoF 1, Shots 15, AP 2).
+· Randolph Logan: Wild Card. See page 33.
+· Barnabas Morley: Wild Card. See page 30.
+A Trip to Town When the cowpokes notify him of
+Logan's response, Sutter falls into a coughing fit. Once it resolves, he makes it clear in no uncertain terms that he has no intention of vacating the range. He asks the heroes to do two further tasks for him while he's recuperating.
+First, he wants them to ride into Dirtwater the next day and order up as much barbed wire as they can from the dry goods store. This amounts to $250 worth--and counts toward accruing Standing bonus. Sutter explains he intends to fence off his property. Second, he wants them to take his deed to the land office and have it recorded, as he says,
+So everything is nice and legal when we kick Logan's butt!
+If any posse members balk at getting involved in a fight between the Lazy S and Northern Star, Sutter is disappointed but doesn't try to convince them otherwise. He says,
+Well, I figure it's likely to get nasty and if that ain't your cup of coffee, I can't hold it against you. As for me, I'm done with runnin' from bullies.
+If the heroes are part owners of the herd, Sutter goes so far as to offer to buy them out of their share, at a fair price of $5 a head. (This, of course, likely ends the characters'
+
+involvement in the adventure as well!)
+Daily Business
+In spite of Logan's threats, the Lazy S has no trouble from him right away. This is likely a relief to the heroes as more of their own hands start contracting the pox from contact with Sutter. Hopefully, by this point, the posse has figured out to stay clear of the infected folks, but if not, feel free to keep having them make the appropriate Vigor rolls until they get the hint. A successful use of the healing power can remove the disease-- provided it's applied within the 10 minutes of the first exposure!
+Over the coming weeks, Black Dog continues to prey on lone Lazy S cowboys, either killing them outright or just infecting them with the pox. Within a week or two, none of the hands is willing to ride night watch without a partner--or three!
+If no one else suggests it, after a couple of days Abby sets up a large tent to quarantine the infected. By that time, nearly half the hands are down with the pox, leaving less than a dozen to keep the ranch functioning. Unfortunately for the characters, this means a lot more time spent handling the day-to-day work with the herd, riding the range, and just doing chores around the ranch.
+It isn't exactly glamorous, but on the other hand, at least it's exhausting. The morning after each day's work, a Vigor roll (at ­4, or ­2 for heroes with the Brawny Edge) is required. A failed roll means the cowpuncher is saddled with a Fatigue level from the previous day's exertion. The good news is that the Fatigue never gets worse than one level, but the bad news is an hombre's only free of it on days that begin with a successful Vigor roll. A full eight
+
+14
+
+hours' siesta also removes the Fatigue.
+The rest of this chapter includes a variety of different encounters around the ranch and Dirtwater. They should serve to confuse the trail for the posse a little, as well as give them a look at exactly how dirty Randolph Logan is willing to get to accomplish his goals. Although you can throw any or all of them at your cowpokes in any order, we recommend you use them before moving onto the next chapter.
+Bayou on the High Plains
+Run this encounter anytime some of the posse head into Dirtwater, say to record Sutter's deed or just gather supplies. While the heroes are in Dirtwater, allow each to make either a Notice or Streetwise roll.
+Success on a Notice roll spots an odd-looking fellow wearing a top hat and somewhat tattered tailcoat walking into the Watering Hole. With a raise, the observant saddletramp notes the man has several unusual rings and talismans. Those who succeed on Streetwise catch wind of rumors about a group of "strange southern fellas" who rode into town last night. A raise on that roll tells the cowpokes that word has it the bunch is connected to some Confederate railroad name of "Bayou something-or-other."
+It's very possible for the posse to assume the Bayou Vermilion enforcers are there looking for Sutter and the Lazy S--especially once they learn the railroad men are asking about anyone who recently arrived from the South! However, they're in town trying to track down Barnabas Morley. Not too long before joining up with Logan, Morley expressed a little too much scientific interest in the Baron's special enforcers--the undead ones--and LaCroix wants to make sure he didn't make off with any trade secrets.
+
+Opening Volleys
+The railroad men are very circumspect about their questions and reveal nothing about who they're specifically looking for. No one in Dirtwater knows about Morley's past except Logan, and he's not talking. If the posse does nothing, the Bayou Vermilion thugs poke around for a couple days then leave. On the other hand, if they provoke fight with the enforcers, the posse finds them more than willing to fight!
+Of course, if they get into a shootout in town, they may have some fast talking to do to avoid running afoul of Marshal Tate.
+· Bayou Vermilion Leader: Use Cult Leader stats in the Deadlands Marshal's Handbook. Armed with a scattergun (Range 5/10/20, Damage 1­3d6, RoF 1­2, Shots 2, +2 Shooting).
+· Enforcers (1 per hero): Use Rail Warrior (Bayou Vermilion) stats in the Deadlands Marshal's Handbook. These are some of the better-preserved of LaCroix's troops, so they don't have the Fear Monstrous Ability. Armed with Colt Army revolvers (Range 12/24/48, Damage 2d6+1, RoF 1, Shots 6, AP 1) and Winchester '73 rifles (Range 24/48/96, Damage 2d8, RoF 1, Shots 15, AP 2).
+Wolves in the Fold
+A night or two after your cowpokes begin extra duty, something gets the cattle stirred up and nervous. This can take place while the heroes are bedded down trying to recover from the labors of the previous day or while they're on night watch themselves out in the grassland. Either way, they've not had enough rest to recover any Fatigue from the previous day.
+Investigating the herd's agitation quickly reveals its source. A pack of particularly gutsy wolves has downed
+
+15
+
+Deadlands: Range War!
+one of the bulls and is currently engaged in tearing the poor beast's remains limb from limb. The wolves are beyond rabid in their ferocity and do not flee at any point. All fight to the death--or in this case, beyond it.
+Sick Wolves (2, plus 1 per hero)
+Attributes: Agility d8, Smarts d6 (A), Spirit d6, Strength d8, Vigor d6
+Skills: Fighting d6, Notice d10
+Pace: 8; Parry: 5; Toughness: 9
+Special Abilities:
+· Armor +2: Underneath their fur, these critters' hides have developed a scaly toughness.
+· Bite: Str+d4.
+· Fleet-Footed: Roll a d10 when running instead of a d6.
+· Undead: +2 Toughness. +2 to recover from Shaken. No additional damage from called shots. Immune to disease and poison.
+Tainted Wolf When the posse puts the abominable
+critters down, a quick examination tells them something is definitely wrong here. The wolves are particularly large, and a successful Notice roll while examining one of the carcasses notes the beasts have thick, almost scaly hides under their mangy fur.
+What the heroes don't know is these wolves feasted on the carcass of one of Barnabas Morley's experiments a few days ago and are now more than a little tainted themselves. However, given the recent plague that's descended on the Lazy S, they may well assume the animals' condition is connected to the pox.
+A Long Shot
+This particular interlude works best once the Lazy S crew begins laying wire along the edge of the ranch property.
+
+Shortly after the cowpokes get a sizable section fenced (which requires a simple Repair check), Northern Star riders begin cutting the wire. They're careful to do this late at night after any night watch has passed, so there's no direct evidence Logan's men have anything to do with the property damage. The night riders don't steal any cattle (yet). Instead, they're setting the stage to fire the first shots in the war.
+Logan contacted some of his friends in the Wyoming Stock Growers' Association back in Laramie for some extra muscle to use against Sutter. Although it takes the other barons some time to raise any real numbers of gunmen, they are able to scrounge up a small number of "independent contractors" willing to pull a trigger for the right amount of money.
+Lying in Wait
+The shortage of able-bodied hands at the Lazy S means the heroes end up having to repair the damaged wire. The first couple times they have to restring the barbed wire, it only means some extra blisters and lost daylight. The third time the posse has to repair the damaged fencing, however, one of Logan's hired shooters ambushes the characters.
+By the time the group arrives at the scene of the cutting--a wideopen stretch of prairie with no real terrain features nearby--the gunman is already in position atop a distant hill. Once the posse dismounts and begins work, he opens fire. The shooter always spends a full round aiming (+2 Shooting) and his rifle is equipped with a new-fangled Smith & Robards 2x telescopic sight (reducing the Long Range penalty to ­2).
+The sniper is well hidden, lying down in tall grass, and over 500 feet away (85"). After each shot, the heroes
+
+16
+
+can make opposed Notice rolls against the gunman's Stealth to attempt to spot the bushwhacker. Thanks to his hidden position, he is treated as being in heavy cover, getting a +4 bonus to his Stealth roll, as well as inflicting a ­4 penalty on anyone firing back at him (in addition to range modifiers).
+He keeps firing on the posse until he puts them all down, they retreat, close to within medium range (48"), or he is Shaken by an attack. At that point, he runs down the backside of the hill to where he's hobbled his own horse and attempts to flee.
+If captured alive, he refuses to talk unless someone makes a successful Intimidation roll, then he says,
+I was hired by some fella in Laramie to come out here and put the fear o' God into you squatters.
+The WSGA hired the man, a former buffalo hunter, through an agent, so he doesn't actually know he's working for Logan--but a canny group of saddletramps can probably guess!
+· Sniper (1): Use Gunman stats in the Deadlands Marshal's Handbook. Add Strength d8 and Stealth d8. Armed with a Bullard Express (Range 24/48/96, Damage 2d10, RoF 1, Shots 11, AP 2), 50 rounds (.50), Smith & Robards telescopic sight (2x).
+Rustle, Rustle
+This encounter is best employed after--or during--A Long Shot (see page 16). A small band of outlaws who've holed up in the nearby Bighorn Mountains have recently taken to stealing cattle now and again from the Northern Star. With the arrival of the Lazy S, they've decided to expand their acquisitions to a new frontier.
+Initially, the gang was briefly thwarted by the barbed wire the
+
+Opening Volleys
+The WSGA
+The Wyoming Stock Grower's Association is an alliance of cattle barons based in Laramie. It was once the most influential group in Wyoming, shaping the course of territorial policy and even, in some cases, that of everyday life. The rise of the Sioux Nations not only significantly cut into their range land, it hamstrung most of their political clout.
+Now, the Northern Star ranch is one of the largest remaining members of the WSGA, and Logan holds a fair amount of influence in the group's decision making. However, Logan is also the only member in the central valley, leaving him somewhat removed from the full weight the WSGA might otherwise bring to bear against his rivals.
+cowboys had strung, wire cutters not being part of the standard outlaw kit. While it was easy enough for them circumvent the fencing on foot, it was too much hassle to breach it for horses or cattle. However, now that Logan's sniper has taken to vandalizing the fence line, all bets are off!
+Morton Walsh and his gang start pilfering Lazy S cattle, a few head here and there at first, but as time goes on, the gang begins pulling larger groups. After about a week, the rustlers are cutting 20 or more cows at a time. Eventually, the ranch hands start to notice some missing animals. (This might even happen the first time your cowpokes become aware of the damaged fence line, Marshal.)
+The Finger of Blame Before the Lazy S can take any steps
+to figure out who's nabbing their cattle,
+
+17
+
+Deadlands: Range War!
+a small band of riders from Northern Star shows up at their doorstep--with Marshal Tate in tow. The foreman of the group quickly starts tossing accusations at the heroes and the rest of the crew of rustling Northern Star cattle. Marshal Tate puts on a weak façade of the peacemaker and intervenes between the two groups before trouble breaks out. He says,
+These are some serious accusations, folks. I'm sure you won't mind if I examine your herd--you know, to make sure there's not been accidental mingling of cattle.
+Obviously, if they allow it, the marshal finds no Northern Star animals. Walsh and his gang have been preying on Logan's ranch for months. He just decided to use this as an opportunity to make trouble for Sutter, and Tate was easily convinced to play along.
+Logan's cowboys are badly outnumbered and have no plans to start an actual fight. Tate has absolutely no jurisdiction in the matter, so if the group chooses to stonewall him, he puffs up his chest, but eventually rides off with the Northern Star hands. As long as the posse doesn't slap leather, the encounter resolves with a lot of talk and no bullets.
+· Northern Star Cowboys (up to 4 per hero): Use Outlaw stats in the Deadlands Marshal's Handbook. Armed with Colt Army revolvers (Range 12/24/48, Damage 2d6+1, RoF 1, Shots 6, AP 1) and Winchester '73 rifles (Range 24/48/96, Damage 2d8, RoF 1, Shots 15, AP 2).
+· Rory Tate: Use Gunman (Veteran) stats in the Deadlands Marshal's Handbook. Armed with a Peacemaker (Range 12/24/48, Damage 2d6+1, RoF 1, Shots 6, AP 1) and 25 spare rounds.
+
+Stakeout
+Tracking the rustlers proves hopeless. The gang rousts the cattle across miles of open prairie, no small portion of which is grazing land for Northern Star. The tracks are quickly intermingled with and obliterated by those of the larger herds. The only way to stop the rustlers is to catch them in the act.
+The posse can do this by setting up a stakeout near one of the broken sections of fencing. (But doing this might expose them to Logan's sniper if they've not already dealt with him!) The gang only strikes at night, but isn't too worried about getting caught. Unless the heroes do something foolish like build a fire or sing lullabies to the cows, allow them a chance to surprise the good-for-nothing cattle thieves. Since the fight's taking place at night, don't forget targets aren't visible beyond 10" and there's a ­2 penalty to attack rolls.
+The gang fights until more than half of their number are Incapacitated, then surrender to take their chances with the legal system. If the posse succeeds in capturing any of the rustlers alive, they gain +1 Standing.
+· Rustlers (2 per hero): Use Outlaw stats in the Deadlands Marshal's Handbook. Armed with Colt Army revolvers (Range 12/24/48, Damage 2d6+1, RoF 1, Shots 6, AP 1) and 25 extra rounds.
+Strangers in Town
+This encounter works best if you run it during a separate visit than the one in which the posse discovers Bayou Vermilion, Marshal.
+While some or all of the heroes are visiting Dirtwater, they catch sight of a man driving a steam wagon down the street. The man is dressed
+
+18
+
+in work clothes, with a long coat and bowler, and wears a pair of brass wind goggles. With a successful Notice roll, a cowpoke spots a fair number of dark stains where the driver's pants emerge from beneath his coat, but they could be the result of anything from oil to mud to blood.
+A local resident comments as the contraption trundles past,
+Now, there goes an odd duck! He's s'posed to be some sort o' expert Logan brought in. You know, to help with his herd. Logan sure has lost a bevy o' cattle to hardship over the last few years. Apparently, he bought some o' them fancy Euro-pee-an cows. Guess they weren't up to the Wyomin' winters. He might o' been some fancy officer back in the War, but that don't mean he can raise cattle.
+The expert's handle is Barnabas Morley. He's supposed to be helpin' Logan with his herd somehow. I don't know what he's s'posed to be doing, 'cause I'm not sure that feller knows a heifer from a bull.
+I'm Callin' You Out!
+Before they have much time to consider what they've learned, the last of Logan's lone guns makes his move.
+Matt Reynolds is a very experienced gunfighter, but prefers to do his shooting up close and personal. Reynolds' well-trimmed beard does nothing to hide his cold, murderous gaze. Even he probably doesn't know how many would-be gunslingers he's gunned down in duels, but if he notched his pistol for every kill, he'd be holding on to bare metal!
+At some point during the group's stop in town, he arranges--or simply claims--to be insulted by one of the cowpokes, whether by action or deed. This is particularly easy if one of the
+
+Opening Volleys
+posse has a Habit or other Hindrance that can irritate a short-tempered gunslinger who's already looking for a fight. Reynolds isn't a coward by any stretch, though. Given the option, he chooses the most competent-looking duelist of the lot. He wants to make an impression, and if doing so cuts the strongest bull from the herd, all the better.
+If one of your adventurers takes the bait, use the rules for Duels in the Deadlands Player's Guide. Reynolds uses his Intimidation during the Face Off. More importantly, once the lead starts flying, the gunfighter isn't shy about using Fate Chips to activate his No Mercy or Knack Edge, and cut off his opponent from soaking wounds when possible!
+Once the dust clears, the town marshal steps in...but not a second before. If the posse member fired first, Marshal Tate is quick to throw him in a cell. With a successful Persuasion or Streetwise roll, the rest of the heroes can produce enough witnesses to prove their amigo's innocence. On the other hand, if Reynolds is the last man standing, Tate rules it a case of selfdefense.
+Matt Reynolds
+Attributes: Agility d8, Smarts d6, Spirit d8, Strength d6, Vigor d8
+Skills: Fighting d6, Guts d8, Intimidation d8, Notice d6, Riding d8, Shooting d10
+Charisma: 0; Grit: 3; Pace: 5; Parry: 5; Toughness: 6
+Hindrances: Grim Servant o' Death, Mean, Vengeful
+Edges: Duelist, Marksman, Knack (Seventh Son), No Mercy, Quick Draw
+Gear: Colt Peacemaker (Range 12/24/48, Damage 2d6, RoF 1, Shots 6, AP 1), holster, 25 extra rounds (.45), $150.
+
+19
+
+Confrontation
+
+By this time, the heroes should have a feel for how Logan plans to play his hand--but they don't know the half of it yet. Real trouble is just getting up a good head of steam and barreling down on them, like a runaway train around a blind curve!
+Black Dog's Bite
+Walking, pustulent undeath has done nothing for Black Dog's patience. A couple of weeks or so after infecting Sutter, he got tired of waiting for the rest of the Lazy S to fall over and die. Initially, he was happy picking off the rare lone cowboy or sowing a little more pestilence when the opportunity presented itself. Lately though, he's found the well of his satisfaction with the waiting game has run dry.
+The revenant has decided to step up his game a little bit, and dipped into his bag of tricks from years ago when he plagued settlers in Texas in a different fashion.
+Missing
+The pox walker catches a couple of Lazy S hands out riding the herd one night. Instead of simply killing the men or passing on his supernatural disease, the undead shaman takes his time with the poor saddle tramps and tortures them to death. In fact, he gets so caught up in the act that he loses track of time--which might finally give the posse the break it's been looking for in running the abomination to ground.
+Shortly after breakfast, the night shift
+
+of riders is missed around the ranch. When a search party is organized, the crew--or posse, if they're handling it on their own--finds the men's remains a couple of miles from the camp. One appears to have died fairly quickly from a slit throat, but the other one was staked out and subjected to all manner of inhuman abuse--and both have been crudely scalped. Just looking at the scene requires a Guts roll (­2) to avoid nausea.
+However, a closer examination allows the heroes to make Notice rolls. With a success, a character notes much of the blood is still wet-- indicating that Black Dog probably left the area only a short while ago. More importantly, a Tracking roll (­2) finds a faint trail leading off into the wilderness. Although Black Dog uses his wilderness walk power, the blood from his recently claimed scalps gives the heroes something to follow.
+If the heroes fail to find his trail this time, Black Dog continues attacking Lazy S hands in the same fashion every few days.
+Puttin' Down a Sick Dog
+The pox walker's trail leads about five miles into the Wyoming grasslands. It requires several Tracking rolls to stay on his heels. If the cowpokes lose the trail, you can allow them a Notice roll (­2) after 15 minutes of searching to reacquire the sign. The good news is the overconfident undead shaman lets his wilderness walk power fade after
+
+20
+
+three miles, so subsequent Tracking rolls are made at no penalty.
+Eventually, the group finds Black Dog's lair. Being one of the living dead, he has little need for niceties like campfires or bedding, but he has left his mark on the area. Most of the plant life has wilted and died from the continued presence of his sickening aura. And, although undead, he still needs to eat to keep his corpse moving, so the area is littered with gnawed bones and rotting pieces of halfconsumed small animals.
+Worse, the monster has surrounded itself with a pack of diseased coyotes enslaved by means of black magic. These beasts carry the same taint of pox as Black Dog and are utterly loyal to him. (If the posse takes time to examine them after the battle, they find the creatures to be very different from the strange wolves they encountered earlier.)
+The renegade is cagey, so an opposed roll of Stealth versus Black Dog's Notice is required to catch him off guard. Otherwise, he spots stealthy hombres and tries to set an ambush, using his own Stealth versus their Notice rolls. If possible, he uses boost trait on his Shooting or Fighting (whichever is most appropriate) before entering battle.
+Black Dog is insane with rage and a desire for vengeance, so he neither surrenders nor accepts it from foes.
+· Black Dog, Pox Walker: Wild Card. See page 32.
+· Diseased Coyotes (1 per hero): Use Dog/Wolf stats in Savage Worlds. Additionally anyone who suffers a wound from one of these creatures'
+
+C on f r on tat ion
+bites must make a Vigor roll or be infected with the pox walker's pox (see Pox Walker in the Deadlands Marshal's Handbook).
+Iron Dragon Steps In
+One afternoon, a month or so after the Lazy S has put down stakes in the area, Li Zhen visits the camp with several of his henchman. Iron Dragon's rail gang is nearing the edge of the ranch's property and its scouts reported the fencing the crew recently laid. Zhen has been working under the impression that Northern Star sold the railroad a legitimate right of way to Dirtwater. As a result, he believes the heroes and the rest of the Lazy S are
+
+21
+
+Deadlands: Range War!
+nothing more than a bunch of squatters sitting in the way of his employer.
+And Iron Dragon, like most of the other rail companies, does not have much patience with squatters on its property.
+Fortunately, Zhen is a bit more levelheaded than most enforcer bosses. Of course, level-headed is a relative term in this case, so his initial approach to the situation is to ride in along with several armed men and posture. He announces in a loud, commanding voice:
+You are on Iron Dragon land! You leave now!
+The posse can certainly draw down on the enforcers, but after all their runins with Rail Barons' cronies over the past few months, it might not hurt to remind them the railroads always have more hired guns to send. Should they go ahead, Zhin attempts to retreat if half his men are Incapacitated. Whether he survives or not, Iron Dragon sends another contingent with twice the enforcers next time (led either by Zhin or another, similar rail boss). The railroad continues until either the Lazy S succumbs or the posse manages to open a negotiation--and how difficult you want that to be is entirely up to you, Marshal!
+· Li Zhin: Wild Card. See page 33.
+· Iron Dragon Enforcers (2, plus 1 per hero): Use Rail Warrior stats in the Deadlands Marshal's Handbook. Armed with Colt Peacemakers (Range 12/24/48, Damage 2d6+1, RoF 1, Shots 6, AP 1), double-barreled shotguns (Range 12/24/48, Damage 1­3d6, RoF 1­2, Shots 2, +2 Shooting), 20 rounds for each.
+Let's Talk
+If the heroes take a more restrained approach and explain the Lazy S
+
+holds a legal deed to the land, Zhin is momentarily thrown back on his heels. Once the posse presents the deed, the enforcer boss mutters angrily in Chinese. He already had a pretty low opinion of Logan and his malcontents, but even he didn't expect the rancher to actually try to swindle Kang!
+It takes a successful Persuasion roll to convince Zhen the deed is legal. Once he gets a handle on the situation, Zhin is more than a little peeved with Logan. He is just proud enough not to apologize, but even though he doesn't show it, he feels tremendously embarrassed for falling for the swindler's game. He immediately dispatches messengers to Northern Star to express his displeasure--to demand the return of Iron Dragon's payment!
+The enforcer explains he must view the records at the land office to verify the Lazy S deed before he can engage in negotiations, but he agrees to temporarily halt the track laying operation. In reality, Zhin realizes his goose is cooked if word gets back to Kang that he got taken by a twobit land scam. He's actually trying to buy time to get the affair straightened out--and the money back--before his boss catches wind of it.
+Man-Eating Cow!
+This encounter can occur day or night, at the ranch proper or while the posse is riding the range. It works best if it happens on Lazy S land, but you can even spring it on your cowpokes as they're riding to or from Dirtwater. If it occurs at the ranch, the heroes are roused by exclamations of shock and surprise from some of the hands who've not fallen ill. Otherwise, they simply ride upon the scene while traveling the wilderness.
+An unusually large steer stands
+
+22
+
+over the body of a cow. At first glance, the intimidating beast appears to be protecting the fallen one, but after only a moment, the creature dips its head and takes a bite from the carcass beneath it! And while it's possible some of the characters may not be the most experienced of cowboys, even the greenest of the group realizes this is not normal behavior for cattle.
+The crazed bull eyes the posse for a moment, then lets out a bellow that borders on unearthly and charges. The beast fights to the death, or until the adventurers flee.
+Should they succeed in killing the beast, a number of things strike them odd regarding its appearance. It appears to have the same scaly hide as the wolves they previously encountered and its hooves and horns bear a nearly metallic sheen. Its wounds slowly ooze a thick, blackish fluid rather than blood, and its eyes are sunken and white with cataracts. Finally, there is a prominent Northern Star brand on its flank--which may warn the characters something's amiss on Logan's ranch, but may also make them leery of saying anything after the recent rustling accusations thrown their way!
+· Mad Cow: See page 33.
+The Flames of War
+This encounter occurs after the heroes prove the Lazy S owns the rightof-way Logan claimed to sell to Iron Dragon. Li Zhin, rightfully angered, confronts Logan about his illegal real estate practices. The railroad enforcer tells the rancher he's seen the deed and that it was recorded in the land office in Dirtwater (assuming the posse got around to that detail). Logan reacts in his usual hot-headed--and illconsidered--manner.
+
+C on f r on tat ion
+Shortly after the run-in with Li Zhin, the reinforcements from Laramie Logan has been waiting on arrive. He decides to end the competition with some direct action. Logan divvies up his forces and sends one group toward town and one riding straight at the Lazy S.
+Depending on how you want to play out the penultimate battles in the war-- as well as how close-knit your posse is, Marshal--it's possible they only participate in one of the two shootouts. If you have to choose between the two, it's probably best to have the fight occur while they're at the Lazy S, so they can play a role in preserving what's theirs. On the other hand, it's also possible to stage the ruckuses so your high plains drifters can thwart Logan's gunmen at both objectives if you want.
+Hot Time in Dirtwater
+The first group of thugs heads to Dirtwater with a single goal: burn the land office to the ground, along with all the documents stored there. Since Logan doesn't hold any official title to his own land, he's got nothing to lose and everything to gain by eradicating the records of everyone else--particularly the Lazy S. His men don't have specific orders to shoot up the town, but because the majority of the lot are former border raiders or just plain hired outlaws, they are likely to take a little bit of criminal initiative once things get rolling, particularly if anyone gets in their way.
+If any of the heroes are in town, they're immediately alerted that trouble's ahoof when a gang of masked gunmen rides into town hooting and hollering. The men head straight to the land office, chasing Fisher out by throwing lead at his heels. As soon as the clerk's shoes clear the doorway, they get to work setting a blaze.
+
+23
+
+Deadlands: Range War!
+Give your cowpokes a chance to intervene before the fire gets really going. The Northern Star gunmen are pretty intent on making sure the building burns though, and they make their point with their shooting irons. Anyone brave enough to stand up to them gets a single warning and then it's shoot to kill.
+The characters don't necessarily have to fight alone, though. If they've increased their Standing by +2 (thus eliminating the Charisma penalty), five townsfolk join in the fight on their side as allied Extras. If they've gained +4 Standing and eliminated the Outsider Hindrance altogether, ten townsfolk join the group. Speaking of Standing, if the heroes manage to save the land office, they get a bonus of +2. If they defeat the gunmen but fail to prevent the office from burning down, the bonus is only +1.
+· Hired Guns (5): Use Gunman stats in the Deadlands Marshal's Handbook. Armed with Peacemakers (Range 12/24/48, Damage 2d6+1, RoF 1, Shots 6, AP 1) and 25 spare rounds (.45).
+· Northern Star Hands (4, plus 1 per hero): Use Gunman stats in the Deadlands Marshal's Handbook. Armed with Colt Army revolvers (Range 12/24/48, Damage 2d6+1, RoF 1, Shots 6, AP 1) and Winchester '73 rifles (Range 24/48/96, Damage 2d8, RoF 1, Shots 15, AP 2), with 20 spare rounds for each.
+· Townsfolk (Varies, see above): Use Townsfolk stats in the Deadlands Marshal's Handbook. Half are armed with double-barreled shotguns (Range 12/24/48, Damage 1­3d6, RoF 1­2, Shots 2, +2 Shooting), the rest with Colt Army revolvers (Range 12/24/48, Damage 2d6+1, RoF 1, Shots 6, AP 1).
+
+Marshal Law
+Once the fire gets going or a shootout begins, Marshal Tate emerges from his office, pistol drawn. Initially, he approaches the situation as if the heroes are at fault, calling for them to put their guns down and surrender. His bluster lasts for all of one round, ending when one of the Northern Star hired guns assumes he's trying to intervene and stop them.
+Tate is bought, but he's not that bought. The next round, he switches allegiances and joins the fight against the raiders. The marshal's biggest contribution isn't his gunhand; rather he involves himself more with organizing a bucket brigade to try to quench the fire Logan's men have started.
+The gang loses its nerve and tries to flee when more than three-quarters of their number are dead or Incapacitated. If the heroes manage to defeat or chase off the gunmen in five rounds or less after Tate changes teams, the townsfolk manage to save the land office. Otherwise, the Northern Star attack succeeds regardless of the fate of the flunkies sent to accomplish it.
+Should the posse manage to capture any of the Northern Star hands--or just take a gander at any who fell in the fight--someone from town immediately recognizes them as Logan's men. The hired guns from Laramie, on the other hand, are complete strangers around Dirtwater. Captured Northern Star cowboys are more than happy to confess that Logan put them up to the attack if they think it helps their own situation. Furthermore, they also pass along the rancher's plan to attack the Lazy S--and the fact he's overextended his resources and left very few hands back the Northern Star ranch to hold down the fort.
+
+24
+
+· Rory Tate: Use Gunman (Veteran) stats in the Deadlands Marshal's Handbook. Armed with a Peacemaker (Range 12/24/48, Damage 2d6+1, RoF 1, Shots 6, AP 1) and 25 spare rounds.
+Meanwhile, Back at the Lazy S...
+At roughly the same time, the other half of the Northern Star crew attacks the Lazy S, intending to burn it to the ground. Or, if you want your cowpokes to go from the frying pan into the fire, you can give them enough time to ride back to their ranch before all Hell breaks loose there.
+Stampede! The Northern Star riders start their
+assault by stampeding some of the Lazy S's own herd right through the center of the ranch. Give any saddle tramps present a Notice roll to hear the distinct rumble of the approaching cattle in time to get to cover. Otherwise, they're caught with their drawers down when the stampede rumbles into the ranch. (See sidebar for more information.)
+The stampede is a small one and only lasts for three rounds before the cattle are completely clear of the ranch. Unfortunately for our heroes, that's when the fun really gets started.
+Shoot 'Em Up Once the herd clears the ranch, the
+Northern Star gunmen ride in the next round, close on its hooves. The group hopes to use the confusion and destruction caused by the stampeding cattle to catch the Lazy S crew completely off-guard. Although the heroes and cowboys might be unprepared for a shootout, at least everyone's probably up and moving by the time Logan's gun hands ride in!
+Luckily for the posse, Sutter's cowboys are an experienced lot,
+
+C on f r on tat ion
+Stampedes
+Hombres caught in a stampede have to seek cover or get trampled. This requires an Agility roll (­2) each round the sodbuster is caught in the stampede. On a failure, he's kicked by a few cattle as they thunder past, suffering 2d6+2 damage. Rolling a 1 on the Agility die, regardless of the Wild Die, means he's caught smack in the middle of the stampede and trampled. He takes 4d6+4 damage.
+A character must make two successful Agility rolls in a row--or succeed with a raise on one--to make it to safety.
+having faced everything the Weird West could throw at them from Texas to Wyoming. Even if the characters don't suggest it, a group of the Lazy S cowboys immediately head out to wrangle the rampaging Longhorns back under control. With the losses to Black Dog's pox and Logan's assassins there are only five cowboys left to help out against the Northern Star raiders, but even a few of the trail-hardened Texas veterans are nothing to sneeze at!
+The Northern Star men stay on horseback, trying to use their increased mobility to their advantage. Of course, that means they lose the option of taking cover in return, but most of these thugs aren't used to facing an enemy that fights back--much less one that fights back smartly. Once the attackers lose more than half their number, the Northern Star regular hands drop their guns and try to surrender. The hired guns, on the other hand, do their best to flee, as they figure they're facing the business end of a hanging rope if they get caught.
+
+25
+
+Deadlands: Range War!
+As at the arson attempt in Dirtwater, any of the Northern Star ranch hands who are captured don't hesitate to sell out Logan in exchange for their own hides.
+· Hired Guns (5): Use Gunman stats in the Deadlands Marshal's Handbook. Armed with Peacemakers (Range 12/24/48, Damage 2d6+1, RoF 1, Shots 6, AP 1) and 25 spare rounds (.45).
+· Northern Star Hands (4, plus 2 per hero): Use Gunman stats in the Deadlands Marshal's Handbook. Armed with Colt Army revolvers (Range 12/24/48, Damage 2d6+1, RoF 1, Shots 6, AP 1) and Winchester '73 rifles (Range 24/48/96, Damage 2d8, RoF 1, Shots 15, AP 2), with 20 spare rounds for each.
+· Lazy S Cowboys (5): See page 32.
+Falling Star
+After the attacks on the Lazy S, it's possible the posse has had enough of Logan's shenanigans and lights out after the megalomaniac on their own. If they don't, folks from Dirtwater step forward to ask that they run the Northern Star out of the area. The rancher's attack on the town has convinced them--even Mashal Tate-- that the man is a hazard to everyone.
+Li Zhin doesn't weigh in publicly on behalf of Iron Dragon. He's afraid doing so would damage his honor, as he originally had business dealings with Logan. However, if approached on the matter, he makes it as clear as possible--without saying so--that persuading Logan to close up shop would be well received. And he's awfully loose with his definition of "persuading."
+Sadly, popular support doesn't necessary translate into a lot of actual physical support. Most of the townsfolk draw the line at actually going with the
+
+heroes to confront Logan. Marshal Tate is suddenly very cognizant of the exact limits of his jurisdiction. However, if the posse has managed to elevate its Standing by +2 or more, they can sway five stalwart townsfolk to back their play.
+If the characters get the idea to field their own army from the surviving Lazy S cowboys, odds are they find their resources in that department running low. Of the trail hands who survived the tussle with Logan's hired guns, only half are available as reinforcements. Although all are likely champing at the bit to get their licks in, the remaining cowboys are needed to tend to the ranch and herd.
+Empty Nest
+Logan's two-pronged attack left the Northern Star almost completely empty. Worse, most of the cowpokes were left on his rolls are either out on the range tending cattle or simply took the opportunity to slip away into the wilderness during the recent excitement. Only Logan and 10 hired guns from Laramie remain at the ranch when he arrives. (Morley's still around as well, but he's already got his hands more than full--as the party soon discovers.)
+When the heroes arrive, Logan rightly assumes his scheme for chasing them out of the territory failed. He doesn't waste time trying to talk his way out of the fight. He and his men start shooting as soon as the posse rides into the Northern Star. While some of the hands are in the open, at least half--including Logan himself-- fire from cover in either the bunkhouse or main building.
+· Randolph Logan: Wild Card. See page 33.
+
+26
+
+· Northern Star Hands (4, plus 2 per hero): Use Gunman stats in the Deadlands Marshal's Handbook. Armed with Colt Army revolvers (Range 12/24/48, Damage 2d6+1, RoF 1, Shots 6, AP 1) and Winchester '73 rifles (Range 24/48/96, Damage 2d8, RoF 1, Shots 15, AP 2), with 20 spare rounds for each.
+Morley's Madness
+A while back, Morley managed to get his hands on the carcass of an El Diablo (see Los Diablos in the Deadlands Marshal's Handbook). Using some rather creative applications of his weird technology, he succeeded in not only preserving the monstrosity but actually reanimating it. He implanted an electrical device in the skull of the undead beast containing what he calls a "trapped spirit." Actually, it's a manitou that was thrilled to have access to the power and fury of the corpse of such a powerful abomination.
+With constant monitoring and adjustment, Morley was able to keep the manitou under his control. He also found that infusing Logan's herd with small doses of whatever passes for Diablo blood resulted in a much hardier stock. You can probably already guess where this is headed, Marshal. It's also resulted in a much more aggressive and carnivorous breed, but the scientist convinced his employer all advances come with certain hurdles.
+Two rounds after the shootout gets underway--or as soon as any posse member enters the barn--all Hell breaks loose. Well, maybe not all of it, but more of a portion than any sane person would want to experience.
+Barnabas Morley, left to tend his experiment by himself, loses control of the abomination he's been nurturing in the Northern Star barn. The undead, augmented Diablo breaks free and
+
+C on f r on tat ion
+decides to repay its creator with a goodold fashioned goring, with a trampling or two thrown in for interest.
+If any of your saddletramps breaks into the barn early, they get to watch his demise. Otherwise, the posse is treated to its first glimpse of El Diablo as it bursts through the doors of the bar, carrying a few chunks of the erstwhile scientist! In either case, it calls for a Fear check.
+Mad Cows
+With Morley dead, his creation sets about sowing as much death and destruction as possible. And it's not alone--the abomination has control of all the cattle infused with its blood as well!
+There are a dozen or so of the supernaturally altered animals near the ranch at the moment. However, even a small herd of satanic, meat-eating bovines is a collection of four-legged, armored death. The only silver lining in this storm cloud of unpleasantness is that the monsters turn their first burst of rage at the Northern Star and its riders.
+The herd quickly gathers behind El Diablo and charges full steam at wherever Logan is currently holed up. The wooden walls of the bunkhouse or main building barely slow down several tons of rampaging undead muscle and horns. Any Northern Star cowboys in the building are killed in the stampede. Logan himself is knocked out of the fight as well.
+The Devil's Roundup
+The remaining ranch hands are temporarily stunned by the scale of the violence, but start shooting at the demonic cattle the following round. The resurrected horror then turns its attention to the biggest remaining threat--the posse! The majority of its
+
+27
+
+Deadlands: Range War!
+minions focus on their former masters, and only a few break off to add el Diablo. Even so, this is likely a very tough fight for the heroes.
+Though there are relatively few of the altered cows on hand, there are hundreds roaming the nearby area. The characters are doomed in any war of attrition against the devil's herd. Luckily, as tough as Morley's reanimated El Diablo is, it isn't as powerful as it was in life.
+First, the creature is vulnerable to all attacks, not just those from a single target. Second, the electrical box Morley installed is integral to the beast's survival. If it is destroyed, the manitou is released and the abomination falls lifeless to the ground.
+When the monster is destroyed, the infusion pumping through the veins of the altered cattle becomes immediately toxic and they fall dead the following round.
+Undead Diablo
+This critter largely resembles its living counterparts: a massive, brawny bull covered in scaly hide. Decay has started to creep in, hinting at its undead state, and a small electrical box is implanted between its horns.
+Attributes: Agility d6, Smarts d6, Spirit d8, Strength d12+4, Vigor d12+2
+Skills: Fighting d10, Intimidation d12, Notice d8, Swimming d8
+Pace: 7; Parry: 7; Toughness: 20 (8)
+Special Abilities:
+· Armor +8: A sheath of thick scales cover the creature.
+· Fear (­2): You know what's scarier than an enormous bull from Hell? An enormous, undead bull from Hell, that's what.
+· Fearless: The abomination is immune to Fear and Intimidation.
+
+· Gore: A raise on its Fighting roll throws its victim into the air for an extra d8 damage, instead of the regular bonus.
+· Horns: Str+d12
+· Improved Frenzy: The beast may make two Fighting attacks per action at no penalty.
+· Size +3: The bull is a massive creature.
+· Undead: +2 Toughness. +2 to recover from Shaken. No additional damage from called shots (except for its Weakness). Immune to disease and poison. No wound modifiers.
+· Weakness (Control Box): A called shot to the control box between its horns (­6) bypasses the creature's armor and causes +4 damage. Any attack that causes a single Wound destroys the box and instantly kills the abomination.
+Aftermath
+If the heroes choose the better part of valor and flee, El Diablo and its herd are content to vent their aggression on the few surviving Northern Star men--though if they do, they're left with an undead horror roaming the plains, backed up by a few hundred man-eating beeves! How you want to handle that is up to you, Marshal!
+Should they defeat the devilish herd, they're left the lone ranch standing, at least for now. Eliminating Logan's tyranny on the high plains opens up the area for others to try their hand, which in turn contributes to the growth of Dirtwater. The posse's role in the town's ascension doesn't go unnoticed either. The heroes may find themselves called on to assume leadership positions or otherwise help shape the town's future.
+Li Zhin is more than happy to negotiate a reasonable deal for a
+
+28
+
+railroad right-of-way with the Lazy S. Logan's demise gives him a plausible reason for having to spend more of Kang's money and he gladly takes it. Furthermore, he shows his gratitude by negotiating a very favorable contract to purchase stock from the ranch, far better than Sutter could have otherwise achieved.
+This doesn't have to mean the end of your posse's adventures in Johnson County, though. The WSGA has a long memory and a war coffer to fund reprisals. A single mountain range
+
+separates the Lazy S and Dirtwater from the Sioux Nations and a whole passel of angry braves. Finally, not far to the west the hot springs of Yellowstone hide a gateway to the Hunting Grounds themselves, letting all sorts of creepy-crawlies slip into our world!
+
+29
+
+Friends & Foes
+
+The following characters appear in the adventure to lend a helpin' hand or try to clean the posse's collective plow, as noted in their descriptions. Wild Cards are marked with a handy marshal's badge, thusly:
+Abigail "Abby" Morton Abby is the youngest of Sutter's
+crew, but still fairly trail-smart even at 18 years old. An orphan from Back East, Abby had a hard row to hoe learning the trade of cowboy. However, over the drive from Texas to Wyoming, Sutter has begun to show more and more faith in her and is no longer afraid to leave things entirely in her hands when the situation demands it--which Sutter is finding to be the case more and more often!
+While he likely relies on the posse members to get the job done and make the hard calls on their own, Sutter now trusts Abby to manage the daily business of managing the herd when he's away.
+Attributes: Agility d8, Smarts d6, Spirit d6, Strength d6, Vigor d6
+Skills: Fighting d6, Guts d8, Notice d8, Riding d8, Shooting d6, Survival d6, Throwing d4, Tracking d4
+Charisma: 0; Pace: 6; Parry: 5; Toughness: 5
+Hindrances: Big Mouth, Curious, Loyal
+Edges: Luck, Quick
+
+Gear: Single-action Colt Peacemaker (12/24/48, 2d6+1, RoF 1, Shots 6, AP 1), 20 spare rounds (.45), Winchester '73 (24/48/96, 2d8, RoF 1, Shots 15, AP 2), 20 spare rounds (.44-40), lariat (Parry ­1, Reach +2, Can be used to perform an Agility Trick using the wielder's Fighting skill. Success means the opponent suffers ­2 Parry until his next action. With a raise the opponent falls prone, suffers ­2 Parry, and is Shaken), horse, chaps, saddle.
+Barnabas Morley Morley is Logan's ace-in-the-hole. Unlike many inventors, Morley has turned his focus to biological matters. The mad scientist promised the rancher he could boost his stock's survivability and has delivered--in a sense. Morley is committed to following his theories to their absolute conclusion and utterly amoral in accomplishing his goals.
+Oddly, his scientific focus has led to a near-mania regarding personal contact with biological contaminants. Morley is in his late forties and surprisingly fit, thanks to an almost religious regimen of vitamins, exercise, and exotic chemical additives. His severe appearance is accented by his closely-shaved head-- due to an obsession about head lice-- and a cloth breathing mask that he is never without.
+Attributes: Agility d6, Smarts d10, Spirit d6, Strength d6, Vigor d6
+
+30
+
+Skills: Fighting d6, Driving d6, Guts d6, Healing d8, Knowledge (Biology) d10, Knowledge (Chemistry) d10, Notice d6, Shooting d6, Weird Sciene d10
+Charisma: ­1; Grit: 2 Pace: 6; Parry: 6; Toughness: 7 (5)
+Hindrances: Delusional (Major, Germophobe), Habit (Minor, Neat Freak)
+Edges: Arcane Background (Weird Science), New Power (x2)
+Powers: Boost/lower trait (adrenal injector), fear (amygdala bomb), zombie (spinal activator). Power Points: 15
+Gear: Doctor's bag, repair kit, bulletproof vest (Armor +2).
+
+Friends & Foes
+Gear: Double-action Colt Peacemaker (12/24/48, 2d6+1, RoF 1, Shots 6, AP 1), 20 spare rounds, double-barrel shotgun (12/24/48, 1­3d6, RoF 1­2, Shots 2, +2 Shooting rolls), 20 spare shells, lariat (Parry ­1, Reach +2, Can be used to perform an Agility Trick using the wielder's Fighting skill. Success means the opponent suffers ­2 Parry until his next action. With a raise the opponent falls prone, suffers ­2 Parry, and is Shaken), horse, chaps, saddle.
+
+Bill Sutter Bill Sutter is as rugged as the land where he makes his home. A tough old war horse, Sutter has led his herd from Texas all the way to Wyoming in an effort to buck the stranglehold Baron LaCroix's railroad had over his ranch. Not only has he managed to keep most of the original beeves--likely with a whole passel of help from the heroes-- his herd is nearly twice the size it was when he began.
+Now that he's in what he's come to think of as the "Promised Land", he's tired of stepping aside for bullies of Randolph Logan's sort. He's ready to dig in his heels and fight for what's his.
+Attributes: Agility d6, Smarts d8, Spirit d10, Strength d6, Vigor d6
+Skills: Fighting d8, Guts d8, Intimidation d8, Knowledge (Battle) d6, Notice d6, Riding d8, Shooting d10, Survival d8, Throwing d6, Tracking d4
+Charisma: 0; Grit: 3; Pace: 5; Parry: 6; Toughness: 5
+Hindrances: Code of Honor, Slowpoke, Stubborn
+Edges: Harder to Kill, Level Headed, Steady Hands, True Grit
+31
+
+Deadlands: Range War!
+Black Dog, Pox Walker Black Dog, or To'sarre, was a renegade Comanche shaman before succumbing to a terrible disease while hounding the Lazy S drive north from Texas. He blames Sutter and his partners for his hideous state and will stop at nothing in his quest to destroy them. He no longer has access to the spirits, but has found plenty of manitous willing to provide him power for his spells. Treat Black Dog as a Seasoned character for spellcasting purposes.
+Attributes: Agility d6, Smarts d8, Spirit d10, Strength d8, Vigor d10 Skills: Climbing d6, Fighting d8, Guts d8, Knowledge (Occult) d6, Intimidation d8, Notice d6, Shooting d8, Spellcasting d10, Stealth d8, Survival d6, Tracking d8, Pace: 6; Parry: 6; Toughness: 9 Hindrances: Mean, Vengeful (Major), Outsider Edges: Arcane Background (Black Magic), New Powers Powers: Beast friend, boost/lower trait, fear, shape change, wilderness walk. Power Points: 15 Gear: Bow (Range 12/24/48, Damage 2d6, RoF 1, Pox), 20 arrows, Bowie knife (Str+d4+1, Pox).
+Special Abilities: · Fear (­2): Anyone who sees Black
+Dog's ravaged flesh must make a Guts roll (­2). · Fearless: Black Dog is immune to Fear and Intimidation. · Pox: Heroes infected with the pox must make a Vigor roll each week or gain a Fatigue level from the disease. See the Pox Walker stats in the Deadlands Marshal's Handbook for the full details.
+
+· Spatter: If a cowpoke's attack comes up snake eyes while attacking Black Dog, several of his sores burst, spraying all those adjacent to him with pus. Each spatter victim must make a Vigor roll (­2) or contract the pox.
+· Tainted Weapons: The abomination covers his weapons and arrows with his filth. Anyone who suffers a wound from them must make a Vigor roll (­2) or contract the pox.
+· Undead: +2 Toughness. +2 to recover from Shaken. Called shots do no extra damage.
+· Virulent Breath: As an action, Black Dog may exhale his diseased breath on a grappled victim, forcing her to make a Vigor roll (­2) or be infected with the pox.
+· Coup: A Harrowed who absorbs coup from Black Dog may cure disease himself. See the stats for Pox Walker in the Deadlands Marshal's Handbook for further details.
+Lazy S Cowboy Rugged when they started the trail
+in Texas, the cowboys still riding for the Lazy S are among the toughest cowpunchers sitting in a saddle. They've faced down Confederate soldiers, Indian war parties, and even an unholy nightmare or two. They're not about to turn tail and run just `cause a bunch of nightriders says "Boo!" At the beginning of this adventure, Sutter has 20 of these hardened trail hands in his employ (not counting the heroes).
+Attributes: Agility d8, Smarts d6, Spirit d6, Strength d6, Vigor d8
+Skills: Fighting d8, Gambling d4, Guts d6, Notice d6, Riding d10, Shooting d8, Survival d6, Taunt d6, Throwing d6, Tracking d4
+
+32
+
+Charisma: 0; Pace: 6; Parry: 6; Toughness: 6 Hindrances: Loyal, Poverty Edges: Steady Hands Gear: Colt Army (Range 12/24/48, Damage 2d6+1, RoF 1, Shots 6, AP 1), Winchester '73 rifle (Range 24/48/96, Damage 2d8, RoF 1, Shots 15, AP 2), 40 spare rounds (.44-40), lariat (Parry ­1, Reach +2. Can be used to perform an Agility Trick using the wielder's Fighting skill. Success means the opponent suffers ­2 Parry until his next action. With a raise the opponent falls prone, suffers ­2 Parry, and is Shaken), horse, chaps, saddle.
+Li Zhin A talented martial artist, Li Zhin has worked his way slowly up through the ranks to the position he holds today. He's been entrusted with handling the building of the Dirtwater spur and he has every intention of completing. While his personal ethics are sometimes at odds with those of Iron Dragon, he nonetheless takes his responsibility very seriously.
+Attributes: Agility d10, Smarts d6, Spirit d8, Strength d8, Vigor d6
+Skills: Fighting d10, Guts d8, Intimidation d6, Knowledge (Battle) d6, Notice d6, Riding d6, Shooting d6
+Charisma: ­2/0; Grit: 2; Pace: 5; Parry: 6; Toughness: 5 Hindrances: Cautious, Code of Honor, Outsider (Chinese)
+Edges: Arcane Background (Chi Mastery), First Strike, Martial Arts
+Powers: Blast (fury fans the flame). Power Points: 10 Gear: Colt Army (Range 12/24/48, Damage 2d6+1, RoF 1, Shots 6, AP 1), katana (Str+d6+2, AP 2).
+
+Friends & Foes
+Mad Cow Bigger, meaner, and a whole lot more
+carnivorous than the usual breed of cattle, these monsters are the result of Barnabas Morley's experimentations with infusions of El Diablo blood-- specifically the blood of a reanimated El Diablo. Hey, he is a mad scientist after all.
+Attributes: Agility d6, Smarts d4 (A), Spirit d6, Strength d12+2, Vigor d12 Skills: Fighting d6, Notice d6 Pace: 7; Parry: 5; Toughness: 14 (2) Special Abilities: · Armor +2: A sheath of thick, scales
+are barely covered by its hide. · Gore: The bull uses the charge
+maneuver to gore its opponents with its horns. If it can move at least 6" before attacking, it adds +4 to their damage total. · Horns: Str+d6 · Size +2: Longhorns are large creatures, weighing well over half a ton. · Undead: +2 Toughness. +2 to recover from Shaken. No additional damage from called shots. Immune to disease and poison.
+Randolph Logan Like Sutter, Logan was also a former officer in the Civil War. He served his time in the Union Army, but he learned all the wrong lessons from his stint. Logan is domineering and is so used to getting his way that he believes it is the only way. He rides his men harder than he ever rode a horse, and only the fact that he pays so well allows him to keep even the most desperate of hands in his employ.
+Attributes: Agility d6, Smarts d6, Spirit d10, Strength d8, Vigor d8
+
+33
+
+Deadlands: Range War!
+Skills: Fighting d8, Guts d8, Intimidation d10, Notice d6, Riding d8, Shooting d8 Charisma: ­2; Grit: 3; Pace: 6; Parry: 6; Toughness: 6
+Hindrances: Mean, Stubborn, Vengeful (Major)
+Edges: Combat Reflexes, Command, Connections (WSGA), Level Headed, Strong Willed
+Gear: Colt Peacemaker (Range 12/24/48, Damage 2d6+1, RoF 1, Shots 6, AP 1) Winchester '76 rifle (Range 24/48/96, Damage 2d8, RoF 1, Shots 15, AP 2),
+
+20 spare rounds (.45), Bowie knife (Str+d4+1), horse, saddle.
+Texas Longhorn Longhorns are rangy and tough, with
+horns that average around six feet from tip to tip, but may grow up to eight feet or more. The animals are natural survivors and are capable of finding food, water, and even shelter in bad weather on their own.
+Attributes: Agility d6, Smarts d4 (A), Spirit d4, Strength d10, Vigor d10 Skills: Fighting d6, Notice d6, Survival d4 Pace: 8; Parry: 5; Toughness: 9 Special Abilities: · Gore: Cattle use the charge
+maneuver to gore their opponents with their horns. If they can move at least 6" before attacking, they add +4 to their damage total. · Horns: Str+d6. · Size +2: Longhorns are large creatures, weighing well over half a ton.
+
+Friends & Foes
+35
+
+Deadlands: Range War!
+
+

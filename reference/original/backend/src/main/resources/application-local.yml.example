@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/deadlands
+    username: your_username
+    password: your_password
+
+  security:
+    jwt:
+      secret: your-very-long-secret-key-change-this-for-production-at-least-256-bits
+      expiration: 86400000

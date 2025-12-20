@@ -1,0 +1,98 @@
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+### Frontend ###
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.env
+frontend/.env.local
+
+### Database ###
+*.db
+*.sqlite
+*.sql
+*.backup
+
+### Environment Variables ###
+.env
+.env.local
+
+### Claude Code Settings ###
+.claude/settings.local.json
+.env.production
+backend/src/main/resources/application-local.yml
+
+### Logs ###
+*.log
+logs/
+
+### OS ###
+.DS_Store
+Thumbs.db
+
+### Temporary ###
+*.tmp
+*.temp
+*.jpg
+
+### Migration Scripts (contain production credentials) ###
+migrate-*.js
+archive/
+
+### Database utility scripts (may contain credentials) ###
+list-users.js
+test-login.js
+update-all-passwords.js
+update-password.js
+check-images.js
+
+### Production database configuration (contains credentials) ###
+backend/src/main/resources/application-proddb.yml
+backend/run-with-prod-db.bat
+
+### Node modules at root (from npm installs) ###
+node_modules/
+
+### Windows null device reference ###
+nul
+
+### Claude settings ###
+.claude/settings.local.json
+
+### Deployment scripts with credentials ###
+Variables*.txt
+monitor-deployment.js
+verify-deployment.js
+verify-new-deployment.js

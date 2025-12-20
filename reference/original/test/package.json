@@ -1,0 +1,13 @@
+{
+  "name": "deadlands-stress-tests",
+  "version": "1.0.0",
+  "description": "Stress and load tests for Deadlands multiplayer system",
+  "scripts": {
+    "stress:concurrent-users": "node stress/concurrent-users.js",
+    "stress:all": "npm run stress:concurrent-users"
+  },
+  "dependencies": {
+    "axios": "^1.6.5",
+    "ws": "^8.18.0"
+  }
+}

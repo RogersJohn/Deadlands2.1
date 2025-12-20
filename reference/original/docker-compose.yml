@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:14-alpine
+    container_name: deadlands-db
+    environment:
+      POSTGRES_DB: deadlands
+      POSTGRES_USER: deadlands
+      POSTGRES_PASSWORD: deadlands123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U deadlands"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: deadlands-backend
+    ports:
+      - "8080:8080"
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-jdbc:postgresql://postgres:5432/deadlands}
+      DATABASE_USERNAME: ${DATABASE_USERNAME:-deadlands}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD:-deadlands123}
+      JWT_SECRET: ${JWT_SECRET:-dev-secret-key-change-in-production-minimum-256-bits-required-for-security}
+      JWT_EXPIRATION: ${JWT_EXPIRATION:-86400000}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:3000}
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE:-development}
+      LOG_LEVEL: ${LOG_LEVEL:-DEBUG}
+      JAVA_OPTS: "-Xmx1024m -Xms512m"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+    env_file:
+      - .env.production
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: deadlands-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      VITE_API_URL: ${VITE_API_URL:-http://localhost:8080/api}
+    depends_on:
+      - backend
+    restart: unless-stopped
+    env_file:
+      - .env.production
+
+volumes:
+  postgres_data:
