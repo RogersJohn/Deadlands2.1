@@ -2,6 +2,7 @@ package com.deadlands.v2.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -20,6 +21,50 @@ public class GlobalExceptionHandler {
             int status,
             String timestamp
     ) {}
+
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleResourceNotFound(ResourceNotFoundException ex) {
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body(new ErrorResponse(
+                        ex.getMessage(),
+                        HttpStatus.NOT_FOUND.value(),
+                        Instant.now().toString()
+                ));
+    }
+
+    @ExceptionHandler(AccessDeniedException.class)
+    public ResponseEntity<ErrorResponse> handleSpringAccessDenied(AccessDeniedException ex) {
+        return ResponseEntity
+                .status(HttpStatus.FORBIDDEN)
+                .body(new ErrorResponse(
+                        "Access denied",
+                        HttpStatus.FORBIDDEN.value(),
+                        Instant.now().toString()
+                ));
+    }
+
+    @ExceptionHandler(com.deadlands.v2.exception.AccessDeniedException.class)
+    public ResponseEntity<ErrorResponse> handleAccessDenied(com.deadlands.v2.exception.AccessDeniedException ex) {
+        return ResponseEntity
+                .status(HttpStatus.FORBIDDEN)
+                .body(new ErrorResponse(
+                        ex.getMessage(),
+                        HttpStatus.FORBIDDEN.value(),
+                        Instant.now().toString()
+                ));
+    }
+
+    @ExceptionHandler(DuplicateResourceException.class)
+    public ResponseEntity<ErrorResponse> handleDuplicateResource(DuplicateResourceException ex) {
+        return ResponseEntity
+                .status(HttpStatus.CONFLICT)
+                .body(new ErrorResponse(
+                        ex.getMessage(),
+                        HttpStatus.CONFLICT.value(),
+                        Instant.now().toString()
+                ));
+    }
 
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<ErrorResponse> handleIllegalArgument(IllegalArgumentException ex) {
