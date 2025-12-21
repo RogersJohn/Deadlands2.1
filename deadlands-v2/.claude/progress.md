@@ -2,9 +2,18 @@
 
 ## Summary
 - **Started:** 2025-12-20
-- **Tasks Completed:** 6/25
+- **Tasks Completed:** 7/25
 - **Current Task:** None
 - **Status:** Ready for next task
+
+## NEXT SESSION - START HERE
+1. Task 008 (Wiki Backend) is COMPLETE and MERGED to main
+2. Next task options:
+   - **Task 009: Wiki Frontend** - Port wiki UI, depends on Task 008 ✓
+   - **Task 004: Railway Deployment** - Still incomplete, no blockers
+   - **Task 010: Reference Data System** - Port reference data endpoints
+3. PR workflow is established - create feature branch, implement, test, create PR, get CodeRabbit review, merge
+4. All 37 backend tests passing (12 auth + 25 wiki)
 
 ---
 
@@ -82,6 +91,23 @@
   - Auth styles in index.css (Western theme)
   - 7 frontend tests all passing
 
+### Task 008: Wiki Backend
+- **Completed:** 2025-12-21
+- **Branch:** feature/008-wiki-backend
+- **PR:** #1 (merged)
+- **Summary:**
+  - WikiEntry and WikiAccess entities with JPA relationships
+  - WikiCategory enum (CHARACTER_BIO, CAMPAIGN_LORE, LOCATION, SESSION_NOTE, RULES, OTHER)
+  - WikiVisibility enum (PUBLIC, CHARACTER_SPECIFIC, PRIVATE)
+  - WikiEntryRepository with search and category filtering
+  - WikiAccessRepository for permission grants
+  - WikiService with CRUD, search, and permission-based filtering
+  - WikiController with 10 REST endpoints
+  - Custom exceptions (ResourceNotFoundException, AccessDeniedException, DuplicateResourceException)
+  - Updated GlobalExceptionHandler for proper HTTP status codes
+  - 25 comprehensive tests all passing
+  - CodeRabbit review passed (docstring coverage warning acknowledged)
+
 ---
 
 ## Session Log
@@ -104,3 +130,15 @@
 - Completed Task 006 - Authentication System
 - Completed Task 007 - Frontend Auth Flow
 - Next: Task 008 - Wiki Backend or Task 004 - Railway Deployment
+
+### Session 2 - 2025-12-21
+
+- Implemented Task 008 - Wiki Backend
+  - Analyzed original wiki implementation patterns
+  - Created entities, DTOs, repositories, service, controller
+  - Added custom exception handling
+  - Wrote 25 comprehensive tests
+- Established PR workflow with CodeRabbit reviews
+- Created PR #1 for Task 008, reviewed by CodeRabbit, merged to main
+- Created PR #2 for code review of Tasks 001-007 (closed - issues were in reference code, not new v2 code)
+- Next session: Task 009 (Wiki Frontend), Task 004 (Railway), or Task 010 (Reference Data)
