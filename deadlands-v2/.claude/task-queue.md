@@ -1,8 +1,8 @@
 # Deadlands V2 - Task Queue
 
-Last updated: 2025-12-20
+Last updated: 2025-12-21
 Total tasks: 25
-Completed: 6
+Completed: 7
 In Progress: 0
 Stuck: 0
 
@@ -125,7 +125,7 @@ Stuck: 0
 - **Dependencies:** Task 006
 
 ### Task 008: Wiki Backend
-- [ ] Incomplete
+- [x] Complete
 - **Branch:** feature/008-wiki-backend
 - **Description:** Port wiki functionality from original. This worked well - preserve the approach.
 - **Acceptance Criteria:**
