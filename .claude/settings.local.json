@@ -19,7 +19,8 @@
       "Bash(gh pr close:*)",
       "Bash(gh pr merge:*)",
       "Bash(git pull:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(npm test)"
     ]
   }
 }
