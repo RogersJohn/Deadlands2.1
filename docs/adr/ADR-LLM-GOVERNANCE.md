@@ -24,7 +24,7 @@ A formal governance mechanism is required to:
 
 ## Decision
 
-The file `CLAUDE_OPERATIONAL_CONTRACT.md` is the authoritative governance document for all LLM-assisted work in this repository.
+The file `docs/ai/CLAUDE_OPERATIONAL_CONTRACT.md` is the authoritative governance document for all LLM-assisted work in this repository.
 
 All LLM-assisted work must comply with the operational contract. This applies to:
 
@@ -81,4 +81,4 @@ Enforcement is procedural. Reviewers are expected to:
 
 ## References
 
-- `CLAUDE_OPERATIONAL_CONTRACT.md`
+- `docs/ai/CLAUDE_OPERATIONAL_CONTRACT.md`
