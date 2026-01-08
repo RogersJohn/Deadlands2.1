@@ -20,7 +20,8 @@
       "Bash(gh pr merge:*)",
       "Bash(git pull:*)",
       "Bash(cat:*)",
-      "Bash(npm test)"
+      "Bash(npm test)",
+      "Bash(git mv:*)"
     ]
   }
 }
