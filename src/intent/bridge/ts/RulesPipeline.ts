@@ -5,8 +5,14 @@
  * The adapter selects and invokes pipelines; it does not implement rules.
  */
 
-import { IntentType, ValidatedIntent } from './ValidatedIntent';
+import type { IntentType, ValidatedIntent } from './ValidatedIntent';
 import type { CostValidationResult } from '../../../resolution/ts/types';
+
+// Re-export IntentType for convenience
+export type { IntentType } from './ValidatedIntent';
+
+// Re-export CostValidationResult for convenience (used by CostResult)
+export type { CostValidationResult } from '../../../resolution/ts/types';
 
 /**
  * Opaque identifier for rulesets - branded to prevent interchange
@@ -168,4 +174,138 @@ export interface PipelineRegistry {
    * Returns null if no pipeline is registered for this ruleset
    */
   getPipeline(rulesetId: RulesetId): RulesPipeline | null;
+
+  /**
+   * Get all pipelines that handle a specific intent type (PR 4.2)
+   *
+   * Returns ALL pipelines that claim authority for this intent type.
+   * Does NOT resolve conflicts. Does NOT short-circuit.
+   * The aggregator will invoke ALL of them.
+   */
+  getPipelinesForIntent(intentType: IntentType): readonly RulesPipeline[];
+}
+
+// ============================================================================
+// VALIDATION AGGREGATION TYPES (PR 4.2)
+// ============================================================================
+
+/**
+ * Opaque identifier for validators - branded to prevent interchange
+ */
+declare const VALIDATOR_ID_BRAND: unique symbol;
+export type ValidatorId = string & { readonly [VALIDATOR_ID_BRAND]: never };
+
+/**
+ * Individual rule validation result (PR 4.2)
+ *
+ * This is the result from a SINGLE validator evaluating a SINGLE intent.
+ * Multiple of these are collected into an AggregatedValidationReport.
+ *
+ * CRITICAL: This is the SAME as ValidationReport but with explicit validatorId.
+ * We keep the same structure to preserve compatibility.
+ */
+export type RuleValidationResult = {
+  /** Which validator produced this result */
+  readonly validatorId: ValidatorId;
+
+  /** The ruleset that produced this result */
+  readonly rulesetId: RulesetId;
+
+  /** The invocation ID for this specific validation */
+  readonly invocationId: InvocationId;
+
+  /** The outcome from this validator */
+  readonly outcome: RulesOutcome;
+
+  /** Violations from this validator */
+  readonly violations: readonly RuleViolation[];
+
+  /** Ambiguity from this validator (if outcome is AMBIGUOUS) */
+  readonly ambiguity: RulesAmbiguity | null;
+};
+
+/**
+ * Individual cost validation result (PR 4.2)
+ *
+ * This is the cost validation from a SINGLE validator.
+ * Multiple of these are collected into an AggregatedValidationReport.
+ */
+export type CostResult = {
+  /** Which validator produced this cost validation */
+  readonly validatorId: ValidatorId;
+
+  /** The ruleset that produced this cost validation */
+  readonly rulesetId: RulesetId;
+
+  /** The cost validation result (from PR 4.1) */
+  readonly costValidation: CostValidationResult;
+};
+
+/**
+ * AggregatedValidationReport (PR 4.2)
+ *
+ * Contains the results from ALL validators that evaluated an intent.
+ *
+ * CRITICAL INVARIANTS:
+ * - ALL validators run - no short-circuit
+ * - ALL results are preserved - no suppression
+ * - NO resolution of disagreements - validators can disagree
+ * - NO "most severe wins" - all outcomes coexist
+ * - NO boolean summary - outcomes are enumerated, not collapsed
+ * - NO ordering guarantees - results are unordered
+ *
+ * The engine TOLERATES disagreement without resolving it.
+ */
+export type AggregatedValidationReport = {
+  /** The source intent being validated */
+  readonly sourceIntentId: string;
+
+  /** The intent type being validated */
+  readonly intentType: IntentType;
+
+  /** The original intent payload (preserved, not transformed) */
+  readonly payload: unknown;
+
+  /**
+   * Rule validation results from ALL validators
+   *
+   * May contain:
+   * - Multiple PASS results
+   * - Multiple FAIL results
+   * - Multiple AMBIGUOUS results
+   * - Any combination thereof
+   *
+   * The aggregator does NOT resolve these.
+   */
+  readonly ruleResults: readonly RuleValidationResult[];
+
+  /**
+   * Cost validation results from ALL validators
+   *
+   * May contain:
+   * - Multiple SATISFIED results
+   * - Multiple UNSATISFIED results
+   * - Multiple AMBIGUOUS results
+   * - Any combination thereof
+   *
+   * The aggregator does NOT resolve these.
+   */
+  readonly costResults: readonly CostResult[];
+
+  /**
+   * Count of validators that ran
+   *
+   * This is informational only - does not affect outcome.
+   */
+  readonly validatorCount: number;
+};
+
+/**
+ * Create a ValidatorId from ruleset ID
+ *
+ * Convention: validatorId = "validator_" + rulesetId
+ * This ensures each ruleset has a unique validator identity.
+ */
+export function createValidatorId(rulesetId: RulesetId): ValidatorId {
+  return `validator_${rulesetId}` as ValidatorId;
 }
