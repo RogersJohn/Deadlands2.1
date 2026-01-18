@@ -1,5 +1,5 @@
 /**
- * Reload Firearm Rule (PR 4.0)
+ * Reload Firearm Rule (PR 4.0, updated PR 4.1)
  *
  * First real Deadlands/Savage Worlds rule implementation.
  *
@@ -21,7 +21,13 @@
  * - FAIL: Weapon is not a reloadable firearm
  * - AMBIGUOUS: Weapon is reloadable BUT ammo availability is unknown
  *
- * EXPLICITLY OUT OF SCOPE FOR PR 4.0 (intentional deferral, not TODOs):
+ * PR 4.1 ADDITIONS - Declarative Cost Validation:
+ * - Emits ActionCostEffect describing the action cost requirement
+ * - Emits CostValidationResult with SATISFIED/UNSATISFIED/AMBIGUOUS
+ * - Cost validation is DECLARATIVE ONLY - it does NOT enforce
+ * - NO arithmetic, NO state mutation, NO inference, NO auto-satisfaction
+ *
+ * EXPLICITLY OUT OF SCOPE (intentional deferral, not TODOs):
  * - Dice rolling: Reload legality does not involve dice in Savage Worlds
  * - Reload success/failure mechanics: Beyond legality check
  * - Weapon-specific reload times: All reloads cost 1 action here
@@ -43,6 +49,8 @@ import type {
   ValidationReport,
 } from '../../../intent/bridge/ts/RulesPipeline';
 import { RulesOutcome } from '../../../intent/bridge/ts/RulesPipeline';
+import type { CostValidationResult, ActionCostEffect } from '../../../resolution/ts/types';
+import { CostValidationOutcome } from '../../../resolution/ts/types';
 
 // ============================================================================
 // INTENT PAYLOAD TYPES (what the UI submits)
@@ -84,6 +92,19 @@ export type ReloadFirearmPayload = {
    * - 'full': Weapon is already fully loaded
    */
   readonly currentAmmoState: 'empty' | 'partial' | 'full';
+
+  /**
+   * Action availability context (PR 4.1)
+   *
+   * This comes from game state, provided by the UI/backend.
+   * - 'available': Character has an action available to spend
+   * - 'unavailable': Character has no actions remaining
+   * - 'unknown': Action availability is not provided (triggers AMBIGUOUS cost)
+   *
+   * IMPORTANT: Rules do NOT track or infer action counts.
+   * This value must be explicitly provided.
+   */
+  readonly actionAvailability?: 'available' | 'unavailable' | 'unknown';
 };
 
 // ============================================================================
@@ -106,6 +127,52 @@ function isReloadableWeaponType(weaponType: ReloadFirearmPayload['weaponType']):
     case 'melee':
       return false;
   }
+}
+
+// ============================================================================
+// DECLARATIVE COST VALIDATION (PR 4.1)
+// ============================================================================
+
+/**
+ * The declared action cost for reloading a firearm
+ *
+ * CRITICAL: This is DESCRIPTIVE ONLY.
+ * - It does NOT enforce anything
+ * - It does NOT track actions
+ * - It does NOT modify state
+ * - The persistence layer decides what to do with this data
+ */
+const RELOAD_ACTION_COST: ActionCostEffect = {
+  kind: 'ActionCostEffect',
+  description: 'Reload requires an action',
+  tags: ['action', 'reload'],
+};
+
+/**
+ * Validate the action cost for reload (PR 4.1)
+ *
+ * CRITICAL INVARIANTS:
+ * - SATISFIED is unreachable without GM override
+ * - 'available' does NOT prove spendability
+ * - Only 'unavailable' produces UNSATISFIED
+ * - Everything else → AMBIGUOUS
+ */
+function validateActionCost(
+  actionAvailability: ReloadFirearmPayload['actionAvailability']
+): CostValidationResult {
+  if (actionAvailability === 'unavailable') {
+    return {
+      cost: RELOAD_ACTION_COST,
+      outcome: CostValidationOutcome.UNSATISFIED,
+      reason: 'Action explicitly unavailable',
+    };
+  }
+
+  return {
+    cost: RELOAD_ACTION_COST,
+    outcome: CostValidationOutcome.AMBIGUOUS,
+    reason: 'Action availability does not prove spendability',
+  };
 }
 
 /**
@@ -204,6 +271,7 @@ export const RELOAD_FIREARM_INTENT_TYPE = 'RELOAD_FIREARM' as IntentType;
  * - Handles RELOAD_FIREARM intents only
  * - Validates against Savage Worlds reload rules
  * - Produces ValidationReport with PASS/FAIL/AMBIGUOUS
+ * - Emits declarative cost validation (PR 4.1)
  */
 export function createReloadFirearmPipeline(): RulesPipeline {
   return {
@@ -221,6 +289,10 @@ export function createReloadFirearmPipeline(): RulesPipeline {
         intent.intentId
       );
 
+      // PR 4.1: Declarative cost validation
+      // This describes the cost requirement; it does NOT enforce it
+      const costValidation = validateActionCost(payload.actionAvailability);
+
       return {
         invocationId,
         sourceIntentId: intent.intentId,
@@ -230,6 +302,7 @@ export function createReloadFirearmPipeline(): RulesPipeline {
         violations,
         ambiguity,
         payload: intent.payload,
+        costValidation,
       };
     },
   };
@@ -240,3 +313,6 @@ export function createReloadFirearmPipeline(): RulesPipeline {
 // ============================================================================
 
 export { RulesOutcome };
+
+/** Exported for testing: the declared action cost for reload */
+export { RELOAD_ACTION_COST };

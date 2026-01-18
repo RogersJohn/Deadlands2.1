@@ -61,6 +61,18 @@ export type RulesAmbiguity = {
 };
 
 /**
+ * Declarative cost validation result (PR 4.1)
+ *
+ * Forward declaration for ValidationReport.
+ * Full type is defined in resolution/ts/types.ts
+ */
+export type CostValidationResult = {
+  readonly cost: { readonly kind: 'ActionCostEffect'; readonly description: string; readonly tags?: readonly string[] };
+  readonly outcome: 'SATISFIED' | 'UNSATISFIED' | 'AMBIGUOUS';
+  readonly reason: string;
+};
+
+/**
  * ValidationReport from PR 1.5 - the target of overrides
  *
  * This type is imported conceptually; in practice, we define it here
@@ -75,6 +87,8 @@ export type ValidationReport = {
   readonly violations: readonly RuleViolation[];
   readonly ambiguity: RulesAmbiguity | null;
   readonly payload: unknown;
+  /** Declarative cost validation (PR 4.1) - optional */
+  readonly costValidation?: CostValidationResult;
 };
 
 /**

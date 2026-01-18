@@ -29,6 +29,7 @@ export {
   RELOAD_FIREARM_INTENT_TYPE,
   createReloadFirearmPipeline,
   RulesOutcome,
+  RELOAD_ACTION_COST,
 } from './ReloadFirearm';
 
 // ============================================================================
