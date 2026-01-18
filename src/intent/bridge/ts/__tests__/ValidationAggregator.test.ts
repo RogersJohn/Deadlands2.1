@@ -30,8 +30,6 @@ import { RulesOutcome, createValidatorId } from '../RulesPipeline';
 import {
   ValidationAggregator,
   createValidationAggregator,
-  hasDisagreement,
-  getUniqueOutcomes,
   AggregationFailureCode,
 } from '../ValidationAggregator';
 
@@ -313,10 +311,10 @@ describe('Multi-Validator Aggregation', () => {
       if (result.kind === 'aggregated') {
         expect(result.report.ruleResults).toHaveLength(3);
 
-        const uniqueOutcomes = getUniqueOutcomes(result.report);
-        expect(uniqueOutcomes).toContain(RulesOutcome.PASS);
-        expect(uniqueOutcomes).toContain(RulesOutcome.FAIL);
-        expect(uniqueOutcomes).toContain(RulesOutcome.AMBIGUOUS);
+        const outcomes = result.report.ruleResults.map(r => r.outcome);
+        expect(outcomes).toContain(RulesOutcome.PASS);
+        expect(outcomes).toContain(RulesOutcome.FAIL);
+        expect(outcomes).toContain(RulesOutcome.AMBIGUOUS);
       }
     });
   });
@@ -343,8 +341,11 @@ describe('Multi-Validator Aggregation', () => {
         // Only ruleResults array
         expect('outcome' in result.report).toBe(false);
 
-        // Disagreement is preserved
-        expect(hasDisagreement(result.report)).toBe(true);
+        // Both results are preserved - disagreement exists in the data
+        expect(result.report.ruleResults).toHaveLength(2);
+        const outcomes = result.report.ruleResults.map(r => r.outcome);
+        expect(outcomes).toContain(RulesOutcome.PASS);
+        expect(outcomes).toContain(RulesOutcome.FAIL);
       }
     });
 
@@ -383,10 +384,15 @@ describe('Multi-Validator Aggregation', () => {
 
       expect(result.kind).toBe('aggregated');
       if (result.kind === 'aggregated') {
-        // There is NO boolean "isValid" or "passed" field
+        // INVARIANT: NO summary booleans exist
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        expect((result.report as any).hasFailures).toBeUndefined();
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        expect((result.report as any).isValid).toBeUndefined();
         expect('isValid' in result.report).toBe(false);
         expect('passed' in result.report).toBe(false);
         expect('success' in result.report).toBe(false);
+        expect('hasFailures' in result.report).toBe(false);
       }
     });
   });
@@ -537,79 +543,6 @@ describe('Failure Cases', () => {
     if (result.kind === 'failure') {
       expect(result.failure.code).toBe(AggregationFailureCode.NO_VALIDATORS);
     }
-  });
-});
-
-// ============================================================================
-// UTILITY FUNCTION TESTS
-// ============================================================================
-
-describe('Utility Functions', () => {
-  describe('hasDisagreement', () => {
-    it('returns false when all validators agree', () => {
-      const pipeline1 = createMockPipeline('ruleset_1', ['TEST_INTENT'], RulesOutcome.PASS);
-      const pipeline2 = createMockPipeline('ruleset_2', ['TEST_INTENT'], RulesOutcome.PASS);
-      const registry = createMockRegistry([pipeline1, pipeline2]);
-      const aggregator = createValidationAggregator(registry);
-      const intent = createTestIntent();
-
-      const result = aggregator.aggregate(intent);
-
-      expect(result.kind).toBe('aggregated');
-      if (result.kind === 'aggregated') {
-        expect(hasDisagreement(result.report)).toBe(false);
-      }
-    });
-
-    it('returns true when validators disagree', () => {
-      const pipeline1 = createMockPipeline('ruleset_1', ['TEST_INTENT'], RulesOutcome.PASS);
-      const pipeline2 = createMockPipeline('ruleset_2', ['TEST_INTENT'], RulesOutcome.FAIL);
-      const registry = createMockRegistry([pipeline1, pipeline2]);
-      const aggregator = createValidationAggregator(registry);
-      const intent = createTestIntent();
-
-      const result = aggregator.aggregate(intent);
-
-      expect(result.kind).toBe('aggregated');
-      if (result.kind === 'aggregated') {
-        expect(hasDisagreement(result.report)).toBe(true);
-      }
-    });
-
-    it('returns false for single validator', () => {
-      const pipeline = createMockPipeline('ruleset_1', ['TEST_INTENT'], RulesOutcome.FAIL);
-      const registry = createMockRegistry([pipeline]);
-      const aggregator = createValidationAggregator(registry);
-      const intent = createTestIntent();
-
-      const result = aggregator.aggregate(intent);
-
-      expect(result.kind).toBe('aggregated');
-      if (result.kind === 'aggregated') {
-        expect(hasDisagreement(result.report)).toBe(false);
-      }
-    });
-  });
-
-  describe('getUniqueOutcomes', () => {
-    it('returns unique outcomes only', () => {
-      const pipeline1 = createMockPipeline('ruleset_1', ['TEST_INTENT'], RulesOutcome.PASS);
-      const pipeline2 = createMockPipeline('ruleset_2', ['TEST_INTENT'], RulesOutcome.PASS);
-      const pipeline3 = createMockPipeline('ruleset_3', ['TEST_INTENT'], RulesOutcome.FAIL);
-      const registry = createMockRegistry([pipeline1, pipeline2, pipeline3]);
-      const aggregator = createValidationAggregator(registry);
-      const intent = createTestIntent();
-
-      const result = aggregator.aggregate(intent);
-
-      expect(result.kind).toBe('aggregated');
-      if (result.kind === 'aggregated') {
-        const unique = getUniqueOutcomes(result.report);
-        expect(unique).toHaveLength(2);
-        expect(unique).toContain(RulesOutcome.PASS);
-        expect(unique).toContain(RulesOutcome.FAIL);
-      }
-    });
   });
 });
 

@@ -73,8 +73,6 @@ export {
   AggregationFailureCode,
   ValidationAggregator,
   createValidationAggregator,
-  hasDisagreement,
-  getUniqueOutcomes,
   toAggregatedReport,
 } from './ValidationAggregator';
 

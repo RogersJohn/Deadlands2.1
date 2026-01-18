@@ -235,40 +235,6 @@ export function createValidationAggregator(registry: PipelineRegistry): Validati
   return new ValidationAggregator(registry);
 }
 
-// ============================================================================
-// UTILITY FUNCTIONS FOR WORKING WITH AGGREGATED REPORTS
-// ============================================================================
-
-/**
- * Check if an aggregated report contains any disagreement
- *
- * Disagreement means validators produced different outcomes.
- * This is INFORMATIONAL ONLY - it does NOT affect behavior.
- *
- * The engine TOLERATES disagreement.
- */
-export function hasDisagreement(report: AggregatedValidationReport): boolean {
-  if (report.ruleResults.length <= 1) {
-    return false;
-  }
-
-  const firstOutcome = report.ruleResults[0]?.outcome;
-  return report.ruleResults.some(r => r.outcome !== firstOutcome);
-}
-
-/**
- * Get all unique outcomes from an aggregated report
- *
- * This is INFORMATIONAL ONLY - it does NOT resolve disagreement.
- */
-export function getUniqueOutcomes(report: AggregatedValidationReport): readonly string[] {
-  const outcomes = new Set<string>();
-  for (const result of report.ruleResults) {
-    outcomes.add(result.outcome);
-  }
-  return [...outcomes];
-}
-
 /**
  * Convert a single ValidationReport to an AggregatedValidationReport
  *
