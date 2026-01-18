@@ -9,6 +9,11 @@
  * - IntentRulesAdapter: Selects and invokes rules pipelines
  * - ValidationReport: Result of rules pipeline invocation
  *
+ * PR 4.2 exports:
+ * - AggregatedValidationReport: Results from multiple validators
+ * - ValidationAggregator: Collects ALL validator results without resolution
+ * - processIntentAggregated(): Multi-validator aggregation method
+ *
  * Legacy exports (deprecated):
  * - IntentToRulesBridge: Original bridge that only selects pipelines
  */
@@ -38,9 +43,14 @@ export type {
   ValidationReport,
   RulesPipeline,
   PipelineRegistry,
+  // PR 4.2 - Validation Aggregation Types
+  ValidatorId,
+  RuleValidationResult,
+  CostResult,
+  AggregatedValidationReport,
 } from './RulesPipeline';
 
-export { RulesOutcome } from './RulesPipeline';
+export { RulesOutcome, createValidatorId } from './RulesPipeline';
 
 export type {
   AdapterFailure,
@@ -52,6 +62,19 @@ export {
   IntentRulesAdapter,
   createIntentRulesAdapter,
 } from './IntentRulesAdapter';
+
+// PR 4.2 - Validation Aggregation
+export type {
+  AggregationFailure,
+  AggregationResult,
+} from './ValidationAggregator';
+
+export {
+  AggregationFailureCode,
+  ValidationAggregator,
+  createValidationAggregator,
+  toAggregatedReport,
+} from './ValidationAggregator';
 
 // Legacy exports (deprecated, kept for backwards compatibility)
 export type {

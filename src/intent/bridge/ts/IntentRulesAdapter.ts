@@ -1,5 +1,5 @@
 /**
- * Intent → Rules Adapter (PR 1.5)
+ * Intent → Rules Adapter (PR 1.5, updated PR 4.2)
  *
  * Authoritative bridge between validated intents and rules pipelines.
  *
@@ -9,23 +9,36 @@
  * - Invokes the pipeline
  * - Produces a ValidationReport
  *
+ * PR 4.2 ADDITIONS:
+ * - processIntentAggregated() for multi-validator aggregation
+ * - Preserves processIntent() for backwards compatibility
+ * - Aggregation collects ALL validator results without resolution
+ *
  * This adapter does NOT:
  * - Interpret or enrich intent data
  * - Resolve ambiguity
  * - Apply effects
  * - Mutate state
  * - Make authority decisions
+ * - Resolve disagreements between validators (PR 4.2)
  */
 
 import { IntentType, ValidatedIntent } from './ValidatedIntent';
 import {
+  AggregatedValidationReport,
   InvocationId,
   PipelineRegistry,
   RuleAuthorityClaim,
   RulesetId,
   RulesPipeline,
   ValidationReport,
+  createValidatorId,
 } from './RulesPipeline';
+import {
+  AggregationResult,
+  createValidationAggregator,
+  ValidationAggregator,
+} from './ValidationAggregator';
 
 /**
  * Adapter-level failure codes
@@ -129,12 +142,16 @@ function findMatchingClaims(
  * IntentRulesAdapter
  *
  * The authoritative bridge between intent validation and rules validation.
+ *
+ * PR 4.2: Now supports both single-validator and multi-validator modes.
  */
 export class IntentRulesAdapter {
   private readonly registry: PipelineRegistry;
+  private readonly aggregator: ValidationAggregator;
 
   constructor(registry: PipelineRegistry) {
     this.registry = registry;
+    this.aggregator = createValidationAggregator(registry);
   }
 
   /**
@@ -227,6 +244,26 @@ export class IntentRulesAdapter {
       kind: 'report',
       report,
     };
+  }
+
+  /**
+   * Process a validated intent through ALL validators (PR 4.2)
+   *
+   * CRITICAL INVARIANTS:
+   * - ALL validators run - no short-circuit
+   * - ALL results are preserved - no suppression
+   * - NO resolution of disagreements
+   * - NO "most severe wins"
+   * - NO boolean summary
+   *
+   * Use this method when multiple validators may contribute to validation.
+   * The returned AggregatedValidationReport contains ALL validator results.
+   *
+   * @param intent The validated intent to process
+   * @returns AggregationResult with all validator results, or failure if no validators
+   */
+  processIntentAggregated(intent: ValidatedIntent): AggregationResult {
+    return this.aggregator.aggregate(intent);
   }
 }
 
