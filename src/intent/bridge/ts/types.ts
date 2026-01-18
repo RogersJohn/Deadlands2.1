@@ -1,58 +1,106 @@
 /**
- * Local types for Intent → Rules Bridge (TypeScript implementation)
+ * Bridge Types (Legacy + New)
  *
- * These are LOCAL placeholder types, not global definitions.
- * A later PR will define authoritative global types.
+ * This file re-exports types from the new modules for backwards compatibility
+ * with existing code that imports from './types'.
+ *
+ * New code should import directly from:
+ * - ValidatedIntent.ts for intent types
+ * - RulesPipeline.ts for pipeline types
+ * - IntentRulesAdapter.ts for adapter types
+ *
+ * DEPRECATED: The plain types below are kept for backwards compatibility
+ * with IntentToRulesBridge.ts. New code should use branded types.
  */
 
-// Opaque identifier placeholders (local to this module)
-export type IntentId = string;
-export type IntentType = string;
-export type RulesetId = string;
-export type InvocationId = string;
+// Re-export branded types (preferred)
+export type {
+  IntentId,
+  IntentType,
+  RawIntent,
+  ValidatedIntent,
+  ValidationSummary,
+  IntentValidationResult,
+} from './ValidatedIntent';
 
-// Input types
-export type ValidatedIntent = {
-  intentId: IntentId;
-  intentType: IntentType;
-  payload: unknown;
-  validationSummary: unknown;
-};
+export {
+  createValidatedIntent,
+  isValidatedIntentStructure,
+} from './ValidatedIntent';
 
-export type RuleAuthorityClaim = {
-  rulesetId: RulesetId;
-  intentType: IntentType;
-};
+export type {
+  RulesetId,
+  InvocationId,
+  RuleAuthorityClaim,
+  RulesOutcome,
+  RuleViolation,
+  RulesAmbiguity,
+  ValidationReport,
+  RulesPipeline,
+  PipelineRegistry,
+} from './RulesPipeline';
 
-// Output types
+export { RulesOutcome as RulesOutcomeEnum } from './RulesPipeline';
+
+export type {
+  AdapterFailure,
+  AdapterResult,
+} from './IntentRulesAdapter';
+
+export {
+  AdapterFailureCode,
+  IntentRulesAdapter,
+  createIntentRulesAdapter,
+} from './IntentRulesAdapter';
+
+// ============================================================================
+// LEGACY TYPES (Deprecated - kept for backwards compatibility)
+// ============================================================================
+
+/**
+ * @deprecated Use RulesInvocationRequest from RulesPipeline.ts or
+ * ValidationReport from the new adapter.
+ */
 export type RulesInvocationRequest = {
-  invocationId: InvocationId;
-  sourceIntentId: IntentId;
-  intentType: IntentType;
+  invocationId: string;
+  sourceIntentId: string;
+  intentType: string;
   payload: unknown;
-  rulesetId: RulesetId;
+  rulesetId: string;
 };
 
+/**
+ * @deprecated Use AdapterFailureCode from IntentRulesAdapter.ts
+ */
 export enum BridgeViolationCode {
   NO_RULESET_CLAIMS_AUTHORITY,
   MULTIPLE_RULESETS_CLAIM_AUTHORITY,
   INTENT_UNMAPPABLE_TO_RULES,
 }
 
+/**
+ * @deprecated Use AdapterFailure from IntentRulesAdapter.ts
+ */
 export type BridgeViolation = {
   code: BridgeViolationCode;
-  intentId: IntentId;
+  intentId: string;
   details?: string;
 };
 
+/**
+ * @deprecated Use AdapterResult from IntentRulesAdapter.ts
+ */
 export type RulesInvocationResult =
   | { kind: 'invocation'; request: RulesInvocationRequest }
   | { kind: 'violation'; violation: BridgeViolation };
 
-// Bridge interface
+/**
+ * @deprecated Use IntentRulesAdapter from IntentRulesAdapter.ts
+ * which invokes pipelines and produces ValidationReport.
+ */
 export interface IntentToRulesBridge {
   toRulesInvocation(
-    intent: ValidatedIntent,
-    authorityClaims: RuleAuthorityClaim[]
+    intent: { intentId: string; intentType: string; payload: unknown; validationSummary: unknown },
+    authorityClaims: { rulesetId: string; intentType: string }[]
   ): RulesInvocationResult;
 }
