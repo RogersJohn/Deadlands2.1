@@ -35,11 +35,29 @@ export type RuleViolation = {
 };
 
 /**
+ * Structured ambiguity interpretation
+ *
+ * Each interpretation declares:
+ * - A machine-readable code for GM selection
+ * - The resulting outcome if this interpretation is chosen
+ * - A human-readable description
+ */
+export type AmbiguityInterpretation = {
+  readonly code: string;
+  readonly resultingOutcome: RulesOutcome.PASS | RulesOutcome.FAIL;
+  readonly description: string;
+};
+
+/**
  * Rules ambiguity marker - immutable, never modified by override
+ *
+ * When outcome is AMBIGUOUS, this provides structured interpretations
+ * that the GM can select from. Each interpretation has an explicit
+ * resulting outcome, making override resolution deterministic.
  */
 export type RulesAmbiguity = {
   readonly reason: string;
-  readonly possibleInterpretations: readonly string[];
+  readonly possibleInterpretations: readonly AmbiguityInterpretation[];
 };
 
 /**
@@ -90,9 +108,19 @@ export enum OverrideScope {
  * Overridden outcome - the GM's decision
  *
  * This replaces the rules outcome WITHOUT erasing the original.
+ *
+ * When overriding AMBIGUOUS, the GM must select one of the declared
+ * interpretations. The selectedInterpretationCode field records which
+ * interpretation was chosen, ensuring deterministic resolution.
  */
 export type OverriddenOutcome = {
   readonly newOutcome: RulesOutcome;
+  /**
+   * When overriding AMBIGUOUS, this records which interpretation the GM selected.
+   * Must match one of the codes in originalReport.ambiguity.possibleInterpretations.
+   * The newOutcome must match the resultingOutcome declared by that interpretation.
+   */
+  readonly selectedInterpretationCode?: string;
 };
 
 /**
@@ -181,6 +209,15 @@ export enum OverrideViolationCode {
 
   /** Attempted to override an adapter failure (not a ValidationReport) */
   CANNOT_OVERRIDE_ADAPTER_FAILURE = 'CANNOT_OVERRIDE_ADAPTER_FAILURE',
+
+  /** Missing interpretation code when overriding AMBIGUOUS */
+  MISSING_INTERPRETATION_CODE = 'MISSING_INTERPRETATION_CODE',
+
+  /** Selected interpretation code does not match any declared interpretation */
+  INVALID_INTERPRETATION_CODE = 'INVALID_INTERPRETATION_CODE',
+
+  /** newOutcome does not match the resultingOutcome of the selected interpretation */
+  OUTCOME_MISMATCH = 'OUTCOME_MISMATCH',
 }
 
 /**

@@ -52,11 +52,38 @@ export type RuleViolation = {
 };
 
 /**
+ * Structured ambiguity interpretation
+ *
+ * Each interpretation declares:
+ * - A machine-readable code for GM selection
+ * - The resulting outcome if this interpretation is chosen
+ * - A human-readable description
+ *
+ * This ensures GM override resolution is deterministic:
+ * GM selects interpretation code → system produces declared outcome
+ */
+export type AmbiguityInterpretation = {
+  /** Machine-readable code for GM selection (e.g., 'AMMO_AVAILABLE', 'NO_AMMO') */
+  readonly code: string;
+  /** The outcome that results if this interpretation is chosen */
+  readonly resultingOutcome: RulesOutcome.PASS | RulesOutcome.FAIL;
+  /** Human-readable description of this interpretation */
+  readonly description: string;
+};
+
+/**
  * Ambiguity marker - explicit, not collapsed
+ *
+ * When rules cannot determine outcome, ambiguity provides:
+ * - A reason explaining why the rules cannot decide
+ * - Structured interpretations with explicit outcome mappings
+ *
+ * GM override must select one of the declared interpretations.
+ * The system then deterministically produces the declared outcome.
  */
 export type RulesAmbiguity = {
   readonly reason: string;
-  readonly possibleInterpretations: readonly string[];
+  readonly possibleInterpretations: readonly AmbiguityInterpretation[];
 };
 
 /**

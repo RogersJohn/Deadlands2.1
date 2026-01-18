@@ -417,11 +417,14 @@ describe('AMBIGUOUS Outcome', () => {
   /**
    * AMBIGUOUS requirements:
    * - Outcome = AMBIGUOUS
-   * - ambiguity field is populated with reason and interpretations
+   * - ambiguity field is populated with reason and STRUCTURED interpretations
+   * - Each interpretation has: code, resultingOutcome, description
    * - No ERROR violations (may have warnings)
    * - Resolution produces NO effects (requires GM decision)
    *
    * GM Override handling for AMBIGUOUS:
+   * - GM MUST select an interpretation code
+   * - System deterministically produces the interpretation's declared outcome
    * - GM can resolve to PASS → effects produced
    * - GM can resolve to FAIL → no effects produced
    * See GM Override tests for explicit coverage.
@@ -456,7 +459,7 @@ describe('AMBIGUOUS Outcome', () => {
     }
   });
 
-  it('provides meaningful ambiguity interpretations', () => {
+  it('provides STRUCTURED ambiguity interpretations with explicit outcomes', () => {
     const adapter = createPipeline();
     const intent = createReloadIntent({
       characterId: 'uncertain_pete',
@@ -471,10 +474,22 @@ describe('AMBIGUOUS Outcome', () => {
 
     expect(result.kind).toBe('report');
     if (result.kind === 'report') {
-      // Ambiguity presents both possible interpretations for GM
       const interpretations = result.report.ambiguity?.possibleInterpretations ?? [];
-      expect(interpretations.some(i => i.includes('has ammunition'))).toBe(true);
-      expect(interpretations.some(i => i.includes('no ammunition'))).toBe(true);
+
+      // Each interpretation must be structured with code, resultingOutcome, description
+      expect(interpretations).toHaveLength(2);
+
+      // AMMO_AVAILABLE interpretation → PASS
+      const ammoAvailable = interpretations.find(i => i.code === 'AMMO_AVAILABLE');
+      expect(ammoAvailable).toBeDefined();
+      expect(ammoAvailable?.resultingOutcome).toBe(RulesOutcome.PASS);
+      expect(ammoAvailable?.description).toContain('ammunition available');
+
+      // NO_AMMO interpretation → FAIL
+      const noAmmo = interpretations.find(i => i.code === 'NO_AMMO');
+      expect(noAmmo).toBeDefined();
+      expect(noAmmo?.resultingOutcome).toBe(RulesOutcome.FAIL);
+      expect(noAmmo?.description).toContain('no ammunition');
     }
   });
 });
@@ -522,7 +537,7 @@ describe('GM Override', () => {
     expect(effective.hasOverrides).toBe(true);
   });
 
-  it('allows GM to override AMBIGUOUS to PASS', () => {
+  it('allows GM to override AMBIGUOUS to PASS by selecting interpretation', () => {
     const adapter = createPipeline();
     const intent = createReloadIntent({
       characterId: 'uncertain_pete',
@@ -540,10 +555,11 @@ describe('GM Override', () => {
     // Original is AMBIGUOUS
     expect(result.report.outcome).toBe(RulesOutcome.AMBIGUOUS);
 
-    // GM resolves ambiguity to PASS
+    // GM resolves ambiguity to PASS by selecting AMMO_AVAILABLE interpretation
     const overrideResult = createGmOverride({
       originalReport: result.report,
       newOutcome: RulesOutcome.PASS,
+      selectedInterpretationCode: 'AMMO_AVAILABLE', // Must select interpretation
       reason: 'Pete has ammo in his saddlebag (not tracked in system)',
       warning: { severity: 'INFO', message: 'GM confirmed ammo availability' },
       issuedBy: 'gm_marshal' as GmId,
@@ -552,6 +568,9 @@ describe('GM Override', () => {
 
     expect(overrideResult.kind).toBe('override');
     if (overrideResult.kind !== 'override') return;
+
+    // Override records the selected interpretation
+    expect(overrideResult.override.overriddenOutcome.selectedInterpretationCode).toBe('AMMO_AVAILABLE');
 
     const effective = getEffectiveValidation(result.report, [overrideResult.override]);
 
@@ -594,13 +613,119 @@ describe('GM Override', () => {
   });
 
   /**
+   * DETERMINISM ENFORCEMENT TESTS
+   *
+   * These tests prove that the override system enforces deterministic
+   * resolution of AMBIGUOUS outcomes via interpretation selection.
+   */
+  it('REJECTS override of AMBIGUOUS without interpretation code', () => {
+    const adapter = createPipeline();
+    const intent = createReloadIntent({
+      characterId: 'uncertain_pete',
+      weaponId: 'colt_peacemaker',
+      weaponType: 'firearm',
+      hasShotsCapacity: true,
+      ammoAvailability: 'unknown',
+      currentAmmoState: 'empty',
+    });
+
+    const result = adapter.processIntent(intent);
+    expect(result.kind).toBe('report');
+    if (result.kind !== 'report') return;
+
+    // Attempt override WITHOUT selectedInterpretationCode
+    const overrideResult = createGmOverride({
+      originalReport: result.report,
+      newOutcome: RulesOutcome.PASS,
+      // selectedInterpretationCode: MISSING!
+      reason: 'I just decided',
+      warning: { severity: 'INFO', message: 'Override' },
+      issuedBy: 'gm_marshal' as GmId,
+      issuedAt: 1000 as LogicalTime,
+    });
+
+    // Must be rejected
+    expect(overrideResult.kind).toBe('violation');
+    if (overrideResult.kind === 'violation') {
+      expect(overrideResult.violation.code).toBe('MISSING_INTERPRETATION_CODE');
+    }
+  });
+
+  it('REJECTS override with invalid interpretation code', () => {
+    const adapter = createPipeline();
+    const intent = createReloadIntent({
+      characterId: 'uncertain_pete',
+      weaponId: 'colt_peacemaker',
+      weaponType: 'firearm',
+      hasShotsCapacity: true,
+      ammoAvailability: 'unknown',
+      currentAmmoState: 'empty',
+    });
+
+    const result = adapter.processIntent(intent);
+    expect(result.kind).toBe('report');
+    if (result.kind !== 'report') return;
+
+    // Attempt override with invalid code
+    const overrideResult = createGmOverride({
+      originalReport: result.report,
+      newOutcome: RulesOutcome.PASS,
+      selectedInterpretationCode: 'INVALID_CODE', // Not a valid interpretation
+      reason: 'Made up interpretation',
+      warning: { severity: 'INFO', message: 'Override' },
+      issuedBy: 'gm_marshal' as GmId,
+      issuedAt: 1000 as LogicalTime,
+    });
+
+    // Must be rejected
+    expect(overrideResult.kind).toBe('violation');
+    if (overrideResult.kind === 'violation') {
+      expect(overrideResult.violation.code).toBe('INVALID_INTERPRETATION_CODE');
+    }
+  });
+
+  it('REJECTS override when outcome does not match interpretation', () => {
+    const adapter = createPipeline();
+    const intent = createReloadIntent({
+      characterId: 'uncertain_pete',
+      weaponId: 'colt_peacemaker',
+      weaponType: 'firearm',
+      hasShotsCapacity: true,
+      ammoAvailability: 'unknown',
+      currentAmmoState: 'empty',
+    });
+
+    const result = adapter.processIntent(intent);
+    expect(result.kind).toBe('report');
+    if (result.kind !== 'report') return;
+
+    // AMMO_AVAILABLE interpretation declares resultingOutcome: PASS
+    // Attempting to use it with FAIL outcome is invalid
+    const overrideResult = createGmOverride({
+      originalReport: result.report,
+      newOutcome: RulesOutcome.FAIL, // WRONG - AMMO_AVAILABLE should be PASS
+      selectedInterpretationCode: 'AMMO_AVAILABLE',
+      reason: 'Contradictory override attempt',
+      warning: { severity: 'INFO', message: 'Override' },
+      issuedBy: 'gm_marshal' as GmId,
+      issuedAt: 1000 as LogicalTime,
+    });
+
+    // Must be rejected
+    expect(overrideResult.kind).toBe('violation');
+    if (overrideResult.kind === 'violation') {
+      expect(overrideResult.violation.code).toBe('OUTCOME_MISMATCH');
+    }
+  });
+
+  /**
    * GM Override AMBIGUOUS → FAIL
    *
-   * When AMBIGUOUS outcome occurs, GM can resolve to FAIL if they
-   * determine the character does NOT have ammunition. This produces
-   * NO effects (same as regular FAIL).
+   * When AMBIGUOUS outcome occurs, GM can resolve to FAIL by selecting
+   * the NO_AMMO interpretation. This produces NO effects.
+   * The system deterministically maps interpretation → outcome.
    */
-  it('allows GM to override AMBIGUOUS to FAIL (no effects produced)', () => {
+  it('allows GM to override AMBIGUOUS to FAIL by selecting interpretation (no effects produced)', () => {
     const adapter = createPipeline();
     const effectRegistry = createEffectRegistry();
     const intent = createReloadIntent({
@@ -620,10 +745,11 @@ describe('GM Override', () => {
     expect(result.report.outcome).toBe(RulesOutcome.AMBIGUOUS);
     expect(result.report.ambiguity).not.toBeNull();
 
-    // GM resolves ambiguity to FAIL (character has no ammo)
+    // GM resolves ambiguity to FAIL by selecting NO_AMMO interpretation
     const overrideResult = createGmOverride({
       originalReport: result.report,
       newOutcome: RulesOutcome.FAIL,
+      selectedInterpretationCode: 'NO_AMMO', // Must select interpretation
       reason: 'Pete checked his saddlebag - no ammo of the correct caliber',
       warning: { severity: 'WARNING', message: 'GM confirmed no ammunition available' },
       issuedBy: 'gm_marshal' as GmId,
@@ -949,7 +1075,7 @@ describe('End-to-End Pipeline', () => {
     expect(resolution.effects).toHaveLength(0);
   });
 
-  it('complete flow: AMBIGUOUS → GM override → effects', () => {
+  it('complete flow: AMBIGUOUS → GM selects interpretation → effects', () => {
     // 1. Create intent with unknown ammo
     const intent = createReloadIntent({
       characterId: 'uncertain_pete',
@@ -966,14 +1092,16 @@ describe('End-to-End Pipeline', () => {
     expect(adapterResult.kind).toBe('report');
     if (adapterResult.kind !== 'report') return;
 
-    // 3. Verify AMBIGUOUS
+    // 3. Verify AMBIGUOUS with structured interpretations
     expect(adapterResult.report.outcome).toBe(RulesOutcome.AMBIGUOUS);
     expect(adapterResult.report.ambiguity).not.toBeNull();
+    expect(adapterResult.report.ambiguity?.possibleInterpretations).toHaveLength(2);
 
-    // 4. GM resolves ambiguity
+    // 4. GM selects AMMO_AVAILABLE interpretation → deterministic PASS
     const overrideResult = createGmOverride({
       originalReport: adapterResult.report,
       newOutcome: RulesOutcome.PASS,
+      selectedInterpretationCode: 'AMMO_AVAILABLE', // Explicit selection
       reason: 'Pete confirmed he has ammo in his saddlebag',
       warning: { severity: 'INFO', message: 'GM confirmed ammo availability' },
       issuedBy: 'gm_marshal' as GmId,
@@ -983,21 +1111,24 @@ describe('End-to-End Pipeline', () => {
     expect(overrideResult.kind).toBe('override');
     if (overrideResult.kind !== 'override') return;
 
+    // 5. Override records the selected interpretation
+    expect(overrideResult.override.overriddenOutcome.selectedInterpretationCode).toBe('AMMO_AVAILABLE');
+
     const effective = getEffectiveValidation(adapterResult.report, [overrideResult.override]);
 
-    // 5. Create authoritative decision with override
+    // 6. Create authoritative decision with override
     const decision = createAuthoritativeDecision(effective, [overrideResult.override]);
 
-    // 6. Resolve to effects
+    // 7. Resolve to effects
     const effectRegistry = createEffectRegistry();
     const resolution = resolve(decision, effectRegistry);
 
-    // 7. Verify effects produced via override
+    // 8. Verify effects produced via override
     expect(resolution.outcome).toBe('EFFECTS_PRODUCED');
     expect(resolution.effects.length).toBeGreaterThan(0);
     expect(resolution.effects[0]?.authority.source).toBe('OVERRIDE');
 
-    // 8. Original AMBIGUOUS is preserved
+    // 9. Original AMBIGUOUS is preserved
     expect(decision.originalReport.outcome).toBe(RulesOutcome.AMBIGUOUS);
   });
 });

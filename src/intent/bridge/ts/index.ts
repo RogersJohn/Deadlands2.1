@@ -33,6 +33,7 @@ export type {
   InvocationId,
   RuleAuthorityClaim,
   RuleViolation,
+  AmbiguityInterpretation,
   RulesAmbiguity,
   ValidationReport,
   RulesPipeline,

@@ -155,11 +155,20 @@ function validateReloadFirearm(
   // Rule 4: Ammo availability check
   if (payload.ammoAvailability === 'unknown') {
     // AMBIGUOUS: Rules cannot determine outcome without ammo info
+    // Structured interpretations with explicit outcome mapping for deterministic GM override
     ambiguity = {
       reason: 'Ammunition availability is not specified in the game state.',
       possibleInterpretations: [
-        'Character has ammunition and reload is legal',
-        'Character has no ammunition and reload is illegal',
+        {
+          code: 'AMMO_AVAILABLE',
+          resultingOutcome: RulesOutcome.PASS,
+          description: 'Character has ammunition available - reload is legal',
+        },
+        {
+          code: 'NO_AMMO',
+          resultingOutcome: RulesOutcome.FAIL,
+          description: 'Character has no ammunition available - reload is illegal',
+        },
       ],
     };
     return { outcome: RulesOutcome.AMBIGUOUS, violations, ambiguity };
