@@ -14,6 +14,7 @@
 
 // Types
 export type {
+  AmbiguityInterpretation,
   EffectiveValidation,
   GmId,
   GmOverride,

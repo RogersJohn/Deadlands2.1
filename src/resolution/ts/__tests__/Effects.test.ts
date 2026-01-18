@@ -9,6 +9,8 @@
  * - Optional fields are handled correctly
  */
 
+import { describe, it, expect } from 'vitest';
+
 import { EffectType, RulesOutcome, type EffectAuthority, type EffectTarget } from '../types';
 import { createApplyConditionEffect } from '../effects/ApplyCondition';
 import { createConsumeResourceEffect } from '../effects/ConsumeResource';

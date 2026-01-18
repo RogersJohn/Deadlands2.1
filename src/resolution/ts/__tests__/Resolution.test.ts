@@ -12,6 +12,8 @@
  * Tests assert authority and separation, not gameplay correctness.
  */
 
+import { describe, it, expect } from 'vitest';
+
 import {
   resolve,
   createEffectProducerRegistry,

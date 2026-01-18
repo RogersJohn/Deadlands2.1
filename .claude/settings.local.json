@@ -21,7 +21,8 @@
       "Bash(git pull:*)",
       "Bash(cat:*)",
       "Bash(npm test)",
-      "Bash(git mv:*)"
+      "Bash(git mv:*)",
+      "Bash(npx vitest:*)"
     ]
   }
 }

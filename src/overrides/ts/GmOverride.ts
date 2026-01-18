@@ -90,6 +90,16 @@ export type CreateOverrideParams = {
   /** The new outcome decided by the GM */
   readonly newOutcome: RulesOutcome;
 
+  /**
+   * When overriding AMBIGUOUS, the code of the selected interpretation.
+   * Must match one of the codes in originalReport.ambiguity.possibleInterpretations.
+   * The newOutcome must match the resultingOutcome declared by that interpretation.
+   *
+   * Required when originalReport.outcome is AMBIGUOUS.
+   * Ignored when originalReport.outcome is PASS or FAIL.
+   */
+  readonly selectedInterpretationCode?: string;
+
   /** Mandatory warning - must have non-empty message */
   readonly warning: OverrideWarning;
 
@@ -116,6 +126,10 @@ export type CreateOverrideParams = {
  * - warning.message must be non-empty
  * - parent override chain must be consistent (same invocationId)
  * - scope is always OUTCOME (other scopes not yet implemented)
+ * - When overriding AMBIGUOUS:
+ *   - selectedInterpretationCode is required
+ *   - Must match a declared interpretation code
+ *   - newOutcome must match the interpretation's resultingOutcome
  *
  * Returns violation as data, never throws.
  *
@@ -152,6 +166,50 @@ export function createGmOverride(params: CreateOverrideParams): OverrideResult {
     }
   }
 
+  // Invariant: When overriding AMBIGUOUS, interpretation selection is mandatory and deterministic
+  let selectedInterpretationCode: string | undefined = params.selectedInterpretationCode;
+
+  if (params.originalReport.outcome === RulesOutcome.AMBIGUOUS) {
+    const ambiguity = params.originalReport.ambiguity;
+
+    // AMBIGUOUS must have ambiguity data
+    if (ambiguity === null) {
+      return violation(
+        OverrideViolationCode.INVALID_CHAIN,
+        'AMBIGUOUS outcome has no ambiguity data'
+      );
+    }
+
+    // Must provide interpretation code
+    if (selectedInterpretationCode === undefined) {
+      return violation(
+        OverrideViolationCode.MISSING_INTERPRETATION_CODE,
+        'selectedInterpretationCode is required when overriding AMBIGUOUS'
+      );
+    }
+
+    // Find the selected interpretation
+    const selectedInterp = ambiguity.possibleInterpretations.find(
+      interp => interp.code === selectedInterpretationCode
+    );
+
+    if (selectedInterp === undefined) {
+      const validCodes = ambiguity.possibleInterpretations.map(i => i.code).join(', ');
+      return violation(
+        OverrideViolationCode.INVALID_INTERPRETATION_CODE,
+        `selectedInterpretationCode '${selectedInterpretationCode}' not found. Valid codes: ${validCodes}`
+      );
+    }
+
+    // newOutcome must match the interpretation's declared outcome
+    if (params.newOutcome !== selectedInterp.resultingOutcome) {
+      return violation(
+        OverrideViolationCode.OUTCOME_MISMATCH,
+        `newOutcome '${params.newOutcome}' does not match interpretation '${selectedInterpretationCode}' which declares resultingOutcome '${selectedInterp.resultingOutcome}'`
+      );
+    }
+  }
+
   // Generate deterministic override ID
   const parentOverrideId = params.parentOverride?.overrideId ?? null;
   const overrideId = generateOverrideId(
@@ -168,6 +226,7 @@ export function createGmOverride(params: CreateOverrideParams): OverrideResult {
     originalReport: params.originalReport,
     overriddenOutcome: {
       newOutcome: params.newOutcome,
+      selectedInterpretationCode,
     },
     scope: OverrideScope.OUTCOME,
     warning: params.warning,

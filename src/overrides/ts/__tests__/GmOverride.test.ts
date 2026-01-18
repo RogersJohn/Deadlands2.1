@@ -10,6 +10,8 @@
  * - Overrides are immutable
  */
 
+import { describe, it, expect } from 'vitest';
+
 import {
   createGmOverride,
   CreateOverrideParams,
@@ -111,16 +113,20 @@ describe('GM Override Model (PR 2.0)', () => {
         }
       });
 
-      it('can override AMBIGUOUS to PASS', () => {
+      it('can override AMBIGUOUS to PASS by selecting interpretation', () => {
         const params = makeOverrideParams({
           originalReport: makeValidationReport({
             outcome: RulesOutcome.AMBIGUOUS,
             ambiguity: {
               reason: 'Rules unclear',
-              possibleInterpretations: ['Option A', 'Option B'],
+              possibleInterpretations: [
+                { code: 'OPTION_A', resultingOutcome: RulesOutcome.PASS, description: 'Option A allows it' },
+                { code: 'OPTION_B', resultingOutcome: RulesOutcome.FAIL, description: 'Option B forbids it' },
+              ],
             },
           }),
           newOutcome: RulesOutcome.PASS,
+          selectedInterpretationCode: 'OPTION_A',
         });
         const result = createGmOverride(params);
 
@@ -128,6 +134,7 @@ describe('GM Override Model (PR 2.0)', () => {
         if (result.kind === 'override') {
           expect(result.override.originalReport.outcome).toBe(RulesOutcome.AMBIGUOUS);
           expect(result.override.overriddenOutcome.newOutcome).toBe(RulesOutcome.PASS);
+          expect(result.override.overriddenOutcome.selectedInterpretationCode).toBe('OPTION_A');
         }
       });
 

@@ -7,6 +7,8 @@
  * - The brand prevents accidental misuse at compile time
  */
 
+import { describe, it, expect } from 'vitest';
+
 import {
   createValidatedIntent,
   IntentValidationResult,
