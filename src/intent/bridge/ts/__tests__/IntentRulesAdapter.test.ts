@@ -10,6 +10,8 @@
  * - AMBIGUOUS outcome passed through unchanged
  */
 
+import { describe, it, expect } from 'vitest';
+
 import {
   AdapterFailureCode,
   AdapterResult,
