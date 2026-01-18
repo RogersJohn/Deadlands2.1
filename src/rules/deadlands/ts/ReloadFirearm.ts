@@ -144,52 +144,34 @@ function isReloadableWeaponType(weaponType: ReloadFirearmPayload['weaponType']):
  */
 const RELOAD_ACTION_COST: ActionCostEffect = {
   kind: 'ActionCostEffect',
-  description: 'Reload requires 1 action',
+  description: 'Reload requires an action',
   tags: ['action', 'reload'],
 };
 
 /**
  * Validate the action cost for reload (PR 4.1)
  *
- * This is a DECLARATIVE validation only:
- * - If actionAvailability is 'available' → SATISFIED (explicitly proven)
- * - If actionAvailability is 'unavailable' → UNSATISFIED (explicitly proven)
- * - If actionAvailability is 'unknown' or missing → AMBIGUOUS (cannot determine)
- *
  * CRITICAL INVARIANTS:
- * - NO arithmetic
- * - NO state mutation
- * - NO inference
- * - NO auto-satisfaction
- *
- * If satisfaction cannot be EXPLICITLY proven, result MUST be AMBIGUOUS.
+ * - SATISFIED is unreachable without GM override
+ * - 'available' does NOT prove spendability
+ * - Only 'unavailable' produces UNSATISFIED
+ * - Everything else → AMBIGUOUS
  */
 function validateActionCost(
   actionAvailability: ReloadFirearmPayload['actionAvailability']
 ): CostValidationResult {
-  // No value provided or explicitly unknown → AMBIGUOUS
-  if (actionAvailability === undefined || actionAvailability === 'unknown') {
-    return {
-      cost: RELOAD_ACTION_COST,
-      outcome: CostValidationOutcome.AMBIGUOUS,
-      reason: 'Action availability is not specified. Cannot determine if character has an action to spend.',
-    };
-  }
-
-  // Explicitly unavailable → UNSATISFIED
   if (actionAvailability === 'unavailable') {
     return {
       cost: RELOAD_ACTION_COST,
       outcome: CostValidationOutcome.UNSATISFIED,
-      reason: 'Character has no actions available to spend on reload.',
+      reason: 'Action explicitly unavailable',
     };
   }
 
-  // Explicitly available → SATISFIED
   return {
     cost: RELOAD_ACTION_COST,
-    outcome: CostValidationOutcome.SATISFIED,
-    reason: 'Character has an action available to spend on reload.',
+    outcome: CostValidationOutcome.AMBIGUOUS,
+    reason: 'Action availability does not prove spendability',
   };
 }
 

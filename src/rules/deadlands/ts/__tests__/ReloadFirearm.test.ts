@@ -1177,22 +1177,21 @@ describe('Declarative Cost Validation (PR 4.1)', () => {
 
         // Cost has correct structure
         expect(result.report.costValidation?.cost.kind).toBe('ActionCostEffect');
-        expect(result.report.costValidation?.cost.description).toBe('Reload requires 1 action');
+        expect(result.report.costValidation?.cost.description).toBe('Reload requires an action');
         expect(result.report.costValidation?.cost.tags).toContain('action');
         expect(result.report.costValidation?.cost.tags).toContain('reload');
       }
     });
 
     it('RELOAD_ACTION_COST is the declared cost constant', () => {
-      // Verify exported constant matches expected structure
       expect(RELOAD_ACTION_COST).toBeDefined();
       expect(RELOAD_ACTION_COST.kind).toBe('ActionCostEffect');
-      expect(RELOAD_ACTION_COST.description).toBe('Reload requires 1 action');
+      expect(RELOAD_ACTION_COST.description).toBe('Reload requires an action');
     });
   });
 
   describe('Cost Validation Outcomes', () => {
-    it('SATISFIED when actionAvailability is available', () => {
+    it('treats available action as AMBIGUOUS cost, not satisfied', () => {
       const adapter = createPipeline();
       const intent = createReloadIntent({
         characterId: 'wild_bill',
@@ -1201,15 +1200,14 @@ describe('Declarative Cost Validation (PR 4.1)', () => {
         hasShotsCapacity: true,
         ammoAvailability: 'available',
         currentAmmoState: 'empty',
-        actionAvailability: 'available', // Explicitly available
+        actionAvailability: 'available',
       });
 
       const result = adapter.processIntent(intent);
 
       expect(result.kind).toBe('report');
       if (result.kind === 'report') {
-        expect(result.report.costValidation?.outcome).toBe(CostValidationOutcome.SATISFIED);
-        expect(result.report.costValidation?.reason).toContain('action available');
+        expect(result.report.costValidation?.outcome).toBe(CostValidationOutcome.AMBIGUOUS);
       }
     });
 
@@ -1222,7 +1220,7 @@ describe('Declarative Cost Validation (PR 4.1)', () => {
         hasShotsCapacity: true,
         ammoAvailability: 'available',
         currentAmmoState: 'empty',
-        actionAvailability: 'unavailable', // Explicitly unavailable
+        actionAvailability: 'unavailable',
       });
 
       const result = adapter.processIntent(intent);
@@ -1230,7 +1228,7 @@ describe('Declarative Cost Validation (PR 4.1)', () => {
       expect(result.kind).toBe('report');
       if (result.kind === 'report') {
         expect(result.report.costValidation?.outcome).toBe(CostValidationOutcome.UNSATISFIED);
-        expect(result.report.costValidation?.reason).toContain('no actions available');
+        expect(result.report.costValidation?.reason).toContain('unavailable');
       }
     });
 
@@ -1243,7 +1241,7 @@ describe('Declarative Cost Validation (PR 4.1)', () => {
         hasShotsCapacity: true,
         ammoAvailability: 'available',
         currentAmmoState: 'empty',
-        actionAvailability: 'unknown', // Explicitly unknown
+        actionAvailability: 'unknown',
       });
 
       const result = adapter.processIntent(intent);
@@ -1251,7 +1249,6 @@ describe('Declarative Cost Validation (PR 4.1)', () => {
       expect(result.kind).toBe('report');
       if (result.kind === 'report') {
         expect(result.report.costValidation?.outcome).toBe(CostValidationOutcome.AMBIGUOUS);
-        expect(result.report.costValidation?.reason).toContain('not specified');
       }
     });
 
@@ -1264,16 +1261,60 @@ describe('Declarative Cost Validation (PR 4.1)', () => {
         hasShotsCapacity: true,
         ammoAvailability: 'available',
         currentAmmoState: 'empty',
-        // actionAvailability: NOT PROVIDED
       });
 
       const result = adapter.processIntent(intent);
 
       expect(result.kind).toBe('report');
       if (result.kind === 'report') {
-        // Default to AMBIGUOUS when not specified - NO auto-satisfaction
         expect(result.report.costValidation?.outcome).toBe(CostValidationOutcome.AMBIGUOUS);
-        expect(result.report.costValidation?.reason).toContain('not specified');
+      }
+    });
+
+    it('SATISFIED is unreachable without GM override', () => {
+      const adapter = createPipeline();
+
+      const availableIntent = createReloadIntent({
+        characterId: 'test',
+        weaponId: 'test',
+        weaponType: 'firearm',
+        hasShotsCapacity: true,
+        ammoAvailability: 'available',
+        currentAmmoState: 'empty',
+        actionAvailability: 'available',
+      });
+
+      const unknownIntent = createReloadIntent({
+        characterId: 'test',
+        weaponId: 'test',
+        weaponType: 'firearm',
+        hasShotsCapacity: true,
+        ammoAvailability: 'available',
+        currentAmmoState: 'empty',
+        actionAvailability: 'unknown',
+      });
+
+      const undefinedIntent = createReloadIntent({
+        characterId: 'test',
+        weaponId: 'test',
+        weaponType: 'firearm',
+        hasShotsCapacity: true,
+        ammoAvailability: 'available',
+        currentAmmoState: 'empty',
+      });
+
+      const result1 = adapter.processIntent(availableIntent);
+      const result2 = adapter.processIntent(unknownIntent);
+      const result3 = adapter.processIntent(undefinedIntent);
+
+      if (result1.kind === 'report') {
+        expect(result1.report.costValidation?.outcome).not.toBe(CostValidationOutcome.SATISFIED);
+      }
+      if (result2.kind === 'report') {
+        expect(result2.report.costValidation?.outcome).not.toBe(CostValidationOutcome.SATISFIED);
+      }
+      if (result3.kind === 'report') {
+        expect(result3.report.costValidation?.outcome).not.toBe(CostValidationOutcome.SATISFIED);
       }
     });
   });
@@ -1311,7 +1352,7 @@ describe('Declarative Cost Validation (PR 4.1)', () => {
       }
     });
 
-    it('cost validation does NOT affect rule outcome (FAIL with SATISFIED cost)', () => {
+    it('cost validation does NOT affect rule outcome (FAIL with AMBIGUOUS cost)', () => {
       const adapter = createPipeline();
       const intent = createReloadIntent({
         characterId: 'wild_bill',
@@ -1320,7 +1361,7 @@ describe('Declarative Cost Validation (PR 4.1)', () => {
         hasShotsCapacity: false,
         ammoAvailability: 'unknown',
         currentAmmoState: 'empty',
-        actionAvailability: 'available', // Cost SATISFIED
+        actionAvailability: 'available', // Cost AMBIGUOUS (available does not prove spendability)
       });
 
       const result = adapter.processIntent(intent);
@@ -1330,11 +1371,8 @@ describe('Declarative Cost Validation (PR 4.1)', () => {
         // Rule outcome is FAIL (melee can't be reloaded)
         expect(result.report.outcome).toBe(RulesOutcome.FAIL);
 
-        // Cost is SATISFIED (action is available)
-        expect(result.report.costValidation?.outcome).toBe(CostValidationOutcome.SATISFIED);
-
-        // Cost satisfaction does NOT override rule failure
-        // The persistence layer decides what to do with this declarative data
+        // Cost is AMBIGUOUS (available does not prove spendability)
+        expect(result.report.costValidation?.outcome).toBe(CostValidationOutcome.AMBIGUOUS);
       }
     });
 
@@ -1347,7 +1385,7 @@ describe('Declarative Cost Validation (PR 4.1)', () => {
         hasShotsCapacity: true,
         ammoAvailability: 'unknown', // Rule AMBIGUOUS
         currentAmmoState: 'empty',
-        actionAvailability: 'available', // Cost SATISFIED
+        actionAvailability: 'available', // Cost AMBIGUOUS
       });
 
       const result = adapter.processIntent(intent);
@@ -1357,10 +1395,8 @@ describe('Declarative Cost Validation (PR 4.1)', () => {
         // Rule outcome is AMBIGUOUS (ammo unknown)
         expect(result.report.outcome).toBe(RulesOutcome.AMBIGUOUS);
 
-        // Cost is SATISFIED (action is available)
-        expect(result.report.costValidation?.outcome).toBe(CostValidationOutcome.SATISFIED);
-
-        // Both can be independent - rule needs GM decision, cost is clear
+        // Cost is AMBIGUOUS (available does not prove spendability)
+        expect(result.report.costValidation?.outcome).toBe(CostValidationOutcome.AMBIGUOUS);
       }
     });
 
@@ -1428,8 +1464,8 @@ describe('Declarative Cost Validation (PR 4.1)', () => {
       // Both have the SAME cost declaration - no arithmetic
       if (result1.kind === 'report' && result2.kind === 'report') {
         expect(result1.report.costValidation?.cost).toEqual(result2.report.costValidation?.cost);
-        expect(result1.report.costValidation?.cost.description).toBe('Reload requires 1 action');
-        expect(result2.report.costValidation?.cost.description).toBe('Reload requires 1 action');
+        expect(result1.report.costValidation?.cost.description).toBe('Reload requires an action');
+        expect(result2.report.costValidation?.cost.description).toBe('Reload requires an action');
       }
     });
 
