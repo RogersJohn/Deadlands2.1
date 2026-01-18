@@ -1,5 +1,5 @@
 /**
- * Pipeline Integration (PR 3.0)
+ * Pipeline Integration (PR 3.0, PR 3.1)
  *
  * Connects UI to the backend pipeline.
  * The UI submits raw intents and receives complete authority chain results.
@@ -8,13 +8,17 @@
  *
  * This module provides:
  * - PipelineClient interface for submitting intents
+ * - OverrideClient interface for submitting overrides (PR 3.1)
  * - Mock implementation for testing
  * - No caching, no optimistic updates, no retries
  */
 
 import type {
+  OverrideRequest,
+  OverrideSubmitResult,
   PipelineResult,
   RawIntentInput,
+  RulesOutcome,
 } from './types';
 
 // ============================================================================
@@ -35,6 +39,28 @@ export interface PipelineClient {
    * Does not modify the intent in any way.
    */
   submitIntent(intent: RawIntentInput): Promise<PipelineResult>;
+}
+
+// ============================================================================
+// OVERRIDE CLIENT INTERFACE (PR 3.1)
+// ============================================================================
+
+/**
+ * OverrideClient - interface for submitting GM overrides
+ *
+ * The UI uses this to create overrides via the backend.
+ * The UI does NOT fabricate overrides client-side.
+ *
+ * Core principle: Overrides must feel deliberate, heavy, and visible.
+ */
+export interface OverrideClient {
+  /**
+   * Submit a GM override through the backend
+   *
+   * All fields are required and explicit.
+   * Returns the created override and updated resolution.
+   */
+  submitOverride(request: OverrideRequest): Promise<OverrideSubmitResult>;
 }
 
 // ============================================================================
@@ -208,4 +234,139 @@ function hashString(str: string): string {
     hash = hash & hash;
   }
   return (hash >>> 0).toString(16).padStart(8, '0');
+}
+
+// ============================================================================
+// MOCK OVERRIDE CLIENT (PR 3.1)
+// ============================================================================
+
+/**
+ * MockOverrideConfig - configuration for mock override responses
+ */
+export type MockOverrideConfig = {
+  readonly simulateDelay: number;
+  readonly forceViolation: boolean;
+  readonly violationCode?: string;
+  readonly violationDetails?: string;
+};
+
+/**
+ * Default mock override configuration
+ */
+export const DEFAULT_MOCK_OVERRIDE_CONFIG: MockOverrideConfig = {
+  simulateDelay: 100,
+  forceViolation: false,
+};
+
+/**
+ * Create a mock override client for testing
+ *
+ * The mock produces deterministic, predictable results.
+ * It simulates the backend override creation flow.
+ */
+export function createMockOverrideClient(
+  config: Partial<MockOverrideConfig> = {}
+): OverrideClient {
+  const fullConfig: MockOverrideConfig = { ...DEFAULT_MOCK_OVERRIDE_CONFIG, ...config };
+
+  return {
+    async submitOverride(request: OverrideRequest): Promise<OverrideSubmitResult> {
+      // Simulate network delay
+      if (fullConfig.simulateDelay > 0) {
+        await delay(fullConfig.simulateDelay);
+      }
+
+      // Return violation if configured
+      if (fullConfig.forceViolation) {
+        return {
+          kind: 'violation',
+          code: fullConfig.violationCode ?? 'MOCK_VIOLATION',
+          details: fullConfig.violationDetails ?? 'Mock violation for testing',
+        };
+      }
+
+      // Validate required fields (mirroring backend behavior)
+      if (request.reason.trim() === '') {
+        return {
+          kind: 'violation',
+          code: 'EMPTY_REASON',
+          details: 'reason must be non-empty',
+        };
+      }
+
+      if (request.warningMessage.trim() === '') {
+        return {
+          kind: 'violation',
+          code: 'EMPTY_WARNING_MESSAGE',
+          details: 'warning.message must be non-empty',
+        };
+      }
+
+      // Generate deterministic override ID
+      const invocationId = request.validationReport.invocationId;
+      const overrideId = `ovr_${hashString(invocationId + ':' + request.gmId + ':' + Date.now())}`;
+
+      // Build the override
+      const override = {
+        overrideId,
+        parentOverrideId: null,
+        overriddenOutcome: { newOutcome: request.newOutcome },
+        warning: {
+          severity: request.warningSeverity,
+          message: request.warningMessage,
+        },
+        reason: request.reason,
+        issuedBy: request.gmId,
+        issuedAt: Date.now(),
+      };
+
+      // Build resolution based on new effective outcome
+      const effectiveOutcome = request.newOutcome;
+      const effects = effectiveOutcome === 'PASS'
+        ? [{
+            effectId: `eff_${hashString(invocationId + '_override_0')}`,
+            effectType: 'TRIGGER_NARRATIVE',
+            target: { targetId: 'mock_target', targetType: 'character' },
+            authority: { invocationId, source: 'OVERRIDE' as const, outcome: effectiveOutcome },
+            parameters: { narrativeDescriptor: 'Effect via GM override' },
+            description: 'Effect produced via GM override',
+          }]
+        : [];
+
+      const resolution = {
+        outcome: effectiveOutcome === 'PASS'
+          ? 'EFFECTS_PRODUCED' as const
+          : effectiveOutcome === 'FAIL'
+            ? 'NO_EFFECTS_FAIL' as const
+            : 'NO_EFFECTS_AMBIGUOUS' as const,
+        effects,
+        explanation: `Resolution via GM override: ${effects.length} effect(s)`,
+      };
+
+      return {
+        kind: 'success',
+        override,
+        newEffectiveOutcome: effectiveOutcome,
+        resolution,
+      };
+    },
+  };
+}
+
+/**
+ * Create a mock override client that always returns violations
+ */
+export function createOverrideViolationMock(
+  code: string,
+  details: string
+): OverrideClient {
+  return {
+    async submitOverride(_request: OverrideRequest): Promise<OverrideSubmitResult> {
+      return {
+        kind: 'violation',
+        code,
+        details,
+      };
+    },
+  };
 }
