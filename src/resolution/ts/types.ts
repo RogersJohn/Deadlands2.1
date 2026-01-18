@@ -237,3 +237,128 @@ export type ResolutionViolation = {
   readonly code: ResolutionViolationCode;
   readonly details: string;
 };
+
+// ============================================================================
+// DECLARATIVE COST TYPES (PR 4.1)
+// ============================================================================
+
+/**
+ * ActionCostEffect - Declarative description of a cost (PR 4.1)
+ *
+ * CRITICAL INVARIANTS:
+ * - This is DESCRIPTIVE ONLY - it does NOT enforce anything
+ * - No arithmetic
+ * - No state mutation
+ * - No tracking of actions, turns, AP, or time
+ * - No implicit inference of costs
+ * - No auto-satisfaction
+ *
+ * Rules may emit zero or more ActionCostEffects.
+ * These describe REQUIREMENTS, not ENFORCEMENT.
+ *
+ * The persistence layer (NOT rules) decides what to do with this data.
+ */
+export type ActionCostEffect = {
+  readonly kind: 'ActionCostEffect';
+
+  /** Human-readable, rules-facing description of the cost */
+  readonly description: string;
+
+  /**
+   * Optional semantic tags for categorization
+   *
+   * Tags are DESCRIPTIVE ONLY. They must NOT be consumed by logic.
+   * Examples: ['action', 'reload'], ['free_action'], ['movement']
+   */
+  readonly tags?: readonly string[];
+};
+
+/**
+ * CostValidationOutcome - The three states of cost validation (PR 4.1)
+ *
+ * CRITICAL: Rules do NOT inspect game state to determine satisfaction.
+ * Rules do NOT infer satisfaction.
+ * If satisfaction cannot be EXPLICITLY proven, result MUST be AMBIGUOUS.
+ */
+export enum CostValidationOutcome {
+  /** Cost is explicitly satisfied (proven, not inferred) */
+  SATISFIED = 'SATISFIED',
+
+  /** Cost is explicitly NOT satisfied (proven, not inferred) */
+  UNSATISFIED = 'UNSATISFIED',
+
+  /** Cost satisfaction cannot be determined - requires GM decision */
+  AMBIGUOUS = 'AMBIGUOUS',
+}
+
+/**
+ * CostValidationResult - Result of declarative cost validation (PR 4.1)
+ *
+ * INVARIANTS:
+ * - If satisfaction cannot be explicitly proven → AMBIGUOUS
+ * - Rules NEVER auto-fail on missing data
+ * - Rules NEVER infer satisfaction
+ * - AMBIGUOUS allows GM override (opt-in, logged, structured)
+ */
+export type CostValidationResult = {
+  /** The declared cost being validated */
+  readonly cost: ActionCostEffect;
+
+  /** The validation outcome */
+  readonly outcome: CostValidationOutcome;
+
+  /**
+   * Reason for this outcome
+   *
+   * For SATISFIED: explicit proof of satisfaction
+   * For UNSATISFIED: explicit proof of non-satisfaction
+   * For AMBIGUOUS: explanation of why satisfaction cannot be determined
+   */
+  readonly reason: string;
+};
+
+/**
+ * CostOverrideInterpretation - Structured interpretation for cost ambiguity (PR 4.1)
+ *
+ * When cost validation produces AMBIGUOUS, the GM must select one of these
+ * interpretations to resolve the ambiguity.
+ */
+export type CostOverrideInterpretation = {
+  /** Machine-readable code for GM selection */
+  readonly code: string;
+
+  /** The resulting cost outcome if this interpretation is chosen */
+  readonly resultingOutcome: CostValidationOutcome.SATISFIED | CostValidationOutcome.UNSATISFIED;
+
+  /** Human-readable description of this interpretation */
+  readonly description: string;
+};
+
+/**
+ * CostOverrideDecision - GM decision on cost ambiguity (PR 4.1)
+ *
+ * INVARIANTS:
+ * - Override is STRUCTURED (not freeform)
+ * - Override is LOGGED (reason + warning required)
+ * - Override is OPT-IN (GM must explicitly select interpretation)
+ * - Override does NOT mutate prior validation results
+ */
+export type CostOverrideDecision = {
+  /** The original cost validation result - NEVER mutated */
+  readonly originalResult: CostValidationResult;
+
+  /** The interpretation code selected by the GM */
+  readonly selectedInterpretationCode: string;
+
+  /** The effective outcome after override */
+  readonly effectiveOutcome: CostValidationOutcome.SATISFIED | CostValidationOutcome.UNSATISFIED;
+
+  /** Mandatory reason for the override */
+  readonly reason: string;
+
+  /** GM identity for audit trail */
+  readonly issuedBy: string;
+
+  /** Timestamp for audit trail */
+  readonly issuedAt: number;
+};

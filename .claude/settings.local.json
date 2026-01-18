@@ -22,7 +22,7 @@
       "Bash(cat:*)",
       "Bash(npm test)",
       "Bash(git mv:*)",
-      "Bash(npx vitest:*)"
+      "Bash(git merge:*)"
     ]
   }
 }

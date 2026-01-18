@@ -1,5 +1,5 @@
 /**
- * Reload Firearm Rule Tests (PR 4.0)
+ * Reload Firearm Rule Tests (PR 4.0, updated PR 4.1)
  *
  * End-to-end tests proving:
  * - The rule is selected correctly by intent
@@ -9,9 +9,15 @@
  * - GM override can override FAIL or AMBIGUOUS
  * - Resolution produces effects only on PASS or override
  *
+ * PR 4.1 ADDITIONS - Declarative Cost Validation:
+ * - costValidation field is populated with ActionCostEffect + outcome
+ * - No arithmetic, no state mutation, no inference
+ * - AMBIGUOUS cost when action availability is unknown
+ * - GM can override cost ambiguity (separate from rule outcome ambiguity)
+ *
  * These tests assert end-to-end behavior, not isolated units.
  *
- * EXPLICITLY OUT OF SCOPE FOR PR 4.0 (intentional deferral, not TODOs):
+ * EXPLICITLY OUT OF SCOPE (intentional deferral, not TODOs):
  * - Dice rolling (reload legality does not involve dice)
  * - Reload success/failure mechanics beyond legality check
  * - Weapon-specific reload times (all reloads cost 1 action here)
@@ -34,7 +40,7 @@ import { createGmOverride, getEffectiveValidation } from '../../../../overrides/
 
 // Resolution layer imports
 import { resolve, createEffectProducerRegistry } from '../../../../resolution/ts/Resolution';
-import { createAuthoritativeDecision, EffectType } from '../../../../resolution/ts/types';
+import { createAuthoritativeDecision, EffectType, CostValidationOutcome } from '../../../../resolution/ts/types';
 
 // Deadlands rule imports
 import {
@@ -42,6 +48,7 @@ import {
   RELOAD_FIREARM_INTENT_TYPE,
   produceReloadFirearmEffects,
   ReloadFirearmPayload,
+  RELOAD_ACTION_COST,
 } from '../index';
 
 // ============================================================================
@@ -1130,5 +1137,324 @@ describe('End-to-End Pipeline', () => {
 
     // 9. Original AMBIGUOUS is preserved
     expect(decision.originalReport.outcome).toBe(RulesOutcome.AMBIGUOUS);
+  });
+});
+
+// ============================================================================
+// PR 4.1 - DECLARATIVE COST VALIDATION TESTS
+// ============================================================================
+
+describe('Declarative Cost Validation (PR 4.1)', () => {
+  /**
+   * PR 4.1 INVARIANTS:
+   * - Cost validation is DECLARATIVE ONLY - it does NOT enforce anything
+   * - NO arithmetic
+   * - NO state mutation
+   * - NO inference of costs
+   * - NO auto-satisfaction
+   * - If satisfaction cannot be EXPLICITLY proven → AMBIGUOUS
+   */
+
+  describe('Cost Declaration', () => {
+    it('emits ActionCostEffect with kind and description', () => {
+      const adapter = createPipeline();
+      const intent = createReloadIntent({
+        characterId: 'wild_bill',
+        weaponId: 'colt_peacemaker',
+        weaponType: 'firearm',
+        hasShotsCapacity: true,
+        ammoAvailability: 'available',
+        currentAmmoState: 'empty',
+      });
+
+      const result = adapter.processIntent(intent);
+
+      expect(result.kind).toBe('report');
+      if (result.kind === 'report') {
+        // costValidation field is populated
+        expect(result.report.costValidation).toBeDefined();
+        expect(result.report.costValidation?.cost).toBeDefined();
+
+        // Cost has correct structure
+        expect(result.report.costValidation?.cost.kind).toBe('ActionCostEffect');
+        expect(result.report.costValidation?.cost.description).toBe('Reload requires 1 action');
+        expect(result.report.costValidation?.cost.tags).toContain('action');
+        expect(result.report.costValidation?.cost.tags).toContain('reload');
+      }
+    });
+
+    it('RELOAD_ACTION_COST is the declared cost constant', () => {
+      // Verify exported constant matches expected structure
+      expect(RELOAD_ACTION_COST).toBeDefined();
+      expect(RELOAD_ACTION_COST.kind).toBe('ActionCostEffect');
+      expect(RELOAD_ACTION_COST.description).toBe('Reload requires 1 action');
+    });
+  });
+
+  describe('Cost Validation Outcomes', () => {
+    it('SATISFIED when actionAvailability is available', () => {
+      const adapter = createPipeline();
+      const intent = createReloadIntent({
+        characterId: 'wild_bill',
+        weaponId: 'colt_peacemaker',
+        weaponType: 'firearm',
+        hasShotsCapacity: true,
+        ammoAvailability: 'available',
+        currentAmmoState: 'empty',
+        actionAvailability: 'available', // Explicitly available
+      });
+
+      const result = adapter.processIntent(intent);
+
+      expect(result.kind).toBe('report');
+      if (result.kind === 'report') {
+        expect(result.report.costValidation?.outcome).toBe(CostValidationOutcome.SATISFIED);
+        expect(result.report.costValidation?.reason).toContain('action available');
+      }
+    });
+
+    it('UNSATISFIED when actionAvailability is unavailable', () => {
+      const adapter = createPipeline();
+      const intent = createReloadIntent({
+        characterId: 'wild_bill',
+        weaponId: 'colt_peacemaker',
+        weaponType: 'firearm',
+        hasShotsCapacity: true,
+        ammoAvailability: 'available',
+        currentAmmoState: 'empty',
+        actionAvailability: 'unavailable', // Explicitly unavailable
+      });
+
+      const result = adapter.processIntent(intent);
+
+      expect(result.kind).toBe('report');
+      if (result.kind === 'report') {
+        expect(result.report.costValidation?.outcome).toBe(CostValidationOutcome.UNSATISFIED);
+        expect(result.report.costValidation?.reason).toContain('no actions available');
+      }
+    });
+
+    it('AMBIGUOUS when actionAvailability is unknown', () => {
+      const adapter = createPipeline();
+      const intent = createReloadIntent({
+        characterId: 'wild_bill',
+        weaponId: 'colt_peacemaker',
+        weaponType: 'firearm',
+        hasShotsCapacity: true,
+        ammoAvailability: 'available',
+        currentAmmoState: 'empty',
+        actionAvailability: 'unknown', // Explicitly unknown
+      });
+
+      const result = adapter.processIntent(intent);
+
+      expect(result.kind).toBe('report');
+      if (result.kind === 'report') {
+        expect(result.report.costValidation?.outcome).toBe(CostValidationOutcome.AMBIGUOUS);
+        expect(result.report.costValidation?.reason).toContain('not specified');
+      }
+    });
+
+    it('AMBIGUOUS when actionAvailability is not provided (undefined)', () => {
+      const adapter = createPipeline();
+      const intent = createReloadIntent({
+        characterId: 'wild_bill',
+        weaponId: 'colt_peacemaker',
+        weaponType: 'firearm',
+        hasShotsCapacity: true,
+        ammoAvailability: 'available',
+        currentAmmoState: 'empty',
+        // actionAvailability: NOT PROVIDED
+      });
+
+      const result = adapter.processIntent(intent);
+
+      expect(result.kind).toBe('report');
+      if (result.kind === 'report') {
+        // Default to AMBIGUOUS when not specified - NO auto-satisfaction
+        expect(result.report.costValidation?.outcome).toBe(CostValidationOutcome.AMBIGUOUS);
+        expect(result.report.costValidation?.reason).toContain('not specified');
+      }
+    });
+  });
+
+  describe('Declarative-Only Invariants', () => {
+    /**
+     * These tests prove the cost system is DECLARATIVE ONLY.
+     * It describes requirements; it does NOT enforce them.
+     */
+
+    it('cost validation does NOT affect rule outcome (PASS with UNSATISFIED cost)', () => {
+      const adapter = createPipeline();
+      const intent = createReloadIntent({
+        characterId: 'wild_bill',
+        weaponId: 'colt_peacemaker',
+        weaponType: 'firearm',
+        hasShotsCapacity: true,
+        ammoAvailability: 'available',
+        currentAmmoState: 'empty',
+        actionAvailability: 'unavailable', // Cost UNSATISFIED
+      });
+
+      const result = adapter.processIntent(intent);
+
+      expect(result.kind).toBe('report');
+      if (result.kind === 'report') {
+        // Rule outcome is PASS (ammo is available, weapon is valid)
+        expect(result.report.outcome).toBe(RulesOutcome.PASS);
+
+        // Cost is UNSATISFIED (no actions)
+        expect(result.report.costValidation?.outcome).toBe(CostValidationOutcome.UNSATISFIED);
+
+        // Cost does NOT block the rule outcome
+        // The persistence layer decides what to do with this declarative data
+      }
+    });
+
+    it('cost validation does NOT affect rule outcome (FAIL with SATISFIED cost)', () => {
+      const adapter = createPipeline();
+      const intent = createReloadIntent({
+        characterId: 'wild_bill',
+        weaponId: 'bowie_knife',
+        weaponType: 'melee', // Will cause FAIL
+        hasShotsCapacity: false,
+        ammoAvailability: 'unknown',
+        currentAmmoState: 'empty',
+        actionAvailability: 'available', // Cost SATISFIED
+      });
+
+      const result = adapter.processIntent(intent);
+
+      expect(result.kind).toBe('report');
+      if (result.kind === 'report') {
+        // Rule outcome is FAIL (melee can't be reloaded)
+        expect(result.report.outcome).toBe(RulesOutcome.FAIL);
+
+        // Cost is SATISFIED (action is available)
+        expect(result.report.costValidation?.outcome).toBe(CostValidationOutcome.SATISFIED);
+
+        // Cost satisfaction does NOT override rule failure
+        // The persistence layer decides what to do with this declarative data
+      }
+    });
+
+    it('cost validation is orthogonal to rule ambiguity', () => {
+      const adapter = createPipeline();
+      const intent = createReloadIntent({
+        characterId: 'wild_bill',
+        weaponId: 'colt_peacemaker',
+        weaponType: 'firearm',
+        hasShotsCapacity: true,
+        ammoAvailability: 'unknown', // Rule AMBIGUOUS
+        currentAmmoState: 'empty',
+        actionAvailability: 'available', // Cost SATISFIED
+      });
+
+      const result = adapter.processIntent(intent);
+
+      expect(result.kind).toBe('report');
+      if (result.kind === 'report') {
+        // Rule outcome is AMBIGUOUS (ammo unknown)
+        expect(result.report.outcome).toBe(RulesOutcome.AMBIGUOUS);
+
+        // Cost is SATISFIED (action is available)
+        expect(result.report.costValidation?.outcome).toBe(CostValidationOutcome.SATISFIED);
+
+        // Both can be independent - rule needs GM decision, cost is clear
+      }
+    });
+
+    it('cost validation is orthogonal to rule ambiguity (both AMBIGUOUS)', () => {
+      const adapter = createPipeline();
+      const intent = createReloadIntent({
+        characterId: 'wild_bill',
+        weaponId: 'colt_peacemaker',
+        weaponType: 'firearm',
+        hasShotsCapacity: true,
+        ammoAvailability: 'unknown', // Rule AMBIGUOUS
+        currentAmmoState: 'empty',
+        actionAvailability: 'unknown', // Cost AMBIGUOUS
+      });
+
+      const result = adapter.processIntent(intent);
+
+      expect(result.kind).toBe('report');
+      if (result.kind === 'report') {
+        // Rule outcome is AMBIGUOUS (ammo unknown)
+        expect(result.report.outcome).toBe(RulesOutcome.AMBIGUOUS);
+
+        // Cost is AMBIGUOUS (action unknown)
+        expect(result.report.costValidation?.outcome).toBe(CostValidationOutcome.AMBIGUOUS);
+
+        // Both need GM decisions independently
+      }
+    });
+  });
+
+  describe('No Arithmetic / No State Mutation', () => {
+    /**
+     * These tests prove there is NO arithmetic and NO state mutation.
+     * The cost system never computes or changes anything.
+     */
+
+    it('cost description is static text, not computed', () => {
+      // Test that the cost description is always the same
+      // regardless of any payload values
+      const adapter = createPipeline();
+
+      const intent1 = createReloadIntent({
+        characterId: 'char_1',
+        weaponId: 'weapon_1',
+        weaponType: 'firearm',
+        hasShotsCapacity: true,
+        ammoAvailability: 'available',
+        currentAmmoState: 'empty',
+        actionAvailability: 'available',
+      });
+
+      const intent2 = createReloadIntent({
+        characterId: 'char_2',
+        weaponId: 'weapon_2',
+        weaponType: 'crossbow',
+        hasShotsCapacity: true,
+        ammoAvailability: 'unavailable',
+        currentAmmoState: 'partial',
+        actionAvailability: 'unavailable',
+      });
+
+      const result1 = adapter.processIntent(intent1);
+      const result2 = adapter.processIntent(intent2);
+
+      // Both have the SAME cost declaration - no arithmetic
+      if (result1.kind === 'report' && result2.kind === 'report') {
+        expect(result1.report.costValidation?.cost).toEqual(result2.report.costValidation?.cost);
+        expect(result1.report.costValidation?.cost.description).toBe('Reload requires 1 action');
+        expect(result2.report.costValidation?.cost.description).toBe('Reload requires 1 action');
+      }
+    });
+
+    it('cost tags are declarative categorization, not computed', () => {
+      const adapter = createPipeline();
+      const intent = createReloadIntent({
+        characterId: 'wild_bill',
+        weaponId: 'colt_peacemaker',
+        weaponType: 'firearm',
+        hasShotsCapacity: true,
+        ammoAvailability: 'available',
+        currentAmmoState: 'empty',
+      });
+
+      const result = adapter.processIntent(intent);
+
+      expect(result.kind).toBe('report');
+      if (result.kind === 'report') {
+        // Tags are static categorization
+        const tags = result.report.costValidation?.cost.tags ?? [];
+        expect(tags).toEqual(['action', 'reload']);
+
+        // Tags do NOT change based on any state
+        // They are DESCRIPTIVE ONLY
+      }
+    });
   });
 });

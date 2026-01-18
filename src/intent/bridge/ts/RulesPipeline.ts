@@ -6,6 +6,7 @@
  */
 
 import { IntentType, ValidatedIntent } from './ValidatedIntent';
+import type { CostValidationResult } from '../../../resolution/ts/types';
 
 /**
  * Opaque identifier for rulesets - branded to prevent interchange
@@ -101,6 +102,19 @@ export type ValidationReport = {
   readonly violations: readonly RuleViolation[];
   readonly ambiguity: RulesAmbiguity | null;
   readonly payload: unknown;
+
+  /**
+   * Declarative cost validation (PR 4.1)
+   *
+   * If the rule declares an action cost, this field contains:
+   * - The cost description (what is required)
+   * - The validation outcome (SATISFIED, UNSATISFIED, or AMBIGUOUS)
+   * - A reason explaining the outcome
+   *
+   * IMPORTANT: This is DECLARATIVE ONLY. It describes requirements,
+   * it does NOT enforce them. The persistence layer decides what to do.
+   */
+  readonly costValidation?: CostValidationResult;
 };
 
 /**

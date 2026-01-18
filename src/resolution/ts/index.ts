@@ -25,6 +25,11 @@ export type {
   EffectTarget,
   ResolutionResult,
   ResolutionViolation,
+  // PR 4.1 - Declarative Cost Types
+  ActionCostEffect,
+  CostValidationResult,
+  CostOverrideInterpretation,
+  CostOverrideDecision,
 } from './types';
 
 export {
@@ -33,6 +38,8 @@ export {
   ResolutionViolationCode,
   RulesOutcome,
   createAuthoritativeDecision,
+  // PR 4.1 - Cost Validation Outcome
+  CostValidationOutcome,
 } from './types';
 
 // ============================================================================
