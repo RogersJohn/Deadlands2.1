@@ -3,12 +3,29 @@
  *
  * Produces declarative effects when reload is authorized.
  *
- * Effects describe what WOULD happen, not what DOES happen.
- * No state mutation. No dice. No game math.
+ * EFFECTS DISCIPLINE:
+ * Effects are DECLARATIVE ONLY - they describe what SHOULD happen,
+ * not what HAS happened. Effects are pure data structures with no
+ * side effects, no state mutation, no dice rolling.
+ *
+ * The persistence layer (not this module) is responsible for:
+ * - Actually consuming actions
+ * - Actually updating ammo counts
+ * - Actually logging to game history
+ *
+ * WHEN EFFECTS ARE PRODUCED:
+ * - ONLY on effectiveOutcome = PASS
+ * - NEVER on FAIL or AMBIGUOUS
+ * - When GM overrides to PASS, effects are produced with OVERRIDE authority
  *
  * Effects produced on PASS:
  * - CONSUME_RESOURCE: Consume 1 action (reload takes an action)
  * - TRIGGER_NARRATIVE: Log the reload for narrative purposes
+ *
+ * EXPLICITLY OUT OF SCOPE (intentional, not TODO):
+ * - Ammo quantity effects (we only check legality, not track counts)
+ * - Weapon state effects (we don't track loaded/unloaded state)
+ * - Variable action costs (all reloads cost 1 action in this implementation)
  */
 
 import type {

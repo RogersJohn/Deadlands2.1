@@ -20,6 +20,16 @@
  * - PASS: Weapon is reloadable AND ammo context is provided AND ammo is available
  * - FAIL: Weapon is not a reloadable firearm
  * - AMBIGUOUS: Weapon is reloadable BUT ammo availability is unknown
+ *
+ * EXPLICITLY OUT OF SCOPE FOR PR 4.0 (intentional deferral, not TODOs):
+ * - Dice rolling: Reload legality does not involve dice in Savage Worlds
+ * - Reload success/failure mechanics: Beyond legality check
+ * - Weapon-specific reload times: All reloads cost 1 action here
+ * - Ammo quantity tracking: Only availability (available/unavailable/unknown)
+ * - Derived stat changes: This is legality, not execution
+ * - Speed Load edge: Not implemented
+ * - Quick Draw edge: Not implemented
+ * - Malfunction/jamming: Not implemented
  */
 
 import type { ValidatedIntent } from '../../../intent/bridge/ts/ValidatedIntent';

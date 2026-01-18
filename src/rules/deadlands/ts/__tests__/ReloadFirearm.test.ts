@@ -10,6 +10,13 @@
  * - Resolution produces effects only on PASS or override
  *
  * These tests assert end-to-end behavior, not isolated units.
+ *
+ * EXPLICITLY OUT OF SCOPE FOR PR 4.0 (intentional deferral, not TODOs):
+ * - Dice rolling (reload legality does not involve dice)
+ * - Reload success/failure mechanics beyond legality check
+ * - Weapon-specific reload times (all reloads cost 1 action here)
+ * - Ammo quantity tracking (only availability: available/unavailable/unknown)
+ * - Derived stat changes (this is legality, not execution)
  */
 
 import { describe, it, expect } from 'vitest';
@@ -142,7 +149,15 @@ describe('Rule Selection', () => {
 // ============================================================================
 
 describe('PASS Outcome', () => {
-  it('PASSes when firearm with ammo is reloaded', () => {
+  /**
+   * PASS requirements:
+   * - Weapon type is reloadable (firearm, bow, crossbow)
+   * - Weapon has Shots capacity
+   * - Ammo availability = 'available'
+   * - Current ammo state = 'empty' or 'partial'
+   */
+
+  it('PASSes when firearm with ammo is reloaded (empty state)', () => {
     const adapter = createPipeline();
     const intent = createReloadIntent({
       characterId: 'wild_bill',
@@ -151,6 +166,27 @@ describe('PASS Outcome', () => {
       hasShotsCapacity: true,
       ammoAvailability: 'available',
       currentAmmoState: 'empty',
+    });
+
+    const result = adapter.processIntent(intent);
+
+    expect(result.kind).toBe('report');
+    if (result.kind === 'report') {
+      expect(result.report.outcome).toBe(RulesOutcome.PASS);
+      expect(result.report.violations).toHaveLength(0);
+      expect(result.report.ambiguity).toBeNull();
+    }
+  });
+
+  it('PASSes when firearm with ammo is reloaded (partial state)', () => {
+    const adapter = createPipeline();
+    const intent = createReloadIntent({
+      characterId: 'wild_bill',
+      weaponId: 'colt_peacemaker',
+      weaponType: 'firearm',
+      hasShotsCapacity: true,
+      ammoAvailability: 'available',
+      currentAmmoState: 'partial', // Partial - can still reload
     });
 
     const result = adapter.processIntent(intent);
@@ -179,6 +215,8 @@ describe('PASS Outcome', () => {
     expect(result.kind).toBe('report');
     if (result.kind === 'report') {
       expect(result.report.outcome).toBe(RulesOutcome.PASS);
+      expect(result.report.violations).toHaveLength(0);
+      expect(result.report.ambiguity).toBeNull();
     }
   });
 
@@ -198,9 +236,19 @@ describe('PASS Outcome', () => {
     expect(result.kind).toBe('report');
     if (result.kind === 'report') {
       expect(result.report.outcome).toBe(RulesOutcome.PASS);
+      expect(result.report.violations).toHaveLength(0);
+      expect(result.report.ambiguity).toBeNull();
     }
   });
 
+  /**
+   * PASS WITH WARNING:
+   * - All PASS conditions met
+   * - BUT currentAmmoState = 'full'
+   * - Outcome = PASS (not FAIL)
+   * - Warning violation is present (severity = WARNING)
+   * - No ambiguity
+   */
   it('PASSes with WARNING when weapon is already full', () => {
     const adapter = createPipeline();
     const intent = createReloadIntent({
@@ -209,18 +257,24 @@ describe('PASS Outcome', () => {
       weaponType: 'firearm',
       hasShotsCapacity: true,
       ammoAvailability: 'available',
-      currentAmmoState: 'full', // Already full
+      currentAmmoState: 'full', // Already full - triggers warning
     });
 
     const result = adapter.processIntent(intent);
 
     expect(result.kind).toBe('report');
     if (result.kind === 'report') {
-      // Still PASS, but with warning
+      // Outcome is PASS (not FAIL)
       expect(result.report.outcome).toBe(RulesOutcome.PASS);
+
+      // Warning violation is present
       expect(result.report.violations).toHaveLength(1);
       expect(result.report.violations[0]?.severity).toBe('WARNING');
       expect(result.report.violations[0]?.ruleId).toBe('SW_RELOAD_003');
+      expect(result.report.violations[0]?.message).toContain('already fully loaded');
+
+      // No ambiguity
+      expect(result.report.ambiguity).toBeNull();
     }
   });
 });
@@ -230,6 +284,14 @@ describe('PASS Outcome', () => {
 // ============================================================================
 
 describe('FAIL Outcome', () => {
+  /**
+   * FAIL requirements:
+   * - Outcome = FAIL
+   * - At least one structured violation with ERROR severity
+   * - No ambiguity (null)
+   * - Resolution produces NO effects
+   */
+
   it('FAILs when weapon is melee (not reloadable)', () => {
     const adapter = createPipeline();
     const intent = createReloadIntent({
@@ -245,10 +307,17 @@ describe('FAIL Outcome', () => {
 
     expect(result.kind).toBe('report');
     if (result.kind === 'report') {
+      // Outcome is FAIL
       expect(result.report.outcome).toBe(RulesOutcome.FAIL);
-      expect(result.report.violations.length).toBeGreaterThan(0);
+
+      // Structured violation present
+      expect(result.report.violations).toHaveLength(1);
       expect(result.report.violations[0]?.ruleId).toBe('SW_RELOAD_001');
+      expect(result.report.violations[0]?.severity).toBe('ERROR');
       expect(result.report.violations[0]?.message).toContain('melee');
+
+      // No ambiguity
+      expect(result.report.ambiguity).toBeNull();
     }
   });
 
@@ -267,8 +336,17 @@ describe('FAIL Outcome', () => {
 
     expect(result.kind).toBe('report');
     if (result.kind === 'report') {
+      // Outcome is FAIL
       expect(result.report.outcome).toBe(RulesOutcome.FAIL);
+
+      // Structured violation present
+      expect(result.report.violations).toHaveLength(1);
       expect(result.report.violations[0]?.ruleId).toBe('SW_RELOAD_001');
+      expect(result.report.violations[0]?.severity).toBe('ERROR');
+      expect(result.report.violations[0]?.message).toContain('thrown');
+
+      // No ambiguity
+      expect(result.report.ambiguity).toBeNull();
     }
   });
 
@@ -287,8 +365,17 @@ describe('FAIL Outcome', () => {
 
     expect(result.kind).toBe('report');
     if (result.kind === 'report') {
+      // Outcome is FAIL
       expect(result.report.outcome).toBe(RulesOutcome.FAIL);
+
+      // Structured violation present
+      expect(result.report.violations).toHaveLength(1);
       expect(result.report.violations[0]?.ruleId).toBe('SW_RELOAD_002');
+      expect(result.report.violations[0]?.severity).toBe('ERROR');
+      expect(result.report.violations[0]?.message).toContain('no Shots capacity');
+
+      // No ambiguity
+      expect(result.report.ambiguity).toBeNull();
     }
   });
 
@@ -307,9 +394,17 @@ describe('FAIL Outcome', () => {
 
     expect(result.kind).toBe('report');
     if (result.kind === 'report') {
+      // Outcome is FAIL
       expect(result.report.outcome).toBe(RulesOutcome.FAIL);
+
+      // Structured violation present
+      expect(result.report.violations).toHaveLength(1);
       expect(result.report.violations[0]?.ruleId).toBe('SW_RELOAD_004');
+      expect(result.report.violations[0]?.severity).toBe('ERROR');
       expect(result.report.violations[0]?.message).toContain('no ammunition');
+
+      // No ambiguity
+      expect(result.report.ambiguity).toBeNull();
     }
   });
 });
@@ -319,6 +414,19 @@ describe('FAIL Outcome', () => {
 // ============================================================================
 
 describe('AMBIGUOUS Outcome', () => {
+  /**
+   * AMBIGUOUS requirements:
+   * - Outcome = AMBIGUOUS
+   * - ambiguity field is populated with reason and interpretations
+   * - No ERROR violations (may have warnings)
+   * - Resolution produces NO effects (requires GM decision)
+   *
+   * GM Override handling for AMBIGUOUS:
+   * - GM can resolve to PASS → effects produced
+   * - GM can resolve to FAIL → no effects produced
+   * See GM Override tests for explicit coverage.
+   */
+
   it('is AMBIGUOUS when ammo availability is unknown', () => {
     const adapter = createPipeline();
     const intent = createReloadIntent({
@@ -334,10 +442,17 @@ describe('AMBIGUOUS Outcome', () => {
 
     expect(result.kind).toBe('report');
     if (result.kind === 'report') {
+      // Outcome is AMBIGUOUS
       expect(result.report.outcome).toBe(RulesOutcome.AMBIGUOUS);
+
+      // Ambiguity field populated
       expect(result.report.ambiguity).not.toBeNull();
       expect(result.report.ambiguity?.reason).toContain('Ammunition availability');
       expect(result.report.ambiguity?.possibleInterpretations).toHaveLength(2);
+
+      // No ERROR violations (no terminal failure)
+      const errorViolations = result.report.violations.filter(v => v.severity === 'ERROR');
+      expect(errorViolations).toHaveLength(0);
     }
   });
 
@@ -356,6 +471,7 @@ describe('AMBIGUOUS Outcome', () => {
 
     expect(result.kind).toBe('report');
     if (result.kind === 'report') {
+      // Ambiguity presents both possible interpretations for GM
       const interpretations = result.report.ambiguity?.possibleInterpretations ?? [];
       expect(interpretations.some(i => i.includes('has ammunition'))).toBe(true);
       expect(interpretations.some(i => i.includes('no ammunition'))).toBe(true);
@@ -475,6 +591,63 @@ describe('GM Override', () => {
     expect(effective.originalReport.outcome).toBe(RulesOutcome.FAIL);
     // Effective is now PASS
     expect(effective.effectiveOutcome).toBe(RulesOutcome.PASS);
+  });
+
+  /**
+   * GM Override AMBIGUOUS → FAIL
+   *
+   * When AMBIGUOUS outcome occurs, GM can resolve to FAIL if they
+   * determine the character does NOT have ammunition. This produces
+   * NO effects (same as regular FAIL).
+   */
+  it('allows GM to override AMBIGUOUS to FAIL (no effects produced)', () => {
+    const adapter = createPipeline();
+    const effectRegistry = createEffectRegistry();
+    const intent = createReloadIntent({
+      characterId: 'uncertain_pete',
+      weaponId: 'colt_peacemaker',
+      weaponType: 'firearm',
+      hasShotsCapacity: true,
+      ammoAvailability: 'unknown', // Triggers AMBIGUOUS
+      currentAmmoState: 'empty',
+    });
+
+    const result = adapter.processIntent(intent);
+    expect(result.kind).toBe('report');
+    if (result.kind !== 'report') return;
+
+    // Original is AMBIGUOUS
+    expect(result.report.outcome).toBe(RulesOutcome.AMBIGUOUS);
+    expect(result.report.ambiguity).not.toBeNull();
+
+    // GM resolves ambiguity to FAIL (character has no ammo)
+    const overrideResult = createGmOverride({
+      originalReport: result.report,
+      newOutcome: RulesOutcome.FAIL,
+      reason: 'Pete checked his saddlebag - no ammo of the correct caliber',
+      warning: { severity: 'WARNING', message: 'GM confirmed no ammunition available' },
+      issuedBy: 'gm_marshal' as GmId,
+      issuedAt: 1000 as LogicalTime,
+    });
+
+    expect(overrideResult.kind).toBe('override');
+    if (overrideResult.kind !== 'override') return;
+
+    const effective = getEffectiveValidation(result.report, [overrideResult.override]);
+
+    // Effective outcome is now FAIL
+    expect(effective.effectiveOutcome).toBe(RulesOutcome.FAIL);
+    expect(effective.hasOverrides).toBe(true);
+
+    // Original AMBIGUOUS is preserved
+    expect(effective.originalReport.outcome).toBe(RulesOutcome.AMBIGUOUS);
+
+    // Resolution: NO effects produced (FAIL)
+    const decision = createAuthoritativeDecision(effective, [overrideResult.override]);
+    const resolution = resolve(decision, effectRegistry);
+
+    expect(resolution.outcome).toBe('NO_EFFECTS_FAIL');
+    expect(resolution.effects).toHaveLength(0);
   });
 });
 
