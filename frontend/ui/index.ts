@@ -32,6 +32,12 @@ export type {
   OverrideWarning,
   GmOverride,
 
+  // Override creation types (PR 3.1)
+  OverrideRequest,
+  OverrideSubmitResult,
+  OverrideScope,
+  OverrideBuilderState,
+
   // Resolution types
   ResolutionOutcome,
   Effect,
@@ -98,14 +104,58 @@ export {
 } from './components/AuthorityViewer';
 
 // ============================================================================
+// OVERRIDE BUILDER (PR 3.1)
+// ============================================================================
+
+export {
+  // Scope checking
+  checkOverrideScope,
+
+  // State management
+  createInitialOverrideState,
+  openOverrideBuilder,
+  closeOverrideBuilder,
+  selectOutcome,
+  setReason,
+  selectWarningSeverity,
+  setOverrideSubmitting,
+  setOverrideValidationErrors,
+
+  // Validation
+  validateOverrideForm,
+  canSubmitOverride,
+
+  // Request building
+  buildOverrideRequest,
+
+  // Display helpers
+  getOverrideDescription,
+  getOriginalOutcome,
+  getSeverityDescription,
+  getAvailableOutcomes,
+  getAvailableSeverities,
+} from './components/OverrideBuilder';
+
+// ============================================================================
 // PIPELINE
 // ============================================================================
 
-export type { PipelineClient, MockPipelineConfig } from './Pipeline';
+export type {
+  PipelineClient,
+  MockPipelineConfig,
+  OverrideClient,
+  MockOverrideConfig,
+} from './Pipeline';
 
 export {
+  // Pipeline client
   createMockPipelineClient,
   createValidationErrorMock,
   createAdapterFailureMock,
   DEFAULT_MOCK_CONFIG,
+
+  // Override client (PR 3.1)
+  createMockOverrideClient,
+  createOverrideViolationMock,
+  DEFAULT_MOCK_OVERRIDE_CONFIG,
 } from './Pipeline';

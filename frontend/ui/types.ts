@@ -1,10 +1,14 @@
 /**
- * UI Types (PR 3.0)
+ * UI Types (PR 3.0, PR 3.1)
  *
  * These types mirror backend types for display purposes only.
  * The UI renders data - it does not interpret or modify it.
  *
  * Core principle: The UI is a window into authority, not a source of authority.
+ *
+ * PR 3.1 additions:
+ * - Override creation types (OverrideRequest, OverrideBuilderState)
+ * - Scope checking types
  */
 
 // ============================================================================
@@ -82,7 +86,7 @@ export type ValidationReport = {
 };
 
 // ============================================================================
-// OVERRIDE (UI displays this, does not create it)
+// OVERRIDE (UI displays and creates via backend)
 // ============================================================================
 
 /**
@@ -94,7 +98,7 @@ export type OverrideWarning = {
 };
 
 /**
- * GmOverride - a GM override decision (display only)
+ * GmOverride - a GM override decision
  */
 export type GmOverride = {
   readonly overrideId: string;
@@ -106,6 +110,98 @@ export type GmOverride = {
   readonly reason: string;
   readonly issuedBy: string;
   readonly issuedAt: number;
+};
+
+// ============================================================================
+// OVERRIDE CREATION (PR 3.1)
+// ============================================================================
+
+/**
+ * OverrideRequest - what the UI submits to create an override
+ *
+ * All fields are REQUIRED and EXPLICIT.
+ * No defaults. No inference. No convenience.
+ *
+ * The GM must consciously provide:
+ * - The validation report to override
+ * - The new outcome they are asserting
+ * - A written reason explaining the override
+ * - Warning severity (how significant this deviation is)
+ */
+export type OverrideRequest = {
+  /** The validation report being overridden */
+  readonly validationReport: ValidationReport;
+
+  /** The outcome the GM is asserting */
+  readonly newOutcome: RulesOutcome;
+
+  /** REQUIRED: Why the GM is overriding the rules */
+  readonly reason: string;
+
+  /** Warning severity - how significant is this override? */
+  readonly warningSeverity: 'INFO' | 'WARNING' | 'CRITICAL';
+
+  /** Warning message (derived from reason, but explicit) */
+  readonly warningMessage: string;
+
+  /** GM identity (may be stubbed, but must be explicit) */
+  readonly gmId: string;
+};
+
+/**
+ * OverrideResult - response from submitting an override
+ */
+export type OverrideSubmitResult =
+  | {
+      readonly kind: 'success';
+      readonly override: GmOverride;
+      readonly newEffectiveOutcome: RulesOutcome;
+      readonly resolution: ResolutionResult;
+    }
+  | {
+      readonly kind: 'violation';
+      readonly code: string;
+      readonly details: string;
+    };
+
+/**
+ * OverrideScope - whether override is allowed for this result
+ *
+ * Override is ONLY allowed for rule outcomes (PASS/FAIL/AMBIGUOUS).
+ * Override is NOT allowed for:
+ * - validation_error (invalid intent structure)
+ * - adapter_failure (no pipeline claimed authority)
+ */
+export type OverrideScope =
+  | { readonly allowed: true; readonly validation: ValidationReport }
+  | { readonly allowed: false; readonly reason: string };
+
+/**
+ * OverrideBuilderState - state of the override creation form
+ *
+ * Overrides must feel deliberate, heavy, and visible — not convenient.
+ */
+export type OverrideBuilderState = {
+  /** Is the override form visible? */
+  readonly isOpen: boolean;
+
+  /** The validation report being considered for override */
+  readonly targetValidation: ValidationReport | null;
+
+  /** Selected new outcome (must be explicitly chosen) */
+  readonly selectedOutcome: RulesOutcome | null;
+
+  /** Written reason (REQUIRED, cannot be empty) */
+  readonly reason: string;
+
+  /** Warning severity (must be explicitly chosen) */
+  readonly warningSeverity: 'INFO' | 'WARNING' | 'CRITICAL' | null;
+
+  /** Is the override being submitted? */
+  readonly isSubmitting: boolean;
+
+  /** Validation errors for the form */
+  readonly validationErrors: Readonly<Record<string, string>>;
 };
 
 // ============================================================================
