@@ -236,6 +236,10 @@ export type CostValidationNode = ExplanationNodeBase & {
  * OverrideNode - represents a GM override decision
  *
  * One node per override in the chain. Only present if overrides exist.
+ *
+ * PR 7.1 ADDITION: policyId field for policy-based overrides.
+ * This field appears ONLY when the override was created via a policy.
+ * Policy-based overrides are otherwise identical to manual overrides.
  */
 export type OverrideNode = ExplanationNodeBase & {
   readonly nodeType: 'OVERRIDE';
@@ -274,6 +278,18 @@ export type OverrideNode = ExplanationNodeBase & {
    * Who issued the override
    */
   readonly issuedBy: string;
+
+  /**
+   * Policy ID if this override was created via a policy (PR 7.1)
+   *
+   * CRITICAL: This field is ONLY present for policy-based overrides.
+   * - undefined means manual override (no policy involved)
+   * - A value means the override was explicitly invoked via this policy
+   *
+   * The presence of this field does NOT change behavior.
+   * It exists only for traceability.
+   */
+  readonly policyId?: string;
 };
 
 // ============================================================================
