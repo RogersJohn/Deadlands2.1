@@ -1,27 +1,32 @@
 /**
- * Temporal Ambiguity Tests (PR 8.1)
+ * Temporal Ambiguity Tests (PR 8.1, PATCH)
  *
  * CRITICAL TEST: The system must tolerate temporal ambiguity without introducing order.
  *
  * These tests PROVE:
- * - Interrupt does not suppress effects
+ * - Contested actions are treated symmetrically (no primary/secondary)
+ * - Swapping action order produces identical output
  * - Delayed action does not schedule execution
  * - Engaged does not enforce prevention
  * - No ordering, no priority, no sequencing
- * - Swapping declaration order produces identical output
  *
  * If any test passes by resolving timing, PR 8.1 fails.
  */
 
 import { describe, it, expect } from 'vitest';
 import {
+  createContestedActionTimingPipeline,
+  createContestedActionTimingEffects,
   createInterruptingActionsPipeline,
   createInterruptingActionsEffects,
+  isContestedActionTimingPayload,
   isInterruptingActionsPayload,
+  CONTESTED_ACTION_TIMING_INTENT_TYPE,
   INTERRUPTING_ACTIONS_INTENT_TYPE,
+  CONTESTED_ACTION_TIMING_APPLICABILITY,
   INTERRUPTING_ACTIONS_APPLICABILITY,
-} from '../InterruptingActions';
-import type { InterruptingActionsPayload } from '../InterruptingActions';
+} from '../ContestedActionTiming';
+import type { ContestedActionTimingPayload, InterruptingActionsPayload } from '../ContestedActionTiming';
 import {
   createDelayedActionsPipeline,
   createDelayedActionsEffects,
@@ -66,119 +71,171 @@ function createInvocationId(): InvocationId {
 }
 
 // ============================================================================
-// RULE 1: INTERRUPTING ACTIONS
+// RULE 1: CONTESTED ACTION TIMING (SYMMETRIC)
 // ============================================================================
 
-describe('Interrupting Actions Rule - No Ordering', () => {
-  const pipeline = createInterruptingActionsPipeline();
+describe('Contested Action Timing Rule - Symmetric, No Ordering', () => {
+  const pipeline = createContestedActionTimingPipeline();
 
-  it('interrupt does not suppress effects', () => {
-    const payload: InterruptingActionsPayload = {
+  it('treats contested actions as symmetric temporal ambiguity', () => {
+    // Order A: attack first, parry second
+    const payloadA: ContestedActionTimingPayload = {
       characterId: 'char_001',
-      declaredAction: 'attack',
-      declaredInterrupt: 'parry',
+      actionA: 'attack',
+      actionB: 'parry',
+    };
+
+    // Order B: parry first, attack second
+    const payloadB: ContestedActionTimingPayload = {
+      characterId: 'char_001',
+      actionA: 'parry',
+      actionB: 'attack',
+    };
+
+    const intentA = createTestIntent(CONTESTED_ACTION_TIMING_INTENT_TYPE, payloadA);
+    const intentB = createTestIntent(CONTESTED_ACTION_TIMING_INTENT_TYPE, payloadB);
+    const invocationId = createInvocationId();
+
+    const resultA = pipeline.validate(intentA, invocationId);
+    const resultB = pipeline.validate(intentB, invocationId);
+
+    // CRITICAL: Swapping order produces identical outcome
+    expect(resultA.outcome).toBe(resultB.outcome);
+    expect(resultA.outcome).toBe(RulesOutcome.AMBIGUOUS);
+    expect(resultA.conflicts.length).toBe(resultB.conflicts.length);
+    expect(resultA.ambiguity?.possibleInterpretations.length).toBe(
+      resultB.ambiguity?.possibleInterpretations.length
+    );
+  });
+
+  it('both actions emit effects without suppression', () => {
+    const payload: ContestedActionTimingPayload = {
+      characterId: 'char_001',
+      actionA: 'attack',
+      actionB: 'parry',
     };
 
     const invocationId = createInvocationId();
-    const effects = createInterruptingActionsEffects(
+    const effects = createContestedActionTimingEffects(
       payload.characterId,
-      payload.declaredAction,
-      payload.declaredInterrupt,
-      undefined,
+      payload.actionA,
+      payload.actionB,
       invocationId
     );
 
     // CRITICAL ASSERTION: Both actions emit effects
     expect(effects.length).toBeGreaterThan(0);
-    expect(effects.length).toBe(2); // Both action and interrupt
+    expect(effects.length).toBe(2);
 
-    const actionEffect = effects.find((e) => e.parameters.actionType === 'standard');
-    const interruptEffect = effects.find((e) => e.parameters.actionType === 'interrupt');
-
-    expect(actionEffect).toBeDefined();
-    expect(interruptEffect).toBeDefined();
+    // Both effects are symmetric - same actionType
+    effects.forEach((effect) => {
+      expect(effect.parameters.actionType).toBe('contested');
+      expect(effect.parameters.temporalStatus).toBe('unresolved');
+      expect(effect.authority.outcome).toBe(RulesOutcome.AMBIGUOUS);
+    });
   });
 
-  it('both actions emit effects despite temporal conflict', () => {
-    const payload: InterruptingActionsPayload = {
+  it('neither action is marked as primary', () => {
+    const payload: ContestedActionTimingPayload = {
       characterId: 'char_001',
-      declaredAction: 'cast spell',
-      declaredInterrupt: 'counterspell',
-      interruptTarget: 'enemy_mage',
+      actionA: 'cast spell',
+      actionB: 'counterspell',
     };
 
     const invocationId = createInvocationId();
-    const effects = createInterruptingActionsEffects(
+    const effects = createContestedActionTimingEffects(
       payload.characterId,
-      payload.declaredAction,
-      payload.declaredInterrupt,
-      payload.interruptTarget,
+      payload.actionA,
+      payload.actionB,
       invocationId
     );
 
-    // CRITICAL: Effects exist for BOTH
-    expect(effects.length).toBe(2);
+    // CRITICAL: No effect is marked as primary or secondary
     effects.forEach((effect) => {
-      expect(effect.authority.outcome).toBe(RulesOutcome.AMBIGUOUS);
-      expect(effect.parameters.temporalStatus).toBe('contested');
+      expect(effect.parameters).not.toHaveProperty('primary');
+      expect(effect.parameters).not.toHaveProperty('secondary');
+      expect(effect.parameters).not.toHaveProperty('target');
+      expect(effect.parameters.narrativeType).toBe('contested_action_attempt');
     });
   });
 
   it('validation is AMBIGUOUS', () => {
-    const payload: InterruptingActionsPayload = {
+    const payload: ContestedActionTimingPayload = {
       characterId: 'char_001',
-      declaredAction: 'attack',
-      declaredInterrupt: 'parry',
+      actionA: 'attack',
+      actionB: 'parry',
     };
 
-    const intent = createTestIntent(INTERRUPTING_ACTIONS_INTENT_TYPE, payload);
+    const intent = createTestIntent(CONTESTED_ACTION_TIMING_INTENT_TYPE, payload);
     const result = pipeline.validate(intent, createInvocationId());
 
     // CRITICAL: Must be AMBIGUOUS
     expect(result.outcome).toBe(RulesOutcome.AMBIGUOUS);
     expect(result.ambiguity).not.toBeNull();
     expect(result.ambiguity?.reason).toContain('temporal precedence');
+    expect(result.ambiguity?.reason).toContain('Neither action is primary');
     expect(result.ambiguity?.reason).toContain('does not resolve ordering');
   });
 
-  it('SoftBlock conflict exists for contested timing', () => {
-    const payload: InterruptingActionsPayload = {
+  it('SoftBlock conflict exists with symmetric language', () => {
+    const payload: ContestedActionTimingPayload = {
       characterId: 'char_001',
-      declaredAction: 'move',
-      declaredInterrupt: 'opportunity strike',
+      actionA: 'move',
+      actionB: 'opportunity strike',
     };
 
-    const intent = createTestIntent(INTERRUPTING_ACTIONS_INTENT_TYPE, payload);
+    const intent = createTestIntent(CONTESTED_ACTION_TIMING_INTENT_TYPE, payload);
     const result = pipeline.validate(intent, createInvocationId());
 
-    // CRITICAL: SoftBlock conflict exists
+    // CRITICAL: SoftBlock conflict exists with symmetric language
     expect(result.conflicts.length).toBe(1);
     expect(result.conflicts[0].kind).toBe(ConflictKind.SoftBlock);
-    expect(result.conflicts[0].message).toContain('timing is contested');
-    expect(result.conflicts[0].message).toContain('No precedence is applied');
+    expect(result.conflicts[0].message).toContain('Contested action timing');
+    expect(result.conflicts[0].message).toContain('Neither action is primary');
+    expect(result.conflicts[0].tags).toContain('symmetric');
     expect(result.conflicts[0].tags).toContain('no-ordering');
     expect(result.conflicts[0].tags).toContain('no-precedence');
   });
 
-  it('no ordering language in ambiguity', () => {
-    const payload: InterruptingActionsPayload = {
+  it('no directional language in any output', () => {
+    const payload: ContestedActionTimingPayload = {
       characterId: 'char_001',
-      declaredAction: 'attack',
-      declaredInterrupt: 'parry',
+      actionA: 'attack',
+      actionB: 'parry',
     };
 
-    const intent = createTestIntent(INTERRUPTING_ACTIONS_INTENT_TYPE, payload);
+    const intent = createTestIntent(CONTESTED_ACTION_TIMING_INTENT_TYPE, payload);
     const result = pipeline.validate(intent, createInvocationId());
 
     const reason = result.ambiguity?.reason || '';
     const conflictMessages = result.conflicts.map((c) => c.message);
 
-    // CRITICAL: No ordering words
+    // CRITICAL: No directional words
     const allText = [reason, ...conflictMessages].join(' ').toLowerCase();
+    expect(allText).not.toContain('interrupts');
+    expect(allText).not.toContain('interrupted');
+    expect(allText).not.toContain('target action');
+    expect(allText).not.toContain('being interrupted');
     expect(allText).not.toContain('first');
     expect(allText).not.toContain('resolves');
     expect(allText).not.toContain('wins');
     expect(allText).not.toContain('beats');
+  });
+
+  it('legacy payload format works with symmetric treatment', () => {
+    // Using old payload format (backward compatibility)
+    const legacyPayload: InterruptingActionsPayload = {
+      characterId: 'char_001',
+      declaredAction: 'attack',
+      declaredInterrupt: 'parry',
+    };
+
+    const intent = createTestIntent(INTERRUPTING_ACTIONS_INTENT_TYPE, legacyPayload);
+    const result = pipeline.validate(intent, createInvocationId());
+
+    // CRITICAL: Still AMBIGUOUS, still symmetric
+    expect(result.outcome).toBe(RulesOutcome.AMBIGUOUS);
+    expect(result.conflicts[0].message).toContain('Neither action is primary');
   });
 });
 
@@ -381,36 +438,41 @@ describe('Acting While Engaged Rule - No Prevention', () => {
 });
 
 // ============================================================================
-// CRITICAL: NO ORDERING
+// CRITICAL: NO ORDERING, SYMMETRIC TREATMENT
 // ============================================================================
 
 describe('Temporal Ambiguity - No Ordering Invariants', () => {
-  it('swapping interrupt declaration order produces identical outcome', () => {
-    const interruptPipeline = createInterruptingActionsPipeline();
+  it('swapping action order produces identical outcome (symmetry proof)', () => {
+    const pipeline = createContestedActionTimingPipeline();
 
-    // Order 1: action first, interrupt second
-    const payload1: InterruptingActionsPayload = {
+    // Order 1: attack, parry
+    const payload1: ContestedActionTimingPayload = {
       characterId: 'char_001',
-      declaredAction: 'attack',
-      declaredInterrupt: 'parry',
+      actionA: 'attack',
+      actionB: 'parry',
     };
 
-    // Order 2: same payload (order doesn't matter in structure)
-    const payload2: InterruptingActionsPayload = {
+    // Order 2: parry, attack (swapped)
+    const payload2: ContestedActionTimingPayload = {
       characterId: 'char_001',
-      declaredAction: 'attack',
-      declaredInterrupt: 'parry',
+      actionA: 'parry',
+      actionB: 'attack',
     };
 
-    const intent1 = createTestIntent(INTERRUPTING_ACTIONS_INTENT_TYPE, payload1);
-    const intent2 = createTestIntent(INTERRUPTING_ACTIONS_INTENT_TYPE, payload2);
     const invocationId = createInvocationId();
 
-    const result1 = interruptPipeline.validate(intent1, invocationId);
-    const result2 = interruptPipeline.validate(intent2, invocationId);
+    const result1 = pipeline.validate(
+      createTestIntent(CONTESTED_ACTION_TIMING_INTENT_TYPE, payload1),
+      invocationId
+    );
+    const result2 = pipeline.validate(
+      createTestIntent(CONTESTED_ACTION_TIMING_INTENT_TYPE, payload2),
+      invocationId
+    );
 
-    // CRITICAL: Identical outputs
+    // CRITICAL: Identical outcomes regardless of declaration order
     expect(result1.outcome).toBe(result2.outcome);
+    expect(result1.violations.length).toBe(result2.violations.length);
     expect(result1.conflicts.length).toBe(result2.conflicts.length);
     expect(result1.ambiguity?.possibleInterpretations.length).toBe(
       result2.ambiguity?.possibleInterpretations.length
@@ -418,14 +480,14 @@ describe('Temporal Ambiguity - No Ordering Invariants', () => {
   });
 
   it('no radioactive words in any rule output', () => {
-    const interruptPipeline = createInterruptingActionsPipeline();
+    const contestedPipeline = createContestedActionTimingPipeline();
     const delayedPipeline = createDelayedActionsPipeline();
     const engagedPipeline = createActingWhileEngagedPipeline();
 
-    const interruptPayload: InterruptingActionsPayload = {
+    const contestedPayload: ContestedActionTimingPayload = {
       characterId: 'char_001',
-      declaredAction: 'attack',
-      declaredInterrupt: 'parry',
+      actionA: 'attack',
+      actionB: 'parry',
     };
 
     const delayedPayload: DelayedActionsPayload = {
@@ -441,8 +503,8 @@ describe('Temporal Ambiguity - No Ordering Invariants', () => {
 
     const invocationId = createInvocationId();
 
-    const result1 = interruptPipeline.validate(
-      createTestIntent(INTERRUPTING_ACTIONS_INTENT_TYPE, interruptPayload),
+    const result1 = contestedPipeline.validate(
+      createTestIntent(CONTESTED_ACTION_TIMING_INTENT_TYPE, contestedPayload),
       invocationId
     );
     const result2 = delayedPipeline.validate(
@@ -470,18 +532,20 @@ describe('Temporal Ambiguity - No Ordering Invariants', () => {
     expect(allText).not.toContain('priority');
     expect(allText).not.toContain('timestamp');
     expect(allText).not.toContain('turn counter');
+    expect(allText).not.toContain('interrupts');
+    expect(allText).not.toContain('interrupted');
   });
 
   it('no state mutation - same input always same output', () => {
-    const pipeline = createInterruptingActionsPipeline();
+    const pipeline = createContestedActionTimingPipeline();
 
-    const payload: InterruptingActionsPayload = {
+    const payload: ContestedActionTimingPayload = {
       characterId: 'char_001',
-      declaredAction: 'attack',
-      declaredInterrupt: 'parry',
+      actionA: 'attack',
+      actionB: 'parry',
     };
 
-    const intent = createTestIntent(INTERRUPTING_ACTIONS_INTENT_TYPE, payload);
+    const intent = createTestIntent(CONTESTED_ACTION_TIMING_INTENT_TYPE, payload);
     const invocationId = createInvocationId();
 
     // Run 100 times
@@ -503,19 +567,23 @@ describe('Temporal Ambiguity - No Ordering Invariants', () => {
 
 describe('Temporal Rules - Applicability', () => {
   it('all rules apply only in combat mode', () => {
-    expect(INTERRUPTING_ACTIONS_APPLICABILITY.modes).toContain('combat');
+    expect(CONTESTED_ACTION_TIMING_APPLICABILITY.modes).toContain('combat');
     expect(DELAYED_ACTIONS_APPLICABILITY.modes).toContain('combat');
     expect(ACTING_WHILE_ENGAGED_APPLICABILITY.modes).toContain('combat');
 
-    expect(INTERRUPTING_ACTIONS_APPLICABILITY.modes).not.toContain('downtime');
+    expect(CONTESTED_ACTION_TIMING_APPLICABILITY.modes).not.toContain('downtime');
     expect(DELAYED_ACTIONS_APPLICABILITY.modes).not.toContain('downtime');
     expect(ACTING_WHILE_ENGAGED_APPLICABILITY.modes).not.toContain('social');
   });
 
   it('applicability is explicit, no defaults', () => {
-    expect(INTERRUPTING_ACTIONS_APPLICABILITY.modes.length).toBeGreaterThan(0);
+    expect(CONTESTED_ACTION_TIMING_APPLICABILITY.modes.length).toBeGreaterThan(0);
     expect(DELAYED_ACTIONS_APPLICABILITY.modes.length).toBeGreaterThan(0);
     expect(ACTING_WHILE_ENGAGED_APPLICABILITY.modes.length).toBeGreaterThan(0);
+  });
+
+  it('backward compatibility applicability aliases work', () => {
+    expect(INTERRUPTING_ACTIONS_APPLICABILITY).toBe(CONTESTED_ACTION_TIMING_APPLICABILITY);
   });
 });
 
@@ -524,7 +592,19 @@ describe('Temporal Rules - Applicability', () => {
 // ============================================================================
 
 describe('Temporal Rules - Type Guards', () => {
-  it('isInterruptingActionsPayload validates correctly', () => {
+  it('isContestedActionTimingPayload validates correctly', () => {
+    expect(isContestedActionTimingPayload({
+      characterId: 'char_001',
+      actionA: 'attack',
+      actionB: 'parry',
+    })).toBe(true);
+
+    expect(isContestedActionTimingPayload(null)).toBe(false);
+    expect(isContestedActionTimingPayload({})).toBe(false);
+    expect(isContestedActionTimingPayload({ characterId: 'x' })).toBe(false);
+  });
+
+  it('isInterruptingActionsPayload (legacy) validates correctly', () => {
     expect(isInterruptingActionsPayload({
       characterId: 'char_001',
       declaredAction: 'attack',
@@ -533,7 +613,6 @@ describe('Temporal Rules - Type Guards', () => {
 
     expect(isInterruptingActionsPayload(null)).toBe(false);
     expect(isInterruptingActionsPayload({})).toBe(false);
-    expect(isInterruptingActionsPayload({ characterId: 'x' })).toBe(false);
   });
 
   it('isDelayedActionsPayload validates correctly', () => {
@@ -573,7 +652,22 @@ describe('Temporal Rules - Type Guards', () => {
 // ============================================================================
 
 describe('Temporal Rules - Effects Despite Ambiguity', () => {
-  it('interrupt emits effects for both actions', () => {
+  it('contested actions emit symmetric effects', () => {
+    const effects = createContestedActionTimingEffects(
+      'char_001',
+      'attack',
+      'parry',
+      'inv_test'
+    );
+
+    expect(effects.length).toBe(2);
+    effects.forEach((effect) => {
+      expect(effect.authority.outcome).toBe(RulesOutcome.AMBIGUOUS);
+      expect(effect.parameters.actionType).toBe('contested');
+    });
+  });
+
+  it('legacy effect function produces symmetric effects', () => {
     const effects = createInterruptingActionsEffects(
       'char_001',
       'attack',
@@ -585,6 +679,7 @@ describe('Temporal Rules - Effects Despite Ambiguity', () => {
     expect(effects.length).toBe(2);
     effects.forEach((effect) => {
       expect(effect.authority.outcome).toBe(RulesOutcome.AMBIGUOUS);
+      expect(effect.parameters.actionType).toBe('contested');
     });
   });
 
