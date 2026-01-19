@@ -183,7 +183,7 @@ describe('Multiple Actions Rule - No Enforcement', () => {
 describe('Free Actions vs Actions Rule - No Suppression', () => {
   const pipeline = createFreeActionsVsActionsPipeline();
 
-  it('free action does not suppress action', () => {
+  it('action + free action produces AMBIGUOUS (not PASS)', () => {
     const payload: FreeActionsVsActionsPayload = {
       characterId: 'char_001',
       declaredAction: 'attack',
@@ -193,9 +193,13 @@ describe('Free Actions vs Actions Rule - No Suppression', () => {
     const intent = createTestIntent(FREE_ACTIONS_VS_ACTIONS_INTENT_TYPE, payload);
     const result = pipeline.validate(intent, createInvocationId());
 
-    // CRITICAL: PASS, not FAIL - free actions do not block
-    expect(result.outcome).toBe(RulesOutcome.PASS);
-    expect(result.violations.length).toBe(0);
+    // CRITICAL: AMBIGUOUS, not PASS
+    // The system does NOT enforce "free action" convention
+    // Absence of cost does NOT imply legality
+    expect(result.outcome).toBe(RulesOutcome.AMBIGUOUS);
+    expect(result.ambiguity).not.toBeNull();
+    expect(result.ambiguity?.reason).toContain('does not enforce');
+    expect(result.violations.length).toBe(0); // No violations - ambiguity, not failure
   });
 
   it('action cost exists, free action has no cost', () => {
@@ -216,7 +220,7 @@ describe('Free Actions vs Actions Rule - No Suppression', () => {
     expect(result.costValidation?.cost.tags).not.toContain('free_action');
   });
 
-  it('both effects occur', () => {
+  it('both effects occur (despite AMBIGUOUS)', () => {
     const payload: FreeActionsVsActionsPayload = {
       characterId: 'char_001',
       declaredAction: 'attack',
@@ -229,10 +233,10 @@ describe('Free Actions vs Actions Rule - No Suppression', () => {
       payload.declaredAction,
       payload.declaredFreeAction,
       invocationId,
-      RulesOutcome.PASS
+      RulesOutcome.AMBIGUOUS // CRITICAL: AMBIGUOUS, not PASS
     );
 
-    // CRITICAL: Both action and free action produce effects
+    // CRITICAL: Both action and free action produce effects despite AMBIGUOUS
     expect(effects.length).toBe(2);
 
     const actionEffect = effects.find((e) => e.parameters.actionType === 'standard');
@@ -240,6 +244,25 @@ describe('Free Actions vs Actions Rule - No Suppression', () => {
 
     expect(actionEffect).toBeDefined();
     expect(freeEffect).toBeDefined();
+    expect(actionEffect?.authority.outcome).toBe(RulesOutcome.AMBIGUOUS);
+    expect(freeEffect?.authority.outcome).toBe(RulesOutcome.AMBIGUOUS);
+  });
+
+  it('Informational conflict exists for action + free action', () => {
+    const payload: FreeActionsVsActionsPayload = {
+      characterId: 'char_001',
+      declaredAction: 'attack',
+      declaredFreeAction: 'speak',
+    };
+
+    const intent = createTestIntent(FREE_ACTIONS_VS_ACTIONS_INTENT_TYPE, payload);
+    const result = pipeline.validate(intent, createInvocationId());
+
+    // CRITICAL: Informational conflict MUST exist when both are declared
+    expect(result.conflicts.length).toBe(1);
+    expect(result.conflicts[0].kind).toBe(ConflictKind.Informational);
+    expect(result.conflicts[0].message).toContain('does not enforce');
+    expect(result.conflicts[0].tags).toContain('no-enforcement');
   });
 
   it('free action alone produces no cost', () => {

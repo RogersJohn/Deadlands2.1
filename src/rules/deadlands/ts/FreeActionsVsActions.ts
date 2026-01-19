@@ -1,23 +1,30 @@
 /**
- * Free Actions vs Actions Rule (PR 8.0)
+ * Free Actions vs Actions Rule (PR 8.0, PATCH 1)
  *
  * CRITICAL INVARIANT: Rules describe requirements without enforcing them.
  *
- * This rule validates intents that declare both an action and a free action
- * in the same turn. It never FAILs - free actions do not block actions.
+ * This rule validates intents that declare both an action and a commonly
+ * treated "free action" in the same turn.
+ *
+ * CRITICAL: "Free" is DESCRIPTIVE CONVENTION, not SYSTEM TRUTH.
+ * - Absence of cost does NOT imply legality
+ * - Absence of cost does NOT remove ambiguity
+ * - Absence of cost does NOT guarantee availability
  *
  * WHAT THIS RULE DOES:
  * - Detects when both action and free action are declared
- * - Emits PASS or AMBIGUOUS (never FAIL)
- * - Emits ActionCostEffect for the action only (free actions have no cost)
- * - May emit Informational conflict (descriptive only)
+ * - Emits AMBIGUOUS when both are present (system does not enforce convention)
+ * - Emits ActionCostEffect for the action only (intentionally no cost for free action)
+ * - Emits Informational conflict (descriptive, not enforcing)
  * - Emits effects for BOTH action and free action
+ * - NEVER returns PASS when both action and free action declared
  *
  * WHAT THIS RULE DOES NOT DO:
  * - Count actions
  * - Track action usage
  * - Enforce limits
- * - Block free actions
+ * - Enforce "free action" convention
+ * - Guarantee that free actions are legal
  * - Suppress effects
  * - Perform arithmetic
  *
@@ -71,8 +78,8 @@ export type FreeActionsVsActionsPayload = {
    * - 'unavailable': No action capacity exists
    * - 'unknown': Capacity is not specified
    *
-   * CRITICAL: This applies to the ACTION only, not the free action.
-   * Free actions do not consume action capacity.
+   * CRITICAL: This is CONTEXT, not enforcement.
+   * The system does not enforce action economy conventions.
    */
   readonly actionAvailability?: 'available' | 'unavailable' | 'unknown';
 };
@@ -99,8 +106,9 @@ export function isFreeActionsVsActionsPayload(
 /**
  * Validate action cost (for the action, NOT the free action)
  *
- * CRITICAL: Free actions do NOT emit cost.
- * Only the action emits a cost declaration.
+ * CRITICAL: Intentionally no cost emitted for free action.
+ * Absence of cost does NOT imply legality.
+ * The system does not enforce action economy conventions.
  */
 function validateActionCost(
   declaredAction: string | undefined,
@@ -139,9 +147,9 @@ function validateActionCost(
 /**
  * Create Informational conflict for combined action + free action
  *
- * CRITICAL: This is INFORMATIONAL, not blocking.
- * - Free actions do NOT block regular actions
- * - This conflict is for GM awareness only
+ * CRITICAL: This is INFORMATIONAL, not enforcing.
+ * - The system does NOT enforce action economy conventions
+ * - "Free" is descriptive convention, not system truth
  */
 function createCombinedActionsConflict(
   action: string,
@@ -150,9 +158,9 @@ function createCombinedActionsConflict(
   return {
     kind: ConflictKind.Informational,
     sourceRule: 'SW_ACTION_ECONOMY_002',
-    message: `Both action (${action}) and free action (${freeAction}) declared. ` +
-      'Free actions do not consume action capacity. Both may proceed.',
-    tags: ['action', 'free_action', 'economy', 'informational'],
+    message: `Intent includes both an action (${action}) and a commonly treated free action (${freeAction}). ` +
+      'Free actions are often treated as not consuming effort, but this system does not enforce that convention.',
+    tags: ['action', 'free_action', 'economy', 'informational', 'no-enforcement'],
   };
 }
 
@@ -321,11 +329,33 @@ function validateFreeActionsVsActions(
       };
     }
 
-    // Default: PASS with informational conflict
+    // CRITICAL: AMBIGUOUS, not PASS
+    // The system does NOT enforce "free action" convention
+    // Absence of cost does NOT imply legality
     return {
-      outcome: RulesOutcome.PASS,
+      outcome: RulesOutcome.AMBIGUOUS,
       violations: [],
-      ambiguity: null,
+      ambiguity: {
+        reason: 'Intent includes both an action and a commonly treated free action. ' +
+          'The system does not enforce action economy conventions.',
+        possibleInterpretations: [
+          {
+            code: 'ALLOW_BOTH',
+            resultingOutcome: RulesOutcome.PASS,
+            description: 'Both action and free action proceed',
+          },
+          {
+            code: 'ACTION_ONLY',
+            resultingOutcome: RulesOutcome.PASS,
+            description: 'Action proceeds, free action deferred or denied',
+          },
+          {
+            code: 'FREE_ONLY',
+            resultingOutcome: RulesOutcome.PASS,
+            description: 'Free action proceeds, action deferred or denied',
+          },
+        ],
+      },
       conflicts,
       costValidation,
     };
