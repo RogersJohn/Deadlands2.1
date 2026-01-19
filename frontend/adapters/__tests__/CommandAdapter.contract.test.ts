@@ -8,6 +8,7 @@
  * - No transformation occurs
  */
 
+import { describe, it, expect, beforeEach, test } from 'vitest';
 import { CommandAdapter } from '../CommandAdapter';
 
 /**

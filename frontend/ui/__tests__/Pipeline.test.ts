@@ -8,6 +8,7 @@
  * - UI is read-only with respect to authority
  */
 
+import { describe, it, expect } from 'vitest';
 import {
   createMockPipelineClient,
   createValidationErrorMock,
