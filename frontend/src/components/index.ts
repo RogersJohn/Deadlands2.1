@@ -1,8 +1,9 @@
 /**
- * Components Index (FE-PR 0.1)
+ * Components Index (FE-PR 0.2)
  *
- * All components are READ-ONLY DTO renderers.
- * No forms. No buttons. No interpretation.
+ * Components include:
+ * - Read-only DTO renderers (FE-PR 0.1)
+ * - Intent capture form (FE-PR 0.2) - declaration only, no interpretation
  */
 
 export { JsonDump, type JsonDumpProps } from './JsonDump';
@@ -27,3 +28,7 @@ export {
   AggregatedValidationView,
   type AggregatedValidationViewProps,
 } from './AggregatedValidationView';
+export {
+  IntentCaptureForm,
+  type IntentCaptureFormProps,
+} from './IntentCaptureForm';
