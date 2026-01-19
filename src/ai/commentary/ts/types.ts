@@ -32,6 +32,7 @@ import type {
 import { RulesOutcome } from '../../../intent/bridge/ts/RulesPipeline';
 import type { EffectiveValidation } from '../../../overrides/ts/types';
 import type { ResolutionResult, Effect } from '../../../resolution/ts/types';
+import type { WikiCitation, WikiEntry, WikiIndex } from '../../../wiki/ts/types';
 
 // ============================================================================
 // SNAPSHOT TYPES (IMMUTABLE, DEEP-COPIED)
@@ -121,6 +122,43 @@ export type AICommentarySnapshot = {
    * This proves the snapshot is a point-in-time copy.
    */
   readonly snapshotTimestamp: number;
+
+  /**
+   * Wiki citations from validation report (PR 5.1)
+   *
+   * CRITICAL INVARIANTS:
+   * - Citations are DESCRIPTIVE, not prescriptive
+   * - Citations do NOT affect AI output authority
+   * - Citations are read-only reference pointers
+   * - AI may reference these for context but NOT for decisions
+   *
+   * These are "see also" pointers to help explain context.
+   * The AI uses them to enrich commentary, not to make decisions.
+   */
+  readonly wikiCitations: readonly Readonly<{
+    readonly entryId: string;
+    readonly reason: string;
+    readonly section?: string;
+  }>[];
+
+  /**
+   * Wiki entries referenced by citations (PR 5.1)
+   *
+   * CRITICAL INVARIANTS:
+   * - Entries are READ-ONLY reference material
+   * - Entries do NOT affect AI output authority
+   * - Entries are prose, not code
+   * - AI may quote/reference but NOT execute
+   *
+   * These are resolved wiki entries for the citations above.
+   * Pre-resolved to avoid AI making lookup calls.
+   */
+  readonly wikiEntries: readonly Readonly<{
+    readonly id: string;
+    readonly title: string;
+    readonly body: string;
+    readonly category: string;
+  }>[];
 };
 
 // ============================================================================
@@ -221,13 +259,15 @@ export type AICommentaryService = {
  * @param report - The validation report (will be deep-copied)
  * @param effectiveValidation - Override info (will be deep-copied, optional)
  * @param resolution - Resolution result (will be deep-copied, optional)
+ * @param wikiIndex - Wiki index for resolving citations (optional, PR 5.1)
  * @returns Immutable snapshot safe for AI consumption
  */
 export function createAICommentarySnapshot(
   intent: ValidatedIntent,
   report: ValidationReport | AggregatedValidationReport,
   effectiveValidation?: EffectiveValidation | null,
-  resolution?: ResolutionResult | null
+  resolution?: ResolutionResult | null,
+  wikiIndex?: WikiIndex | null
 ): AICommentarySnapshot {
   // Deep copy intent (defensive)
   const intentSnapshot = {
@@ -330,12 +370,49 @@ export function createAICommentarySnapshot(
       }
     : null;
 
+  // Extract wiki citations (PR 5.1)
+  // Citations are read-only reference pointers
+  const wikiCitationsFromReport =
+    isSingleReport && (report as ValidationReport).wikiCitations
+      ? (report as ValidationReport).wikiCitations!
+      : [];
+
+  const wikiCitationsSnapshot = wikiCitationsFromReport.map((c: WikiCitation) => ({
+    entryId: String(c.entryId),
+    reason: String(c.reason),
+    ...(c.section !== undefined && { section: String(c.section) }),
+  }));
+
+  // Resolve wiki entries from citations (defensive copy)
+  // Pre-resolve to avoid AI making lookup calls
+  const wikiEntriesSnapshot: Array<{
+    readonly id: string;
+    readonly title: string;
+    readonly body: string;
+    readonly category: string;
+  }> = [];
+  if (wikiIndex) {
+    for (const citation of wikiCitationsFromReport) {
+      const entry = wikiIndex.getEntry(citation.entryId);
+      if (entry) {
+        wikiEntriesSnapshot.push({
+          id: String(entry.id),
+          title: String(entry.title),
+          body: String(entry.body),
+          category: String(entry.category),
+        });
+      }
+    }
+  }
+
   return {
     intent: intentSnapshot,
     validationReport: validationSnapshot,
     overrideInfo: overrideSnapshot,
     resolutionInfo: resolutionSnapshot,
     snapshotTimestamp: Date.now(),
+    wikiCitations: wikiCitationsSnapshot,
+    wikiEntries: wikiEntriesSnapshot,
   } as const;
 }
 
@@ -362,7 +439,10 @@ export function isValidSnapshot(obj: unknown): obj is AICommentarySnapshot {
     typeof snapshot.validationReport.outcome === 'string' &&
     Array.isArray(snapshot.validationReport.violations) &&
     Array.isArray(snapshot.validationReport.conflicts) &&
-    typeof snapshot.snapshotTimestamp === 'number'
+    typeof snapshot.snapshotTimestamp === 'number' &&
+    // PR 5.1: Wiki citations are required (may be empty array)
+    Array.isArray(snapshot.wikiCitations) &&
+    Array.isArray(snapshot.wikiEntries)
   );
 }
 

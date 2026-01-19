@@ -8,6 +8,7 @@
  * - No interpretation or modification of data
  */
 
+import { describe, it, expect } from 'vitest';
 import {
   toIntentView,
   toValidationView,

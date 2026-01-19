@@ -8,6 +8,7 @@
  * - No auto-fill or inference
  */
 
+import { describe, it, expect } from 'vitest';
 import {
   createInitialState,
   selectIntentType,

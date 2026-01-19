@@ -9,6 +9,7 @@
  * - Violations are returned explicitly
  */
 
+import { describe, it, expect, beforeEach, test } from 'vitest';
 import { QueryAdapter } from '../QueryAdapter';
 import { QueryViolationCode } from '../../types/backend';
 import {

@@ -7,12 +7,16 @@
 
 import type { IntentType, ValidatedIntent } from './ValidatedIntent';
 import type { CostValidationResult } from '../../../resolution/ts/types';
+import type { WikiCitation } from '../../../wiki/ts/types';
 
 // Re-export IntentType for convenience
 export type { IntentType } from './ValidatedIntent';
 
 // Re-export CostValidationResult for convenience (used by CostResult)
 export type { CostValidationResult } from '../../../resolution/ts/types';
+
+// Re-export WikiCitation for convenience (PR 5.1 - citations are metadata only)
+export type { WikiCitation } from '../../../wiki/ts/types';
 
 /**
  * Opaque identifier for rulesets - branded to prevent interchange
@@ -135,6 +139,23 @@ export type ValidationReport = {
    * The caller interprets them. That's the entire contract.
    */
   readonly conflicts: readonly Conflict[];
+
+  /**
+   * Wiki citations for reference (PR 5.1)
+   *
+   * CRITICAL INVARIANTS:
+   * - Citations are DESCRIPTIVE, not prescriptive
+   * - Citations do NOT affect validation outcome
+   * - Citations do NOT influence resolution
+   * - Absence of citations does NOT change behavior
+   * - Removing citations does NOT change system behavior
+   *
+   * Citations are "see also" pointers, not "because of" markers.
+   * They help humans understand context, not machines make decisions.
+   *
+   * This field is optional. Undefined or empty array are equivalent.
+   */
+  readonly wikiCitations?: readonly WikiCitation[];
 };
 
 /**

@@ -148,6 +148,28 @@ function generateCommentaryText(snapshot: AICommentarySnapshot): string {
     }
   }
 
+  // Wiki references (PR 5.1)
+  // CRITICAL: These are "see also" references, NOT authoritative sources
+  if (snapshot.wikiEntries && snapshot.wikiEntries.length > 0) {
+    lines.push('');
+    lines.push('## Reference Material');
+    lines.push('');
+    lines.push('*The following entries may provide helpful context. They are reference material only.*');
+    lines.push('');
+
+    for (const entry of snapshot.wikiEntries) {
+      lines.push(`### ${entry.title}`);
+      lines.push('');
+      // Show a preview of the body (first 200 chars)
+      const preview =
+        entry.body.length > 200
+          ? entry.body.substring(0, 200) + '...'
+          : entry.body;
+      lines.push(preview);
+      lines.push('');
+    }
+  }
+
   // Advisory footer
   lines.push('');
   lines.push('---');
