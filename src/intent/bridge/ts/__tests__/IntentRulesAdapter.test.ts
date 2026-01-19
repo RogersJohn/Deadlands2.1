@@ -87,6 +87,8 @@ class MockPipeline implements RulesPipeline {
       violations: [],
       ambiguity: this.returnAmbiguity,
       payload: intent.payload,
+      // PR 4.3: Conflicts are data, not logic
+      conflicts: [],
     };
   }
 }
@@ -120,6 +122,19 @@ class MockRegistry implements PipelineRegistry {
 
   getPipeline(rulesetId: RulesetId): RulesPipeline | null {
     return this.pipelines.get(rulesetId) ?? null;
+  }
+
+  // PR 4.2: Get all pipelines for an intent type
+  getPipelinesForIntent(intentType: IntentType): readonly RulesPipeline[] {
+    const matchingClaims = this.claims.filter(c => c.intentType === intentType);
+    const pipelines: RulesPipeline[] = [];
+    for (const claim of matchingClaims) {
+      const pipeline = this.pipelines.get(claim.rulesetId);
+      if (pipeline) {
+        pipelines.push(pipeline);
+      }
+    }
+    return pipelines;
   }
 }
 
@@ -323,7 +338,10 @@ describe('IntentRulesAdapter', () => {
       pipeline.returnOutcome = RulesOutcome.AMBIGUOUS;
       pipeline.returnAmbiguity = {
         reason: 'Rules cannot determine outcome',
-        possibleInterpretations: ['Option A', 'Option B'],
+        possibleInterpretations: [
+          { code: 'OPTION_A', resultingOutcome: RulesOutcome.PASS, description: 'Option A' },
+          { code: 'OPTION_B', resultingOutcome: RulesOutcome.FAIL, description: 'Option B' },
+        ],
       };
       registry.addPipeline(pipeline);
 
@@ -337,7 +355,7 @@ describe('IntentRulesAdapter', () => {
         expect(result.report.outcome).toBe(RulesOutcome.AMBIGUOUS);
         expect(result.report.ambiguity).not.toBeNull();
         expect(result.report.ambiguity?.reason).toBe('Rules cannot determine outcome');
-        expect(result.report.ambiguity?.possibleInterpretations).toEqual(['Option A', 'Option B']);
+        expect(result.report.ambiguity?.possibleInterpretations).toHaveLength(2);
       }
     });
   });

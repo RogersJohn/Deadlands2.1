@@ -811,6 +811,7 @@ describe('Resolution', () => {
         effectiveOutcome: result.report.outcome,
         hasOverrides: false,
         latestWarning: null,
+        overrideCount: 0,
       },
       []
     );
@@ -843,6 +844,7 @@ describe('Resolution', () => {
         effectiveOutcome: result.report.outcome,
         hasOverrides: false,
         latestWarning: null,
+        overrideCount: 0,
       },
       []
     );
@@ -879,6 +881,7 @@ describe('Resolution', () => {
         effectiveOutcome: result.report.outcome,
         hasOverrides: false,
         latestWarning: null,
+        overrideCount: 0,
       },
       []
     );
@@ -916,6 +919,7 @@ describe('Resolution', () => {
         effectiveOutcome: result.report.outcome,
         hasOverrides: false,
         latestWarning: null,
+        overrideCount: 0,
       },
       []
     );
@@ -950,6 +954,7 @@ describe('Resolution', () => {
         effectiveOutcome: result.report.outcome,
         hasOverrides: false,
         latestWarning: null,
+        overrideCount: 0,
       },
       []
     );
@@ -1035,6 +1040,7 @@ describe('End-to-End Pipeline', () => {
         effectiveOutcome: report.outcome,
         hasOverrides: false,
         latestWarning: null,
+        overrideCount: 0,
       },
       []
     );
@@ -1071,6 +1077,7 @@ describe('End-to-End Pipeline', () => {
         effectiveOutcome: adapterResult.report.outcome,
         hasOverrides: false,
         latestWarning: null,
+        overrideCount: 0,
       },
       []
     );

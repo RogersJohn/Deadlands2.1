@@ -48,9 +48,12 @@ export type {
   RuleValidationResult,
   CostResult,
   AggregatedValidationReport,
+  // PR 4.3 - Conflict Classification Types
+  Conflict,
+  ConflictResult,
 } from './RulesPipeline';
 
-export { RulesOutcome, createValidatorId } from './RulesPipeline';
+export { RulesOutcome, ConflictKind, createValidatorId } from './RulesPipeline';
 
 export type {
   AdapterFailure,

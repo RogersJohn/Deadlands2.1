@@ -121,6 +121,20 @@ export type ValidationReport = {
    * it does NOT enforce them. The persistence layer decides what to do.
    */
   readonly costValidation?: CostValidationResult;
+
+  /**
+   * Conflicts detected during validation (PR 4.3)
+   *
+   * CRITICAL INVARIANTS:
+   * - Conflicts do NOT affect outcome
+   * - Conflicts are NOT resolved or prioritized
+   * - ALL conflicts are preserved as-is
+   * - Empty array means no conflicts detected
+   *
+   * The validator emits conflicts. The engine collects them.
+   * The caller interprets them. That's the entire contract.
+   */
+  readonly conflicts: readonly Conflict[];
 };
 
 /**
@@ -186,6 +200,104 @@ export interface PipelineRegistry {
 }
 
 // ============================================================================
+// CONFLICT CLASSIFICATION TYPES (PR 4.3)
+// ============================================================================
+
+/**
+ * ConflictKind - exhaustive enum of conflict severity classifications
+ *
+ * CRITICAL INVARIANT: These are OPAQUE LABELS, not logic drivers.
+ * - The engine does NOT make decisions based on conflict kind
+ * - The engine does NOT prioritize HardBlock over SoftBlock
+ * - The engine does NOT suppress Informational conflicts
+ * - ALL conflicts are preserved and reported as-is
+ *
+ * The caller (UI/GM/resolution layer) interprets these labels.
+ * This module ONLY emits and collects them.
+ */
+export enum ConflictKind {
+  /**
+   * HardBlock - the action fundamentally cannot proceed
+   *
+   * Examples:
+   * - "Cannot attack a dead target"
+   * - "Weapon is broken and unusable"
+   * - "Character does not exist"
+   *
+   * The engine does NOT enforce this. It only reports it.
+   */
+  HardBlock = 'HardBlock',
+
+  /**
+   * SoftBlock - the action can proceed but has consequences
+   *
+   * Examples:
+   * - "Attacking this target will trigger opportunity attacks"
+   * - "Reloading during combat provokes"
+   * - "This action exceeds your action economy"
+   *
+   * The engine does NOT enforce consequences. It only reports the conflict.
+   */
+  SoftBlock = 'SoftBlock',
+
+  /**
+   * Informational - advisory information, not a block
+   *
+   * Examples:
+   * - "This is your last bullet"
+   * - "Target has damage resistance to this weapon type"
+   * - "Weather conditions may affect accuracy"
+   *
+   * The engine does NOT distinguish this from other conflicts.
+   * It is data, not logic.
+   */
+  Informational = 'Informational',
+}
+
+/**
+ * Conflict - explicit conflict marker emitted by validators
+ *
+ * CRITICAL INVARIANTS (PR 4.3):
+ * - Conflicts are DATA, not logic
+ * - Conflicts do NOT affect validation outcome
+ * - Conflicts do NOT trigger behavior changes
+ * - Conflicts do NOT get resolved or prioritized
+ * - ALL conflicts are preserved and reported as-is
+ *
+ * The validator emits conflicts. The engine collects them.
+ * The caller interprets them. That's the entire contract.
+ */
+export type Conflict = {
+  /**
+   * The kind of conflict (opaque label)
+   *
+   * This is informational only. The engine does NOT
+   * make decisions based on this field.
+   */
+  readonly kind: ConflictKind;
+
+  /**
+   * The rule that detected this conflict
+   *
+   * Format: rule identifier string (e.g., "deadlands.combat.reload")
+   */
+  readonly sourceRule: string;
+
+  /**
+   * Human-readable description of the conflict
+   */
+  readonly message: string;
+
+  /**
+   * Optional tags for categorization
+   *
+   * These are opaque strings. The engine does NOT
+   * interpret them. The caller may use them for filtering/grouping.
+   */
+  readonly tags?: readonly string[];
+};
+
+// ============================================================================
 // VALIDATION AGGREGATION TYPES (PR 4.2)
 // ============================================================================
 
@@ -222,6 +334,19 @@ export type RuleValidationResult = {
 
   /** Ambiguity from this validator (if outcome is AMBIGUOUS) */
   readonly ambiguity: RulesAmbiguity | null;
+
+  /**
+   * Conflicts detected by this validator (PR 4.3)
+   *
+   * CRITICAL INVARIANTS:
+   * - Conflicts do NOT affect outcome
+   * - Conflicts are NOT resolved or prioritized
+   * - ALL conflicts are preserved as-is
+   * - Empty array means no conflicts detected
+   *
+   * The engine collects conflicts. It does not interpret them.
+   */
+  readonly conflicts: readonly Conflict[];
 };
 
 /**
@@ -239,6 +364,28 @@ export type CostResult = {
 
   /** The cost validation result (from PR 4.1) */
   readonly costValidation: CostValidationResult;
+};
+
+/**
+ * Individual conflict result (PR 4.3)
+ *
+ * This is a conflict from a SINGLE validator.
+ * Multiple of these are collected into an AggregatedValidationReport.
+ *
+ * CRITICAL INVARIANTS:
+ * - Conflicts do NOT affect validation outcome
+ * - Conflicts do NOT get resolved or prioritized
+ * - ALL conflicts are preserved as-is
+ */
+export type ConflictResult = {
+  /** Which validator produced this conflict */
+  readonly validatorId: ValidatorId;
+
+  /** The ruleset that produced this conflict */
+  readonly rulesetId: RulesetId;
+
+  /** The conflict (from PR 4.3) */
+  readonly conflict: Conflict;
 };
 
 /**
@@ -291,6 +438,25 @@ export type AggregatedValidationReport = {
    * The aggregator does NOT resolve these.
    */
   readonly costResults: readonly CostResult[];
+
+  /**
+   * Conflicts from ALL validators (PR 4.3)
+   *
+   * May contain:
+   * - Multiple HardBlock conflicts
+   * - Multiple SoftBlock conflicts
+   * - Multiple Informational conflicts
+   * - Any combination thereof
+   *
+   * CRITICAL INVARIANTS:
+   * - Conflicts do NOT affect validation outcome
+   * - Conflicts do NOT get resolved or prioritized
+   * - Conflicts do NOT get filtered by kind
+   * - ALL conflicts are preserved as-is
+   *
+   * The aggregator does NOT resolve these.
+   */
+  readonly allConflicts: readonly ConflictResult[];
 
   /**
    * Count of validators that ran

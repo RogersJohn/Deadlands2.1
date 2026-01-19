@@ -303,6 +303,10 @@ export function createReloadFirearmPipeline(): RulesPipeline {
         ambiguity,
         payload: intent.payload,
         costValidation,
+        // PR 4.3: Conflicts are data, not logic
+        // ReloadFirearm currently emits no conflicts
+        // Future rules may emit HardBlock/SoftBlock/Informational conflicts
+        conflicts: [],
       };
     },
   };
