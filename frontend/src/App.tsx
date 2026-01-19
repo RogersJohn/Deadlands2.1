@@ -1,104 +1,136 @@
 /**
- * App Component (FE-PR 0.1)
+ * App Component (FE-PR 0.2)
  *
- * CRITICAL: This is a SKELETON app.
- * - No routing
- * - No state management
- * - No forms
- * - No buttons
+ * CRITICAL: This app is a DECLARATION console.
+ * - Collects explicit user input
+ * - Submits verbatim to backend
+ * - Displays raw response without interpretation
  *
- * Shows sample DTOs rendered as raw JSON to prove data fidelity.
+ * If the GM submits nonsense, the system accepts it.
  */
 
-import { type ReactElement } from 'react';
-import { ValidationReportView } from './components/ValidationReportView';
-import { ResolutionView } from './components/ResolutionView';
-import { OverrideListView } from './components/OverrideView';
-import type { ValidationReport, ResolutionResult, GmOverride } from './contracts';
-
-/**
- * Sample ValidationReport for display
- */
-const sampleValidationReport: ValidationReport = {
-  invocationId: 'inv_001',
-  sourceIntentId: 'int_001',
-  intentType: 'ATTACK',
-  rulesetId: 'deadlands_core',
-  outcome: 'AMBIGUOUS',
-  violations: [],
-  ambiguity: {
-    reason: 'Attack while shaken. System does not resolve impact.',
-    possibleInterpretations: [
-      {
-        code: 'ATTACK_SUCCEEDS',
-        resultingOutcome: 'PASS',
-        description: 'Attack succeeds despite shaken (GM decision)',
-      },
-      {
-        code: 'ATTACK_FAILS',
-        resultingOutcome: 'FAIL',
-        description: 'Shaken undermines attack (GM decision)',
-      },
-    ],
-  },
-  payload: {
-    attackerId: 'char_001',
-    targetId: 'char_002',
-    weaponId: 'weapon_001',
-  },
-  costValidation: {
-    cost: {
-      kind: 'ActionCostEffect',
-      description: 'Attack action',
-      tags: ['action', 'attack'],
-    },
-    outcome: 'AMBIGUOUS',
-    reason: 'Action cost not explicitly tracked',
-  },
-  conflicts: [
-    {
-      kind: 'SoftBlock',
-      sourceRule: 'SW_CONDITION_001',
-      message: 'Attacker is shaken. Shaken condition affects combat actions.',
-      tags: ['condition', 'shaken', 'combat'],
-    },
-  ],
-  wikiCitations: [
-    {
-      wikiId: 'wiki_shaken',
-      title: 'Shaken Condition',
-      relevance: 'Describes shaken effects on actions',
-    },
-  ],
-};
+import { type ReactElement, useState } from 'react';
+import { IntentCaptureForm } from './components/IntentCaptureForm';
+import { JsonDump } from './components/JsonDump';
+import type { RawIntent } from './contracts';
+import { createApiClient, type ApiResponse } from './api';
 
 /**
- * Sample ResolutionResult for display
+ * API client - configured for local dev
+ * TODO: Make configurable via environment
  */
-const sampleResolution: ResolutionResult = {
-  outcome: 'NO_EFFECTS_AMBIGUOUS',
-  effects: [],
-  explanation: 'No effects produced - validation outcome was AMBIGUOUS',
-};
+const apiClient = createApiClient({ baseUrl: 'http://localhost:8080' });
 
 /**
- * Sample GmOverride for display
+ * Submission state
  */
-const sampleOverrides: readonly GmOverride[] = [];
+type SubmissionState =
+  | { readonly status: 'idle' }
+  | { readonly status: 'submitting'; readonly intent: RawIntent }
+  | { readonly status: 'complete'; readonly intent: RawIntent; readonly response: ApiResponse<unknown> };
 
 export function App(): ReactElement {
+  const [submission, setSubmission] = useState<SubmissionState>({ status: 'idle' });
+
+  /**
+   * Handle intent submission
+   * NO TRANSFORMATION - submit exactly as received
+   */
+  async function handleSubmit(intent: RawIntent): Promise<void> {
+    setSubmission({ status: 'submitting', intent });
+
+    const response = await apiClient.submitIntent(intent);
+
+    setSubmission({ status: 'complete', intent, response });
+  }
+
   return (
-    <div>
-      <h1>Deadlands 2.1 - Frontend Skeleton (FE-PR 0.1)</h1>
-      <p>
-        This is a read-only DTO viewer. No forms. No buttons. No interpretation.
-      </p>
-      <hr />
-      <ValidationReportView report={sampleValidationReport} />
-      <hr />
-      <ResolutionView resolution={sampleResolution} />
-      <hr />
-      <OverrideListView overrides={sampleOverrides} />
+    <div style={styles.app}>
+      <header style={styles.header}>
+        <h1 style={styles.title}>Deadlands 2.1 - Intent Declaration Console</h1>
+        <p style={styles.subtitle}>
+          Explicit input. No interpretation. No validation.
+        </p>
+      </header>
+
+      <main style={styles.main}>
+        <section style={styles.formSection}>
+          <IntentCaptureForm onSubmit={handleSubmit} />
+        </section>
+
+        <section style={styles.responseSection}>
+          <h2 style={styles.sectionHeading}>Submission Result</h2>
+
+          {submission.status === 'idle' && (
+            <p style={styles.idleText}>No submission yet.</p>
+          )}
+
+          {submission.status === 'submitting' && (
+            <div>
+              <p style={styles.submittingText}>Submitting...</p>
+              <JsonDump label="Submitted Intent" data={submission.intent} />
+            </div>
+          )}
+
+          {submission.status === 'complete' && (
+            <div>
+              <JsonDump label="Submitted Intent" data={submission.intent} />
+              <JsonDump label="Backend Response (Raw)" data={submission.response} />
+            </div>
+          )}
+        </section>
+      </main>
     </div>
   );
 }
+
+/**
+ * Inline styles
+ */
+const styles: Record<string, React.CSSProperties> = {
+  app: {
+    minHeight: '100vh',
+    background: '#1a1a1a',
+    color: '#e0e0e0',
+    fontFamily: 'monospace',
+  },
+  header: {
+    padding: '20px',
+    borderBottom: '1px solid #333',
+  },
+  title: {
+    margin: '0 0 8px 0',
+    fontSize: '24px',
+  },
+  subtitle: {
+    margin: 0,
+    color: '#888',
+    fontSize: '14px',
+  },
+  main: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    gap: '40px',
+    padding: '20px',
+  },
+  formSection: {
+    flex: '1 1 400px',
+    minWidth: '300px',
+  },
+  responseSection: {
+    flex: '1 1 400px',
+    minWidth: '300px',
+  },
+  sectionHeading: {
+    margin: '0 0 16px 0',
+    fontSize: '18px',
+  },
+  idleText: {
+    color: '#666',
+    fontStyle: 'italic',
+  },
+  submittingText: {
+    color: '#888',
+    marginBottom: '16px',
+  },
+};
