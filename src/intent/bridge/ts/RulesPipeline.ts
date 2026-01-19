@@ -8,6 +8,7 @@
 import type { IntentType, ValidatedIntent } from './ValidatedIntent';
 import type { CostValidationResult } from '../../../resolution/ts/types';
 import type { WikiCitation } from '../../../wiki/ts/types';
+import type { RuleApplicability, IntentContext } from '../../../rules/applicability/ts/types';
 
 // Re-export IntentType for convenience
 export type { IntentType } from './ValidatedIntent';
@@ -17,6 +18,12 @@ export type { CostValidationResult } from '../../../resolution/ts/types';
 
 // Re-export WikiCitation for convenience (PR 5.1 - citations are metadata only)
 export type { WikiCitation } from '../../../wiki/ts/types';
+
+// Re-export applicability types for convenience (PR 6.1)
+export type { RuleApplicability, IntentContext } from '../../../rules/applicability/ts/types';
+
+// Re-export applicability functions for convenience (PR 6.1)
+export { isRuleApplicable } from '../../../rules/applicability/ts/types';
 
 /**
  * Opaque identifier for rulesets - branded to prevent interchange
@@ -179,6 +186,20 @@ export interface RulesPipeline {
   readonly handledIntentTypes: readonly IntentType[];
 
   /**
+   * Rule applicability declaration (PR 6.1)
+   *
+   * CRITICAL INVARIANTS:
+   * - Applicability must be EXPLICIT - no defaults
+   * - Absence of applicability means rule does NOT apply
+   * - Applicability is DATA, not logic
+   * - Applicability determines WHETHER rule runs, not WHAT it does
+   *
+   * A pipeline without applicability declaration is never applicable.
+   * This is NOT a "global" pipeline - it simply does not run.
+   */
+  readonly applicability: RuleApplicability;
+
+  /**
    * Validate an intent against the rules
    *
    * Guarantees:
@@ -218,6 +239,28 @@ export interface PipelineRegistry {
    * The aggregator will invoke ALL of them.
    */
   getPipelinesForIntent(intentType: IntentType): readonly RulesPipeline[];
+
+  /**
+   * Get all APPLICABLE pipelines for an intent type and context (PR 6.1)
+   *
+   * CRITICAL INVARIANTS:
+   * - Context must be EXPLICIT - no defaulting
+   * - Context must be EXPLICIT - no inference
+   * - Missing context means NO scoped rules apply
+   * - Non-applicable rules are silently excluded
+   *
+   * Returns ONLY pipelines whose applicability matches the context.
+   * Does NOT resolve conflicts. Does NOT prioritize.
+   * Non-applicable rules are simply not included.
+   *
+   * @param intentType - The intent type to find pipelines for
+   * @param context - The intent context (may be undefined)
+   * @returns Only pipelines that are applicable given the context
+   */
+  getApplicablePipelinesForIntent(
+    intentType: IntentType,
+    context: IntentContext | undefined
+  ): readonly RulesPipeline[];
 }
 
 // ============================================================================

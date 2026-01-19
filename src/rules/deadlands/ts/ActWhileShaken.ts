@@ -1,5 +1,5 @@
 /**
- * Act While Shaken Rule (PR 6.0)
+ * Act While Shaken Rule (PR 6.0, PR 6.1)
  *
  * CRITICAL INVARIANT: FAIL does not mean "nothing happens."
  *
@@ -21,6 +21,11 @@
  * - Inspect other rules
  * - Special-case outcomes
  *
+ * PR 6.1 ADDITIONS - Rule Applicability:
+ * - Declares explicit applicability (combat mode only)
+ * - Rule does not apply in downtime or social modes
+ * - Applicability is filtering, not decision-making
+ *
  * This rule operates independently. It does not coordinate with other rules.
  */
 
@@ -37,6 +42,8 @@ import type {
 import { RulesOutcome, ConflictKind } from '../../../intent/bridge/ts/RulesPipeline';
 import type { CostValidationResult, ActionCostEffect, Effect } from '../../../resolution/ts/types';
 import { CostValidationOutcome, EffectType } from '../../../resolution/ts/types';
+import type { RuleApplicability } from '../../applicability/ts/types';
+import { createRuleApplicability } from '../../applicability/ts/types';
 
 // ============================================================================
 // INTENT PAYLOAD TYPES
@@ -183,6 +190,26 @@ function createShakenEffects(
 }
 
 // ============================================================================
+// RULE APPLICABILITY (PR 6.1)
+// ============================================================================
+
+/**
+ * The declared applicability for Act While Shaken rule
+ *
+ * CRITICAL: This is EXPLICIT applicability.
+ * - Rule applies ONLY in combat mode
+ * - Rule does NOT apply in downtime or social modes
+ * - Applicability is filtering, not decision-making
+ *
+ * Shaken is a combat status. It does not make sense
+ * to validate Shaken rules during downtime or social encounters.
+ */
+export const ACT_WHILE_SHAKEN_APPLICABILITY: RuleApplicability = createRuleApplicability(
+  ['combat'],
+  ['status', 'shaken', 'action', 'constraint']
+);
+
+// ============================================================================
 // PIPELINE IMPLEMENTATION
 // ============================================================================
 
@@ -201,6 +228,7 @@ export const ACT_WHILE_SHAKEN_INTENT_TYPE = 'ACT_WHILE_SHAKEN' as IntentType;
  * - Always emits effects (FAIL does not suppress effects)
  * - Emits SoftBlock conflict (descriptive, inert)
  * - Emits ActionCostEffect (action still costs)
+ * - Declares explicit applicability (PR 6.1): combat mode only
  *
  * CRITICAL: This rule operates INDEPENDENTLY.
  * - No inspection of other rules
@@ -211,6 +239,7 @@ export function createActWhileShakenPipeline(): RulesPipeline {
   return {
     rulesetId: DEADLANDS_CORE_RULESET_ID,
     handledIntentTypes: [ACT_WHILE_SHAKEN_INTENT_TYPE],
+    applicability: ACT_WHILE_SHAKEN_APPLICABILITY,
 
     validate(intent: ValidatedIntent, invocationId: InvocationId): ValidationReport {
       const payload = intent.payload;
