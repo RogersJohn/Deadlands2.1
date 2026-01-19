@@ -18,13 +18,14 @@ import { createValidatedIntent } from '../ValidatedIntent';
 import type { ValidatedIntent, IntentType } from '../ValidatedIntent';
 import type {
   AggregatedValidationReport,
+  Conflict,
   InvocationId,
   PipelineRegistry,
   RulesetId,
   RulesPipeline,
   ValidationReport,
 } from '../RulesPipeline';
-import { RulesOutcome, createValidatorId } from '../RulesPipeline';
+import { RulesOutcome, ConflictKind, createValidatorId } from '../RulesPipeline';
 
 // Aggregation imports
 import {
@@ -52,7 +53,8 @@ function createMockPipeline(
   rulesetId: string,
   intentTypes: string[],
   outcome: RulesOutcome,
-  costOutcome?: CostValidationOutcome
+  costOutcome?: CostValidationOutcome,
+  conflicts?: Conflict[]
 ): RulesPipeline {
   return {
     rulesetId: rulesetId as RulesetId,
@@ -78,6 +80,8 @@ function createMockPipeline(
               reason: `Cost reason from ${rulesetId}`,
             }
           : undefined,
+        // PR 4.3: Conflicts are data, not logic
+        conflicts: conflicts ?? [],
       };
     },
   };
@@ -645,5 +649,435 @@ describe('Integration with Deadlands Registry', () => {
       expect(result.report.ruleResults[0]?.ambiguity).not.toBeNull();
       expect(result.report.ruleResults[0]?.ambiguity?.possibleInterpretations).toHaveLength(2);
     }
+  });
+
+  it('aggregates Reload Firearm with empty conflicts array (PR 4.3)', () => {
+    const registry = createDeadlandsPipelineRegistry();
+    const aggregator = createValidationAggregator(registry);
+    const intent = createReloadIntent({
+      characterId: 'wild_bill',
+      weaponId: 'colt_peacemaker',
+      weaponType: 'firearm',
+      hasShotsCapacity: true,
+      ammoAvailability: 'available',
+      currentAmmoState: 'empty',
+    });
+
+    const result = aggregator.aggregate(intent);
+
+    expect(result.kind).toBe('aggregated');
+    if (result.kind === 'aggregated') {
+      // Reload Firearm emits no conflicts (empty array)
+      expect(result.report.ruleResults[0]?.conflicts).toEqual([]);
+      expect(result.report.allConflicts).toEqual([]);
+    }
+  });
+});
+
+// ============================================================================
+// CONFLICT CLASSIFICATION TESTS (PR 4.3)
+// ============================================================================
+
+describe('Conflict Classification (PR 4.3)', () => {
+  /**
+   * CRITICAL INVARIANT: Conflicts are DATA, not logic
+   *
+   * The engine does NOT make decisions based on conflict kind.
+   * ALL conflicts are preserved as-is.
+   */
+  describe('Conflicts Are Data Only', () => {
+    it('collects conflicts from single validator', () => {
+      const conflicts: Conflict[] = [
+        {
+          kind: ConflictKind.HardBlock,
+          sourceRule: 'test_rule_001',
+          message: 'Cannot attack dead target',
+        },
+      ];
+      const pipeline = createMockPipeline('test_ruleset', ['TEST_INTENT'], RulesOutcome.PASS, undefined, conflicts);
+      const registry = createMockRegistry([pipeline]);
+      const aggregator = createValidationAggregator(registry);
+      const intent = createTestIntent();
+
+      const result = aggregator.aggregate(intent);
+
+      expect(result.kind).toBe('aggregated');
+      if (result.kind === 'aggregated') {
+        expect(result.report.allConflicts).toHaveLength(1);
+        expect(result.report.allConflicts[0]?.conflict.kind).toBe(ConflictKind.HardBlock);
+        expect(result.report.allConflicts[0]?.conflict.message).toBe('Cannot attack dead target');
+      }
+    });
+
+    it('collects conflicts from multiple validators', () => {
+      const conflicts1: Conflict[] = [
+        { kind: ConflictKind.HardBlock, sourceRule: 'rule_1', message: 'Hard block from validator 1' },
+      ];
+      const conflicts2: Conflict[] = [
+        { kind: ConflictKind.SoftBlock, sourceRule: 'rule_2', message: 'Soft block from validator 2' },
+        { kind: ConflictKind.Informational, sourceRule: 'rule_3', message: 'Info from validator 2' },
+      ];
+      const pipeline1 = createMockPipeline('ruleset_1', ['TEST_INTENT'], RulesOutcome.PASS, undefined, conflicts1);
+      const pipeline2 = createMockPipeline('ruleset_2', ['TEST_INTENT'], RulesOutcome.PASS, undefined, conflicts2);
+      const registry = createMockRegistry([pipeline1, pipeline2]);
+      const aggregator = createValidationAggregator(registry);
+      const intent = createTestIntent();
+
+      const result = aggregator.aggregate(intent);
+
+      expect(result.kind).toBe('aggregated');
+      if (result.kind === 'aggregated') {
+        // ALL conflicts are collected
+        expect(result.report.allConflicts).toHaveLength(3);
+
+        const kinds = result.report.allConflicts.map(c => c.conflict.kind);
+        expect(kinds).toContain(ConflictKind.HardBlock);
+        expect(kinds).toContain(ConflictKind.SoftBlock);
+        expect(kinds).toContain(ConflictKind.Informational);
+      }
+    });
+
+    it('preserves conflict source information (validatorId, rulesetId)', () => {
+      const conflicts: Conflict[] = [
+        { kind: ConflictKind.HardBlock, sourceRule: 'test_rule', message: 'Test conflict' },
+      ];
+      const pipeline = createMockPipeline('my_ruleset', ['TEST_INTENT'], RulesOutcome.PASS, undefined, conflicts);
+      const registry = createMockRegistry([pipeline]);
+      const aggregator = createValidationAggregator(registry);
+      const intent = createTestIntent();
+
+      const result = aggregator.aggregate(intent);
+
+      expect(result.kind).toBe('aggregated');
+      if (result.kind === 'aggregated') {
+        expect(result.report.allConflicts[0]?.validatorId).toBe('validator_my_ruleset');
+        expect(result.report.allConflicts[0]?.rulesetId).toBe('my_ruleset');
+      }
+    });
+
+    it('preserves optional tags on conflicts', () => {
+      const conflicts: Conflict[] = [
+        {
+          kind: ConflictKind.Informational,
+          sourceRule: 'ammo_check',
+          message: 'Last bullet in magazine',
+          tags: ['ammo', 'warning', 'low-resource'],
+        },
+      ];
+      const pipeline = createMockPipeline('test_ruleset', ['TEST_INTENT'], RulesOutcome.PASS, undefined, conflicts);
+      const registry = createMockRegistry([pipeline]);
+      const aggregator = createValidationAggregator(registry);
+      const intent = createTestIntent();
+
+      const result = aggregator.aggregate(intent);
+
+      expect(result.kind).toBe('aggregated');
+      if (result.kind === 'aggregated') {
+        expect(result.report.allConflicts[0]?.conflict.tags).toEqual(['ammo', 'warning', 'low-resource']);
+      }
+    });
+  });
+
+  /**
+   * CRITICAL INVARIANT: Conflicts do NOT affect validation outcome
+   *
+   * A PASS with HardBlock conflicts is still PASS.
+   * A FAIL with no conflicts is still FAIL.
+   * Conflicts and outcomes are INDEPENDENT.
+   */
+  describe('Conflicts Are Independent of Outcome', () => {
+    it('PASS outcome can coexist with HardBlock conflicts', () => {
+      const conflicts: Conflict[] = [
+        { kind: ConflictKind.HardBlock, sourceRule: 'strict_rule', message: 'This is a hard block' },
+      ];
+      const pipeline = createMockPipeline('test_ruleset', ['TEST_INTENT'], RulesOutcome.PASS, undefined, conflicts);
+      const registry = createMockRegistry([pipeline]);
+      const aggregator = createValidationAggregator(registry);
+      const intent = createTestIntent();
+
+      const result = aggregator.aggregate(intent);
+
+      expect(result.kind).toBe('aggregated');
+      if (result.kind === 'aggregated') {
+        // Outcome is PASS
+        expect(result.report.ruleResults[0]?.outcome).toBe(RulesOutcome.PASS);
+
+        // But HardBlock conflict exists
+        expect(result.report.allConflicts).toHaveLength(1);
+        expect(result.report.allConflicts[0]?.conflict.kind).toBe(ConflictKind.HardBlock);
+
+        // The engine does NOT change outcome based on conflict
+        // This is intentional - conflicts are DATA, not logic
+      }
+    });
+
+    it('FAIL outcome can coexist with Informational conflicts', () => {
+      const conflicts: Conflict[] = [
+        { kind: ConflictKind.Informational, sourceRule: 'info_rule', message: 'Just an FYI' },
+      ];
+      const pipeline = createMockPipeline('test_ruleset', ['TEST_INTENT'], RulesOutcome.FAIL, undefined, conflicts);
+      const registry = createMockRegistry([pipeline]);
+      const aggregator = createValidationAggregator(registry);
+      const intent = createTestIntent();
+
+      const result = aggregator.aggregate(intent);
+
+      expect(result.kind).toBe('aggregated');
+      if (result.kind === 'aggregated') {
+        // Outcome is FAIL (due to violations, not conflicts)
+        expect(result.report.ruleResults[0]?.outcome).toBe(RulesOutcome.FAIL);
+
+        // Informational conflict also exists
+        expect(result.report.allConflicts[0]?.conflict.kind).toBe(ConflictKind.Informational);
+      }
+    });
+
+    it('validator with conflicts but no outcome change', () => {
+      // Validator 1: PASS with HardBlock
+      // Validator 2: PASS with no conflicts
+      // Result: Both PASS outcomes, one HardBlock conflict
+      const conflicts1: Conflict[] = [
+        { kind: ConflictKind.HardBlock, sourceRule: 'rule_1', message: 'Hard block' },
+      ];
+      const pipeline1 = createMockPipeline('ruleset_1', ['TEST_INTENT'], RulesOutcome.PASS, undefined, conflicts1);
+      const pipeline2 = createMockPipeline('ruleset_2', ['TEST_INTENT'], RulesOutcome.PASS, undefined, []);
+      const registry = createMockRegistry([pipeline1, pipeline2]);
+      const aggregator = createValidationAggregator(registry);
+      const intent = createTestIntent();
+
+      const result = aggregator.aggregate(intent);
+
+      expect(result.kind).toBe('aggregated');
+      if (result.kind === 'aggregated') {
+        // Both validators say PASS
+        expect(result.report.ruleResults).toHaveLength(2);
+        expect(result.report.ruleResults[0]?.outcome).toBe(RulesOutcome.PASS);
+        expect(result.report.ruleResults[1]?.outcome).toBe(RulesOutcome.PASS);
+
+        // But one HardBlock conflict exists
+        expect(result.report.allConflicts).toHaveLength(1);
+        expect(result.report.allConflicts[0]?.conflict.kind).toBe(ConflictKind.HardBlock);
+
+        // The engine does NOT resolve this
+        // The caller must interpret the conflict
+      }
+    });
+  });
+
+  /**
+   * CRITICAL INVARIANT: NO conflict resolution
+   *
+   * The engine does NOT:
+   * - Prioritize HardBlock over SoftBlock
+   * - Suppress Informational conflicts
+   * - Count conflicts by kind
+   * - Summarize conflicts to a single status
+   */
+  describe('No Conflict Resolution', () => {
+    it('does NOT prioritize conflicts by kind', () => {
+      const conflicts: Conflict[] = [
+        { kind: ConflictKind.Informational, sourceRule: 'rule_info', message: 'Info' },
+        { kind: ConflictKind.HardBlock, sourceRule: 'rule_hard', message: 'Hard' },
+        { kind: ConflictKind.SoftBlock, sourceRule: 'rule_soft', message: 'Soft' },
+      ];
+      const pipeline = createMockPipeline('test_ruleset', ['TEST_INTENT'], RulesOutcome.PASS, undefined, conflicts);
+      const registry = createMockRegistry([pipeline]);
+      const aggregator = createValidationAggregator(registry);
+      const intent = createTestIntent();
+
+      const result = aggregator.aggregate(intent);
+
+      expect(result.kind).toBe('aggregated');
+      if (result.kind === 'aggregated') {
+        // ALL three conflicts are preserved
+        expect(result.report.allConflicts).toHaveLength(3);
+
+        // NO priority ordering - order is not guaranteed
+        const kinds = result.report.allConflicts.map(c => c.conflict.kind);
+        expect(kinds).toContain(ConflictKind.HardBlock);
+        expect(kinds).toContain(ConflictKind.SoftBlock);
+        expect(kinds).toContain(ConflictKind.Informational);
+
+        // NO summary field
+        expect('conflictSummary' in result.report).toBe(false);
+        expect('hasHardBlock' in result.report).toBe(false);
+        expect('blocked' in result.report).toBe(false);
+      }
+    });
+
+    it('does NOT suppress any conflict kind', () => {
+      // Multiple Informational conflicts should all be preserved
+      const conflicts: Conflict[] = [
+        { kind: ConflictKind.Informational, sourceRule: 'rule_1', message: 'Info 1' },
+        { kind: ConflictKind.Informational, sourceRule: 'rule_2', message: 'Info 2' },
+        { kind: ConflictKind.Informational, sourceRule: 'rule_3', message: 'Info 3' },
+      ];
+      const pipeline = createMockPipeline('test_ruleset', ['TEST_INTENT'], RulesOutcome.PASS, undefined, conflicts);
+      const registry = createMockRegistry([pipeline]);
+      const aggregator = createValidationAggregator(registry);
+      const intent = createTestIntent();
+
+      const result = aggregator.aggregate(intent);
+
+      expect(result.kind).toBe('aggregated');
+      if (result.kind === 'aggregated') {
+        // ALL three Informational conflicts are preserved
+        expect(result.report.allConflicts).toHaveLength(3);
+        expect(result.report.allConflicts.every(c => c.conflict.kind === ConflictKind.Informational)).toBe(true);
+      }
+    });
+
+    it('does NOT count or summarize conflicts', () => {
+      const conflicts: Conflict[] = [
+        { kind: ConflictKind.HardBlock, sourceRule: 'rule_1', message: 'Hard 1' },
+        { kind: ConflictKind.HardBlock, sourceRule: 'rule_2', message: 'Hard 2' },
+        { kind: ConflictKind.SoftBlock, sourceRule: 'rule_3', message: 'Soft' },
+      ];
+      const pipeline = createMockPipeline('test_ruleset', ['TEST_INTENT'], RulesOutcome.PASS, undefined, conflicts);
+      const registry = createMockRegistry([pipeline]);
+      const aggregator = createValidationAggregator(registry);
+      const intent = createTestIntent();
+
+      const result = aggregator.aggregate(intent);
+
+      expect(result.kind).toBe('aggregated');
+      if (result.kind === 'aggregated') {
+        // NO conflict counts
+        expect('hardBlockCount' in result.report).toBe(false);
+        expect('softBlockCount' in result.report).toBe(false);
+        expect('conflictCount' in result.report).toBe(false);
+
+        // Just the raw array
+        expect(result.report.allConflicts).toHaveLength(3);
+      }
+    });
+  });
+
+  /**
+   * CRITICAL INVARIANT: Conflicts coexist with validation results
+   *
+   * The aggregator collects conflicts alongside rule results and cost results.
+   * They are independent data streams.
+   */
+  describe('Conflicts Coexist With Other Data', () => {
+    it('conflicts coexist with rule violations', () => {
+      const conflicts: Conflict[] = [
+        { kind: ConflictKind.SoftBlock, sourceRule: 'soft_rule', message: 'Soft block warning' },
+      ];
+      const pipeline = createMockPipeline('test_ruleset', ['TEST_INTENT'], RulesOutcome.FAIL, undefined, conflicts);
+      const registry = createMockRegistry([pipeline]);
+      const aggregator = createValidationAggregator(registry);
+      const intent = createTestIntent();
+
+      const result = aggregator.aggregate(intent);
+
+      expect(result.kind).toBe('aggregated');
+      if (result.kind === 'aggregated') {
+        // Has violations (from FAIL outcome)
+        expect(result.report.ruleResults[0]?.violations).toHaveLength(1);
+
+        // Also has conflicts
+        expect(result.report.allConflicts).toHaveLength(1);
+
+        // They are independent
+        expect(result.report.ruleResults[0]?.violations[0]?.ruleId).toBe('test_ruleset_001');
+        expect(result.report.allConflicts[0]?.conflict.sourceRule).toBe('soft_rule');
+      }
+    });
+
+    it('conflicts coexist with cost validation', () => {
+      const conflicts: Conflict[] = [
+        { kind: ConflictKind.Informational, sourceRule: 'cost_info', message: 'Action will be expensive' },
+      ];
+      const pipeline = createMockPipeline('test_ruleset', ['TEST_INTENT'], RulesOutcome.PASS, CostValidationOutcome.AMBIGUOUS, conflicts);
+      const registry = createMockRegistry([pipeline]);
+      const aggregator = createValidationAggregator(registry);
+      const intent = createTestIntent();
+
+      const result = aggregator.aggregate(intent);
+
+      expect(result.kind).toBe('aggregated');
+      if (result.kind === 'aggregated') {
+        // Has cost results
+        expect(result.report.costResults).toHaveLength(1);
+        expect(result.report.costResults[0]?.costValidation.outcome).toBe(CostValidationOutcome.AMBIGUOUS);
+
+        // Also has conflicts
+        expect(result.report.allConflicts).toHaveLength(1);
+        expect(result.report.allConflicts[0]?.conflict.message).toBe('Action will be expensive');
+      }
+    });
+
+    it('conflicts from multiple validators are all collected', () => {
+      const conflicts1: Conflict[] = [
+        { kind: ConflictKind.HardBlock, sourceRule: 'rule_1', message: 'From validator 1' },
+      ];
+      const conflicts2: Conflict[] = [
+        { kind: ConflictKind.SoftBlock, sourceRule: 'rule_2', message: 'From validator 2' },
+      ];
+      const pipeline1 = createMockPipeline('ruleset_1', ['TEST_INTENT'], RulesOutcome.PASS, CostValidationOutcome.AMBIGUOUS, conflicts1);
+      const pipeline2 = createMockPipeline('ruleset_2', ['TEST_INTENT'], RulesOutcome.FAIL, CostValidationOutcome.UNSATISFIED, conflicts2);
+      const registry = createMockRegistry([pipeline1, pipeline2]);
+      const aggregator = createValidationAggregator(registry);
+      const intent = createTestIntent();
+
+      const result = aggregator.aggregate(intent);
+
+      expect(result.kind).toBe('aggregated');
+      if (result.kind === 'aggregated') {
+        // Two rule results (PASS and FAIL)
+        expect(result.report.ruleResults).toHaveLength(2);
+
+        // Two cost results
+        expect(result.report.costResults).toHaveLength(2);
+
+        // Two conflicts (one from each validator)
+        expect(result.report.allConflicts).toHaveLength(2);
+        expect(result.report.allConflicts[0]?.rulesetId).toBe('ruleset_1');
+        expect(result.report.allConflicts[1]?.rulesetId).toBe('ruleset_2');
+      }
+    });
+  });
+
+  /**
+   * CRITICAL INVARIANT: RuleValidationResult includes conflicts
+   *
+   * Each validator's result includes its conflicts.
+   * This allows tracking which validator produced which conflicts.
+   */
+  describe('Conflicts in RuleValidationResult', () => {
+    it('RuleValidationResult includes conflicts array', () => {
+      const conflicts: Conflict[] = [
+        { kind: ConflictKind.HardBlock, sourceRule: 'test_rule', message: 'Test conflict' },
+      ];
+      const pipeline = createMockPipeline('test_ruleset', ['TEST_INTENT'], RulesOutcome.PASS, undefined, conflicts);
+      const registry = createMockRegistry([pipeline]);
+      const aggregator = createValidationAggregator(registry);
+      const intent = createTestIntent();
+
+      const result = aggregator.aggregate(intent);
+
+      expect(result.kind).toBe('aggregated');
+      if (result.kind === 'aggregated') {
+        // RuleValidationResult has conflicts
+        expect(result.report.ruleResults[0]?.conflicts).toBeDefined();
+        expect(result.report.ruleResults[0]?.conflicts).toHaveLength(1);
+        expect(result.report.ruleResults[0]?.conflicts[0]?.kind).toBe(ConflictKind.HardBlock);
+      }
+    });
+
+    it('RuleValidationResult has empty conflicts when validator emits none', () => {
+      const pipeline = createMockPipeline('test_ruleset', ['TEST_INTENT'], RulesOutcome.PASS, undefined, []);
+      const registry = createMockRegistry([pipeline]);
+      const aggregator = createValidationAggregator(registry);
+      const intent = createTestIntent();
+
+      const result = aggregator.aggregate(intent);
+
+      expect(result.kind).toBe('aggregated');
+      if (result.kind === 'aggregated') {
+        expect(result.report.ruleResults[0]?.conflicts).toEqual([]);
+      }
+    });
   });
 });

@@ -18,6 +18,7 @@
 import type { ValidatedIntent } from './ValidatedIntent';
 import type {
   AggregatedValidationReport,
+  ConflictResult,
   CostResult,
   InvocationId,
   PipelineRegistry,
@@ -159,6 +160,7 @@ export class ValidationAggregator {
     // Collect results from ALL validators
     const ruleResults: RuleValidationResult[] = [];
     const costResults: CostResult[] = [];
+    const allConflicts: ConflictResult[] = [];
 
     for (const pipeline of pipelines) {
       const result = this.invokeValidator(intent, pipeline);
@@ -166,6 +168,8 @@ export class ValidationAggregator {
       if (result.costResult) {
         costResults.push(result.costResult);
       }
+      // Collect ALL conflicts from this validator (PR 4.3)
+      allConflicts.push(...result.conflictResults);
     }
 
     // Build aggregated report
@@ -175,6 +179,7 @@ export class ValidationAggregator {
       payload: intent.payload,
       ruleResults,
       costResults,
+      allConflicts,
       validatorCount: pipelines.length,
     };
 
@@ -190,19 +195,23 @@ export class ValidationAggregator {
    * This is an internal helper that:
    * - Generates a deterministic invocation ID
    * - Invokes the pipeline
-   * - Extracts rule result and cost result
+   * - Extracts rule result, cost result, and conflict results (PR 4.3)
    */
   private invokeValidator(
     intent: ValidatedIntent,
     pipeline: RulesPipeline
-  ): { ruleResult: RuleValidationResult; costResult: CostResult | null } {
+  ): {
+    ruleResult: RuleValidationResult;
+    costResult: CostResult | null;
+    conflictResults: ConflictResult[];
+  } {
     const validatorId = createValidatorId(pipeline.rulesetId);
     const invocationId = generateInvocationId(intent, pipeline.rulesetId);
 
     // Invoke the pipeline
     const report = pipeline.validate(intent, invocationId);
 
-    // Extract rule result
+    // Extract rule result (now includes conflicts from validator)
     const ruleResult: RuleValidationResult = {
       validatorId,
       rulesetId: pipeline.rulesetId,
@@ -210,6 +219,7 @@ export class ValidationAggregator {
       outcome: report.outcome,
       violations: report.violations,
       ambiguity: report.ambiguity,
+      conflicts: report.conflicts,
     };
 
     // Extract cost result (if present)
@@ -222,7 +232,17 @@ export class ValidationAggregator {
       };
     }
 
-    return { ruleResult, costResult };
+    // Extract conflict results (PR 4.3)
+    // Each conflict from the validator becomes a ConflictResult
+    const conflictResults: ConflictResult[] = report.conflicts.map(
+      (conflict) => ({
+        validatorId,
+        rulesetId: pipeline.rulesetId,
+        conflict,
+      })
+    );
+
+    return { ruleResult, costResult, conflictResults };
   }
 }
 
@@ -239,18 +259,30 @@ export function createValidationAggregator(registry: PipelineRegistry): Validati
  * Convert a single ValidationReport to an AggregatedValidationReport
  *
  * Utility for backwards compatibility when only one validator exists.
+ *
+ * PR 4.3: Now includes conflict conversion.
  */
 export function toAggregatedReport(
   intent: ValidatedIntent,
   ruleResult: RuleValidationResult,
   costResult: CostResult | null
 ): AggregatedValidationReport {
+  // Convert conflicts from the rule result to ConflictResults (PR 4.3)
+  const allConflicts: ConflictResult[] = ruleResult.conflicts.map(
+    (conflict) => ({
+      validatorId: ruleResult.validatorId,
+      rulesetId: ruleResult.rulesetId,
+      conflict,
+    })
+  );
+
   return {
     sourceIntentId: intent.intentId,
     intentType: intent.intentType,
     payload: intent.payload,
     ruleResults: [ruleResult],
     costResults: costResult ? [costResult] : [],
+    allConflicts,
     validatorCount: 1,
   };
 }
