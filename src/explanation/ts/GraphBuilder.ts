@@ -37,6 +37,7 @@ import type {
   Conflict,
 } from '../../intent/bridge/ts/RulesPipeline';
 import type { GmOverride } from '../../overrides/ts/types';
+import type { GmOverrideWithPolicyMetadata } from '../../overrides/ts/policy/application';
 import type { ResolutionResult, Effect } from '../../resolution/ts/types';
 
 // ============================================================================
@@ -271,6 +272,9 @@ function buildCostNodes(
  *
  * CRITICAL: Overrides are only present if they exist.
  * Override links do NOT replace original validation.
+ *
+ * PR 7.1 ADDITION: Extract policyId from policy-based overrides.
+ * This is metadata only - policy-based overrides behave identically to manual overrides.
  */
 function buildOverrideNodes(
   overrides: readonly GmOverride[],
@@ -292,6 +296,10 @@ function buildOverrideNodes(
           ? createExplanationNodeId('OVERRIDE', overrides[index - 1].overrideId)
           : (undefined as unknown as ExplanationNodeId);
 
+    // PR 7.1: Extract policyId if this is a policy-based override
+    const policyOverride = override as GmOverrideWithPolicyMetadata;
+    const policyId = policyOverride.policyMetadata?.policyId;
+
     return {
       nodeId: createExplanationNodeId('OVERRIDE', override.overrideId),
       nodeType: 'OVERRIDE' as const,
@@ -303,6 +311,8 @@ function buildOverrideNodes(
       warningSeverity: override.warning.severity,
       reason: override.reason,
       issuedBy: override.issuedBy,
+      // PR 7.1: Include policyId only if present (policy-based override)
+      ...(policyId && { policyId }),
     };
   });
 }
