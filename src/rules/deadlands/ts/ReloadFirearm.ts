@@ -1,7 +1,12 @@
 /**
- * Reload Firearm Rule (PR 4.0, updated PR 4.1)
+ * Reload Firearm Rule (PR 4.0, updated PR 4.1, PR 6.1)
  *
  * First real Deadlands/Savage Worlds rule implementation.
+ *
+ * PR 6.1 ADDITIONS - Rule Applicability:
+ * - Declares explicit applicability (combat mode only)
+ * - Rule does not apply in downtime or social modes
+ * - Applicability is filtering, not decision-making
  *
  * This rule answers: "Is this reload action legal under the rules?"
  *
@@ -51,6 +56,8 @@ import type {
 import { RulesOutcome } from '../../../intent/bridge/ts/RulesPipeline';
 import type { CostValidationResult, ActionCostEffect } from '../../../resolution/ts/types';
 import { CostValidationOutcome } from '../../../resolution/ts/types';
+import type { RuleApplicability } from '../../applicability/ts/types';
+import { createRuleApplicability } from '../../applicability/ts/types';
 
 // ============================================================================
 // INTENT PAYLOAD TYPES (what the UI submits)
@@ -255,6 +262,26 @@ function validateReloadFirearm(
 }
 
 // ============================================================================
+// RULE APPLICABILITY (PR 6.1)
+// ============================================================================
+
+/**
+ * The declared applicability for Reload Firearm rule
+ *
+ * CRITICAL: This is EXPLICIT applicability.
+ * - Rule applies ONLY in combat mode
+ * - Rule does NOT apply in downtime or social modes
+ * - Applicability is filtering, not decision-making
+ *
+ * Reloading is a combat action. It does not make sense
+ * to validate reload rules during downtime or social encounters.
+ */
+export const RELOAD_FIREARM_APPLICABILITY: RuleApplicability = createRuleApplicability(
+  ['combat'],
+  ['action', 'weapon', 'reload']
+);
+
+// ============================================================================
 // PIPELINE IMPLEMENTATION
 // ============================================================================
 
@@ -272,11 +299,13 @@ export const RELOAD_FIREARM_INTENT_TYPE = 'RELOAD_FIREARM' as IntentType;
  * - Validates against Savage Worlds reload rules
  * - Produces ValidationReport with PASS/FAIL/AMBIGUOUS
  * - Emits declarative cost validation (PR 4.1)
+ * - Declares explicit applicability (PR 6.1): combat mode only
  */
 export function createReloadFirearmPipeline(): RulesPipeline {
   return {
     rulesetId: DEADLANDS_CORE_RULESET_ID,
     handledIntentTypes: [RELOAD_FIREARM_INTENT_TYPE],
+    applicability: RELOAD_FIREARM_APPLICABILITY,
 
     validate(intent: ValidatedIntent, invocationId: InvocationId): ValidationReport {
       // Type guard: payload must be ReloadFirearmPayload
