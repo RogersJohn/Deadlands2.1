@@ -1,0 +1,26 @@
+{
+  "name": "deadlands-assistant",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Rules Assistant Logic Layer for Savage Worlds: Deadlands",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "lint": "eslint . --ext .ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "~5.6.2",
+    "vitest": "^2.1.8"
+  },
+  "keywords": [
+    "savage-worlds",
+    "deadlands",
+    "rules-engine",
+    "assistant"
+  ]
+}
