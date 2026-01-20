@@ -1,5 +1,5 @@
 /**
- * Components Index (FE-PR 1.0)
+ * Components Index (GM Results View PR)
  *
  * Components include:
  * - Read-only DTO renderers (FE-PR 0.1)
@@ -9,6 +9,7 @@
  * - Explanation Graph viewer (FE-PR 1.0) - post-hoc traceability
  * - AI Commentary panel (FE-PR 1.0) - hidden by default, non-authoritative
  * - Session Log (FE-PR 1.0) - immutable audit timeline
+ * - GM Results View (GM Results View PR) - scan-friendly, no authority creep
  */
 
 export { JsonDump, type JsonDumpProps } from './JsonDump';
@@ -80,3 +81,20 @@ export {
   type OverrideLogEntry,
   type EffectLogEntry,
 } from './SessionLog';
+export {
+  GmResultsView,
+  EvaluationContextSection,
+  RuleResultsSection,
+  ConflictsDetectedSection,
+  CostsSection,
+  EffectsSection,
+  OverridesInEffectSection,
+  type GmResultsViewProps,
+  type EvaluationContext,
+  type EvaluationContextSectionProps,
+  type RuleResultsSectionProps,
+  type ConflictsDetectedSectionProps,
+  type CostsSectionProps,
+  type EffectsSectionProps,
+  type OverridesInEffectSectionProps,
+} from './GmResultsView';
