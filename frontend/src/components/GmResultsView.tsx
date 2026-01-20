@@ -273,7 +273,7 @@ export function RuleResultsSection({
                 <div style={{ marginTop: spacing.sm }}>
                   {result.violations.map((v, vi) => (
                     <div key={`${v.ruleId}-${vi}`} style={sectionStyles.fieldRow}>
-                      <span style={sectionStyles.fieldLabel}>Reason:</span>
+                      <span style={sectionStyles.fieldLabel}>Engine-reported:</span>
                       <span style={sectionStyles.fieldValue}>{v.message}</span>
                     </div>
                   ))}
@@ -342,12 +342,14 @@ export function ConflictsDetectedSection({
                 <span style={sectionStyles.fieldLabel}>Kind:</span>
                 <span style={sectionStyles.fieldValue}>{c.conflict.kind}</span>
               </div>
+              {/* Engine-reported conflict text - no explanatory framing */}
               <div style={sectionStyles.fieldRow}>
-                <span style={sectionStyles.fieldLabel}>Explanation:</span>
+                <span style={sectionStyles.fieldLabel}>Engine-reported conflict:</span>
                 <span style={sectionStyles.fieldValue}>{c.conflict.message}</span>
               </div>
-              {/* Status line - do not suggest resolution */}
+              {/* Status line - do not suggest resolution or GM action */}
               <div style={{ marginTop: spacing.sm, ...sectionStyles.fieldRow }}>
+                <span style={sectionStyles.fieldLabel}>Status:</span>
                 <span style={sectionStyles.unresolvedBadge}>Unresolved by design.</span>
               </div>
             </li>
@@ -409,7 +411,7 @@ export function CostsSection({ costs }: CostsSectionProps): JSX.Element {
               </div>
               {c.costValidation.reason && (
                 <div style={sectionStyles.fieldRow}>
-                  <span style={sectionStyles.fieldLabel}>Reason:</span>
+                  <span style={sectionStyles.fieldLabel}>Engine-reported:</span>
                   <span style={sectionStyles.fieldValue}>{c.costValidation.reason}</span>
                 </div>
               )}
@@ -576,7 +578,7 @@ export function OverridesInEffectSection({
                 </span>
               </div>
               <div style={sectionStyles.fieldRow}>
-                <span style={sectionStyles.fieldLabel}>Reason:</span>
+                <span style={sectionStyles.fieldLabel}>Engine-reported:</span>
                 <span style={sectionStyles.fieldValue}>{override.reason}</span>
               </div>
               <div style={sectionStyles.fieldRow}>

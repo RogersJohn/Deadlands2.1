@@ -29,7 +29,9 @@ export {
   type OverrideViewProps,
   type OverrideListViewProps,
 } from './OverrideView';
-export { ResolutionView, type ResolutionViewProps } from './ResolutionView';
+// REMOVED: ResolutionView implied convergence and finality.
+// The engine does not resolve outcomes.
+// Presenting a "Resolution" implies authority the system does not have.
 export {
   AggregatedValidationView,
   type AggregatedValidationViewProps,
