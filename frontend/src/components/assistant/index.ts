@@ -33,5 +33,11 @@ export { AuthorityDisclaimer } from './AuthorityDisclaimer';
 export { ErrorPanel } from './ErrorPanel';
 export type { ErrorPanelProps } from './ErrorPanel';
 
+export { CharacterSelector, generateCharacterText } from './CharacterSelector';
+export type { CharacterSelectorProps } from './CharacterSelector';
+
+export { CharacterContext } from './CharacterContext';
+export type { CharacterContextProps } from './CharacterContext';
+
 export { AssistantMode } from './AssistantMode';
 export type { AssistantModeProps, AssistantOutput } from './AssistantMode';

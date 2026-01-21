@@ -12,6 +12,7 @@ import { type ReactElement, useState, useEffect } from 'react';
 import { IntentCaptureForm } from './components/IntentCaptureForm';
 import { JsonDump } from './components/JsonDump';
 import { AssistantMode, type AssistantOutput } from './components/assistant';
+import { CharacterSheetsManager } from './components/character-sheets';
 import type { RawIntent } from './contracts';
 import { createApiClient, type ApiResponse } from './api';
 import type { AppMode } from './types/AppMode';
@@ -36,6 +37,9 @@ function getModeFromHash(): AppMode {
   const hash = window.location.hash.slice(1); // Remove #
   if (hash === 'audit' || hash === '/audit') {
     return 'audit';
+  }
+  if (hash === 'characters' || hash === '/characters') {
+    return 'characters';
   }
   return 'assistant'; // Default to assistant
 }
@@ -67,7 +71,11 @@ export function App(): ReactElement {
    * Switch mode explicitly
    */
   function switchMode(newMode: AppMode): void {
-    window.location.hash = newMode === 'assistant' ? '' : 'audit';
+    if (newMode === 'assistant') {
+      window.location.hash = '';
+    } else {
+      window.location.hash = newMode;
+    }
   }
 
   /**
@@ -94,6 +102,12 @@ export function App(): ReactElement {
             Assistant
           </button>
           <button
+            onClick={() => switchMode('characters')}
+            style={mode === 'characters' ? styles.navButtonActive : styles.navButton}
+          >
+            Characters
+          </button>
+          <button
             onClick={() => switchMode('audit')}
             style={mode === 'audit' ? styles.navButtonActive : styles.navButton}
           >
@@ -106,6 +120,8 @@ export function App(): ReactElement {
         {mode === 'assistant' && (
           <AssistantMode getSuggestedRoll={mockGetSuggestedRoll} />
         )}
+
+        {mode === 'characters' && <CharacterSheetsManager />}
 
         {mode === 'audit' && (
           <>
