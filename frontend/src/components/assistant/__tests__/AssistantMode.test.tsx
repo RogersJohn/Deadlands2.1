@@ -102,7 +102,7 @@ describe('AssistantMode', () => {
     expect(screen.getByText('Actor is mounted and moving')).toBeInTheDocument();
   });
 
-  it('rejects output if advisory flag is not true', async () => {
+  it('rejects output if advisory flag is not true - hard fail with ErrorPanel', async () => {
     const invalidOutput = { ...validOutput, advisory: false as const };
     const mockGetRoll = vi.fn().mockResolvedValue(invalidOutput);
     render(<AssistantMode getSuggestedRoll={mockGetRoll} />);
@@ -114,11 +114,15 @@ describe('AssistantMode', () => {
     fireEvent.click(button);
 
     await waitFor(() => {
-      expect(screen.getByText(/not marked as advisory/i)).toBeInTheDocument();
+      // CRITICAL: Exact error message per spec
+      expect(screen.getByText(/Invalid assistant response/i)).toBeInTheDocument();
     });
+    expect(screen.getByText(/No advisory suggestion was provided/i)).toBeInTheDocument();
 
-    // Output sections should NOT be visible
+    // Output sections should NOT be visible - hard fail, no fallback
     expect(screen.queryByText('Suggested Roll')).not.toBeInTheDocument();
+    expect(screen.queryByText('Modifiers')).not.toBeInTheDocument();
+    expect(screen.queryByText('Assumptions')).not.toBeInTheDocument();
   });
 
   it('displays modifiers with correct formatting', async () => {

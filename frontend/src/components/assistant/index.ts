@@ -19,5 +19,8 @@ export type { NotesProps } from './Notes';
 
 export { AuthorityDisclaimer } from './AuthorityDisclaimer';
 
+export { ErrorPanel } from './ErrorPanel';
+export type { ErrorPanelProps } from './ErrorPanel';
+
 export { AssistantMode } from './AssistantMode';
 export type { AssistantModeProps, AssistantOutput } from './AssistantMode';

@@ -16,6 +16,7 @@ import { Modifiers } from './Modifiers';
 import { Assumptions } from './Assumptions';
 import { Notes } from './Notes';
 import { AuthorityDisclaimer } from './AuthorityDisclaimer';
+import { ErrorPanel } from './ErrorPanel';
 import { colors, spacing, typography } from '../shared/styles';
 
 /**
@@ -47,7 +48,8 @@ type SubmissionState =
   | { readonly status: 'idle' }
   | { readonly status: 'processing'; readonly input: string }
   | { readonly status: 'complete'; readonly input: string; readonly output: AssistantOutput }
-  | { readonly status: 'error'; readonly input: string; readonly error: string };
+  | { readonly status: 'error'; readonly input: string; readonly error: string }
+  | { readonly status: 'invalid_advisory'; readonly input: string };
 
 export type AssistantModeProps = {
   /**
@@ -66,12 +68,12 @@ export function AssistantMode({ getSuggestedRoll }: AssistantModeProps): ReactEl
     try {
       const output = await getSuggestedRoll(text);
 
-      // CRITICAL: Verify advisory flag before accepting output
+      // CRITICAL: Runtime check - verify advisory flag before accepting output
+      // This is a hard-fail, no fallback, no coercion
       if (output.advisory !== true) {
         setSubmission({
-          status: 'error',
+          status: 'invalid_advisory',
           input: text,
-          error: 'Output is not marked as advisory. Cannot display.',
         });
         return;
       }
@@ -89,6 +91,7 @@ export function AssistantMode({ getSuggestedRoll }: AssistantModeProps): ReactEl
   const isProcessing = submission.status === 'processing';
   const hasOutput = submission.status === 'complete';
   const hasError = submission.status === 'error';
+  const hasInvalidAdvisory = submission.status === 'invalid_advisory';
 
   return (
     <div style={styles.container}>
@@ -105,6 +108,13 @@ export function AssistantMode({ getSuggestedRoll }: AssistantModeProps): ReactEl
 
       {isProcessing && (
         <p style={styles.processingText}>Processing...</p>
+      )}
+
+      {hasInvalidAdvisory && (
+        <ErrorPanel>
+          Invalid assistant response.
+          No advisory suggestion was provided.
+        </ErrorPanel>
       )}
 
       {hasError && (
