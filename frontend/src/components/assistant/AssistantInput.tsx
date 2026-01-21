@@ -1,12 +1,20 @@
 /**
- * AssistantInput Component (PR #2 - Frontend Assistant Mode)
+ * AssistantInput Component (Phase 1 - Input Suggestions)
  *
- * A multiline text area for natural language input.
+ * A multiline text area for natural language input WITH text insertion helpers.
  * No validation, no character limits, no interpretation.
  * The user types whatever they want and submits.
+ *
+ * CRITICAL: All helpers INSERT TEXT ONLY.
+ * - No form fields, no hidden state
+ * - No auto-submit on interaction
+ * - Free-text input remains visually primary
  */
 
 import { type ReactElement, useState, type ChangeEvent } from 'react';
+import { CommonActions } from './CommonActions';
+import { CommonSituations } from './CommonSituations';
+import { DistanceHelper } from './DistanceHelper';
 import { colors, spacing, typography, borderRadius } from '../shared/styles';
 
 export type AssistantInputProps = {
@@ -28,6 +36,22 @@ export function AssistantInput({
     onSubmit(inputText);
   }
 
+  /**
+   * Insert text at end of textarea content.
+   * Adds appropriate spacing if there's existing text.
+   * Does NOT auto-submit, does NOT overwrite.
+   */
+  function handleInsertText(text: string): void {
+    setInputText((current) => {
+      if (current.trim() === '') {
+        return text;
+      }
+      // Add space before appending if current text doesn't end with space
+      const separator = current.endsWith(' ') ? '' : ' ';
+      return current + separator + text;
+    });
+  }
+
   return (
     <div style={styles.container}>
       <label htmlFor="assistant-input" style={styles.label}>
@@ -36,6 +60,15 @@ export function AssistantInput({
       <p style={styles.description}>
         Describe what the character is doing in plain language.
       </p>
+
+      {/* Text insertion helpers - ABOVE the textarea */}
+      <div style={styles.helpersContainer}>
+        <CommonActions onInsertText={handleInsertText} disabled={disabled} />
+        <CommonSituations onInsertText={handleInsertText} disabled={disabled} />
+        <DistanceHelper onInsertText={handleInsertText} disabled={disabled} />
+      </div>
+
+      {/* Primary input - free-text textarea */}
       <textarea
         id="assistant-input"
         value={inputText}
@@ -69,9 +102,16 @@ const styles: Record<string, React.CSSProperties> = {
     color: colors.textPrimary,
   },
   description: {
-    margin: `0 0 ${spacing.sm} 0`,
+    margin: `0 0 ${spacing.md} 0`,
     color: colors.textMuted,
     fontSize: typography.fontSize.base,
+  },
+  helpersContainer: {
+    marginBottom: spacing.md,
+    padding: spacing.md,
+    background: colors.bgDarker,
+    borderRadius: borderRadius.md,
+    border: `1px solid ${colors.borderDark}`,
   },
   textarea: {
     width: '100%',
