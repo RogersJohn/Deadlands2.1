@@ -19,6 +19,7 @@ import { Assumptions } from './Assumptions';
 import { Notes } from './Notes';
 import { AuthorityDisclaimer } from './AuthorityDisclaimer';
 import { ErrorPanel } from './ErrorPanel';
+import { CharacterContext } from './CharacterContext';
 import { colors, spacing, typography } from '../shared/styles';
 
 /**
@@ -102,6 +103,17 @@ export function AssistantMode({ getSuggestedRoll }: AssistantModeProps): ReactEl
     }
   }
 
+  /**
+   * Handle character context text injection.
+   * Appends character description to input and focuses textarea.
+   * Does NOT auto-submit.
+   */
+  function handleInjectCharacterText(text: string): void {
+    if (inputRef.current) {
+      inputRef.current.insertTextAndFocus(text);
+    }
+  }
+
   const isProcessing = submission.status === 'processing';
   const hasOutput = submission.status === 'complete';
   const hasError = submission.status === 'error';
@@ -117,6 +129,10 @@ export function AssistantMode({ getSuggestedRoll }: AssistantModeProps): ReactEl
       </header>
 
       <section style={styles.inputSection}>
+        <CharacterContext
+          onInjectText={handleInjectCharacterText}
+          disabled={isProcessing}
+        />
         <AssistantInput
           ref={inputRef}
           onSubmit={handleSubmit}

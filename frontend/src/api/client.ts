@@ -19,6 +19,11 @@ import type {
   EffectiveValidation,
   ResolutionResult,
 } from '../contracts';
+import type {
+  CharacterSheet,
+  CharacterSheetCreate,
+  CharacterSheetUpdate,
+} from '../types/CharacterSheet';
 
 /**
  * API configuration
@@ -160,6 +165,51 @@ export function createApiClient(config: ApiConfig) {
         'GET',
         `/api/validations/${invocationId}/resolution`
       );
+    },
+
+    // ========================================
+    // Character Sheets (Phase 2.5a)
+    // Non-authoritative reference objects
+    // ========================================
+
+    /**
+     * Get all character sheets
+     */
+    getCharacterSheets(): Promise<ApiResponse<readonly CharacterSheet[]>> {
+      return fetchRaw<readonly CharacterSheet[]>('GET', '/api/character-sheets');
+    },
+
+    /**
+     * Get a single character sheet by ID
+     */
+    getCharacterSheet(id: string): Promise<ApiResponse<CharacterSheet>> {
+      return fetchRaw<CharacterSheet>('GET', `/api/character-sheets/${id}`);
+    },
+
+    /**
+     * Create a new character sheet
+     */
+    createCharacterSheet(
+      data: CharacterSheetCreate
+    ): Promise<ApiResponse<CharacterSheet>> {
+      return fetchRaw<CharacterSheet>('POST', '/api/character-sheets', data);
+    },
+
+    /**
+     * Update an existing character sheet
+     */
+    updateCharacterSheet(
+      id: string,
+      data: CharacterSheetUpdate
+    ): Promise<ApiResponse<CharacterSheet>> {
+      return fetchRaw<CharacterSheet>('PUT', `/api/character-sheets/${id}`, data);
+    },
+
+    /**
+     * Delete a character sheet
+     */
+    deleteCharacterSheet(id: string): Promise<ApiResponse<void>> {
+      return fetchRaw<void>('DELETE', `/api/character-sheets/${id}`);
     },
   };
 }
