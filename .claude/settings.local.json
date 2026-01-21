@@ -22,7 +22,21 @@
       "Bash(cat:*)",
       "Bash(npm test)",
       "Bash(git mv:*)",
-      "Bash(git merge:*)"
+      "Bash(git merge:*)",
+      "Bash(git fetch:*)",
+      "Bash(node -e:*)",
+      "Bash(npm remove:*)",
+      "Bash(node --version:*)",
+      "Bash(npm --version:*)",
+      "Bash(npx tsx:*)",
+      "Bash(./node_modules/.bin/vitest:*)",
+      "Bash(ls -la \"c:\\\\Users\\\\roger\\\\Documents\\\\GitHub\\\\Deadlands2.1\\\\src\"\" 2>/dev/null || echo \"src not found, checking alternative paths \")",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(npm test:*)",
+      "Bash(git rm:*)",
+      "Bash(gh pr list:*)",
+      "Bash(No advisory suggestion was provided.\"\n\n- Add ErrorPanel component for displaying hard-fail errors\n- Add ''invalid_advisory'' state to SubmissionState discriminated union\n- Runtime check \\(not TypeScript-only\\) for advisory !== true\n- No fallback, no coercion - rendering hard-fails\n- Update test to verify exact error message and hard-fail behavior\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
     ]
   }
 }
