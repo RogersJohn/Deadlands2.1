@@ -1,5 +1,5 @@
 /**
- * AssistantMode View (PR #2 - Frontend Assistant Mode)
+ * AssistantMode View (Phase 2 - Assumption-Driven Refinement)
  *
  * Main view for the assistant mode. Combines all assistant components.
  * Displays: AssistantInput, then (if output exists) SuggestedRoll, Modifiers,
@@ -7,10 +7,12 @@
  *
  * CRITICAL: Before rendering output, verify advisory === true.
  * If advisory is not true, do not render the output.
+ *
+ * Phase 2: Assumptions now have Refine action that appends text to input.
  */
 
-import { type ReactElement, useState } from 'react';
-import { AssistantInput } from './AssistantInput';
+import { type ReactElement, useState, useRef } from 'react';
+import { AssistantInput, type AssistantInputHandle } from './AssistantInput';
 import { SuggestedRoll } from './SuggestedRoll';
 import { Modifiers } from './Modifiers';
 import { Assumptions } from './Assumptions';
@@ -61,6 +63,7 @@ export type AssistantModeProps = {
 
 export function AssistantMode({ getSuggestedRoll }: AssistantModeProps): ReactElement {
   const [submission, setSubmission] = useState<SubmissionState>({ status: 'idle' });
+  const inputRef = useRef<AssistantInputHandle>(null);
 
   async function handleSubmit(text: string): Promise<void> {
     setSubmission({ status: 'processing', input: text });
@@ -88,6 +91,17 @@ export function AssistantMode({ getSuggestedRoll }: AssistantModeProps): ReactEl
     }
   }
 
+  /**
+   * Handle assumption refinement.
+   * Appends sentence starter to input and focuses textarea.
+   * Does NOT auto-submit.
+   */
+  function handleRefine(sentenceStarter: string): void {
+    if (inputRef.current) {
+      inputRef.current.insertTextAndFocus(sentenceStarter);
+    }
+  }
+
   const isProcessing = submission.status === 'processing';
   const hasOutput = submission.status === 'complete';
   const hasError = submission.status === 'error';
@@ -103,7 +117,11 @@ export function AssistantMode({ getSuggestedRoll }: AssistantModeProps): ReactEl
       </header>
 
       <section style={styles.inputSection}>
-        <AssistantInput onSubmit={handleSubmit} disabled={isProcessing} />
+        <AssistantInput
+          ref={inputRef}
+          onSubmit={handleSubmit}
+          disabled={isProcessing}
+        />
       </section>
 
       {isProcessing && (
@@ -133,7 +151,10 @@ export function AssistantMode({ getSuggestedRoll }: AssistantModeProps): ReactEl
 
           <Modifiers modifiers={submission.output.modifiers} />
 
-          <Assumptions assumptions={submission.output.assumptions} />
+          <Assumptions
+            assumptions={submission.output.assumptions}
+            onRefine={handleRefine}
+          />
 
           <Notes notes={submission.output.notes} />
 
