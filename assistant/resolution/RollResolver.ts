@@ -31,6 +31,7 @@ export function resolveRoll(intent: ParsedIntent): AssistantOutput {
   const netModifier = modifiers.reduce((sum, m) => sum + m.value, 0);
 
   return {
+    advisory: true,
     suggestedRoll: {
       trait,
       targetNumber: 4

@@ -15,6 +15,12 @@ export class AssistantEngine {
 
     const resolution = resolveRoll(intent);
 
+    if (!resolution.assumptions || resolution.assumptions.length === 0) {
+      throw new Error(
+        "Assistant must emit at least one explicit assumption when interpreting natural language input."
+      );
+    }
+
     return resolution;
   }
 }
