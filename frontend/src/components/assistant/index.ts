@@ -1,10 +1,11 @@
 /**
  * Assistant Components (PR #2 - Frontend Assistant Mode)
  * Phase 1: Input Suggestions - text insertion helpers
+ * Phase 2: Assumption-Driven Refinement
  */
 
 export { AssistantInput } from './AssistantInput';
-export type { AssistantInputProps } from './AssistantInput';
+export type { AssistantInputProps, AssistantInputHandle } from './AssistantInput';
 
 export { CommonActions } from './CommonActions';
 export type { CommonActionsProps } from './CommonActions';

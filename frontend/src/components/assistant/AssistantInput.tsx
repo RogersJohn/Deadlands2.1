@@ -1,5 +1,5 @@
 /**
- * AssistantInput Component (Phase 1 - Input Suggestions)
+ * AssistantInput Component (Phase 2 - Assumption-Driven Refinement)
  *
  * A multiline text area for natural language input WITH text insertion helpers.
  * No validation, no character limits, no interpretation.
@@ -9,9 +9,18 @@
  * - No form fields, no hidden state
  * - No auto-submit on interaction
  * - Free-text input remains visually primary
+ *
+ * Phase 2: Exposes insertTextAndFocus for assumption refinement.
  */
 
-import { type ReactElement, useState, type ChangeEvent } from 'react';
+import {
+  type ReactElement,
+  useState,
+  type ChangeEvent,
+  useRef,
+  useImperativeHandle,
+  forwardRef,
+} from 'react';
 import { CommonActions } from './CommonActions';
 import { CommonSituations } from './CommonSituations';
 import { DistanceHelper } from './DistanceHelper';
@@ -22,73 +31,103 @@ export type AssistantInputProps = {
   readonly disabled?: boolean;
 };
 
-export function AssistantInput({
-  onSubmit,
-  disabled = false,
-}: AssistantInputProps): ReactElement {
-  const [inputText, setInputText] = useState('');
+/**
+ * Handle exposed by AssistantInput for external text insertion
+ */
+export type AssistantInputHandle = {
+  insertTextAndFocus: (text: string) => void;
+};
 
-  function handleChange(e: ChangeEvent<HTMLTextAreaElement>): void {
-    setInputText(e.target.value);
-  }
+export const AssistantInput = forwardRef<AssistantInputHandle, AssistantInputProps>(
+  function AssistantInput({ onSubmit, disabled = false }, ref) {
+    const [inputText, setInputText] = useState('');
+    const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  function handleSubmit(): void {
-    onSubmit(inputText);
-  }
+    function handleChange(e: ChangeEvent<HTMLTextAreaElement>): void {
+      setInputText(e.target.value);
+    }
 
-  /**
-   * Insert text at end of textarea content.
-   * Adds appropriate spacing if there's existing text.
-   * Does NOT auto-submit, does NOT overwrite.
-   */
-  function handleInsertText(text: string): void {
-    setInputText((current) => {
-      if (current.trim() === '') {
-        return text;
-      }
-      // Add space before appending if current text doesn't end with space
-      const separator = current.endsWith(' ') ? '' : ' ';
-      return current + separator + text;
-    });
-  }
+    function handleSubmit(): void {
+      onSubmit(inputText);
+    }
 
-  return (
-    <div style={styles.container}>
-      <label htmlFor="assistant-input" style={styles.label}>
-        Describe the action
-      </label>
-      <p style={styles.description}>
-        Describe what the character is doing in plain language.
-      </p>
+    /**
+     * Insert text at end of textarea content.
+     * Adds appropriate spacing if there's existing text.
+     * Does NOT auto-submit, does NOT overwrite.
+     */
+    function insertText(text: string): void {
+      setInputText((current) => {
+        if (current.trim() === '') {
+          return text;
+        }
+        // Add space or newline before appending if current text doesn't end with whitespace
+        const endsWithWhitespace = /\s$/.test(current);
+        const separator = endsWithWhitespace ? '' : ' ';
+        return current + separator + text;
+      });
+    }
 
-      {/* Text insertion helpers - ABOVE the textarea */}
-      <div style={styles.helpersContainer}>
-        <CommonActions onInsertText={handleInsertText} disabled={disabled} />
-        <CommonSituations onInsertText={handleInsertText} disabled={disabled} />
-        <DistanceHelper onInsertText={handleInsertText} disabled={disabled} />
+    /**
+     * Insert text and focus the textarea with cursor at end.
+     * Used by assumption refinement.
+     */
+    function insertTextAndFocus(text: string): void {
+      insertText(text);
+      // Focus textarea and move cursor to end after state update
+      setTimeout(() => {
+        if (textareaRef.current) {
+          textareaRef.current.focus();
+          const length = textareaRef.current.value.length;
+          textareaRef.current.setSelectionRange(length, length);
+        }
+      }, 0);
+    }
+
+    // Expose insertTextAndFocus to parent via ref
+    useImperativeHandle(ref, () => ({
+      insertTextAndFocus,
+    }));
+
+    return (
+      <div style={styles.container}>
+        <label htmlFor="assistant-input" style={styles.label}>
+          Describe the action
+        </label>
+        <p style={styles.description}>
+          Describe what the character is doing in plain language.
+        </p>
+
+        {/* Text insertion helpers - ABOVE the textarea */}
+        <div style={styles.helpersContainer}>
+          <CommonActions onInsertText={insertText} disabled={disabled} />
+          <CommonSituations onInsertText={insertText} disabled={disabled} />
+          <DistanceHelper onInsertText={insertText} disabled={disabled} />
+        </div>
+
+        {/* Primary input - free-text textarea */}
+        <textarea
+          ref={textareaRef}
+          id="assistant-input"
+          value={inputText}
+          onChange={handleChange}
+          disabled={disabled}
+          style={disabled ? styles.textareaDisabled : styles.textarea}
+          rows={4}
+          placeholder="e.g., Alice shoots at Bob while galloping on a horse, Bob is 100 yards away"
+        />
+        <button
+          type="button"
+          onClick={handleSubmit}
+          disabled={disabled}
+          style={disabled ? styles.buttonDisabled : styles.button}
+        >
+          Get Suggested Roll
+        </button>
       </div>
-
-      {/* Primary input - free-text textarea */}
-      <textarea
-        id="assistant-input"
-        value={inputText}
-        onChange={handleChange}
-        disabled={disabled}
-        style={disabled ? styles.textareaDisabled : styles.textarea}
-        rows={4}
-        placeholder="e.g., Alice shoots at Bob while galloping on a horse, Bob is 100 yards away"
-      />
-      <button
-        type="button"
-        onClick={handleSubmit}
-        disabled={disabled}
-        style={disabled ? styles.buttonDisabled : styles.button}
-      >
-        Get Suggested Roll
-      </button>
-    </div>
-  );
-}
+    );
+  }
+);
 
 const styles: Record<string, React.CSSProperties> = {
   container: {
